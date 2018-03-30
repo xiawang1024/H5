@@ -1,6 +1,8 @@
 <template>
     <section class="signup">        
-        <div class="logo ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"></div>
+        <div class="logo ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"></div>
+        <div class="left"></div>
+        <div class="right"></div>
         <section class="container">
             <h2 class="name">[报名参加]</h2>
             <form class="signup-form">

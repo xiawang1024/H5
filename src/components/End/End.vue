@@ -1,26 +1,23 @@
 <template>
-    <section class="one">        
-        <div class="img-1 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"></div>
-        <div class="img-2"></div>
-        <section class="contain">
-            <div class="img-3"></div>
-            <div class="img-4"></div>
-            <div class="img-5"></div>
-        </section>
-        <section class="ft">
-            <div class="img-6"></div>
-            <p class="text-1">4月22日 15：00  普罗·理想国</p>
-        </section>       
+    <section class="end">        
+        <div class="logo ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"></div>
+        <div class="left"></div>
+        <div class="right"></div>
+        <section class="container">
+            <h2 class="name">[技术支持]</h2>
+            
+        </section>        
+        
     </section>
 </template>
 <script>
 export default {
-  
+    name:'end'
 }
 </script>
 
 <style lang="stylus" scoped>
-.one
+.end
     position absolute
     top 0
     right 0
@@ -28,76 +25,23 @@ export default {
     left 0
     width 100%
     height 100%
-    background url('../common/bg.gif') center center no-repeat, url('../common/bg.png') center center no-repeat
-    background-size cover
-    .img-1
-        width 100%
-        height 437px
-        background url('./1.png') center center no-repeat
-        background-size contain
-    .img-2
+    background #1f1a17 url('../common/bg.png') top center no-repeat
+    background-size contain
+    .container
         position absolute
-        left 0
-        right 0
-        top 350px
-        width 100%
-        height 175px
-        background url(./2.png) center center no-repeat
-        background-size contain
-    .contain
-        position absolute
-        top 515px
-        left 0
-        right 0
-        width 100%
-        height 426px
-        background url('./border.png') center center no-repeat
-        background-size contain
-        .img-3
+        top 120px
+        left 50px
+        right 50px
+        bottom 90px        
+        background rgba(0,0,0,0.6)
+        .name
             position absolute
-            top 20px
+            top 125px
             left 0
             width 100%
-            height 94px
-            background url('./3.png') center center no-repeat
-            background-size contain
-        .img-4
-            position absolute
-            top 135px
-            left 0
-            width 100%
-            height 174px
-            background url('./4.png') center center no-repeat
-            background-size contain
-        .img-5
-            position absolute
-            top 322px
-            left 0
-            width 100%
-            height 88px
-            background url('../common/logo.png') center center no-repeat
-            background-size contain
-    .ft
-        position absolute
-        left 0
-        right 0
-        bottom 70px
-        width 100%
-        height 90px
-        text-align center
-        color #e4007e
-        .img-6
-            position absolute
-            top 0
-            left 0
-            width 100%
-            height 43px
-            background url('./6.png') center center no-repeat
-            background-size contain
-        .text-1
-            position absolute
-            bottom 0
-            left 0
-            width 100% 
-            font-size 18px           
+            text-align center
+            font-size 64px
+            color #ffffff
+            letter-spacing 10px
+        
 </style>

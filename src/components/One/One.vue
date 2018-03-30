@@ -1,6 +1,6 @@
 <template>
     <section class="one">        
-        <div class="logo ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"></div>
+        <div class="logo ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"></div>
         <div class="title"></div>
         <section class="contain">
             <div class="name"></div>

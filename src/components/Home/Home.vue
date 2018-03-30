@@ -8,7 +8,13 @@
 				<two></two>
 			</swiper-slide>
 			<swiper-slide>				
+				<three></three>
+			</swiper-slide>
+			<swiper-slide>				
 				<sign-up></sign-up>
+			</swiper-slide>
+			<swiper-slide>				
+				<end></end>
 			</swiper-slide>
 		</swiper>
 	</div>
@@ -19,6 +25,8 @@ const { swiperAnimateCache, swiperAnimate } = require('base/js/animate.min.js')
 
 import One from '../One/One'
 import Two from '../Two/Two'
+import Three from '../Three/Three'
+import End from '../End/End'
 
 import SignUp from '../SignUp/SignUp'
 
@@ -27,7 +35,9 @@ export default {
 	components:{
 		One,
 		Two,
-		SignUp
+		Three,
+		SignUp,
+		End
 	},
 	data () {
 		return {
@@ -74,4 +84,20 @@ export default {
 	height 75px
 	background url('../common/logo.png') right 30px center no-repeat
 	background-size contain 
+.left
+	position absolute
+	top 324px
+	left 0
+	width 131px
+	height 204px
+	background url('../common/left.png') center center no-repeat
+	background-size cover
+.right
+	position absolute
+	bottom 0
+	right 0
+	width 192px
+	height 301px
+	background url('../common/right.png') center center no-repeat
+	background-size cover
 </style>

@@ -1,10 +1,10 @@
 <template>
-    <section class="two">        
+    <section class="three">        
         <div class="logo ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"></div>
         <div class="left"></div>
         <div class="right"></div>
         <section class="container">
-            <h2 class="name">[活动介绍]</h2>
+            <h2 class="name">[活动地图]</h2>
             
         </section>        
         
@@ -12,12 +12,12 @@
 </template>
 <script>
 export default {
-    name:'two'
+    name:'three'
 }
 </script>
 
 <style lang="stylus" scoped>
-.two
+.three
     position absolute
     top 0
     right 0
