@@ -33,7 +33,7 @@ export default {
 		return {
 			swiperOption: {
 				direction : 'vertical',
-				loop : true,
+				// loop : true,
 				pagination: {
 					el: '.swiper-pagination'
 				},
@@ -51,12 +51,7 @@ export default {
 		}
 	},
 	mounted() {
-		setInterval(() => {
-			console.log('simulate async data')
-			if (this.swiperSlides.length < 10) {
-				this.swiperSlides.push(this.swiperSlides.length + 1)
-			}
-		}, 3000)
+		
     }
 }
 </script>

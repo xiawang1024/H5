@@ -33,11 +33,11 @@ export default {
     left 0
     width 100%
     height 100%
-    background #1f1a17 url('../common/bg.png') top center no-repeat
+    background #1f1a17 url('../common/bg.png') top -20px center no-repeat
     background-size contain    
     .title
         position absolute
-        top 555px
+        top 520px
         left 0
         width 100%
         height 168px
@@ -45,7 +45,7 @@ export default {
         background-size contain
     .contain
         position absolute
-        top 740px
+        top 705px
         left 0
         width 100%
         .name
@@ -58,7 +58,7 @@ export default {
             background-size contain
         .text
             position absolute
-            top 124px
+            top 115px
             left 0
             width 100%
             .img-1,.img-2,.img-3,.img-4,.img-5
@@ -88,7 +88,7 @@ export default {
                 background-size contain
     .ft
         position absolute
-        bottom 60px
+        bottom 40px
         left 0
         width 100%
         height 80px

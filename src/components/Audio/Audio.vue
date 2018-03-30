@@ -51,4 +51,5 @@ export default {
     background-size cover
     &.no-music 
         animation-play-state paused
+        animation none
 </style>
