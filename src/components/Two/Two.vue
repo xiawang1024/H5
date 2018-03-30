@@ -1,6 +1,6 @@
 <template>
     <section class="two">
-
+        <div class="logo ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"></div>
     </section>
 </template>
 
@@ -20,6 +20,6 @@ export default {
     left 0
     width 100%
     height 100%
-    background url('../common/bg.gif') center center no-repeat, url('../common/bg.png') center center no-repeat
-    background-size cover
+    background #1f1a17 url('../common/bg.png') top center no-repeat
+    background-size contain
 </style>

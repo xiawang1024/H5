@@ -1,15 +1,20 @@
 <template>
     <section class="one">        
-        <div class="img-1 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"></div>
-        <div class="img-2"></div>
+        <div class="logo ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"></div>
+        <div class="title"></div>
         <section class="contain">
-            <div class="img-3"></div>
-            <div class="img-4"></div>
-            <div class="img-5"></div>
+            <div class="name"></div>
+            <div class="text">
+                <p class="img-1"></p>
+                <p class="img-2"></p>
+                <p class="img-3"></p>
+                <p class="img-4"></p>
+                <p class="img-5"></p>
+            </div>
         </section>
         <section class="ft">
             <div class="img-6"></div>
-            <p class="text-1">4月22日 15：00  普罗·理想国</p>
+            <div class="img-7"></div>
         </section>       
     </section>
 </template>
@@ -28,64 +33,65 @@ export default {
     left 0
     width 100%
     height 100%
-    background url('../common/bg.gif') center center no-repeat, url('../common/bg.png') center center no-repeat
-    background-size cover
-    .img-1
-        width 100%
-        height 437px
-        background url('./1.png') center center no-repeat
-        background-size contain
-    .img-2
+    background #1f1a17 url('../common/bg.png') top center no-repeat
+    background-size contain    
+    .title
         position absolute
+        top 555px
         left 0
-        right 0
-        top 350px
         width 100%
-        height 175px
-        background url(./2.png) center center no-repeat
+        height 168px
+        background url('../common/title.png') center center no-repeat
         background-size contain
     .contain
         position absolute
-        top 515px
+        top 740px
         left 0
-        right 0
         width 100%
-        height 426px
-        background url('./border.png') center center no-repeat
-        background-size contain
-        .img-3
+        .name
             position absolute
-            top 20px
+            top 0
             left 0
             width 100%
             height 94px
-            background url('./3.png') center center no-repeat
+            background url('./name.png') center center no-repeat
             background-size contain
-        .img-4
+        .text
             position absolute
-            top 135px
+            top 124px
             left 0
             width 100%
-            height 174px
-            background url('./4.png') center center no-repeat
-            background-size contain
-        .img-5
-            position absolute
-            top 322px
-            left 0
-            width 100%
-            height 88px
-            background url('../common/logo.png') center center no-repeat
-            background-size contain
+            .img-1,.img-2,.img-3,.img-4,.img-5
+                position absolute                
+                left 0
+                width 100%
+                height 28px
+            .img-1
+                top 0
+                background url('./1.png') center center no-repeat
+                background-size contain
+            .img-2
+                top 39px
+                background url('./2.png') center center no-repeat
+                background-size contain
+            .img-3
+                top 78px
+                background url('./3.png') center center no-repeat
+                background-size contain
+            .img-4
+                top 117px
+                background url('./4.png') center center no-repeat
+                background-size contain
+            .img-5
+                top 156px
+                background url('./5.png') center center no-repeat
+                background-size contain
     .ft
         position absolute
+        bottom 60px
         left 0
-        right 0
-        bottom 70px
         width 100%
-        height 90px
-        text-align center
-        color #e4007e
+        height 80px
         .img-6
             position absolute
             top 0
@@ -94,10 +100,12 @@ export default {
             height 43px
             background url('./6.png') center center no-repeat
             background-size contain
-        .text-1
+        .img-7
             position absolute
             bottom 0
             left 0
-            width 100% 
-            font-size 18px           
+            width 100%
+            height 27px
+            background url('./7.png') center center no-repeat
+            background-size contain
 </style>

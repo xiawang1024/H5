@@ -7,6 +7,9 @@
 			<swiper-slide>				
 				<two></two>
 			</swiper-slide>
+			<swiper-slide>				
+				<sign-up></sign-up>
+			</swiper-slide>
 		</swiper>
 	</div>
 </template>
@@ -17,11 +20,14 @@ const { swiperAnimateCache, swiperAnimate } = require('base/js/animate.min.js')
 import One from '../One/One'
 import Two from '../Two/Two'
 
+import SignUp from '../SignUp/SignUp'
+
 export default {
 	name: 'Home',	
 	components:{
 		One,
-		Two
+		Two,
+		SignUp
 	},
 	data () {
 		return {
@@ -65,4 +71,12 @@ export default {
     left 0
     width 100%
     height 100%
+.logo
+	position absolute
+	top 22px
+	left 0
+	width 100%
+	height 75px
+	background url('../common/logo.png') right 30px center no-repeat
+	background-size contain 
 </style>

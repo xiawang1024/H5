@@ -43,7 +43,7 @@ export default {
 .audio-wrap
     position absolute
     z-index 1024
-    right 30px
+    left 30px
     top 30px
     width 80px
     height 80px
