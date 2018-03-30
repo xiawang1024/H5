@@ -5,6 +5,8 @@ import App from './App'
 import router from 'router'
 import 'base/stylus/index.styl'
 
+import 'base/stylus/animate.css'
+
 /* 微信自定义分享 */ 
 // import 'wechat/index.js'
 

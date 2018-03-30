@@ -1,0 +1,28 @@
+@charset "UTF-8";
+.animated {
+    
+    animation-duration: 1s;
+    
+    animation-fill-mode: both
+}
+
+.animated.infinite {
+    
+    animation-iteration-count: infinite
+}
+
+
+@keyframes bigToSmall {
+    from {
+        
+        transform:scale(1.3)
+    }
+    to {
+        
+        transform: scale(1)
+    }
+}
+
+.bigToSmall {
+    animation-name: bigToSmall
+}

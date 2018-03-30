@@ -1,11 +1,12 @@
 <template>
-	<div class="home">
-		<h1>Hello Wx</h1>
+	<div class="home">		
 		<swiper :options="swiperOption">
-			<swiper-slide v-for="slide in swiperSlides" :key="slide">				
-				<p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" style="height:60px">I'm Slide {{ slide }}</p>
+			<swiper-slide>				
+				<one></one>
 			</swiper-slide>
-			<div class="swiper-pagination" slot="pagination"></div>
+			<swiper-slide>				
+				<two></two>
+			</swiper-slide>
 		</swiper>
 	</div>
 </template>
@@ -13,11 +14,20 @@
 <script>
 const { swiperAnimateCache, swiperAnimate } = require('base/js/animate.min.js')
 
+import One from '../One/One'
+import Two from '../Two/Two'
+
 export default {
 	name: 'Home',	
+	components:{
+		One,
+		Two
+	},
 	data () {
 		return {
 			swiperOption: {
+				direction : 'vertical',
+				loop : true,
 				pagination: {
 					el: '.swiper-pagination'
 				},
@@ -46,6 +56,21 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-
+<style lang="stylus">
+.home,.swiper-container
+    position absolute
+    top 0
+    right 0
+    bottom 0
+    left 0
+    width 100%
+    height 100%
+.arrow
+	position absolute
+	left 0
+	bottom 50px
+	width 100%
+	height 45px
+	background url('../common/arrow.png') center center no-repeat
+	background-size contain
 </style>
