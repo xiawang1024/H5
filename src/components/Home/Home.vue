@@ -65,12 +65,4 @@ export default {
     left 0
     width 100%
     height 100%
-.arrow
-	position absolute
-	left 0
-	bottom 50px
-	width 100%
-	height 45px
-	background url('../common/arrow.png') center center no-repeat
-	background-size contain
 </style>

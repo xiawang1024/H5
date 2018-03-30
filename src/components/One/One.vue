@@ -10,8 +10,7 @@
         <section class="ft">
             <div class="img-6"></div>
             <p class="text-1">4月22日 15：00  普罗·理想国</p>
-        </section>
-        <div class="arrow"></div>
+        </section>       
     </section>
 </template>
 <script>
