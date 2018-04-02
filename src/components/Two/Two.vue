@@ -1,17 +1,17 @@
 <template>
     <section class="two">        
-        <div class="logo ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"></div>
-        <div class="left"></div>
-        <div class="right"></div>
-        <div class="title"></div>
-        <section class="container">
-            <div class="title-1"></div>
-            <div class="text-1"></div>
-            <div class="text-2"></div>
-            <div class="text-3"></div>
-            <div class="text-4"></div>
+        <div class="logo ani" swiper-animate-effect="flipInX" swiper-animate-duration="0.75s" swiper-animate-delay="3.5s"></div>
+        <div class="left ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.75s" swiper-animate-delay="0s"></div>
+        <div class="right ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.75s" swiper-animate-delay="0s"></div>
+        <div class="title ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.75s" swiper-animate-delay="3.5s"></div>
+        <section class="container ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.75s" swiper-animate-delay="0.25s">
+            <div class="title-1 ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.75s" swiper-animate-delay="0.25s"></div>
+            <div class="text-1 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="2s" swiper-animate-delay="0.5s"></div>
+            <div class="text-2 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="2s" swiper-animate-delay="1.25s"></div>
+            <div class="text-3 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="2s" swiper-animate-delay="2s"></div>
+            <div class="text-4 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="2s" swiper-animate-delay="2.75s"></div>
             <div class="time-location">
-                <div class="time"></div>
+                <div class="time ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.75s" swiper-animate-delay="3.5s"></div>
                 <div class="location"></div>
             </div>
         </section>        

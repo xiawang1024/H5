@@ -1,19 +1,32 @@
 <template>
     <section class="signup">        
-        <div class="logo ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"></div>
-        <div class="left"></div>
-        <div class="right"></div>
-        <div class="title"></div>
-        <section class="container">
-            <h2 class="name">[报名参加]</h2>
-            <form class="signup-form">
-                <input type="text" class="ipt" placeholder="姓名" v-model="username">
-                <input type="text" class="ipt" placeholder="电话" v-model="mobile">
-                <input type="text" class="ipt" placeholder="职业" v-model="work">
-                <input type="text" class="ipt" placeholder="人数" v-model="personNum">
-            </form>
-            <button class="signUpBtn" @click="postUser">提交</button>
-            <div class="qrcode-wrap">
+        <div class="logo ani" swiper-animate-effect="flipInX" swiper-animate-duration="0.75s" swiper-animate-delay="0.75s"></div>
+        <div class="left ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.75s" swiper-animate-delay="0s"></div>
+        <div class="right ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.75s" swiper-animate-delay="0s"></div>
+        <div class="title ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.75s" swiper-animate-delay="1s"></div>
+        <section class="container ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.75s" swiper-animate-delay="0.25s">
+            <h2 class="name ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.75s" swiper-animate-delay="0.25s">[报名参加]</h2>
+            <div v-if="!isShowToast">
+                <form class="signup-form ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.75s" swiper-animate-delay="0.25s">
+                    <input type="text" class="ipt" placeholder="姓名" v-model="username">
+                    <input type="text" class="ipt" placeholder="电话" v-model="mobile">
+                    <input type="text" class="ipt" placeholder="职业" v-model="work">
+                    <input type="text" class="ipt" placeholder="人数" v-model="personNum">
+                </form>
+                <button class="signUpBtn ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.75s" swiper-animate-delay="0.5s" @click="postUser">提交</button>
+            </div>
+            <div class="toast animated fadeIn" v-else>
+                <div class="text-wrap">
+                    <p class="text-1">
+                        感谢您对My Radio的关注和支持，我们已收到您的信息。 
+                    </p>
+                    <p class="text-2">
+                        {{msg}}
+                    </p>
+                </div>
+                <button class="okBtn" @click="closeToast">完成</button>
+            </div>
+            <div class="qrcode-wrap ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.85s" swiper-animate-delay="0.75s">
                 <p class="text">敬请关注</p>
                 <img src="./qrcode.png" alt="" class="qrcode">
             </div>
@@ -22,37 +35,104 @@
     </section>
 </template>
 <script>
+import { postUserInfo, checkOpenId } from 'api/index'
+import Toast from 'v-toast'
+
+const TEXT_1 = '活动将于4月22日下午15点开始签到，建议着正装出席。如遇突发状况不能前来，请提前告知我们，谢谢。'
+const TEXT_2 = '由于活动名额有限，工作人员会按先后顺序和您电话沟通是否报名成功，请保持电话畅通，谢谢。详情可于工作日咨询0371-65887900。'
+
 export default {
     name:'signup',
     data() {
         return {
+            isShowToast:false,
+            msg:TEXT_1,            
             username:'',
             mobile:'',
             work:'',
-            personNum:''
+            personNum:'',
+            openId:'123'
         }
     },
+    mounted() {
+        this.openId = this._getQueryString('openId')
+    },
     methods:{
+        _getQueryString(name) {
+            let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+            let r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]);
+            return null;
+        },
+        _checkPhone(phone) { 
+            if(!(/^1[34578]\d{9}$/.test(phone))){                 
+                return false; 
+            }else{
+                return true
+            }
+        },
+        closeToast() {
+            this.isShowToast = false
+        },
+        _clearfIpt() {
+            this.username = ''
+            this.mobile = ''
+            this.work = ''
+            this.personNum = ''
+        },
         postUser() {
-            alert('nihao')
+           
             if(!this.username) {
+                Toast.warn('请填写您的姓名')
                 return 
             }
 
             if(!this.mobile) {
+                Toast.warn('请填写您的电话')
                 return 
             }
 
-             if(!this.work) {
+            if(!this._checkPhone(this.mobile)) {
+                Toast.warn('请填写正确的手机号')
                 return 
             }
 
-             if(!this.personNum) {
+            if(!this.work) {
+                Toast.warn('请填写您的职业')
                 return 
             }
 
-            
-            
+            if(!this.personNum) {
+                Toast.warn('请填写您的随从人数')
+                return 
+            }
+
+            postUserInfo(this.username, this.mobile, this.work, this.personNum, this.openId).then((res) => {
+                
+                let data = res.data
+                if(data.status == 1) {
+                   
+                    Toast.info({
+                        message:'玩命提交中...',
+                        duration:1000
+                    })
+
+                    setTimeout(() => {
+                        this.isShowToast = true
+                    }, 1250);
+                    
+                }else{
+                    Toast.error({
+                        message:'报名失败，该微信已经报名！',
+                        duration:2000
+                    })
+                    setTimeout(() => {
+                        this.isShowToast = true
+                    }, 2250);                    
+                }                
+            }).catch(() => {
+                Toast.error('报名失败，请重新提交！')                
+            })                        
         }
     }
 }
@@ -87,6 +167,32 @@ export default {
             font-size 64px
             color #ffffff
             letter-spacing 10px
+        .toast
+            position absolute
+            top 250px
+            left 115px
+            width 420px
+            .text-wrap
+                width 420px
+                background #ffffff
+                padding 60px 30px
+                border 1px solid #e4007e
+                border-radius 6px
+                line-height 2
+                font-size 20px
+                color #666
+                box-sizing border-box
+            .okBtn
+                margin-top 26px 
+                width 420px
+                height 60px
+                line-height 60px
+                border-radius 6px
+                font-size 30px
+                color #ffffff
+                outline none
+                border none
+                background #e4007e
         .signup-form
             position absolute
             top 282px

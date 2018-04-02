@@ -1,15 +1,13 @@
 <template>
     <section class="three">        
-        <div class="logo ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"></div>
-        <div class="left"></div>
-        <div class="right"></div>
-        <section class="container">
-            <h2 class="name">[台庆地点]</h2>
-            <!-- <img src="./map.png" alt="" class="map"> -->
-            <div class="map"></div>
-            <div class="img"></div>
-        </section>        
-        
+        <div class="logo ani" swiper-animate-effect="flipInX" swiper-animate-duration="0.75s" swiper-animate-delay="1s"></div>
+        <div class="left ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.75s" swiper-animate-delay="0s"></div>
+        <div class="right ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.75s" swiper-animate-delay="0s"></div>
+        <section class="container ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.75s" swiper-animate-delay="0.25s">
+            <h2 class="name ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.75s" swiper-animate-delay="0.25s">[台庆地点]</h2>            
+            <div class="map ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.75s" swiper-animate-delay="0.75s"></div>
+            <div class="img ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.75s" swiper-animate-delay="1s"></div>
+        </section>                
     </section>
 </template>
 <script>
