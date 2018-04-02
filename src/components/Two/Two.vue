@@ -1,6 +1,6 @@
 <template>
     <section class="two">        
-        <div class="logo ani" swiper-animate-effect="flipInX" swiper-animate-duration="0.75s" swiper-animate-delay="3.5s"></div>
+        <div class="logo ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.75s" swiper-animate-delay="3.5s"></div>
         <div class="left ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.75s" swiper-animate-delay="0s"></div>
         <div class="right ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.75s" swiper-animate-delay="0s"></div>
         <div class="title ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.75s" swiper-animate-delay="3.5s"></div>
@@ -12,7 +12,7 @@
             <div class="text-4 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="2s" swiper-animate-delay="2.75s"></div>
             <div class="time-location">
                 <div class="time ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.75s" swiper-animate-delay="3.5s"></div>
-                <div class="location"></div>
+                <div class="location ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.75s" swiper-animate-delay="3.5s"></div>
             </div>
         </section>        
         
@@ -36,7 +36,7 @@ export default {
     background #1f1a17 url('../common/bg.png') top center no-repeat
     background-size contain
     .title
-        top 800px
+        top 600px
         height 200px
     .container
         position absolute
@@ -84,7 +84,7 @@ export default {
             width 440px
             .time
                 position absolute
-                bottom 105px
+                bottom 90px
                 left 0
                 width 100%
                 height 114px

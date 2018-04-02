@@ -3,8 +3,14 @@ import axios from 'axios'
 import Qs from 'qs'
 const wx = require('weixin-js-sdk')
 
-const { title, link, imgUrl, desc } = require('./config')
+// import { title, link, imgUrl, desc } from './config'
 
+const title  = '《好久不见》 —— My Radio 14周年台庆特别策划'
+const link   = 'http://hndt.com/h5/yingshi/index.html'
+const imgUrl = 'http://www.hndt.com/fm/900/res/dJkNYkGj.jpg?1503459110283'
+const desc   = '《好久不见》 —— My Radio 14周年台庆特别策划'
+
+console.log(title,link,imgUrl,desc)
 
 let configData = {
     url: window.location.href.split('#')[0],

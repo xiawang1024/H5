@@ -2,13 +2,13 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
-import router from 'router'
+// import router from 'router'
 import 'base/stylus/index.styl'
 
 import 'base/stylus/animate.css'
 
 /* 微信自定义分享 */ 
-// import 'wechat/index.js'
+import 'wechat/index.js'
 
 /* swiper插件 */ 
 import VueAwesomeSwiper　from 'vue-awesome-swiper'
@@ -26,7 +26,7 @@ Vue.config.productionTip = false
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
-  router,
+  // router,
   components: { App },
   template: '<App/>'
 })

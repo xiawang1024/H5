@@ -1,6 +1,6 @@
 <template>
     <section class="signup">        
-        <div class="logo ani" swiper-animate-effect="flipInX" swiper-animate-duration="0.75s" swiper-animate-delay="0.75s"></div>
+        <div class="logo ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.75s" swiper-animate-delay="0.75s"></div>
         <div class="left ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.75s" swiper-animate-delay="0s"></div>
         <div class="right ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.75s" swiper-animate-delay="0s"></div>
         <div class="title ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.75s" swiper-animate-delay="1s"></div>
@@ -9,9 +9,9 @@
             <div v-if="!isShowToast">
                 <form class="signup-form ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.75s" swiper-animate-delay="0.25s">
                     <input type="text" class="ipt" placeholder="姓名" v-model="username">
-                    <input type="text" class="ipt" placeholder="电话" v-model="mobile">
+                    <input type="tel" class="ipt" placeholder="电话" v-model="mobile">
                     <input type="text" class="ipt" placeholder="职业" v-model="work">
-                    <input type="text" class="ipt" placeholder="人数" v-model="personNum">
+                    <input type="tel" class="ipt" placeholder="人数" v-model="personNum">
                 </form>
                 <button class="signUpBtn ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.75s" swiper-animate-delay="0.5s" @click="postUser">提交</button>
             </div>
@@ -119,6 +119,7 @@ export default {
 
                     setTimeout(() => {
                         this.isShowToast = true
+                        this._clearfIpt()
                     }, 1250);
                     
                 }else{
@@ -150,7 +151,7 @@ export default {
     background #1f1a17 url('../common/bg.png') top center no-repeat
     background-size contain
     .title
-        top 700px
+        top 560px
     .container
         position absolute
         top 120px
@@ -160,7 +161,7 @@ export default {
         background rgba(0,0,0,0.6)
         .name
             position absolute
-            top 125px
+            top 90px
             left 0
             width 100%
             text-align center
@@ -169,7 +170,7 @@ export default {
             letter-spacing 10px
         .toast
             position absolute
-            top 250px
+            top 200px
             left 115px
             width 420px
             .text-wrap
@@ -195,7 +196,7 @@ export default {
                 background #e4007e
         .signup-form
             position absolute
-            top 282px
+            top 202px
             left 115px
             width 420px
             .ipt
@@ -214,7 +215,7 @@ export default {
                 padding-left 26px
         .signUpBtn
             position absolute
-            top 640px
+            top 580px
             left 115px
             width 420px
             height 60px
@@ -228,7 +229,7 @@ export default {
             color #fff
         .qrcode-wrap
             position absolute
-            bottom 100px
+            bottom 50px
             left 224px
             width 202px
             .text

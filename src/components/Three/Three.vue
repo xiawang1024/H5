@@ -1,6 +1,6 @@
 <template>
     <section class="three">        
-        <div class="logo ani" swiper-animate-effect="flipInX" swiper-animate-duration="0.75s" swiper-animate-delay="1s"></div>
+        <div class="logo ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.75s" swiper-animate-delay="1s"></div>
         <div class="left ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.75s" swiper-animate-delay="0s"></div>
         <div class="right ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.75s" swiper-animate-delay="0s"></div>
         <section class="container ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.75s" swiper-animate-delay="0.25s">
@@ -36,7 +36,7 @@ export default {
         background rgba(0,0,0,0.6)
         .name
             position absolute
-            top 125px
+            top 90px
             left 0
             width 100%
             text-align center
@@ -45,7 +45,7 @@ export default {
             letter-spacing 10px
         .map
             position absolute
-            top 250px
+            top 200px
             left 0
             width 100%
             height 651px

@@ -1,6 +1,6 @@
 <template>
     <section class="end">        
-        <div class="logo ani" swiper-animate-effect="flipInX" swiper-animate-duration="0.75s" swiper-animate-delay="0.5s"></div>
+        <div class="logo ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.75s" swiper-animate-delay="0.5s"></div>
         <div class="title"></div>
         <!-- <div class="left"></div>
         <div class="right"></div> -->
@@ -13,9 +13,9 @@
         </div>
         <section class="container">
             <h2 class="name">[技术支持]</h2>
-            <img src="./hndt-qrcode.png" alt="" class="img ani" swiper-animate-effect="flipInX" swiper-animate-duration="0.75s" swiper-animate-delay="0s">
+            <img src="./hndt-qrcode.png" alt="" class="img ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.75s" swiper-animate-delay="0s">
             <p class="text">敬请关注</p>
-            <div class="img-1 ani" swiper-animate-effect="flipInX" swiper-animate-duration="0.75s" swiper-animate-delay="0.5s"></div>
+            <div class="img-1 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.75s" swiper-animate-delay="0.5s"></div>
         </section>        
         
     </section>
@@ -85,12 +85,12 @@ export default {
             letter-spacing 10px
         .img
             position absolute
-            top 400px
+            top 300px
             left 207px
             width 236px
         .text
             position absolute
-            top 680px
+            top 560px
             left 0
             width 100%
             text-align center

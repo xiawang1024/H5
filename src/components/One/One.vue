@@ -1,6 +1,6 @@
 <template>
     <section class="one">        
-        <div class="logo ani" swiper-animate-effect="flipInX" swiper-animate-duration="0.75s" swiper-animate-delay="3.5s"></div>
+        <div class="logo ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.75s" swiper-animate-delay="3.5s"></div>
         <div class="title ani" swiper-animate-effect="bounceIn" swiper-animate-duration="0.75s" swiper-animate-delay="0.25s"></div>
         <section class="contain">
             <div class="name ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.75s" swiper-animate-delay="0.75s"></div>
