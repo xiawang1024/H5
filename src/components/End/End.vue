@@ -4,13 +4,13 @@
         <div class="title"></div>
         <!-- <div class="left"></div>
         <div class="right"></div> -->
-        <div class="text-wrap">
+        <!-- <div class="text-wrap">
             <p class="img-1"></p>
             <p class="img-2"></p>
             <p class="img-3"></p>
             <p class="img-4"></p>
             <p class="img-5"></p>
-        </div>
+        </div> -->
         <section class="container">
             <h2 class="name">[技术支持]</h2>
             <img src="./hndt-qrcode.png" alt="" class="img ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.75s" swiper-animate-delay="0s">
@@ -37,36 +37,6 @@ export default {
     height 100%
     background #1f1a17 url('../common/bg.png') top center no-repeat
     background-size contain
-    .text-wrap
-        position absolute
-        bottom 420px
-        left 0
-        width 100%
-        .img-1,.img-2,.img-3,.img-4,.img-5
-            position absolute                
-            left 0
-            width 100%
-            height 28px
-        .img-1
-            top 0
-            background url('./1.png') center center no-repeat
-            background-size contain
-        .img-2
-            top 39px
-            background url('./2.png') center center no-repeat
-            background-size contain
-        .img-3
-            top 78px
-            background url('./3.png') center center no-repeat
-            background-size contain
-        .img-4
-            top 117px
-            background url('./4.png') center center no-repeat
-            background-size contain
-        .img-5
-            top 156px
-            background url('./5.png') center center no-repeat
-            background-size contain
     .container
         position absolute
         top 120px
@@ -85,12 +55,12 @@ export default {
             letter-spacing 10px
         .img
             position absolute
-            top 300px
+            top 350px
             left 207px
             width 236px
         .text
             position absolute
-            top 560px
+            top 610px
             left 0
             width 100%
             text-align center
