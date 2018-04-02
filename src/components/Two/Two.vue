@@ -3,9 +3,17 @@
         <div class="logo ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"></div>
         <div class="left"></div>
         <div class="right"></div>
+        <div class="title"></div>
         <section class="container">
-            <h2 class="name">[活动介绍]</h2>
-            
+            <div class="title-1"></div>
+            <div class="text-1"></div>
+            <div class="text-2"></div>
+            <div class="text-3"></div>
+            <div class="text-4"></div>
+            <div class="time-location">
+                <div class="time"></div>
+                <div class="location"></div>
+            </div>
         </section>        
         
     </section>
@@ -27,6 +35,9 @@ export default {
     height 100%
     background #1f1a17 url('../common/bg.png') top center no-repeat
     background-size contain
+    .title
+        top 800px
+        height 200px
     .container
         position absolute
         top 120px
@@ -34,14 +45,57 @@ export default {
         right 50px
         bottom 90px        
         background rgba(0,0,0,0.6)
-        .name
+        .title-1
             position absolute
-            top 125px
+            top 60px
             left 0
             width 100%
-            text-align center
-            font-size 64px
-            color #ffffff
-            letter-spacing 10px
-        
+            height 168px
+            background url('../common/title.png') center center no-repeat
+            background-size contain
+        .text-1,.text-2,.text-3,.text-4
+            position absolute            
+            left 0
+            width 100%
+        .text-1
+            top 290px
+            height 26px
+            background url('./text-1.png') center center no-repeat
+            background-size contain
+        .text-2
+            top 340px
+            height 125px
+            background url('./text-2.png') center center no-repeat
+            background-size contain
+        .text-3
+            top 490px
+            height 125px
+            background url('./text-3.png') center center no-repeat
+            background-size contain
+        .text-4
+            top 640px
+            height 125px
+            background url('./text-4.png') center center no-repeat
+            background-size contain
+        .time-location
+            position absolute
+            bottom 0
+            left 0
+            width 440px
+            .time
+                position absolute
+                bottom 105px
+                left 0
+                width 100%
+                height 114px
+                background url('./time.png') center center no-repeat
+                background-size contain    
+            .location 
+                position absolute
+                bottom 30px
+                left 0
+                width 100%
+                height 38px
+                background url('./location.png') center center no-repeat
+                background-size contain 
 </style>

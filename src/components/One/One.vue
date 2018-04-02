@@ -35,14 +35,6 @@ export default {
     height 100%
     background #1f1a17 url('../common/bg.png') top -20px center no-repeat
     background-size contain    
-    .title
-        position absolute
-        top 520px
-        left 0
-        width 100%
-        height 168px
-        background url('../common/title.png') center center no-repeat
-        background-size contain
     .contain
         position absolute
         top 705px

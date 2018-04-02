@@ -4,8 +4,10 @@
         <div class="left"></div>
         <div class="right"></div>
         <section class="container">
-            <h2 class="name">[活动地图]</h2>
-            
+            <h2 class="name">[台庆地点]</h2>
+            <!-- <img src="./map.png" alt="" class="map"> -->
+            <div class="map"></div>
+            <div class="img"></div>
         </section>        
         
     </section>
@@ -43,5 +45,20 @@ export default {
             font-size 64px
             color #ffffff
             letter-spacing 10px
-        
+        .map
+            position absolute
+            top 250px
+            left 0
+            width 100%
+            height 651px
+            background url('./map.png') center center no-repeat
+            background-size contain
+        .img
+            position absolute
+            bottom 60px
+            left 0
+            width 100%
+            height 34px
+            background url('../common/text.png') left 50px center no-repeat
+            background-size contain
 </style>

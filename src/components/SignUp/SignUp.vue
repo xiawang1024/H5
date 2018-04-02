@@ -3,6 +3,7 @@
         <div class="logo ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s"></div>
         <div class="left"></div>
         <div class="right"></div>
+        <div class="title"></div>
         <section class="container">
             <h2 class="name">[报名参加]</h2>
             <form class="signup-form">
@@ -12,6 +13,10 @@
                 <input type="text" class="ipt" placeholder="人数" v-model="personNum">
             </form>
             <button class="signUpBtn" @click="postUser">提交</button>
+            <div class="qrcode-wrap">
+                <p class="text">敬请关注</p>
+                <img src="./qrcode.png" alt="" class="qrcode">
+            </div>
         </section>        
         
     </section>
@@ -64,6 +69,8 @@ export default {
     height 100%
     background #1f1a17 url('../common/bg.png') top center no-repeat
     background-size contain
+    .title
+        top 700px
     .container
         position absolute
         top 120px
@@ -113,4 +120,19 @@ export default {
             background #e4007e
             font-size 30px
             color #fff
+        .qrcode-wrap
+            position absolute
+            bottom 100px
+            left 224px
+            width 202px
+            .text
+                width 100%
+                margin-bottom 20px 
+                text-align center
+                font-size 32px
+                color #ffffff
+                letter-spacing 7px
+            .qrcode
+                display block
+                width 202px
 </style>

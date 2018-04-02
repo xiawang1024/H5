@@ -100,4 +100,12 @@ export default {
 	height 301px
 	background url('../common/right.png') center center no-repeat
 	background-size cover
+.title
+	position absolute
+	top 520px
+	left 0
+	width 100%
+	height 168px
+	background url('../common/title.png') center center no-repeat
+	background-size contain
 </style>
