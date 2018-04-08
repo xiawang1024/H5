@@ -19,6 +19,7 @@
                 </p>
                 <button class="sub-btn ani" @click="postUser" swiper-animate-effect="bounceIn" swiper-animate-duration="1s" swiper-animate-delay="2s" :disabled="disabled">提交</button>
             </div>
+            <img src="./qrcode-channel.png" alt="" class="qrcode">
         </div>                
         <transition name="fade">
             <div class="qr-wrap" ref="qrWrap" id="qrWrap" v-show="isLoad && !isNewUser"> 
@@ -179,8 +180,8 @@ export default {
 .qrcode
     position absolute
     bottom 150px
-    left 375px
-    width 300px
+    left 275px
+    width 200px
 .signUp
     width 100%
     height 100%
