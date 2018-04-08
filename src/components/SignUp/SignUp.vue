@@ -7,8 +7,8 @@
         <section class="container ani" swiper-animate-effect="fadeIn" swiper-animate-duration="0.75s" swiper-animate-delay="0.25s">
             <h2 class="name ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.75s" swiper-animate-delay="0.25s">[报名参加]</h2>
             <div v-if="!isShowToast">
-                <form class="signup-form ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.75s" swiper-animate-delay="0.25s">
-                    <input type="text" class="ipt" placeholder="姓名" v-model="username">
+                <form class="signup-form ani" ref="form" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.75s" swiper-animate-delay="0.25s">
+                    <input type="text" class="ipt" placeholder="姓名" v-model="username" @focus="scrollIntoView">
                     <input type="tel" class="ipt" placeholder="电话" v-model="mobile">
                     <input type="text" class="ipt" placeholder="职业" v-model="work">
                     <input type="tel" class="ipt" placeholder="人数" v-model="personNum">
@@ -46,7 +46,7 @@ export default {
     data() {
         return {
             isShowToast:false,
-            msg:TEXT_1,            
+            msg:TEXT_2,            
             username:'',
             mobile:'',
             work:'',
@@ -58,6 +58,12 @@ export default {
         this.openId = this._getQueryString('openId')
     },
     methods:{
+        scrollIntoView() {
+            setTimeout(() => {
+                console.log(this.$refs['form'])
+                // this.$refs['form'].scrollIntoView(true)
+            },100)
+        },
         _getQueryString(name) {
             let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
             let r = window.location.search.substr(1).match(reg);
@@ -154,14 +160,14 @@ export default {
         top 560px
     .container
         position absolute
-        top 120px
+        top 100px
         left 50px
         right 50px
         bottom 90px        
         background rgba(0,0,0,0.6)
         .name
             position absolute
-            top 90px
+            top 50px
             left 0
             width 100%
             text-align center
@@ -196,7 +202,7 @@ export default {
                 background #e4007e
         .signup-form
             position absolute
-            top 202px
+            top 160px
             left 115px
             width 420px
             .ipt
@@ -204,7 +210,7 @@ export default {
                 width 100%
                 height 60px
                 line-height 60px
-                margin-bottom 30px
+                margin-bottom 20px
                 border 1px solid #e4007e
                 border-radius 6px
                 outline none
@@ -215,7 +221,7 @@ export default {
                 padding-left 26px
         .signUpBtn
             position absolute
-            top 580px
+            top 550px
             left 115px
             width 420px
             height 60px
@@ -229,7 +235,7 @@ export default {
             color #fff
         .qrcode-wrap
             position absolute
-            bottom 50px
+            top 680px
             left 224px
             width 202px
             .text

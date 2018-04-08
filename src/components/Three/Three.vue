@@ -45,10 +45,10 @@ export default {
             letter-spacing 10px
         .map
             position absolute
-            top 200px
+            top 180px
             left 0
             width 100%
-            height 651px
+            height 600px
             background url('./map.png') center center no-repeat
             background-size contain
         .img
