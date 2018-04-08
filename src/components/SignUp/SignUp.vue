@@ -179,7 +179,7 @@ export default {
 <style lang="stylus" scoped>
 .qrcode
     position absolute
-    bottom 150px
+    top 850px
     left 275px
     width 200px
 .signUp
@@ -188,15 +188,15 @@ export default {
     background-color #121532
     .logo
         position absolute
-        top 30px
+        top 20px
         left 0
         width 100%
-        height 60px
-        background url('./logo.png') left 30px center no-repeat
+        height 120px
+        background url('./icon-hndt-channel.png') center center no-repeat
         background-size contain
     .title
         position absolute
-        top 170px
+        top 180px
         left 0
         width 100%
         font-size 42px
@@ -205,7 +205,7 @@ export default {
         letter-spacing 10px
     .title-bottom
         position absolute
-        top 206px
+        top 210px
         left 0
         width 100%
         height 34px        
@@ -213,7 +213,7 @@ export default {
         background-size contain
     #form
         position absolute
-        top 380px
+        top 360px
         left 145px
         width 460px
         .item
