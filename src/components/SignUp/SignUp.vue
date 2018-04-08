@@ -46,7 +46,7 @@ export default {
     data() {
         return {
             isShowToast:false,
-            msg:TEXT_2,            
+            msg:TEXT_1,            
             username:'',
             mobile:'',
             work:'',

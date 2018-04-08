@@ -14,15 +14,25 @@
     <title>My Radio《我的荒岛唱片》新书发布会邀请函</title>
     <script>
     ;(function() {
-      if (!getQueryString('openId')) {
-        window.location = "http://a.weixin.hndt.com/wx/openid?cate=person&back=http://hndt.com/h5/yingshi1/index.html";
+      if (!getQueryString()['openId']) {
+        window.location = "http://a.weixin.hndt.com/wx/openid?cate=person&back=http://hndt.com/h5/yingshi/index.html";
       }
-
-      function getQueryString(name) {
-        let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
-        let r = window.location.search.substr(1).match(reg);
-        if (r != null) return unescape(r[2]);
-        return null;
+      function getQueryString() {  
+          var qs = location.search.substr(1), // 获取url中"?"符后的字串  
+              args = {}, // 保存参数数据的对象
+              items = qs.length ? qs.split("&") : [], // 取得每一个参数项,
+              item = null,
+              len = items.length;
+          
+          for(var i = 0; i < len; i++) {
+              item = items[i].split("=");
+              var name = decodeURIComponent(item[0]),
+              value = decodeURIComponent(item[1]);
+              if(name) {
+              args[name] = value;
+              }
+          }
+          return args;
       }
     })()
     </script>
