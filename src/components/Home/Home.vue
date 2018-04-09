@@ -6,16 +6,13 @@
 			</swiper-slide>			
 			<swiper-slide>				
 				<sign-up></sign-up>
-			</swiper-slide>
-			<swiper-slide>				
-				<end></end>
-			</swiper-slide>
+			</swiper-slide>			
 		</swiper>		
 	</div>
 </template>
 
 <script>
-
+const { swiperAnimateCache, swiperAnimate } = require('base/js/animate.min.js')
 
 import One from '../One/One.vue'
 import SignUp from '../SignUp/SignUp'

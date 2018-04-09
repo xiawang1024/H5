@@ -1,18 +1,20 @@
 <template>
     <div class="one">
         <div class="from">
-            <div class="logo ani" ></div>            
-            <div class="bt-1 ani" ></div>
-            <div class="bt-2 ani" ></div>
-            <div class="bt-3 ani" ></div>
-            <div class="bt-4 ani" ></div>
-            <div class="text-1">
+            <div class="logo ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="0.2s"></div>            
+            <div class="bt-1 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="1s"></div>
+            <div class="bt-2 ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s" swiper-animate-delay="1.25s"></div>
+            <div class="bt-3 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="1.5s"></div>
+            <div class="bt-4 ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s" swiper-animate-delay="1.75s"></div>
+            <div class="text ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="0.5s">河南建业艾美酒店</div>
+            <div class="text-1 ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="1s">
                 关注魅力881官方微信，申请电子卡券，凭卡券用餐尊享魅力881粉丝福利折扣。
             </div>
-            <div class="text-2">
-                截至4月30日 尊享66折！
+            <div class="text-2 ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="1.5s">
+                截至4月30日 尊享6.6折！
             </div>
-            <img src="./qrcode-channel.png" alt="" class="qrcode">
+            <img src="./hotel.gif" alt="" class="hotel ani" swiper-animate-effect="fadeIn" swiper-animate-duration="1s" swiper-animate-delay="1.75s">
+            <img src="./qrcode-channel.png" alt="" class="qrcode ani" swiper-animate-effect="bounceIn" swiper-animate-duration="1s" swiper-animate-delay="2.25s">
         </div>                
        
     </div>
@@ -30,13 +32,52 @@ export default {
 <style lang="stylus" scoped>
 .qrcode
     position absolute
-    top 850px
+    bottom 80px
     left 275px
     width 200px
 .one
     width 100%
     height 100%
     background-color #121532
+    .text
+        position absolute
+        top 200px
+        left 0
+        width 100%
+        text-align center
+        font-size 38px
+        color #ffffff
+        padding 0 30px
+        box-sizing border-box
+    .text-1
+        position absolute
+        top 270px
+        left 0
+        width 100%
+        text-align center
+        line-height 1.6
+        font-size 32px
+        color #ffffff
+        padding 0 30px
+        box-sizing border-box
+    .text-2
+        position absolute
+        top 400px
+        left 0
+        width 100%
+        text-align center
+        font-size 32px
+        color #ffffff
+        padding 0 30px
+        box-sizing border-box
+    .hotel
+        position absolute
+        top 480px
+        left 0
+        width 600px
+        margin-left 75px
+        padding 0 30px
+        box-sizing border-box
     .logo
         position absolute
         top 20px
@@ -44,62 +85,7 @@ export default {
         width 100%
         height 120px
         background url('./icon-hndt-channel.png') center center no-repeat
-        background-size contain
-    .title
-        position absolute
-        top 180px
-        left 0
-        width 100%
-        font-size 42px
-        color #0bc0fb
-        text-align center
-        letter-spacing 10px
-    .title-bottom
-        position absolute
-        top 210px
-        left 0
-        width 100%
-        height 34px        
-        background url('./title-border.png') center center no-repeat
-        background-size contain
-    #form
-        position absolute
-        top 360px
-        left 145px
-        width 460px
-        .item
-            width 100%
-            height 66px
-            display flex
-            align-items center
-            margin-bottom 40px
-            .label
-                width 100px
-                font-size 36px
-                color rgb(11, 192, 251)
-            .ipt
-                flex 1
-                align-self stretch
-                background none 
-                border 1px solid #0ca9e0
-                outline none
-                box-sizing border-box
-                padding-left 24px
-                font-size 26px
-                color #99cce8
-        .sub-btn
-            display block
-            width 300px
-            height 70px
-            text-align center
-            margin 100px auto 0
-            background linear-gradient(#f29a39,#e05712)
-            outline none
-            border none 
-            border-radius 70px
-            font-size 30px
-            letter-spacing 0.3em
-            color #ffffff
+        background-size contain    
     .bt-1
         position absolute
         bottom 55px
@@ -132,54 +118,6 @@ export default {
         height 217px        
         background url('./bt-4.png') center center no-repeat
         background-size cover
-    .qr-wrap
-        position absolute
-        top 180px
-        left 181px
-        width 388px
-        height 777px        
-        text-align center
-        background url('./qr-bg.png') center center no-repeat
-        background-size cover
-        .title
-            position relative
-            top -80px
-            font-size 40px
-            .str
-                color #f00
-                font-size 18px
-                letter-spacing 0
-        .logoc
-            position absolute
-            top 60px
-            left 0
-            width 100%
-            height 60px            
-            background url('./logo.png') center center no-repeat
-            background-size contain
-        .qr
-            position absolute            
-            bottom 100px            
-            margin 0 auto
-            margin-left 50%
-            transform translateX(-50%)
-        .user-info
-            position absolute
-            top 150px
-            left 34px
-            width 320px
-            border 1px solid #6bb3da
-            border-radius 12px
-            padding 12px 0
-            box-sizing border-box
-            font-size 26px
-            .item
-                line-height 1.8
-                display flex
-                .tag
-                    width 110px
-                .text
-                    flex 1
-                    text-align left
+    
 </style>
 

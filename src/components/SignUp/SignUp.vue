@@ -1,25 +1,25 @@
 <template>
     <div class="signUp">
         <div class="from" v-show="isLoad && isNewUser">
-            <div class="logo ani" ></div>
-            <div class="title ani">报名</div>
-            <div class="title-bottom ani" ></div>
-            <div class="bt-1 ani" ></div>
-            <div class="bt-2 ani" ></div>
-            <div class="bt-3 ani" ></div>
-            <div class="bt-4 ani" ></div>
+            <div class="logo ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="0.2s"></div>
+            <div class="title ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s" swiper-animate-delay="0.5s">报名</div>
+            <div class="title-bottom ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.5s"></div>
+            <div class="bt-1 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="1s"></div>
+            <div class="bt-2 ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s" swiper-animate-delay="1.25s"></div>
+            <div class="bt-3 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="1.5s"></div>
+            <div class="bt-4 ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s" swiper-animate-delay="1.75s"></div>
             <div id="form">
-                <p class="item ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.8s">
+                <p class="item ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.75s">
                     <span class="label">姓名</span>
                     <input type="text" class="ipt" v-model="name">
                 </p>              
-                <p class="item ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="1.6s">
+                <p class="item ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="1s">
                     <span class="label">电话</span>
                     <input type="tel" class="ipt" v-model="mobile">
                 </p>
-                <button class="sub-btn ani" @click="postUser" swiper-animate-effect="bounceIn" swiper-animate-duration="1s" swiper-animate-delay="2s" :disabled="disabled">提交</button>
+                <button class="sub-btn ani" @click="postUser" swiper-animate-effect="fadeIn" swiper-animate-duration="1s" swiper-animate-delay="1.25s" :disabled="disabled">提交</button>
             </div>
-            <img src="./qrcode-channel.png" alt="" class="qrcode">
+            <img src="./qrcode-channel.png" alt="" class="qrcode ani" swiper-animate-effect="bounceIn" swiper-animate-duration="1s" swiper-animate-delay="2s" >
         </div>                
         <transition name="fade">
             <div class="qr-wrap" ref="qrWrap" id="qrWrap" v-show="isLoad && !isNewUser"> 

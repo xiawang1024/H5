@@ -5,10 +5,10 @@ const wx = require('weixin-js-sdk')
 
 // import { title, link, imgUrl, desc } from './config'
 
-const title  = '报名'
+const title  = '魅力881粉丝福利折扣报名通道！'
 const link   = 'http://hndt.com/h5/yinyue/index.html'
 const imgUrl = 'http://www.hndt.com/fm/881/res/WGLcmNK5.png?1487665352849'
-const desc   = '报名'
+const desc   = '关注魅力881官方微信，申请电子卡券，凭卡券用餐享魅力881粉丝福利折扣。截至4月30日，尊享6.6折。'
 
 console.log(title,link,imgUrl,desc)
 
@@ -50,7 +50,7 @@ wx.ready(function() {
             
         },
         cancel: function() {
-            
+           
         }
     });
     wx.onMenuShareAppMessage({
