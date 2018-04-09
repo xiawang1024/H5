@@ -11,10 +11,10 @@ import 'base/stylus/animate.css'
 import 'wechat/index.js'
 
 /* swiper插件 */ 
-// import VueAwesomeSwiper　from 'vue-awesome-swiper'
-// import 'animate.css'
-// import 'swiper/dist/css/swiper.css'
-// Vue.use(VueAwesomeSwiper)
+import VueAwesomeSwiper　from 'vue-awesome-swiper'
+import 'animate.css'
+import 'swiper/dist/css/swiper.css'
+Vue.use(VueAwesomeSwiper)
 
 /* fastclick修复移动端点击延迟300ms */
 import fastclick from 'fastclick'
