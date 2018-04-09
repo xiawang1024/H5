@@ -1,5 +1,5 @@
 <template>
-    <div class="one">
+    <div class="two">
         <div class="logo ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="0.2s"></div>            
         <div class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="1.75s">
             <svg class="bd-bg" width="70px" height="70px" viewBox="0 0 70 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" preserveAspectRatio="none meet" >
@@ -24,22 +24,23 @@
                 </svg>
             </div>
             <div class="text ani" swiper-animate-effect="zoomIn" swiper-animate-duration="1s" swiper-animate-delay="2.75s">
-                跟着诗歌去旅行
+                行程安排
             </div>
             <div class="text-1 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="3s">
-                想象总归是虚无肤浅的，<br/>
-                仅仅想想或谈谈那是辜负了江南。<br/>
-                4月22号~~4月28号<br/>
-                一起去吧，<br/>
-                和主持人一起，<br/>
-                去触摸江南的记忆,<br/>
-                去体验不一样的江南。<br/>
+                D1：郑州--南京<br/>
+                D2：扬州--南京<br/>
+                D3：无锡--苏州<br/>
+                D4：乌镇--南浔<br/>
+                D5：杭州--绍兴<br/>
+                D6：溪口--杭州<br/>
+                D7：杭州--郑州<br/>
             </div>
         </div>
         <div class="bt-1 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1.5s" swiper-animate-delay="1s"></div>
         <div class="bt-2 ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1.5s" swiper-animate-delay="0.25s"></div>
         <div class="bt-3 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.5s" swiper-animate-delay="1.5s"></div>
         <div class="bt-4 ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1.5s" swiper-animate-delay="1.75s"></div>
+                     
        
     </div>
 </template>
@@ -48,7 +49,7 @@
 
 
 export default {
-  name:'one'
+  name:'two'
 }
 </script>
 
@@ -59,7 +60,7 @@ export default {
     bottom 80px
     left 275px
     width 200px
-.one
+.two
     width 100%
     height 100%
     background url('../common/bg.jpg') center center no-repeat
@@ -91,7 +92,7 @@ export default {
             left 0
             width 100%
             text-align center
-            font-size 38px
+            font-size 44px
             font-weight bold
             color #08865c
             padding 0 30px
@@ -102,7 +103,7 @@ export default {
             left 0
             width 100%
             text-align center
-            line-height 1.8
+            line-height 2
             font-size 32px
             color #08865c
             padding 0 30px

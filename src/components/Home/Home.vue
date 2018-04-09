@@ -3,6 +3,12 @@
 		<swiper :options="swiperOption">
 			<swiper-slide>				
 				<one></one>
+			</swiper-slide>
+			<swiper-slide>				
+				<three></three>
+			</swiper-slide>
+			<swiper-slide>				
+				<two></two>
 			</swiper-slide>			
 			<swiper-slide>				
 				<sign-up></sign-up>
@@ -15,12 +21,16 @@
 const { swiperAnimateCache, swiperAnimate } = require('base/js/animate.min.js')
 
 import One from '../One/One.vue'
+import Three from '../Three/Three.vue'
+import Two from '../Two/Two.vue'
 import SignUp from '../SignUp/SignUp'
 
 export default {
 	name: 'Home',	
 	components:{
 		One,
+		Three,
+		Two,
 		SignUp
 	},
 	data () {

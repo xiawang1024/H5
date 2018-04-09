@@ -1,5 +1,5 @@
 <template>
-    <div class="one">
+    <div class="three">
         <div class="logo ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="0.2s"></div>            
         <div class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="1.75s">
             <svg class="bd-bg" width="70px" height="70px" viewBox="0 0 70 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" preserveAspectRatio="none meet" >
@@ -24,16 +24,16 @@
                 </svg>
             </div>
             <div class="text ani" swiper-animate-effect="zoomIn" swiper-animate-duration="1s" swiper-animate-delay="2.75s">
-                跟着诗歌去旅行
+                活动简介
             </div>
             <div class="text-1 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="3s">
-                想象总归是虚无肤浅的，<br/>
-                仅仅想想或谈谈那是辜负了江南。<br/>
-                4月22号~~4月28号<br/>
-                一起去吧，<br/>
-                和主持人一起，<br/>
-                去触摸江南的记忆,<br/>
-                去体验不一样的江南。<br/>
+                【带队主持】：乐龄1056主持人 宋扬 <br/>
+                （河南广播电视台信息广播主持人<br/>
+                河南省朗诵协会副秘书长<br/>
+                宋读诗团团长）<br/>
+                【活动主办】：河南广播电视台乐龄1056<br/>
+                【旅行费用】：1998元<br/>
+                【报名咨询】：0371-65889929<br/>13663843003（小海）<br/>18638503030（小彤）<br/>              
             </div>
         </div>
         <div class="bt-1 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1.5s" swiper-animate-delay="1s"></div>
@@ -48,7 +48,7 @@
 
 
 export default {
-  name:'one'
+  name:'three'
 }
 </script>
 
@@ -59,7 +59,7 @@ export default {
     bottom 80px
     left 275px
     width 200px
-.one
+.three
     width 100%
     height 100%
     background url('../common/bg.jpg') center center no-repeat
@@ -73,6 +73,7 @@ export default {
         opacity 0.85
     .contain
         position absolute
+        z-index 1024
         left 75px
         top 60px
         width 600px
@@ -91,14 +92,15 @@ export default {
             left 0
             width 100%
             text-align center
-            font-size 38px
+            font-size 44px
             font-weight bold
             color #08865c
             padding 0 30px
             box-sizing border-box
         .text-1
             position absolute
-            top 250px
+            z-index 1024
+            top 220px
             left 0
             width 100%
             text-align center

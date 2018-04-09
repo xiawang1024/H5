@@ -1,6 +1,6 @@
 <template>
     <div class="audio-wrap music" :class="noMusic ? 'no-music' : ''" @click="pauseAudio">
-    	<audio id="audio" autoplay loop width="0" height="0" src="http://www.hndt.com/h5/promotion/static/mp3/mp3.mp3"></audio>
+    	<audio id="audio" autoplay loop width="0" height="0" src="http://www.hndt.com/h5/audio/d4fd51b72a7cd83e57dd1d2d2e152e15.mp3"></audio>
     </div>
 </template>
 
@@ -42,12 +42,12 @@ export default {
     animation music 2.5s linear infinite 
 .audio-wrap
     position absolute
-    z-index 1024
+    z-index 2041
     right 30px
     top 30px
     width 80px
     height 80px
-    background url('./music.png') center center no-repeat
+    background url('./music-black.png') center center no-repeat
     background-size cover
     &.no-music 
         animation-play-state paused

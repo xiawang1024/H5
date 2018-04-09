@@ -5,10 +5,10 @@ const wx = require('weixin-js-sdk')
 
 // import { title, link, imgUrl, desc } from './config'
 
-const title  = '魅力881粉丝福利折扣报名通道！'
-const link   = 'http://hndt.com/h5/yinyue/index.html'
-const imgUrl = 'http://www.hndt.com/fm/881/res/WGLcmNK5.png?1487665352849'
-const desc   = '关注魅力881官方微信，申请电子卡券，凭卡券用餐享魅力881粉丝福利折扣。截至4月30日，尊享6.6折。'
+const title  = '乐龄1056--跟着诗歌去旅行“江南站”报名通道'
+const link   = 'http://hndt.com/h5/xinxi/index.html'
+const imgUrl = 'http://www.hndt.com/fm/1056/res/9G7yxLDL.png?1487661285139'
+const desc   = '想象总归是虚无肤浅的，仅仅想想或谈谈那是辜负了江南。4月22号~~4月28号一起去吧，和主持人一起，去触摸江南的记忆,去体验不一样的江南。'
 
 console.log(title,link,imgUrl,desc)
 
