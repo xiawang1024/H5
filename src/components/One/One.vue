@@ -1,177 +1,28 @@
 <template>
-    <div class="signUp">
-        <div class="from" v-show="isLoad && isNewUser">
-            <div class="logo ani" ></div>
-            <div class="title ani">报名</div>
-            <div class="title-bottom ani" ></div>
+    <div class="one">
+        <div class="from">
+            <div class="logo ani" ></div>            
             <div class="bt-1 ani" ></div>
             <div class="bt-2 ani" ></div>
             <div class="bt-3 ani" ></div>
             <div class="bt-4 ani" ></div>
-            <div id="form">
-                <p class="item ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.8s">
-                    <span class="label">姓名</span>
-                    <input type="text" class="ipt" v-model="name">
-                </p>              
-                <p class="item ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="1.6s">
-                    <span class="label">电话</span>
-                    <input type="tel" class="ipt" v-model="mobile">
-                </p>
-                <button class="sub-btn ani" @click="postUser" swiper-animate-effect="bounceIn" swiper-animate-duration="1s" swiper-animate-delay="2s" :disabled="disabled">提交</button>
+            <div class="text-1">
+                关注魅力881官方微信，申请电子卡券，凭卡券用餐尊享魅力881粉丝福利折扣。
+            </div>
+            <div class="text-2">
+                截至4月30日 尊享66折！
             </div>
             <img src="./qrcode-channel.png" alt="" class="qrcode">
         </div>                
-        <transition name="fade">
-            <div class="qr-wrap" ref="qrWrap" id="qrWrap" v-show="isLoad && !isNewUser"> 
-                <h2 class="title">入场凭证<span class="str">（妥善保管）</span></h2>
-                <div class="logoc"></div>
-                <div class="user-info">
-                    <p class="item">
-                        <span class="tag">编号：</span>
-                        <span class="text">{{qrCode}}</span>
-                    </p>
-                    <p class="item">
-                        <span class="tag">姓名：</span>
-                        <span class="text">{{qrName}}</span>
-                    </p>
-                    <p class="item">
-                        <span class="tag">电话：</span>
-                        <span class="text">{{qrMobile}}</span>
-                    </p>
-                </div>
-                <qr-code class="qr" :text="qrText" :size="qrSize"></qr-code>
-            </div>
-        </transition>
+       
     </div>
 </template>
 
 <script>
 
-const qrPre = 'http://a.weixin.hndt.com/user/verify/'
-import { postUserInfo, checkOpenId } from '@/api/index'
-import Toast from 'v-toast'
-import QrCode from 'vue-qrcode-component'
+
 export default {
-  name:'signUp',
-  components:{
-      QrCode
-  },
-  data () {
-      return {
-          isLoad:false,
-          isNewUser:true,
-          title:'报名',          
-          name:'',
-          mobile:'',
-          origin:'881',
-          openId:'',
-          disabled:false,
-          qrCode:'',
-          qrSize:120,
-          qrText:'',
-          qrName:'',
-          qrUnit:'',
-          qrMobile:''
-      }
-  },
-  created () {
-        
-        let clientWidth = document.body.clientWidth
-        this.qrSize = parseInt(120 * clientWidth / 375 )
-        this.openId = this._getQueryString('openId')
-  },
-  mounted () {
-      //模拟异步请求，判断openId是否为已报名用户
-    setTimeout(() => {
-        
-        checkOpenId(this.openId, this.origin).then((res) => {
-            let data = res.data
-            this.isLoad = true
-
-            if(data.status == 1) {
-                this.isNewUser = false
-                this.qrName = data.data.name;                    
-                this.qrMobile = data.data.mobile;
-                this.qrCode = data.data.code
-                this.qrText = qrPre + this.openId
-                this.$nextTick(() => {
-        
-                })
-            }else{
-                this.isNewUser = true
-            }
-        })
-    },20)
-    setTimeout(() => {
-        this.isLoad = true
-    },1000)
-  },
-  methods:{
-        postUser() {
-
-            if(!this.name){
-                Toast.warn('请填写姓名')
-                return 
-            }
-            if(!this.mobile){
-                Toast.warn('请填写手机号')
-                return 
-            }
-            if(!this._checkPhone(this.mobile)) {
-                Toast.warn('请填写正确的手机号')
-                return 
-            }
-            
-            postUserInfo(this.name, this.mobile, this.origin, this.openId).then((res) => {
-                this.disabled = true;
-                let data = res.data
-                if(data.status == 1) {
-                    this.qrName = this.name;                
-                    this.qrMobile = this.mobile
-                    this.qrCode = data.code
-                    this.qrText = qrPre + this.openId
-                    Toast.success({
-                        message:'提交成功，正在生成入场凭证',
-                        duration:3000
-                    })
-                    setTimeout(() => {
-                        this.isNewUser = false
-                        this.disabled = false
-                        this.$nextTick(() => {
-
-                        })
-                    },3000)
-                }else{
-                    Toast.error({
-                        message:'报名失败，改微信已报名！',
-                        duration:2000
-                    })
-                    this.disabled = false
-                }
-                
-            }).catch(() => {
-                Toast.error({
-                    message:'报名失败，请重新提交！',
-                    duration:2000
-                })
-                this.disabled = false
-            })
-            
-        },
-        _getQueryString(name) {
-            let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
-            let r = window.location.search.substr(1).match(reg);
-            if (r != null) return unescape(r[2]);
-            return null;
-        },
-        _checkPhone(phone) { 
-            if(!(/^1[34578]\d{9}$/.test(phone))){                 
-                return false; 
-            }else{
-                return true
-            }
-        }
-  }
+  name:'one'
 }
 </script>
 
@@ -182,7 +33,7 @@ export default {
     top 850px
     left 275px
     width 200px
-.signUp
+.one
     width 100%
     height 100%
     background-color #121532
