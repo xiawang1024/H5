@@ -1,11 +1,9 @@
 <template>
-	<div class="home">
-		<h1>Hello Wx</h1>
+	<div class="home">		
 		<swiper :options="swiperOption">
 			<swiper-slide>				
-				<p class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" style="height:60px">I'm Slide</p>
-			</swiper-slide>
-			
+				<sign-up></sign-up>
+			</swiper-slide>			
 		</swiper>
 	</div>
 </template>
@@ -13,8 +11,13 @@
 <script>
 const { swiperAnimateCache, swiperAnimate } = require('base/js/animate.min.js')
 
+import SignUp from 'components/SignUp/SignUp'
+
 export default {
 	name: 'Home',	
+	components:{
+		SignUp
+	},
 	data () {
 		return {
 			swiperOption: {				
