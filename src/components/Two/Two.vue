@@ -99,7 +99,7 @@ export default {
             box-sizing border-box
         .text-1
             position absolute
-            top 250px
+            top 220px
             left 0
             width 100%
             text-align center

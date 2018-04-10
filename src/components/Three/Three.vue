@@ -27,11 +27,10 @@
                 活动简介
             </div>
             <div class="text-1 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="3s">
-                【带队主持】：乐龄1056主持人 宋扬 <br/>
-                （河南广播电视台信息广播主持人<br/>
-                河南省朗诵协会副秘书长<br/>
-                宋读诗团团长）<br/>
                 【活动主办】：河南广播电视台乐龄1056<br/>
+                【带队主持】：乐龄1056主持人 宋扬 <br/>
+                （河南省朗诵协会副秘书长<br/>                
+                宋读诗团团长）<br/>
                 【旅行费用】：1998元<br/>
                 【报名咨询】：0371-65889929<br/>13663843003（小海）<br/>18638503030（小彤）<br/>              
             </div>
@@ -100,7 +99,7 @@ export default {
         .text-1
             position absolute
             z-index 1024
-            top 220px
+            top 200px
             left 0
             width 100%
             text-align center
@@ -138,7 +137,7 @@ export default {
         background-size cover
     .bt-3
         position absolute
-        bottom 0px
+        bottom -40px
         right 0px
         width 335px
         height 486px        
