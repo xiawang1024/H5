@@ -3,7 +3,7 @@ import axios from 'axios'
 import Qs from 'qs'
 const wx = require('weixin-js-sdk')
 
-const { title, link, imgUrl, desc } = require('./config')
+import { title, link, imgUrl, desc } from './config'
 
 
 let configData = {

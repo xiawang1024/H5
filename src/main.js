@@ -6,7 +6,7 @@ import router from 'router'
 import 'base/stylus/index.styl'
 
 /* 微信自定义分享 */ 
-// import 'wechat/index.js'
+import 'wechat/index.js'
 
 /* swiper插件 */ 
 import VueAwesomeSwiper　from 'vue-awesome-swiper'

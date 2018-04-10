@@ -4,10 +4,19 @@
  * DEFAULT_IMGURL String 分享图标链接
  * DEFAULT_DESC String 分享描述
  */
+const title = '河南广播电视台'
+const link = '河南广播电视台'
+const imgUrl = '河南广播电视台'
+const desc = '河南广播电视台'
 
-export const DEFAULT_TITLE  = '河南广播电视台'
-export const DEFAULT_LINK   = '河南广播电视台'
-export const DEFAULT_IMGURL = '河南广播电视台'
-export const DEFAULT_DESC   = '河南广播电视台'
+
+export {
+    title,
+    link,
+    imgUrl,
+    desc
+} 
+
+
 
 
