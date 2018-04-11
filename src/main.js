@@ -15,9 +15,15 @@ import 'base/stylus/index.styl'
 // Vue.use(VueAwesomeSwiper)
 
 /* fastclick修复移动端点击延迟300ms */
-import fastclick from 'fastclick'
-fastclick.attach(document.body)
+// import fastclick from 'fastclick'
+// fastclick.attach(document.body)
 
+import VueVideoPlayer from 'vue-video-player'
+import 'video.js/dist/video-js.css'
+Vue.use(VueVideoPlayer, /* {
+  options: global default options,
+  events: global videojs events
+} */)
 
 Vue.config.productionTip = false
 
