@@ -6,13 +6,13 @@ import router from 'router'
 import 'base/stylus/index.styl'
 
 /* 微信自定义分享 */ 
-import 'wechat/index.js'
+// import 'wechat/index.js'
 
 /* swiper插件 */ 
-import VueAwesomeSwiper　from 'vue-awesome-swiper'
-import 'animate.css'
-import 'swiper/dist/css/swiper.css'
-Vue.use(VueAwesomeSwiper)
+// import VueAwesomeSwiper　from 'vue-awesome-swiper'
+// import 'animate.css'
+// import 'swiper/dist/css/swiper.css'
+// Vue.use(VueAwesomeSwiper)
 
 /* fastclick修复移动端点击延迟300ms */
 import fastclick from 'fastclick'
