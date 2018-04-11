@@ -21,7 +21,7 @@ export default {
         return {
             playerOptions: {
                 // videojs and plugin options
-                height: '260',
+                height: '240',
                 sources: [
                     {
                         withCredentials: false,

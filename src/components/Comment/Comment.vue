@@ -10,17 +10,20 @@
                 @pullingUp="onPullingUp"
             > 
         </scroll>
+        <send-msg @sendMsg="onSendMsg"></send-msg>
     </div>
 </template>
 
 
 <script>
 import Scroll from 'common/scroll/scroll'
+import SendMsg from '../SendMsg/SendMsg'
 
 export default {
     name:'comment',
     components:{
-       Scroll
+       Scroll,
+       SendMsg
     },
     data() {
         return {
@@ -40,6 +43,9 @@ export default {
         }
     },
     methods:{
+        onSendMsg() {
+            // alert('fasongxinxi')
+        },
         onPullingDown() {
             // 模拟更新数据
             console.log('pulling down and load data')
@@ -86,8 +92,11 @@ export default {
 <style lang="stylus" scoped>
 .comment
     position absolute
-    top 260px
+    top 240px
     left 0
     right 0
-    bottom 80px
+    bottom 0px
+    .list-wrap
+        position absolute
+        bottom 60px
 </style>
