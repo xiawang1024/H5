@@ -1,18 +1,20 @@
 <template>
 	<div class="home">		
 		<player></player>
+		<comment></comment>
 	</div>
 </template>
 
 <script>
 
-
 import Player from 'components/Player/Player'
+import Comment from 'components/Comment/Comment'
 
 export default {
 	name: 'Home',	
 	components:{
-		Player
+		Player,
+		Comment
 	},
 	data () {
 		return {
