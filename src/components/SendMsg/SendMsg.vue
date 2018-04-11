@@ -14,11 +14,11 @@ export default {
     data() {
         return {
             msg:'',
-            openid:'oaYgpwAWb44JGI4rdW8NCEgEMnJ8'
+            openid:''
         }
     },
     mounted() {
-        // this.openId = this._getQueryString('openId')
+        this.openid = this._getQueryString('openId')
     },
     methods:{
         _getQueryString(name) {

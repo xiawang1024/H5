@@ -4,10 +4,10 @@
  * DEFAULT_IMGURL String 分享图标链接
  * DEFAULT_DESC String 分享描述
  */
-const title = '河南广播电视台'
-const link = '河南广播电视台'
-const imgUrl = '河南广播电视台'
-const desc = '河南广播电视台'
+const title = '走进话剧，与咖同行'
+const link = 'http://hndt.com/h5/jiaoyu/index.html'
+const imgUrl = 'http://www.hndt.com/fm/1066/res/1A1YTh4p.jpg?1507631272960'
+const desc = 'Up Radio 1066 有声者4月鸿园声音现场演员海选，每天18点至19点现场直播'
 
 
 export {

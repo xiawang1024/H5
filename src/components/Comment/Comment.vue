@@ -62,7 +62,7 @@ export default {
         this._fetchData(1)
     },
     mounted() {
-        this.openid = this._getQueryString('openId')
+        // this.openid = this._getQueryString('openId')
 
         setInterval(() => {
             this._fetchData(1)

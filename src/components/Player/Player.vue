@@ -13,7 +13,7 @@ import './custom-theme.css'
 import videojs from 'video.js'
 window.videojs = videojs
 // hls plugin for videojs6
-require('videojs-contrib-hls/dist/videojs-contrib-hls.js')
+require('videojs-contrib-hls')
 
 export default {
     name:'player',
@@ -26,7 +26,7 @@ export default {
                     {
                         withCredentials: false,
                         type: "application/x-mpegURL",
-                        src: "https://logos-channel.scaleengine.net/logos-channel/live/biblescreen-ad-free/playlist.m3u8"
+                        src: "http://live.muzhifm.com/shuazhibo/room322_pc.m3u8?auth_key=1526006127-0-0-fe1acb8daf5215fef1024ffc674071c0"
                     }
                 ],
                 controlBar: {
@@ -35,7 +35,7 @@ export default {
                 },
                 flash: { hls: { withCredentials: false }},
                 html5: { hls: { withCredentials: false }},
-                poster: "https://surmon-china.github.io/vue-quill-editor/static/images/surmon-5.jpg"
+                poster: "http://hndt.com/h5/jiaoyu/video-cover.png"
             }
         }
     },

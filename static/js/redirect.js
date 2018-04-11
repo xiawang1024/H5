@@ -1,7 +1,7 @@
 /**
  * 回转地址
  */
-var backUrl = 'http://hndt.com/h5/yinyue/index.html'
+var backUrl = 'http://hndt.com/h5/jiaoyu/index.html'
 
 ;(function(url) {
     if (!getQueryString('openId')) {
