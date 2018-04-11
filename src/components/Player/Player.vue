@@ -39,6 +39,15 @@ export default {
             }
         }
     },
+    mounted() {
+        setTimeout(() => {
+            let video = document.querySelector('.vjs-tech')
+            console.log(video)
+            video.setAttribute('webkit-playsinline',true)
+            video.setAttribute('playsinline',true)
+
+        },1000)
+    },
     methods: {
         playerReadied(player) {
             var hls = player.tech({ IWillNotUseThisInPlugins: true }).hls

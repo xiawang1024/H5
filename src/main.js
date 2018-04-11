@@ -25,6 +25,8 @@ Vue.use(VueVideoPlayer, /* {
   events: global videojs events
 } */)
 
+require('./filter')
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

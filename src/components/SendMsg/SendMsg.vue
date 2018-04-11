@@ -8,7 +8,7 @@
 
 <script>
 import { postMsg } from 'api/index'
-
+import Toast from 'v-toast'
 export default {
     name:'send-msg',
     data() {
@@ -17,14 +17,28 @@ export default {
             openid:'oaYgpwAWb44JGI4rdW8NCEgEMnJ8'
         }
     },
+    mounted() {
+        // this.openId = this._getQueryString('openId')
+    },
     methods:{
+        _getQueryString(name) {
+            let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+            let r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]);
+            return null;
+        },
         sendMsg() {
-            console.log(this.msg)
+            if(!this.msg){
+                Toast.warn('消息不能为空！')
+                return 
+            }
             this._postMsg()
             this.$emit('sendMsg')
         },
         _postMsg() {
             postMsg(this.openid, this.msg, 0).then((res) => {
+                Toast.success('消息发送成功，等待审核！')
+                this.msg = ''
                 console.log(res)
             })
         }
