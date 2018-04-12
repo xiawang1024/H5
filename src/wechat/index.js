@@ -6,7 +6,7 @@ const wx = require('weixin-js-sdk')
 // import { title, link, imgUrl, desc } from './config'
 
 const title  = 'My Radio《我的荒岛唱片》新书发布会邀请函'
-const link   = 'http://hndt.com/h5/yingshi1/index.html'
+const link   = 'http://hndt.com/h5/yingshi/index.html'
 const imgUrl = 'http://www.hndt.com/fm/900/res/dJkNYkGj.jpg?1503459110283'
 const desc   = '《好久不见》 —— My Radio 14周年台庆特别策划'
 
