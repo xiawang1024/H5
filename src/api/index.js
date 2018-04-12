@@ -18,13 +18,16 @@ const postUserInfo = (name, mobile, origin, openId) => axios.post('http://a.weix
 
 const checkOpenId = (openId, origin) => axios.get('http://a.weixin.hndt.com/user/check/?openid=' + openId + '&origin=' + origin)
 
-const postMsg = (openid, content, page, appid = 'wx5f789dea59c6c2c5') => axios.post('http://talk.hndt.com/test/upRadio.do',Qs.stringify({
-    openid, content, page , appid
+const getUser = (openid) => axios.get('http://a.weixin.hndt.com/user/find/openid?openid=' + openid)
+
+const postMsg = ( page, cid = 9, creater='', fromUid='', content='') => axios.post('http://talk.hndt.com/test/upRadio.do',Qs.stringify({
+    page, cid, creater, fromUid, content
 }))
 
 
 export {
     postUserInfo,
     checkOpenId,
+    getUser,
     postMsg
 }

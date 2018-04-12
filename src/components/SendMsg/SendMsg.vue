@@ -7,18 +7,33 @@
 
 
 <script>
-import { postMsg } from 'api/index'
+import { getUser, postMsg } from 'api/index'
 import Toast from 'v-toast'
 export default {
     name:'send-msg',
     data() {
         return {
             msg:'',
-            openid:''
+            openid:'',
+            creater:'',
+            fromUid:''
         }
     },
     mounted() {
         this.openid = this._getQueryString('openId')
+        setTimeout(() => {
+            getUser(this.openid).then((res) => {
+                let data = res.data
+                if(data.status === 1) {
+                    this.creater = data.data.name
+                    this.fromUid = data.data.id
+                }else{
+                    console.log('获取用户信息失败')
+                }
+            }).catch((err) => {
+                console.log(err)
+            })
+        },100)
     },
     methods:{
         _getQueryString(name) {
@@ -36,7 +51,7 @@ export default {
             this.$emit('sendMsg')
         },
         _postMsg() {
-            postMsg(this.openid, this.msg, 0).then((res) => {
+            postMsg(0, 9, this.creater, this.fromUid, this.msg).then((res) => {
                 Toast.success('消息发送成功，等待审核！')
                 this.msg = ''
                 console.log(res)

@@ -10,13 +10,13 @@
                 @pullingUp="onPullingUp"
             > 
             <div class="list" v-for="item of commentList" :key="item.id">
-                <img :src="item.icon" alt="" class="avatar">
+                <img :src="item.icon || defaultAvatar" alt="" class="avatar">
                 <div class="text-wrap">
                     <span class="time">{{item.create_time | timeStamp2LocalTime}}</span>
                     <h5 class="name">{{item.creater}}</h5>
                     <div class="content">
                         <p v-if="item.file_type == 'TEXT'" v-html="item.content"></p>                            
-                        <img class="img" v-if="item.file_type == 'PIC'" :src="item.content" />
+                        <img class="img" width="300" v-if="item.file_type == 'PIC'" :src="item.content" />
                     </div>
                 </div>
             </div>     
@@ -40,6 +40,7 @@ export default {
     },
     data() {
         return {
+            defaultAvatar:'http://www.hndt.com/res/logo_300.png',
             commentList:[],
             pullDownRefresh:{
 				txt:'更新成功',
@@ -70,7 +71,7 @@ export default {
     },
     methods:{
         _fetchData(page) {
-            postMsg(this.openid, '', page).then((res) => {
+            postMsg(page).then((res) => {
                 // console.log(res)
                 let data = res.data
                 if(data.success) {
@@ -112,7 +113,7 @@ export default {
 
             this.page++;
             if(this.page <= this.pages) {
-                postMsg(this.openid, '', this.page).then((res) => {
+                postMsg(this.page).then((res) => {
                     // console.log(res)
                     let data = res.data
                     if(data.success) {
@@ -126,24 +127,8 @@ export default {
                 })
             }else{
                  this.$refs.scroll.forceUpdate()
-            }
-            // setTimeout(() => {
-           
-            // if (Math.random() > 0.5) {
-            //     // 如果有新数据
-            //     let newPage = []
-            //     for (let i = 0; i < 10; i++) {
-            //     newPage.push(this.itemIndex)
-            //     }
-
-            //     this.commentList = this.commentList.concat(newPage)
-            // } else {
-            //     // 如果没有新数据
-            //     this.$refs.scroll.forceUpdate()
-            // }
-            // }, 1500)
+            }           
         }
-
     }
 }
 </script>
