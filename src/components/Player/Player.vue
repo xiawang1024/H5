@@ -45,7 +45,7 @@ export default {
             console.log(video)
             video.setAttribute('webkit-playsinline',true)
             video.setAttribute('playsinline',true)
-
+            video.setAttribute('x5-playsinline',true)                     
         },1000)
     },
     methods: {
