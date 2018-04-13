@@ -1,5 +1,9 @@
 <template>
     <div class="comment">
+        <div class="online-people">
+            <i class="icon-people"></i>
+            <span class="online-num">浏览人数：{{online}}</span>
+        </div>
         <scroll
                 class="list-wrap"
                 ref="scroll"
@@ -10,13 +14,22 @@
                 @pullingUp="onPullingUp"
             > 
             <div class="list" v-for="item of commentList" :key="item.id">
-                <img :src="item.icon || defaultAvatar" alt="" class="avatar">
+                <!-- {{item.comment.icon}} -->
+                <img :src="item.comment.icon || defaultAvatar" alt="" class="avatar">
                 <div class="text-wrap">
-                    <span class="time">{{item.create_time | timeStamp2LocalTime}}</span>
-                    <h5 class="name">{{item.creater}}</h5>
+                    <span class="time">{{item.comment.create_time | timeStamp2LocalTime}}</span>
+                    <h5 class="name">{{item.comment.creater}}</h5>
                     <div class="content">
-                        <p v-if="item.file_type == 'TEXT'" v-html="item.content"></p>                            
-                        <img class="img" width="300" v-if="item.file_type == 'PIC'" :src="item.content" />
+                        <p v-if="item.comment.file_type == 'TEXT'" v-html="item.comment.content"></p>                            
+                        <img class="img" width="300" v-if="item.comment.file_type == 'PIC'" :src="item.comment.content" />
+                    </div>
+                    <div class="anchor-reply" v-show="item.commentChildList && item.commentChildList.length > 0">
+                        <span class="anchor">主播回复:</span>
+                        <div class="child-list-wrap">
+                            <div class="child-list" v-for="childItem of item.commentChildList" :key="childItem.create_time">
+                                {{childItem.content}}
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>     
@@ -42,6 +55,7 @@ export default {
         return {
             defaultAvatar:'http://www.hndt.com/res/logo_300.png',
             commentList:[],
+            online:'',
             pullDownRefresh:{
 				txt:'更新成功',
                 stop:40,
@@ -61,22 +75,41 @@ export default {
     },
     created() {
         this._fetchData(1)
+        this._fetchOnline(-1)
+        postMsg(-2)
     },
     mounted() {
         // this.openid = this._getQueryString('openId')
+        setInterval(() => {            
+            this._fetchOnline()
+            
+        },15000)
 
         setInterval(() => {
             this._fetchData(1)
-        },30000)
+        },60000)
     },
     methods:{
+        _fetchOnline() {
+            postMsg(-1).then((res) => {
+                // console.log(res)
+                let data = res.data
+                if(data.success) {
+                    // this.commentList = data.result.list
+                    this.pages = data.result.pages
+                    this.online = data.message
+                }
+            }).catch((err) => {
+                console.log(err)
+            })
+        },
         _fetchData(page) {
             postMsg(page).then((res) => {
                 // console.log(res)
                 let data = res.data
                 if(data.success) {
                     this.commentList = data.result.list
-                    this.pages = data.result.pages
+                    this.pages = data.result.pages                    
                 }
             }).catch((err) => {
                 console.log(err)
@@ -137,12 +170,31 @@ export default {
 <style lang="stylus" scoped>
 .comment
     position absolute
-    top 240px
+    top 230px
     left 0
     right 0
     bottom 0px
+    .online-people
+        width 100%
+        height 20px
+        line-height 20px
+        font-size 12px
+        padding-left 20px
+        box-sizing border-box
+        border-bottom 1px solid #eee
+        .icon-people
+            vertical-align middle
+            display inline-block
+            width 14px 
+            height 18px
+            background url('./icon-people.png') center center no-repeat
+            background-size contain
+        .online-num
+            vertical-align middle
+            color #666
     .list-wrap
         position absolute
+        top 20px
         bottom 60px
         .list
             display flex
@@ -184,4 +236,18 @@ export default {
                         height 300px
                         max-width 400px                        
                         border-radius 20px
+                .anchor-reply
+                    width 100%
+                    margin-top 10px
+                    padding-top 8px
+                    border-top 1px dashed #eee
+                    .anchor
+                        font-size 15px
+                        color #333
+                    .child-list-wrap
+                        width 100%
+                        margin-top 8px
+                        .child-list
+                            text-indent 2em
+                            line-height 1.8
 </style>
