@@ -26,7 +26,7 @@ export default {
                     {
                         withCredentials: false,
                         type: "application/x-mpegURL",
-                        src: "http://live.muzhifm.com/shuazhibo/room322_pc.m3u8?auth_key=1526006127-0-0-fe1acb8daf5215fef1024ffc674071c0"
+                        src: "http://livepull.hndt.com/live/jiaoyu0411/playlist.m3u8"
                     }
                 ],
                 controlBar: {
