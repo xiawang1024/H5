@@ -14,37 +14,34 @@
             </svg>
             <div class="body">
                 <div class="title">[报名参加]</div>                                              
-                <div id="form">
-                    <p class="item ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.75s">
-                        <!-- <span class="label">姓名</span> -->
-                        <input type="text" class="ipt" v-model="name" placeholder="姓名">
-                    </p> 
-                    <p class="item ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.75s">
-                        <!-- <span class="label">性别</span> -->
-                        <input type="text" class="ipt" v-model="mobile" placeholder="电话">
-                    </p> 
-                    <p class="item ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.75s">
-                        <!-- <span class="label">年龄</span> -->
-                        <input type="tel" class="ipt" v-model="age" placeholder="职业">
-                    </p>              
-                    <p class="item ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="1s">
-                        <!-- <span class="label">电话</span> -->
-                        <input type="tel" class="ipt" v-model="mobile" placeholder="年龄">
-                    </p>
-                    <p class="item ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="1s">
-                        <!-- <span class="label">电话</span> -->
-                        <input type="tel" class="ipt" v-model="mobile" placeholder="陪同人数">
-                    </p>
-                    <button class="sub-btn ani" @click="postUser" swiper-animate-effect="fadeIn" swiper-animate-duration="1s" swiper-animate-delay="1.25s" :disabled="disabled">提交</button>
+                <div v-if="!isShowToast">
+                    <form class="signup-form ani" ref="form" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.75s" swiper-animate-delay="0.25s">
+                        <input type="text" class="ipt" placeholder="姓名" v-model="username" @focus="handleFocus" @blur="handleBlur">
+                        <input type="tel" class="ipt" placeholder="电话" v-model="mobile" @focus="handleFocus">
+                        
+                        <input type="text" class="ipt" placeholder="职业" v-model="work" @focus="handleFocus">
+                        <input type="tel" class="ipt" placeholder="年龄" v-model="age" @focus="handleFocus">
+                        <input type="tel" class="ipt" placeholder="陪同人数" v-model="personNum" @focus="handleFocus">
+                    </form>
+                    <button class="signUpBtn ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.75s" swiper-animate-delay="0.5s" @click="postUser">提交</button>
+                </div>
+                <div class="toast animated fadeIn" v-else>
+                    <div class="text-wrap">
+                        <p class="text-1">
+                            感谢您对My Radio的关注和支持，我们已收到您的信息。 
+                        </p>
+                        <p class="text-2">
+                            如果您有幸成为我们现场嘉宾，我 们稍后将以短信形式与您联系。
+                        </p>
+                    </div>
+                    <button class="okBtn" @click="closeToast">完成</button>
                 </div>
             </div>
         </div>
         <div class="contain">            
             <div class="bg ani" swiper-animate-effect="zoomIn" swiper-animate-duration="2s" swiper-animate-delay="1.25s"></div>
             <div class="text ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="0.75s"></div>
-            <div class="text-1 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="0.75s"></div>
-            
-           
+            <div class="text-1 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="0.75s"></div>    <img src="" alt="" class="qrcode">             
         </div>                
         <div class="bt-1 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1.5s" swiper-animate-delay="1s"></div>
         <div class="bt-2 ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1.5s" swiper-animate-delay="0.25s"></div>
@@ -57,113 +54,86 @@
 const qrPre = 'http://a.weixin.hndt.com/user/verify/'
 import { postUserInfo, checkOpenId } from '@/api/index'
 import Toast from 'v-toast'
-import QrCode from 'vue-qrcode-component'
+// import QrCode from 'vue-qrcode-component'
 export default {
   name:'signUp',
-  components:{
-      QrCode
-  },
   data () {
       return {
-          isLoad:false,
-          isNewUser:true,
-          title:'报名',          
-          name:'',
-          sex:'',
-          age:'',
-          mobile:'',
-          origin:'1056',
-          openId:'',
-          disabled:false,
-          qrCode:'',
-          qrSize:120,
-          qrText:'',
-          qrName:'',
-          qrUnit:'',
-          qrMobile:''
+            isShowToast:false,
+            isLoad:false,
+            isNewUser:true,
+            title:'报名',          
+            username:'',
+            mobile:'',
+            work:'',
+            age:'',
+            personNum:'',
+            origin:'900',
+            openId:'',
+            isHidden:true,
       }
   },
   created () {
         
-        let clientWidth = document.body.clientWidth
-        this.qrSize = parseInt(120 * clientWidth / 375 )
+        // let clientWidth = document.body.clientWidth
+        // this.qrSize = parseInt(120 * clientWidth / 375 )
         this.openId = this._getQueryString('openId')
   },
   mounted () {
-      //模拟异步请求，判断openId是否为已报名用户
-    setTimeout(() => {
-        
-        checkOpenId(this.openId, this.origin).then((res) => {
-            let data = res.data
-            this.isLoad = true
-
-            if(data.status == 1) {
-                this.isNewUser = false
-                this.qrName = data.data.name;                    
-                this.qrMobile = data.data.mobile;
-                this.qrCode = data.data.code
-                this.qrText = qrPre + this.openId
-                this.$nextTick(() => {
-        
-                })
-            }else{
-                this.isNewUser = true
-            }
-        })
-    },20)
-    setTimeout(() => {
-        this.isLoad = true
-    },1000)
+      
   },
   methods:{
         postUser() {
 
-            if(!this.name){
-                Toast.warn('请填写姓名')
+            if(!this.username) {
+                Toast.warn('请填写您的姓名')
                 return 
             }
-            if(!this.sex){
-                Toast.warn('请填写性别')
+
+            if(!this.mobile) {
+                Toast.warn('请填写您的电话')
                 return 
             }
-            if(!this.age){
-                Toast.warn('请填写年龄')
-                return 
-            }
-            if(!this.mobile){
-                Toast.warn('请填写手机号')
-                return 
-            }
+
             if(!this._checkPhone(this.mobile)) {
                 Toast.warn('请填写正确的手机号')
                 return 
             }
+
+            if(!this.work) {
+                Toast.warn('请填写您的职业')
+                return 
+            }
+            if(!this.age) {
+                Toast.warn('请填写您的年龄')
+                return 
+            }
+            if(!this.personNum) {
+                Toast.warn('请填写您的随从人数')
+                return 
+            }
             
-            postUserInfo(this.name, this.sex, this.age, this.mobile, this.origin, this.openId).then((res) => {
-                this.disabled = true;
+            postUserInfo(this.username, this.mobile, this.work, this.age, this.personNum, this.origin, this.openId).then((res) => {
+                
                 let data = res.data
                 if(data.status == 1) {
-                    this.qrName = this.name;                
-                    this.qrMobile = this.mobile
-                    this.qrCode = data.code
-                    this.qrText = qrPre + this.openId
-                    Toast.success({
-                        message:'报名成功',
-                        duration:3000
+                   Toast.info({
+                        message:'玩命提交中...',
+                        duration:1000
                     })
-                    setTimeout(() => {
-                        this.isNewUser = false
-                        this.disabled = false
-                        this.$nextTick(() => {
 
-                        })
-                    },3000)
+                    setTimeout(() => {
+                        this.isShowToast = true
+                        this._clearfIpt()
+                    }, 1250);
                 }else{
                     Toast.error({
                         message:'报名失败，该微信已报名！',
                         duration:2000
                     })
-                    this.disabled = false
+                    setTimeout(() => {
+                        this.isShowToast = true
+                    }, 2250); 
                 }
                 
             }).catch(() => {
@@ -171,9 +141,18 @@ export default {
                     message:'报名失败，请重新提交！',
                     duration:2000
                 })
-                this.disabled = false
+                
             })
             
+        },
+        handleFocus() {
+            this.isHidden = false
+        },
+        handleBlur() {
+            this.isHidden = true
+        },
+        closeToast() {
+            this.isShowToast = false
         },
         _getQueryString(name) {
             let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
@@ -182,12 +161,19 @@ export default {
             return null;
         },
         _checkPhone(phone) { 
-            if(!(/^1[34578]\d{9}$/.test(phone))){                 
+            if(!(/^1[345678]\d{9}$/.test(phone))){                 
                 return false; 
             }else{
                 return true
             }
-        }
+        },
+        _clearfIpt() {
+            this.username = ''
+            this.mobile = ''
+            this.work = ''
+            this.age = ''
+            this.personNum = ''
+        },
   }
 }
 </script>
@@ -230,14 +216,41 @@ export default {
             z-index 1024
             text-align center
             overflow hidden
-            padding 0 40px
+            padding 0 40px 30px 40px
             box-sizing border-box
             .title
                 width 100%
                 margin 20px 0 40px 0
                 text-align center
                 font-size 63px
-                letter-spacing 12px   
+                letter-spacing 12px  
+            .toast               
+                width 420px
+                margin 0 auto
+                .text-wrap
+                    width 420px
+                    background #ffffff
+                    padding 60px 30px
+                    border 1px solid #e4007e
+                    border-radius 6px
+                    line-height 1.8125
+                    font-size 20px
+                    color #666
+                    text-align left
+                    box-sizing border-box
+                    .text-1
+                        margin-bottom 10px
+                .okBtn
+                    margin-top 26px 
+                    width 420px
+                    height 60px
+                    line-height 60px
+                    border-radius 6px
+                    font-size 30px
+                    color #ffffff
+                    outline none
+                    border none
+                    background #e4007e 
         .bd-bg
             position absolute            
             left 0
@@ -281,7 +294,7 @@ export default {
     .bt-1
         position absolute
         z-index 1024
-        bottom 120px
+        top 1040px
         left 0px
         width 100%
         height 38px 
@@ -290,49 +303,41 @@ export default {
     .bt-2
         position absolute
         z-index 1024
-        bottom 80px
+        top 1090px
         right 0px
         width 100%
         height 28px        
         background url('../common/bt-2.png') center center no-repeat
         background-size contain
-    #form       
-        width 460px
-        margin 0 auto
-        .item
+    .signup-form
+        margin 0 auto                   
+        width 420px
+        .ipt
+            display inline-block
             width 100%
-            height 66px
-            display flex
-            align-items center
-            margin-bottom 25px
-            .label
-                width 100px
-                font-size 36px
-                color rgb(11, 192, 251)
-            .ipt
-                flex 1
-                align-self stretch
-                background #fff 
-                border 1px solid #e4007e
-                border-radius 8px
-                outline none
-                box-sizing border-box
-                padding-left 24px
-                font-size 26px
-                color #99cce8
-        .sub-btn
-            display block
-            width 460px
-            height 70px
-            text-align center
-            margin 60px auto 0
-            background #e4007e
+            height 60px
+            line-height 60px
+            margin-bottom 20px
+            border 1px solid #e4007e
+            border-radius 6px
             outline none
-            border none 
-            border-radius 8px
-            font-size 30px
-            letter-spacing 0.3em
-            color #ffffff
+            background #fff
+            box-sizing border-box
+            font-size 24px
+            color #000
+            padding-left 26px
+    .signUpBtn
+        margin-top 10px
+        width 420px
+        height 60px
+        line-height 60px
+        box-sizing border-box
+        border-radius 6px
+        outline none
+        border none 
+        background #e4007e
+        font-size 30px
+        color #fff
     
 </style>
 
