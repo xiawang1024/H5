@@ -5,10 +5,10 @@ const wx = require('weixin-js-sdk')
 
 // import { title, link, imgUrl, desc } from './config'
 
-const title  = '乐龄1056--跟着诗歌去旅行“江南站”报名通道'
-const link   = 'http://hndt.com/h5/xinxi/index.html'
-const imgUrl = 'http://www.hndt.com/fm/1056/res/9G7yxLDL.png?1487661285139'
-const desc   = '想象总归是虚无肤浅的，仅仅想想或谈谈那是辜负了江南。4月22号~~4月28号一起去吧，和主持人一起，去触摸江南的记忆,去体验不一样的江南。'
+const title  = '放肆青春——My Radio第5届潮流创意文化节'
+const link   = 'http://hndt.com/h5/9000423/index.html'
+const imgUrl = 'http://www.hndt.com/fm/900/res/dJkNYkGj.jpg?1503459110283'
+const desc   = '放肆青春——My Radio第5届潮流创意文化节。打包城市之开封建业七盛角。'
 
 console.log(title,link,imgUrl,desc)
 

@@ -33,15 +33,20 @@
                         <p class="text-2">
                             如果您有幸成为我们现场嘉宾，我 们稍后将以短信形式与您联系。
                         </p>
+                        <p class="logo-channel">
+                            <img src="./90.0logo.png" alt="" class="img">
+                        </p>
+                        
                     </div>
                     <button class="okBtn" @click="closeToast">完成</button>
                 </div>
+                <img src="./900qrcode.png" alt="" class="qrcode"> 
             </div>
         </div>
         <div class="contain">            
             <div class="bg ani" swiper-animate-effect="zoomIn" swiper-animate-duration="2s" swiper-animate-delay="1.25s"></div>
             <div class="text ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="0.75s"></div>
-            <div class="text-1 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="0.75s"></div>    <img src="" alt="" class="qrcode">             
+            <div class="text-1 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="0.75s"></div>                            
         </div>                
         <div class="bt-1 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1.5s" swiper-animate-delay="1s"></div>
         <div class="bt-2 ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1.5s" swiper-animate-delay="0.25s"></div>
@@ -225,19 +230,24 @@ export default {
                 font-size 63px
                 letter-spacing 12px  
             .toast               
-                width 420px
+                width 460px
                 margin 0 auto
                 .text-wrap
-                    width 420px
+                    width 460px
                     background #ffffff
-                    padding 60px 30px
+                    padding 60px 30px 30px
                     border 1px solid #e4007e
                     border-radius 6px
                     line-height 1.8125
-                    font-size 20px
+                    font-size 24px
                     color #666
                     text-align left
                     box-sizing border-box
+                    .logo-channel
+                        margin-top 30px
+                        text-align right 
+                        .img
+                            width 120px
                     .text-1
                         margin-bottom 10px
                 .okBtn
@@ -251,6 +261,9 @@ export default {
                     outline none
                     border none
                     background #e4007e 
+            .qrcode
+                margin-top 60px
+                width 220px
         .bd-bg
             position absolute            
             left 0
@@ -303,7 +316,7 @@ export default {
     .bt-2
         position absolute
         z-index 1024
-        top 1090px
+        top 1100px
         right 0px
         width 100%
         height 28px        
