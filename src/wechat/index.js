@@ -24,7 +24,8 @@ let configData = {
         'stopRecord', 
         'downloadVoice',
         'uploadVoice',
-        'stopVoice'
+        'stopVoice',
+        'openLocation'
     ]
 }
 

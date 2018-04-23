@@ -5,10 +5,10 @@
 				<one></one>
 			</swiper-slide>
 			<swiper-slide>				
-				<three></three>
+				<two></two>
 			</swiper-slide>
 			<swiper-slide>				
-				<two></two>
+				<three></three>
 			</swiper-slide>			
 			<swiper-slide>				
 				<sign-up></sign-up>

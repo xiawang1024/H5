@@ -1,46 +1,14 @@
 <template>
     <div class="one">
-        <div class="logo ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="0.2s"></div>            
-        <div class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="1.75s">
-            <svg class="bd-bg" width="70px" height="70px" viewBox="0 0 70 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" preserveAspectRatio="none meet" >
-                <!-- Generator: Sketch 3.4.3 (16044) - http://www.bohemiancoding.com/sketch -->
-                <title>shape01</title>
-                <desc>Created with Sketch.</desc>
-                <defs></defs>
-                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-                    <rect id="shape01" class="color1-fill" fill="#ffffff" sketch:type="MSShapeGroup" x="0" y="0" width="70" height="70"></rect>
-                </g>
-            </svg>
-        </div>
+        <div class="logo ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.2s"></div>  
+        <div class="logoc ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s" swiper-animate-delay="0.2s"></div>                  
         <div class="contain">
-            <div class="ani" swiper-animate-effect="zoomIn" swiper-animate-duration="1s" swiper-animate-delay="2s">
-                <svg class="border" version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="140 0 480 200" xml:space="preserve" preserveAspectRatio="none meet">                
-                    <title>Rectangle 45</title>
-                    <desc>Created with Sketch.</desc>
-                    <g>
-                    <path class="class14899129078660" d="M140,0v200h480V0H140z M614,194H146V6h468V194z" style="fill:#08865c;"></path>
-                    <path class="class14899129078660" d="M605,185V15H155v170H605z M157,17h446v166H157V17z" style="fill:#08865c;"></path>
-                    </g>
-                </svg>
-            </div>
-            <div class="text ani" swiper-animate-effect="zoomIn" swiper-animate-duration="1s" swiper-animate-delay="2.75s">
-                跟着诗歌去旅行
-            </div>
-            <div class="text-1 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="3s">
-                想象总归是虚无肤浅的，<br/>
-                仅仅想想或谈谈那是辜负了江南。<br/>
-                4月22号~~4月28号<br/>
-                一起去吧，<br/>
-                和主持人一起，<br/>
-                去触摸江南的记忆,<br/>
-                去体验不一样的江南。<br/>
-            </div>
+            <div class="bg ani" swiper-animate-effect="zoomIn" swiper-animate-duration="2s" swiper-animate-delay="1.25s"></div>
+            <div class="text ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="0.75s"></div>
+            <div class="text-1 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="0.75s"></div>
         </div>
-        <div class="bt-1 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1.5s" swiper-animate-delay="1s"></div>
-        <div class="bt-2 ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1.5s" swiper-animate-delay="0.25s"></div>
-        <div class="bt-3 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.5s" swiper-animate-delay="1.5s"></div>
-        <div class="bt-4 ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1.5s" swiper-animate-delay="1.75s"></div>
-       
+        <div class="bt-1 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1.5s" swiper-animate-delay="1.5s"></div>
+        <div class="bt-2 ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1.5s" swiper-animate-delay="2s"></div>              
     </div>
 </template>
 
@@ -54,103 +22,74 @@ export default {
 
 
 <style lang="stylus" scoped>
-.qrcode
-    position absolute
-    bottom 80px
-    left 275px
-    width 200px
 .one
     width 100%
     height 100%
-    background url('../common/bg.jpg') center center no-repeat
-    background-size cover
-    .bd-bg
+    background #0b0812    
+    .logo
         position absolute
-        left 75px
-        top 60px
-        width 600px
-        height 850px
-        opacity 0.85
+        top 30px
+        left 30px
+        width 305px
+        height 81px
+        background url('../common/logo.png') center center no-repeat
+        background-size cover
+    .logoc
+        position absolute
+        top 30px
+        right 30px
+        width 129px
+        height 64px
+        background url('../common/logoc.png') center center no-repeat
+        background-size cover
     .contain
         position absolute
-        left 75px
-        top 60px
-        width 600px
+        left 0
+        top 120px
+        width 100%
         height 850px
         opacity 0.85
-        .border
+        .bg
             position absolute
-            left 140px
-            top 40px
-            width 320px
-            height 120px
+            z-index 10
+            left 0
+            top 120px
+            width 100%
+            height 812px
             opacity 0.85
+            background url('../common/bg.png') center center no-repeat
+            background-size cover
         .text
             position absolute
-            top 80px
+            top 0
             left 0
             width 100%
-            text-align center
-            font-size 38px
-            font-weight bold
-            color #08865c
-            padding 0 30px
-            box-sizing border-box
+            height 854px
+            background url('../common/title-1.png') center center no-repeat
+            background-size contain
         .text-1
             position absolute
-            top 250px
-            left 0
-            width 100%
-            text-align center
-            line-height 1.8
-            font-size 32px
-            color #08865c
-            padding 0 30px
-            box-sizing border-box
-        .text-2
-            position absolute
-            top 400px
-            left 0
-            width 100%
-            text-align center
-            font-size 32px
-            color #ffffff
-            padding 0 30px
-            box-sizing border-box   
-
+            top 610px
+            left 290px
+            width 357px
+            height 272px
+            background url('../common/title-2.png') center center no-repeat
+            background-size contain
     .bt-1
         position absolute
-        bottom 55px
+        bottom 120px
         left 0px
-        width 640px
-        height 398px 
-        background url('../common/left.png') center center no-repeat
-        background-size cover
+        width 100%
+        height 38px 
+        background url('../common/bt-1.png') center center no-repeat
+        background-size contain
     .bt-2
         position absolute
-        bottom 72px
+        bottom 80px
         right 0px
-        width 482px
-        height 179px        
-        background url('../common/right.png') center center no-repeat
-        background-size cover
-    .bt-3
-        position absolute
-        bottom 0px
-        right 0px
-        width 335px
-        height 486px        
-        background url('../common/up.png') center center no-repeat
-        background-size cover
-    .bt-4
-        position absolute
-        top 40px
-        right 0px
-        width 400px
-        height 323px        
-        background url('../common/top.png') center center no-repeat
-        background-size cover
-    
-    
+        width 100%
+        height 28px        
+        background url('../common/bt-2.png') center center no-repeat
+        background-size contain   
 </style>
 

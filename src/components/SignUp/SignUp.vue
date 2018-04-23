@@ -1,56 +1,54 @@
 <template>
     <div class="signUp">
-        <div class="ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="1.75s">
-            <svg class="bd-bg" width="70px" height="70px" viewBox="0 0 70 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" preserveAspectRatio="none meet" >
+        <div class="logo ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.2s"></div>  
+        <div class="logoc ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s" swiper-animate-delay="0.2s"></div> 
+        <div class="black ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="1.75s">
+            <svg class="bd-bg" viewBox="0 0 70 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" preserveAspectRatio="none meet" >
                 <!-- Generator: Sketch 3.4.3 (16044) - http://www.bohemiancoding.com/sketch -->
                 <title>shape01</title>
                 <desc>Created with Sketch.</desc>
                 <defs></defs>
                 <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-                    <rect id="shape01" class="color1-fill" fill="#ffffff" sketch:type="MSShapeGroup" x="0" y="0" width="70" height="70"></rect>
+                    <rect id="shape01" class="color1-fill" fill="#000" sketch:type="MSShapeGroup" x="0" y="0" width="70" height="70"></rect>
                 </g>
             </svg>
+            <div class="body">
+                <div class="title">[报名参加]</div>                                              
+                <div id="form">
+                    <p class="item ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.75s">
+                        <!-- <span class="label">姓名</span> -->
+                        <input type="text" class="ipt" v-model="name" placeholder="姓名">
+                    </p> 
+                    <p class="item ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.75s">
+                        <!-- <span class="label">性别</span> -->
+                        <input type="text" class="ipt" v-model="mobile" placeholder="电话">
+                    </p> 
+                    <p class="item ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.75s">
+                        <!-- <span class="label">年龄</span> -->
+                        <input type="tel" class="ipt" v-model="age" placeholder="职业">
+                    </p>              
+                    <p class="item ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="1s">
+                        <!-- <span class="label">电话</span> -->
+                        <input type="tel" class="ipt" v-model="mobile" placeholder="年龄">
+                    </p>
+                    <p class="item ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="1s">
+                        <!-- <span class="label">电话</span> -->
+                        <input type="tel" class="ipt" v-model="mobile" placeholder="陪同人数">
+                    </p>
+                    <button class="sub-btn ani" @click="postUser" swiper-animate-effect="fadeIn" swiper-animate-duration="1s" swiper-animate-delay="1.25s" :disabled="disabled">提交</button>
+                </div>
+            </div>
         </div>
-        <div class="contain">
-            <div class="ani" swiper-animate-effect="zoomIn" swiper-animate-duration="1s" swiper-animate-delay="2s">
-                <svg class="border" version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="140 0 480 200" xml:space="preserve" preserveAspectRatio="none meet">                
-                    <title>Rectangle 45</title>
-                    <desc>Created with Sketch.</desc>
-                    <g>
-                    <path class="class14899129078660" d="M140,0v200h480V0H140z M614,194H146V6h468V194z" style="fill:#08865c;"></path>
-                    <path class="class14899129078660" d="M605,185V15H155v170H605z M157,17h446v166H157V17z" style="fill:#08865c;"></path>
-                    </g>
-                </svg>
-            </div>
-            <div class="text ani" swiper-animate-effect="zoomIn" swiper-animate-duration="1s" swiper-animate-delay="2.75s">
-                预约报名
-            </div>
-            <div class="logo ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="0.2s"></div>                    
-            <div id="form">
-                <p class="item ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.75s">
-                    <!-- <span class="label">姓名</span> -->
-                    <input type="text" class="ipt" v-model="name" placeholder="姓名">
-                </p> 
-                 <p class="item ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.75s">
-                    <!-- <span class="label">性别</span> -->
-                    <input type="text" class="ipt" v-model="sex" placeholder="性别">
-                </p> 
-                 <p class="item ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.75s">
-                    <!-- <span class="label">年龄</span> -->
-                    <input type="tel" class="ipt" v-model="age" placeholder="年龄">
-                </p>              
-                <p class="item ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="1s">
-                    <!-- <span class="label">电话</span> -->
-                    <input type="tel" class="ipt" v-model="mobile" placeholder="电话">
-                </p>
-                <button class="sub-btn ani" @click="postUser" swiper-animate-effect="fadeIn" swiper-animate-duration="1s" swiper-animate-delay="1.25s" :disabled="disabled">提交</button>
-            </div>
-            <!-- <img src="./qrcode-channel.png" alt="" class="qrcode ani" swiper-animate-effect="bounceIn" swiper-animate-duration="1s" swiper-animate-delay="2s" > -->
+        <div class="contain">            
+            <div class="bg ani" swiper-animate-effect="zoomIn" swiper-animate-duration="2s" swiper-animate-delay="1.25s"></div>
+            <div class="text ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="0.75s"></div>
+            <div class="text-1 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="0.75s"></div>
+            
+           
         </div>                
         <div class="bt-1 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1.5s" swiper-animate-delay="1s"></div>
         <div class="bt-2 ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1.5s" swiper-animate-delay="0.25s"></div>
-        <div class="bt-3 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.5s" swiper-animate-delay="1.5s"></div>
-        <div class="bt-4 ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1.5s" swiper-animate-delay="1.75s"></div>
+        
     </div>
 </template>
 
@@ -196,87 +194,111 @@ export default {
 
 
 <style lang="stylus" scoped>
-.qrcode
-    position absolute
-    top 850px
-    left 275px
-    width 200px
+
 .signUp
     width 100%
     height 100%
-    background url('../common/bg.jpg') center center no-repeat
-    background-size cover 
-    .bd-bg
+    background #0b0812
+    .logo
         position absolute
-        z-index 1024
-        left 75px
-        top 60px
-        width 600px
-        height 850px
-        opacity 1
+        top 30px
+        left 30px
+        width 305px
+        height 81px
+        background url('../common/logo.png') center center no-repeat
+        background-size cover
+    .logoc
+        position absolute
+        top 30px
+        right 30px
+        width 129px
+        height 64px
+        background url('../common/logoc.png') center center no-repeat
+        background-size cover
+    .black
+        position absolute
+        top 120px
+        left 50px
+        width 650px
+        z-index 100
+        color #ffffff
+        .body
+            position relative
+            top 0
+            left 0
+            width 100% 
+            z-index 1024
+            text-align center
+            overflow hidden
+            padding 0 40px
+            box-sizing border-box
+            .title
+                width 100%
+                margin 20px 0 40px 0
+                text-align center
+                font-size 63px
+                letter-spacing 12px   
+        .bd-bg
+            position absolute            
+            left 0
+            top 0              
+            width 100%
+            height 1000px
+            opacity 0.75
     .contain
         position absolute
-        z-index 1025
-        left 75px
-        top 60px
-        width 600px
+        left 0
+        top 120px
+        width 100%
         height 850px
         opacity 0.85
-        .border
+        .bg
             position absolute
-            left 140px
-            top 40px
-            width 320px
-            height 120px
+            z-index 10
+            left 0
+            top 120px
+            width 100%
+            height 812px
             opacity 0.85
+            background url('../common/bg.png') center center no-repeat
+            background-size cover      
         .text
             position absolute
-            top 80px
+            top 0
             left 0
             width 100%
-            text-align center
-            font-size 44px
-            font-weight bold
-            color #08865c
-            padding 0 30px
-            box-sizing border-box
+            height 854px
+            background url('../common/title-1.png') center center no-repeat
+            background-size contain
+        .text-1
+            position absolute
+            top 610px
+            left 290px
+            width 357px
+            height 272px
+            background url('../common/title-2.png') center center no-repeat
+            background-size contain
     .bt-1
         position absolute
-        bottom 55px
+        z-index 1024
+        bottom 120px
         left 0px
-        width 640px
-        height 398px 
-        background url('../common/left.png') center center no-repeat
-        background-size cover
+        width 100%
+        height 38px 
+        background url('../common/bt-1.png') center center no-repeat
+        background-size contain
     .bt-2
         position absolute
-        bottom 72px
+        z-index 1024
+        bottom 80px
         right 0px
-        width 482px
-        height 179px        
-        background url('../common/right.png') center center no-repeat
-        background-size cover
-    .bt-3
-        position absolute
-        bottom 0px
-        right 0px
-        width 335px
-        height 486px        
-        background url('../common/up.png') center center no-repeat
-        background-size cover
-    .bt-4
-        position absolute
-        top 40px
-        right 0px
-        width 400px
-        height 323px        
-        background url('../common/top.png') center center no-repeat
-        background-size cover
-    #form
-        position absolute
-        top 200px
-        left 70px
+        width 100%
+        height 28px        
+        background url('../common/bt-2.png') center center no-repeat
+        background-size contain
+    #form       
         width 460px
+        margin 0 auto
         .item
             width 100%
             height 66px
@@ -290,8 +312,8 @@ export default {
             .ipt
                 flex 1
                 align-self stretch
-                background none 
-                border 1px solid rgb(15, 129, 91)
+                background #fff 
+                border 1px solid #e4007e
                 border-radius 8px
                 outline none
                 box-sizing border-box
@@ -304,7 +326,7 @@ export default {
             height 70px
             text-align center
             margin 60px auto 0
-            background rgb(15, 129, 91)
+            background #e4007e
             outline none
             border none 
             border-radius 8px

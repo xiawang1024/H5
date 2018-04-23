@@ -1,6 +1,6 @@
 <template>
   <div id="app">  
-    <wx-audio></wx-audio>  
+    <!-- <wx-audio></wx-audio>   -->
     <!-- <router-view/> -->
     <home/>
     <up-arrow></up-arrow>

@@ -1,5 +1,5 @@
 <template>
-    <div class="three">
+    <div class="four">
         <div class="logo ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.2s"></div>  
         <div class="logoc ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s" swiper-animate-delay="0.2s"></div>            
         <div class="black ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="1.75s">
@@ -13,9 +13,26 @@
                 </g>
             </svg>
             <div class="body">
-                <div class="title">[活动地点]</div>
-                <img src="./map.png" alt="" class="img">
-                <button class="btn needsclick" @click="openMap">一键导航</button>
+                <div class="title">[活动介绍]</div>
+                <div class="text">
+                    1、原创尖货创意市集——《朝/潮市》
+                </div>
+                <div class="text desc">
+                    两天时间，在七盛角两条商业街上设置创意市集区，除了开封本土＆周边原创优质创业者展示优质产品外，还会有开封非物质文化遗产作品进行展出；将古典“潮流”和现代潮流放在一起。
+                </div>
+                <div class="text">
+                    2、网红探店寻味美食——《寻味七盛角》
+                </div>
+                <div class="text desc">
+                    4.30日，主持人带队，根据“吃货地图”寻找老字号店铺，以及“潮市”上的美食；
+                </div>
+                <div class="text">
+                    3、粉丝见面会——《放肆青春》   
+                </div>
+                <div class="text desc">
+                    4.30日7:30，MyRadio全线主持悉数登场，在Dj、歌者、模特的角色中自由转场，一场大秀在七盛角引爆。届时河南广播网进行现场直播，还可互动赢大奖！
+                </div>
+                <div class="text info">活动详情请锁定FM90.0 My Radio。</div>
             </div>
         </div>
         <div class="contain">
@@ -29,33 +46,17 @@
 </template>
 
 <script>
-const wx = require('weixin-js-sdk')
+
 
 export default {
-  name:'three',
-  created() {
-      console.log(wx)
-  },
-  methods:{
-        openMap() {
-            alert(11)
-            wx.openLocation({
-                latitude: 34.807392,// 纬度，浮点数，范围为90 ~ -90
-                longitude: 114.343529,  // 经度，浮点数，范围为180 ~ -180。
-                name: '', // 位置名
-                address: '', // 地址详情说明
-                scale: 1, // 地图缩放级别,整形值,范围从1~28。默认为最大
-                infoUrl: '' // 在查看位置界面底部显示的超链接,可点击跳转
-            });
-        }
-  }
+  name:'four'
 }
 </script>
 
 
 <style lang="stylus" scoped>
 
-.three
+.four
     width 100%
     height 100%
     background #0b0812  
@@ -84,11 +85,7 @@ export default {
         color #ffffff
         .body
             position absolute
-            top 0
-            left 0
-            width 100%
             z-index 1024
-            text-align center
             overflow hidden
             padding 0 40px
             box-sizing border-box
@@ -97,20 +94,7 @@ export default {
                 margin 20px 0 40px 0
                 text-align center
                 font-size 63px
-                letter-spacing 12px 
-            .img
-                width 100%    
-            .btn
-                display inline-block
-                width 300px
-                margin 80px auto
-                height 60px
-                outline none 
-                border none 
-                border-radius 30px
-                background  #e4007f
-                font-size 28px
-                color #ffffff          
+                letter-spacing 12px                
             .text
                 font-size 27px
                 line-height 1.815
