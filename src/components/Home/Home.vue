@@ -8,6 +8,12 @@
 				<two></two>
 			</swiper-slide>
 			<swiper-slide>				
+				<two1></two1>
+			</swiper-slide>
+			<swiper-slide>				
+				<two2></two2>
+			</swiper-slide>
+			<swiper-slide>				
 				<three></three>
 			</swiper-slide>			
 			<swiper-slide>				
@@ -25,6 +31,8 @@ const { swiperAnimateCache, swiperAnimate } = require('base/js/animate.min.js')
 
 import One from '../One/One.vue'
 import Two from '../Two/Two.vue'
+import Two1 from '../Two1/Two1.vue'
+import Two2 from '../Two2/Two2.vue'
 import Three from '../Three/Three.vue'
 import SignUp from '../SignUp/SignUp'
 import End from '../End/End'
@@ -35,6 +43,8 @@ export default {
 		One,
 		Three,
 		Two,
+		Two1,
+		Two2,
 		SignUp,
 		End
 	},

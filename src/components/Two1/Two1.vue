@@ -1,7 +1,7 @@
 <template>
-    <div class="two">
-        <div class="logo ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="1.5s"></div>  
-        <div class="logoc ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s" swiper-animate-delay="1.5s"></div>            
+    <div class="tow1">
+        <div class="logo ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="1.75s"></div>  
+        <div class="logoc ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s" swiper-animate-delay="1.75s"></div>            
         <div class="black ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="1.75s">
             <svg class="bd-bg" viewBox="0 0 70 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" preserveAspectRatio="none meet" >
                 <!-- Generator: Sketch 3.4.3 (16044) - http://www.bohemiancoding.com/sketch -->
@@ -9,19 +9,18 @@
                 <desc>Created with Sketch.</desc>
                 <defs></defs>
                 <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-                    <rect id="shape01" class="color1-fill" fill="#000000" sketch:type="MSShapeGroup" x="0" y="0" width="70" height="70"></rect>
+                    <rect id="shape01" class="color1-fill" fill="#000" sketch:type="MSShapeGroup" x="0" y="0" width="70" height="70"></rect>
                 </g>
             </svg>
             <div class="body">
                 <div class="title">[活动介绍]</div>
-                <img src="http://www.hndt.com/h5/9000423/imgs/1.png" alt="" class="img">
+                <img src="http://www.hndt.com/h5/9000423/imgs/2.png" alt="" class="img">
                 <div class="text">
-                    创意市集————《潮市》
+                    DJ探店————《寻味开封》
                 </div>
                 <div class="text desc">
-                    两天时间，在七盛角两条商业街上设置创意市集区，开封小吃、台湾美食、生活手作，原创尖货应有尽有；
+                    4月30日，主持人带队，根据“吃货地图”寻找老字号店铺，以及“潮市”上的美食；
                 </div>
-               
             </div>
         </div>
         <div class="contain">
@@ -35,17 +34,32 @@
 </template>
 
 <script>
-
+const wx = require('weixin-js-sdk')
 
 export default {
-  name:'two'
+  name:'tow1',
+  created() {
+      console.log(wx)
+  },
+  methods:{
+        openMap() {
+            wx.openLocation({
+                latitude: 34.806350,// 纬度，浮点数，范围为90 ~ -90
+                longitude: 114.344070,  // 经度，浮点数，范围为180 ~ -180。
+                name: '河南建业七盛角民俗商业街', // 位置名
+                address: '河南省开封市龙亭区龙亭西路7号', // 地址详情说明
+                scale: 28, // 地图缩放级别,整形值,范围从1~28。默认为最大
+                infoUrl: '' // 在查看位置界面底部显示的超链接,可点击跳转
+            });
+        }
+  }
 }
 </script>
 
 
 <style lang="stylus" scoped>
 
-.two
+.tow1
     width 100%
     height 100%
     background #0b0812  
@@ -74,7 +88,11 @@ export default {
         color #ffffff
         .body
             position absolute
+            top 0
+            left 0
+            width 100%
             z-index 1024
+            // text-align center
             overflow hidden
             padding 0 40px
             box-sizing border-box
@@ -83,12 +101,23 @@ export default {
                 margin 20px 0 40px 0
                 text-align center
                 font-size 63px
-                letter-spacing 12px      
+                letter-spacing 12px 
             .img
-                width 100% 
+                width 100%
                 border 1px solid #fff 
                 padding 10px
-                box-sizing border-box           
+                box-sizing border-box      
+            .btn
+                display inline-block
+                width 300px
+                margin 80px auto
+                height 60px
+                outline none 
+                border none 
+                border-radius 30px
+                background  #e4007f
+                font-size 28px
+                color #ffffff          
             .text
                 margin-top 60px
                 font-size 27px
