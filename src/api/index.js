@@ -20,7 +20,7 @@ const checkOpenId = (openId, origin) => axios.get('http://a.weixin.hndt.com/user
 
 const getUser = (openid) => axios.get('http://a.weixin.hndt.com/user/find/openid?openid=' + openid)
 
-const postMsg = ( page, cid = 9, creater='', fromUid='', content='') => axios.post('http://talk.hndt.com/test/upRadio.do',Qs.stringify({
+const postMsg = ( page, cid = 4, creater='', fromUid='', content='') => axios.post('http://talk.hndt.com/test/upRadio.do',Qs.stringify({
     page, cid, creater, fromUid, content
 }))
 

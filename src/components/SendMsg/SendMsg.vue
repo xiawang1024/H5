@@ -51,7 +51,7 @@ export default {
             this.$emit('sendMsg')
         },
         _postMsg() {
-            postMsg(0, 9, this.creater, this.fromUid, this.msg).then((res) => {
+            postMsg(0, 4 , this.creater, this.fromUid, this.msg).then((res) => {
                 Toast.success('消息发送成功，等待审核！')
                 this.msg = ''
                 console.log(res)

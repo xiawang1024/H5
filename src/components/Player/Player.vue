@@ -26,7 +26,7 @@ export default {
                     {
                         withCredentials: false,
                         type: "application/x-mpegURL",
-                        src: "http://livepull.hndt.com/live/jiaoyu0411/playlist.m3u8"
+                        src: ""
                     }
                 ],
                 controlBar: {
@@ -35,7 +35,7 @@ export default {
                 },
                 flash: { hls: { withCredentials: false }},
                 html5: { hls: { withCredentials: false }},
-                poster: "http://hndt.com/h5/jiaoyu/video-cover.png"
+                poster: "http://hndt.com/h5/yule/976.png"
             }
         }
     },

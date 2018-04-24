@@ -4,10 +4,10 @@
  * DEFAULT_IMGURL String 分享图标链接
  * DEFAULT_DESC String 分享描述
  */
-const title = '走进话剧，与咖同行'
-const link = 'http://hndt.com/h5/jiaoyu/index.html'
-const imgUrl = 'http://www.hndt.com/fm/1066/res/1A1YTh4p.jpg?1507631272960'
-const desc = 'Up Radio 1066 有声者4月鸿园声音现场演员海选，每天18点至19点现场直播'
+const title = '素韵梅香100周年'
+const link = 'http://hndt.com/h5/yule/index.html'
+const imgUrl = 'http://www.hndt.com/fm/976/res/JYcsNF0B.png?1487664825486'
+const desc = '豫剧大师陈素真先生诞辰100周年--省会隆重纪念。'
 
 
 export {
