@@ -51,6 +51,7 @@ export default {
     },
     methods: {
         playerReadied(player) {
+            console.log(player)
             //TODO:开启hls直播
             // var hls = player.tech({ IWillNotUseThisInPlugins: true }).hls
             //     player.tech_.hls.xhr.beforeRequest = function(options) {

@@ -3,6 +3,7 @@
 		<player></player>
 		<!-- <comment></comment> -->
 		<info></info>
+		<pay v-show="isShow"></pay>
 	</div>
 </template>
 
@@ -11,22 +12,40 @@
 import Player from 'components/Player/Player'
 import Comment from 'components/Comment/Comment'
 import Info from 'components/Info/Info'
+import Pay from 'components/Pay/Pay'
 
 export default {
 	name: 'Home',	
 	components:{
 		Player,
 		Comment,
-		Info
+		Info,
+		Pay
 	},
 	data () {
 		return {
-			
+			isShow:false
 		}
 	},
 	mounted() {
-		
-    }
+		setTimeout(() => {
+			this.startTime()
+		}, 10000)
+	},
+	methods:{
+		startTime() {
+			this.timerId = setTimeout(() => {
+				this.$nextTick(() => {
+					this.isShow = true
+					let video = document.querySelector('video')
+					video.pause()				
+				})
+			}, 10000)
+		}
+	},
+	destroyed() {
+		clearTimeout(this.timerId)
+	}
 }
 </script>
 
