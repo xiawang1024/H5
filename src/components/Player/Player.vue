@@ -13,7 +13,7 @@ import './custom-theme.css'
 import videojs from 'video.js'
 window.videojs = videojs
 // hls plugin for videojs6
-require('videojs-contrib-hls')
+// require('videojs-contrib-hls') //TODO:开启hls直播
 
 export default {
     name:'player',
@@ -25,8 +25,9 @@ export default {
                 sources: [
                     {
                         withCredentials: false,
-                        type: "application/x-mpegURL",
-                        src: ""
+                        // type: "application/x-mpegURL",  //TODO:开启hls直播
+                        type: "video/mp4",
+                        src: "http://www.hndt.com/h5/yule/video/976.mp4"
                     }
                 ],
                 controlBar: {
@@ -50,11 +51,12 @@ export default {
     },
     methods: {
         playerReadied(player) {
-            var hls = player.tech({ IWillNotUseThisInPlugins: true }).hls
-            player.tech_.hls.xhr.beforeRequest = function(options) {
-            // console.log(options)
-            return options
-            }
+            //TODO:开启hls直播
+            // var hls = player.tech({ IWillNotUseThisInPlugins: true }).hls
+            //     player.tech_.hls.xhr.beforeRequest = function(options) {
+            //     // console.log(options)
+            //     return options
+            // }
         }
     }
 }

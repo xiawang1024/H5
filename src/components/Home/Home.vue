@@ -1,7 +1,8 @@
 <template>
 	<div class="home">		
 		<player></player>
-		<comment></comment>
+		<!-- <comment></comment> -->
+		<info></info>
 	</div>
 </template>
 
@@ -9,12 +10,14 @@
 
 import Player from 'components/Player/Player'
 import Comment from 'components/Comment/Comment'
+import Info from 'components/Info/Info'
 
 export default {
 	name: 'Home',	
 	components:{
 		Player,
-		Comment
+		Comment,
+		Info
 	},
 	data () {
 		return {
