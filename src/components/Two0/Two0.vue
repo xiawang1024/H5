@@ -13,20 +13,9 @@
                 </g>
             </svg>
             <div class="body">
-                <div class="title">[活动地点]</div>
-                <img src="http://www.hndt.com/h5/9000423/imgs/3.png" alt="" class="img">
-                <div class="text">
-                    粉丝见面会————《放肆青春》
-                </div>
-                <div class="text desc">
-                    4月30日7:30，My Radio主持人悉数登场，在DJ、歌者、模特的角色中自由转场。届时河南广播网进行现场直播，还可互动赢大奖！
-                </div>
-                <div class="text desc info">
-                    活动详情请锁定 FM90.0 My Radio。
-                </div>
-                <!-- <div class="text margin">
-                    秀场合作品牌：
-                </div>
+                <div class="title">[合作品牌]</div>
+               
+                
                 <div class="logo-wrap">
                     <img src="./1@2x.png" alt="" class="img">
                     <img src="./2@2x.png" alt="" class="img">
@@ -34,7 +23,7 @@
                     <img src="./4@2x.png" alt="" class="img">
                     <img src="./5@2x.png" alt="" class="img">
                     <img src="./6@2x.png" alt="" class="img">
-                </div> -->
+                </div>
             </div>
         </div>
         <div class="contain">
@@ -149,13 +138,13 @@ export default {
                 display flex
                 flex-wrap wrap
                 justify-content space-between
-                width 360px
-                margin 10px auto
+                width 520px
+                margin 120px auto
                 font-size 0
                 .img
-                    width 102px
-                    height 102px
-                    margin-top 15px
+                    width 140px
+                    height 140px
+                    margin-bottom 50px
         .bd-bg
             position absolute            
             left 0

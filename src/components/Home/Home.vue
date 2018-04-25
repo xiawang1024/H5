@@ -5,6 +5,12 @@
 				<one></one>
 			</swiper-slide>
 			<swiper-slide>				
+				<two0></two0>
+			</swiper-slide>
+			<swiper-slide>				
+				<end></end>
+			</swiper-slide>	
+			<swiper-slide>				
 				<two></two>
 			</swiper-slide>
 			<swiper-slide>				
@@ -19,9 +25,7 @@
 			<swiper-slide>				
 				<sign-up></sign-up>
 			</swiper-slide>		
-			<swiper-slide>				
-				<end></end>
-			</swiper-slide>	
+			
 		</swiper>		
 	</div>
 </template>
@@ -30,6 +34,7 @@
 const { swiperAnimateCache, swiperAnimate } = require('base/js/animate.min.js')
 
 import One from '../One/One.vue'
+import Two0 from '../Two0/Two0.vue'
 import Two from '../Two/Two.vue'
 import Two1 from '../Two1/Two1.vue'
 import Two2 from '../Two2/Two2.vue'
@@ -42,6 +47,7 @@ export default {
 	components:{
 		One,
 		Three,
+		Two0,
 		Two,
 		Two1,
 		Two2,

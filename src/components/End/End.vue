@@ -13,8 +13,9 @@
                 </g>
             </svg>
             <div class="body">
-                <div class="title">[技术支持]</div>
+                <div class="title">[视频直播]</div>
                 <img src="./hndt-qrcode.png" alt="" class="img">
+                <p class="text">敬请关注</p>
             </div>
         </div>
         <div class="contain">
@@ -99,7 +100,7 @@ export default {
                 letter-spacing 12px 
             .img
                 margin-top 100px
-                width 350px    
+                width 260px    
             .btn
                 display inline-block
                 width 300px
@@ -112,8 +113,10 @@ export default {
                 font-size 28px
                 color #ffffff          
             .text
-                font-size 27px
+                margin-top 30px
+                font-size 34px
                 line-height 1.815
+                letter-spacing 8px
                 &.desc
                     text-indent 2em
                 &.info
@@ -172,10 +175,10 @@ export default {
     .bt-2
         position absolute
         z-index 1024
-        bottom 80px
+        bottom 70px
         right 0px
         width 100%
-        height 28px        
+        height 38px        
         background url('../common/bt-2.png') center center no-repeat
         background-size contain
     

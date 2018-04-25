@@ -85,10 +85,10 @@ export default {
         background-size contain
     .bt-2
         position absolute
-        bottom 80px
+        bottom 70px
         right 0px
         width 100%
-        height 28px        
+        height 38px        
         background url('../common/bt-2.png') center center no-repeat
         background-size contain   
 </style>

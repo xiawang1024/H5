@@ -28,10 +28,10 @@
                 <div class="toast animated fadeIn" v-else>
                     <div class="text-wrap">
                         <p class="text-1">
-                            感谢您对My Radio的关注和支持，我们已收到您的信息。 
+                            恭喜您报名成功！ 
                         </p>
-                        <p class="text-2">
-                            如果您有幸成为我们现场嘉宾，我 们稍后将以短信形式与您联系。
+                        <p class="text-2" style="text-indent:2em">
+                            活动门票于4月30日19：00前到开封七盛角活动现场领取，门票数量有限，先到先得！
                         </p>
                         <p class="logo-channel">
                             <img src="./90.0logo.png" alt="" class="img">
@@ -316,10 +316,10 @@ export default {
     .bt-2
         position absolute
         z-index 1024
-        top 1100px
+        top 1110px
         right 0px
         width 100%
-        height 28px        
+        height 38px        
         background url('../common/bt-2.png') center center no-repeat
         background-size contain
     .signup-form
