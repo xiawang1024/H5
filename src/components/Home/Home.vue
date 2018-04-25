@@ -4,12 +4,8 @@
 			<swiper-slide>				
 				<one></one>
 			</swiper-slide>
-			<swiper-slide>				
-				<two0></two0>
-			</swiper-slide>
-			<swiper-slide>				
-				<end></end>
-			</swiper-slide>	
+			
+			
 			<swiper-slide>				
 				<two></two>
 			</swiper-slide>
@@ -20,12 +16,17 @@
 				<two2></two2>
 			</swiper-slide>
 			<swiper-slide>				
+				<two0></two0>
+			</swiper-slide>
+			<swiper-slide>				
 				<three></three>
 			</swiper-slide>			
 			<swiper-slide>				
 				<sign-up></sign-up>
 			</swiper-slide>		
-			
+			<swiper-slide>				
+				<end></end>
+			</swiper-slide>	
 		</swiper>		
 	</div>
 </template>
