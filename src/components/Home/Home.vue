@@ -5,7 +5,7 @@
 		<div class="tab-wrap">
 			<div class="tab" @click="slide(0)" :class="isIndex == 0 ? 'isActive' : ''">活动简介</div>
 			<div class="tab" @click="slide(1)" :class="isIndex == 1 ? 'isActive' : ''">节目单</div>
-			<div class="tab" @click="slide(2)" :class="isIndex == 2 ? 'isActive' : ''">直播互动</div>
+			<!-- <div class="tab" @click="slide(2)" :class="isIndex == 2 ? 'isActive' : ''">直播互动</div> -->
 		</div>
 		<component :is="componentId"></component>
 		<pay v-show="isShow"></pay>
@@ -43,11 +43,22 @@ export default {
 	},
 	created() {
 		this.openid = this._getQueryString('openid')
+		this._isStart()
 	},
 	mounted() {
-		this._visit() //TODO:直播付费
+		// this._visit() //TODO:直播付费
 	},
 	methods:{
+		_isStart() {
+			let targetTime = (new Date('2018-04-27 00:00:00')).getTime()
+			let nowTime = (new Date()).getTime()
+			if(nowTime >= targetTime) {
+				this._visit()
+			}else{
+				console.log('直播未开始')
+				return false
+			}
+		},
 		_visit() {
 			visit(this.openid).then((res) => {
 				let data = res.data

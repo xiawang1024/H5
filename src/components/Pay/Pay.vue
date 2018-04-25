@@ -50,7 +50,7 @@ export default {
             pay(this.name, this.phone, this.openid).then((res) => {
                 let data = res.data
                 if(data.success){
-                    let returnUrl = `http://hndt.com/h5/yuletest/index.html`;
+                    let returnUrl = `http://hndt.com/h5/yule/index.html`;
                     window.location.href = `http://a.weixin.hndt.com/passport/pay/pay_for_live.do?orderId=${data.orderId}&returnUrl=${encodeURIComponent(returnUrl)}&openId=${this.openid}`;
                 }else{
                     Toast.error({

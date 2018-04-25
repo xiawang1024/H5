@@ -1,7 +1,7 @@
 /**
  * 回转地址
  */
-var backUrl = 'http://hndt.com/h5/yuletest/index.html'
+var backUrl = 'http://hndt.com/h5/yule/index.html'
 
 ;(function(url) {
     if (!getQueryString('openid')) {
