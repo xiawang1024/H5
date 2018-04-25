@@ -1,6 +1,7 @@
 <template>
 	<div class="home">		
 		<player v-show="!isShow"></player>
+		<div class="tips">活动宣传片</div>
 		<div class="tab-wrap">
 			<div class="tab" @click="slide(0)" :class="isIndex == 0 ? 'isActive' : ''">活动简介</div>
 			<div class="tab" @click="slide(1)" :class="isIndex == 1 ? 'isActive' : ''">节目单</div>
@@ -12,12 +13,14 @@
 </template>
 
 <script>
-
+import { visit } from 'api/index'
 import Player from 'components/Player/Player'
 import Comment from 'components/Comment/Comment'
 import Info from 'components/Info/Info'
 import Program from 'components/Program/Program'
 import Pay from 'components/Pay/Pay'
+
+import Toast from 'v-toast'
 
 export default {
 	name: 'Home',	
@@ -33,24 +36,37 @@ export default {
 			isShow:false,
 			isIndex:0,
 			componentId:Info,
-			openId:''
+			openid:''
 		}
 	},
 	created() {
-		this.openId = this._getQueryString('openId')
+		this.openid = this._getQueryString('openid')
 	},
 	mounted() {
-		setTimeout(() => {
-			this.startTime()
-		}, 6000)
-
-		setTimeout(() => {
-			this.isShow = false
-					let video = document.querySelector('video')
-					video.pause()
-		},10000)
+		this._visit()
 	},
 	methods:{
+		_visit() {
+			visit(this.openid).then((res) => {
+				let data = res.data
+				if(data.code == 0) {
+					if(data.data == 0) {
+						this.startTime()
+					}else{
+						if(data.data.isPay) {
+							return 
+						}else{
+							this._pay()
+						}
+					}
+				}else{
+					Toast.error({
+                        message:'好像哪里出现问题了！',
+                        duration:2000
+                    })
+				}
+			})
+		},
 		_getQueryString(name) {
             let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
             let r = window.location.search.substr(1).match(reg);
@@ -64,8 +80,16 @@ export default {
 					let video = document.querySelector('video')
 					video.pause()				
 				})
-			}, 1000)
+			}, 10000)
 		},
+		_pay() {
+			this.$nextTick(() => {
+				this.isShow = true
+				let video = document.querySelector('video')
+				video.pause()				
+			})
+		},
+		
 		slide(type) {
 			this.isIndex = type
 			if(type == 0) {
@@ -85,6 +109,16 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.tips{
+	width: 100%;
+	height: 20px;
+	line-height: 20px;
+	font-size: 12px;
+	color:#666;
+	border-bottom:1px solid #eee;
+	box-sizing: border-box;
+	padding-left: 10px;
+}
 .tab-wrap{
 	width: 100%;
 	height: 40px;
@@ -92,7 +126,7 @@ export default {
 	justify-content: space-around;
 	align-items: center;
 	padding:0 5px;
-	border-bottom:1px solid #e5e5e5;
+	border-bottom:1px solid #eee;
 	box-sizing: border-box;
 }
 .tab{

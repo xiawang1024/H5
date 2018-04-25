@@ -1,6 +1,6 @@
 <template>
   <div class="pay">
-      <p class="info">本直播为付费直播，免费试看5分钟</p>
+      <p class="info">"素韵梅香”省会隆重纪念豫剧大师陈素真诞辰100 周年祥符调品赏会  5元即可欣赏一场名家、大咖云集的祥符饕餮盛宴。</p>
       <p class="info">付费方式:（5元／场）</p>
       <form class="form">
           <p>
@@ -16,17 +16,18 @@
 
 <script>
 import { pay } from 'api/index' 
+import Toast from 'v-toast'
 export default {
     name:'pay',
     data() {
         return {
             name:'',
             phone:'',
-            openId:''
+            openid:''
         }
     },
     created() {
-        this.openId = this._getQueryString('openId')
+        this.openid = this._getQueryString('openid')
     },
     mounted () {
 
@@ -34,19 +35,28 @@ export default {
     methods:{
         payFor() {
             if(!this.name) {
+                Toast.warn('请填写您的姓名')
                 return false
             }
             if(!this.phone) {
+                Toast.warn('请填写您的电话')
                 return false
             }
+             if(!this._checkPhone(this.phone)) {
+                Toast.warn('请填写正确的手机号')
+                return 
+            }
 
-            pay(this.name, this.phone, this.openId).then((res) => {
+            pay(this.name, this.phone, this.openid).then((res) => {
                 let data = res.data
                 if(data.success){
                     let returnUrl = `http://hndt.com/h5/yule/index.html`;
                     window.location.href = `/passport/pay/create.do?orderId=${data.orderId}&returnUrl=${encodeURIComponent(returnUrl)}`;
                 }else{
-                    
+                    Toast.error({
+                        message:'好像哪里出现问题了！',
+                        duration:2000
+                    })
                 }
             })
         },
@@ -56,7 +66,13 @@ export default {
             if (r != null) return unescape(r[2]);
             return null;
         },
-        
+        _checkPhone(phone) { 
+            if(!(/^1[345678]\d{9}$/.test(phone))){                 
+                return false; 
+            }else{
+                return true
+            }
+        },
     }
 }
 </script>

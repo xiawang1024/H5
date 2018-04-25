@@ -1,11 +1,11 @@
 /**
  * 回转地址
  */
-var backUrl = 'http://hndt.com/h5/yule/index.html'
+var backUrl = 'http://hndt.com/h5/yuletest/index.html'
 
 ;(function(url) {
-    if (!getQueryString('openId')) {
-        var redirectUrl = 'http://a.weixin.hndt.com/wx/openid?cate=person&back=' + url;
+    if (!getQueryString('openid')) {
+        var redirectUrl = 'http://a.weixin.hndt.com/boom/api/token/openid?back=' + url;
         window.location = redirectUrl
     }
     function getQueryString(query) {  
