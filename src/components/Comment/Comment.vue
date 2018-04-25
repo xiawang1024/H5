@@ -170,7 +170,7 @@ export default {
 <style lang="stylus" scoped>
 .comment
     position absolute
-    top 230px
+    top 270px
     left 0
     right 0
     bottom 0px

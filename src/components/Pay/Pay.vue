@@ -10,19 +10,61 @@
               <input type="text" placeholder="手机号" class="ipt">
           </p>
       </form>
-      <button class="btn">去支付</button>
+      <button class="btn" @click="payFor">去支付</button>
   </div>
 </template>
 
 <script>
+import { pay } from 'api/index' 
 export default {
-  name:'pay'
+    name:'pay',
+    data() {
+        return {
+            name:'',
+            phone:'',
+            openId:''
+        }
+    },
+    created() {
+        this.openId = this._getQueryString('openId')
+    },
+    mounted () {
+
+    },
+    methods:{
+        payFor() {
+            if(!this.name) {
+                return false
+            }
+            if(!this.phone) {
+                return false
+            }
+
+            pay(this.name, this.phone, this.openId).then((res) => {
+                let data = res.data
+                if(data.success){
+                    let returnUrl = `http://hndt.com/h5/yule/index.html`;
+                    window.location.href = `/passport/pay/create.do?orderId=${data.orderId}&returnUrl=${encodeURIComponent(returnUrl)}`;
+                }else{
+                    
+                }
+            })
+        },
+        _getQueryString(name) {
+            let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+            let r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]);
+            return null;
+        },
+        
+    }
 }
 </script>
 
 <style lang="stylus" scoped>
 .pay
     position fixed
+    z-index 99999
     top 0 
     bottom 0
     left 0

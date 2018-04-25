@@ -24,10 +24,22 @@ const postMsg = ( page, cid = 4, creater='', fromUid='', content='') => axios.po
     page, cid, creater, fromUid, content
 }))
 
+const pay = (name, phone, openId, source=100) => axios.post('http://a.weixin.hndt.com/passport/order/create.do',Qs.stringify({
+    name, phone, openId, source, 
+    "orderDetailList":[{
+        "productId" : 3,
+        "productQuantity" : 1
+    }]
+}))
+
+const visit = (openId) => axios.get('http://a.weixin.hndt.com/passport/pay_to_live/pay_and_time_auth.do?openId=' + openId)
+
 
 export {
     postUserInfo,
     checkOpenId,
     getUser,
-    postMsg
+    postMsg,
+    pay,
+    visit
 }

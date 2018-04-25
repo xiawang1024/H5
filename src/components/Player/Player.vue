@@ -1,6 +1,6 @@
 <template>
     <div class="player">
-        <video-player class="vjs-custom-skin" 
+        <video-player v-show="isShow" ref="videoPlayer" class="vjs-custom-skin" 
         :options="playerOptions" 
         @ready="playerReadied">
         </video-player>
@@ -19,8 +19,8 @@ export default {
     name:'player',
     data() {
         return {
-            playerOptions: {
-                // videojs and plugin options
+            isShow:true,
+            playerOptions: {                
                 height: '230',
                 sources: [
                     {
@@ -40,14 +40,25 @@ export default {
             }
         }
     },
+    computed: {
+      player() {
+        return this.$refs.videoPlayer.player
+      }
+    },
     mounted() {
         setTimeout(() => {
-            let video = document.querySelector('.vjs-tech')
-            console.log(video)
+            let video = document.querySelector('video')            
             video.setAttribute('webkit-playsinline',true)
             video.setAttribute('playsinline',true)
             video.setAttribute('x5-playsinline',true)                     
-        },1000)
+        },500)
+
+        // setTimeout(() => {
+        //     this.player.src({
+        //         src: 'http://ivi.bupt.edu.cn/hls/chchd.m3u8',
+        //         type: 'application/x-mpegURL',
+        //     });
+        // },5000)
     },
     methods: {
         playerReadied(player) {
@@ -59,7 +70,9 @@ export default {
             //     return options
             // }
         }
-    }
+        
+    },
+    
 }
 </script>
 

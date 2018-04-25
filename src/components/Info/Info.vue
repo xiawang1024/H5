@@ -14,7 +14,7 @@
 
 <script>
 export default {
-  
+  name:'info'
 }
 </script>
 
@@ -22,13 +22,13 @@ export default {
 <style lang="stylus" scoped>
 .info
     position absolute
-    top 230px
+    top 270px
     left 0
     right 0
     bottom 0px
     overflow auto
     -webkit-overflow-scrolling: touch
-    padding 30px 15px 100px
+    padding 10px 15px 100px
     box-sizing border-box
     .title
         line-height 1.6
