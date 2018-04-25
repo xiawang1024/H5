@@ -13,6 +13,8 @@
 </template>
 
 <script>
+const TIMER_ID = 5 * 60 * 1000
+
 import { visit } from 'api/index'
 import Player from 'components/Player/Player'
 import Comment from 'components/Comment/Comment'
@@ -43,7 +45,7 @@ export default {
 		this.openid = this._getQueryString('openid')
 	},
 	mounted() {
-		this._visit()
+		this._visit() //TODO:直播付费
 	},
 	methods:{
 		_visit() {
@@ -80,7 +82,7 @@ export default {
 					let video = document.querySelector('video')
 					video.pause()				
 				})
-			}, 10000)
+			}, TIMER_ID)
 		},
 		_pay() {
 			this.$nextTick(() => {

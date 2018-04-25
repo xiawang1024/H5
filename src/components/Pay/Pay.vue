@@ -4,10 +4,10 @@
       <p class="info">付费方式:（5元／场）</p>
       <form class="form">
           <p>
-              <input type="text" placeholder="姓名" class="ipt">
+              <input type="text" placeholder="姓名" class="ipt" v-model="name">
           </p>
           <p>
-              <input type="text" placeholder="手机号" class="ipt">
+              <input type="tel" placeholder="手机号" class="ipt" v-model="phone">
           </p>
       </form>
       <button class="btn" @click="payFor">去支付</button>
@@ -51,7 +51,7 @@ export default {
                 let data = res.data
                 if(data.success){
                     let returnUrl = `http://hndt.com/h5/yule/index.html`;
-                    window.location.href = `/passport/pay/create.do?orderId=${data.orderId}&returnUrl=${encodeURIComponent(returnUrl)}`;
+                    window.location.href = `http://a.weixin.hndt.com/passport/pay/pay_for_live.do?orderId=${data.orderId}&returnUrl=${encodeURIComponent(returnUrl)}&openId=${this.openid}`;
                 }else{
                     Toast.error({
                         message:'好像哪里出现问题了！',
@@ -80,7 +80,7 @@ export default {
 <style lang="stylus" scoped>
 .pay
     position fixed
-    z-index 99999
+    z-index 1024
     top 0 
     bottom 0
     left 0
@@ -88,11 +88,14 @@ export default {
     background rgba(0,0,0,.85)
     color #fff
     text-align center
+    padding 0 10px
+    box-sizing border-box
     .info
         margin-top 10px
         font-size 18px
+        line-height 1.5
         &:first-child
-            margin-top 40px
+            margin-top 20px
     .form
         margin-top 20px
         .ipt
