@@ -24,7 +24,7 @@ const postMsg = ( page, cid = 4, creater='', fromUid='', content='') => axios.po
     page, cid, creater, fromUid, content
 }))
 
-const pay = (name, phone, openId, source=100) => axios.post('api/passport/order/create.do',JSON.stringify({
+const pay = (name, phone, openId, source=100) => axios.post('http://a.weixin.hndt.com/passport/order/create.do',JSON.stringify({
     name, phone, openId, source, 
     "orderDetailList":[{
         "productId" : 3,
