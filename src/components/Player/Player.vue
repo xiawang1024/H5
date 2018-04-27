@@ -51,7 +51,7 @@ export default {
             video.setAttribute('webkit-playsinline',true)
             video.setAttribute('playsinline',true)
             video.setAttribute('x5-playsinline',true)                     
-        },500)
+        },750)
 
       
     },
