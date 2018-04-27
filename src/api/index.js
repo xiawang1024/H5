@@ -20,14 +20,24 @@ const checkOpenId = (openId, origin) => axios.get('http://a.weixin.hndt.com/user
 
 const getUser = (openid) => axios.get('http://a.weixin.hndt.com/user/find/openid?openid=' + openid)
 
-const postMsg = ( page, cid = 4, creater='', fromUid='', content='') => axios.post('http://talk.hndt.com/test/upRadio.do',Qs.stringify({
+
+import channelInfo from '../config'
+const postMsg = ( page, cid = channelInfo.cid, creater='', fromUid='', content='') => axios.post('http://talk.hndt.com/test/upRadio.do',Qs.stringify({
     page, cid, creater, fromUid, content
 }))
 
+
+/**
+ * 获取指定频率列表接口
+ * @param  {[type]} channelId [cid]
+ * @return {[type]}           [description]
+ */
+const getChannelItem = (channelId) => axios.get('http://program.hndt.com/get/live/channel/' + channelId)
 
 export {
     postUserInfo,
     checkOpenId,
     getUser,
-    postMsg
+    postMsg,
+    getChannelItem
 }

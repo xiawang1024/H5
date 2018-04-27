@@ -4,11 +4,23 @@
  * DEFAULT_IMGURL String 分享图标链接
  * DEFAULT_DESC String 分享描述
  */
-const title = '素韵梅香100周年'
-const link = 'http://hndt.com/h5/yule/index.html'
-const imgUrl = 'http://www.hndt.com/fm/976/res/JYcsNF0B.png?1487664825486'
-const desc = '豫剧大师陈素真先生诞辰100周年--省会隆重纪念。'
+let title = ''
+let link = ''
+let imgUrl = ''
+let desc = ''
 
+import { getChannelItem } from 'api/index'
+import channelInfo from '../config'
+
+document.title = channelInfo.title
+
+getChannelItem(channelInfo.cid).then((res) => {
+    let data = res.data
+    title = data.name;
+    link= channelInfo.url;
+    imgUrl = `http://program.hndt.com${data.image}`;
+    desc = data.description;
+})
 
 export {
     title,
@@ -16,6 +28,7 @@ export {
     imgUrl,
     desc
 } 
+
 
 
 
