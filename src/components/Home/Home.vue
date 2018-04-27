@@ -50,7 +50,7 @@ export default {
 	},
 	methods:{
 		_isStart() {
-			let targetTime = (new Date('2018-04-27 18:00:00')).getTime()
+			let targetTime = (new Date('2018-04-27 19:00:00')).getTime()
 			let nowTime = (new Date()).getTime()
 			if(nowTime >= targetTime) {
 				this._visit()
