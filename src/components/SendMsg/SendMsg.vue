@@ -7,6 +7,7 @@
 
 
 <script>
+import channelInfo from '../../config.js'
 import { getUser, postMsg } from 'api/index'
 import Toast from 'v-toast'
 export default {
@@ -51,7 +52,7 @@ export default {
             this.$emit('sendMsg')
         },
         _postMsg() {
-            postMsg(0, 8 , this.creater, this.fromUid, this.msg).then((res) => {
+            postMsg(0, channelInfo.cid , this.creater, this.fromUid, this.msg).then((res) => {
                 Toast.success('消息发送成功，等待审核！')
                 this.msg = ''
                 console.log(res)
