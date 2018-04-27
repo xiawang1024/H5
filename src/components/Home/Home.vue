@@ -50,7 +50,7 @@ export default {
 	},
 	methods:{
 		_isStart() {
-			let targetTime = Date.parse(new Date('2018-04-27 19:10:0')) || Date.parse(new Date('2018/04/27 19:10:0'))
+			let targetTime = Date.parse(new Date('2018-04-27 19:20:0')) || Date.parse(new Date('2018/04/27 19:20:0'))
 			let nowTime = (new Date()).getTime()
 			// alert(targetTime)
 			if(nowTime >= targetTime) {
