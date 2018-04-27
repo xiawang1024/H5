@@ -59,6 +59,6 @@ const chanelList = [
     }
 ]
 
-const cid = 6 //频率id
+const cid = 8 //频率id
 
 module.exports = chanelList[cid]

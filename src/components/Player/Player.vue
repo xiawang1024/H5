@@ -53,7 +53,7 @@ export default {
             video.setAttribute('webkit-playsinline',true)
             video.setAttribute('playsinline',true)
             video.setAttribute('x5-playsinline',true)                     
-        },250)
+        },850)
     },
     methods: {
         _getStream() {
@@ -75,7 +75,8 @@ export default {
                 let poster = `http://program.hndt.com${data.image}`
                 player.src({
                     type:'application/x-mpegURL',
-                    src:'http://ivi.bupt.edu.cn/hls/chchd.m3u8'
+                    src:liveStream
+                    // src:'http://ivi.bupt.edu.cn/hls/chchd.m3u8'
                 })
                 this.playerOptions = Object.assign(this.playerOptions, {
                     poster: poster
