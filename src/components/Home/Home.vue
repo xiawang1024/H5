@@ -1,11 +1,11 @@
 <template>
 	<div class="home">		
 		<player v-show="!isShow"></player>
-		<div class="tips">活动宣传片</div>
+		<div class="tips">‘素韵梅香’ 祥符调品赏会直播中</div>
 		<div class="tab-wrap">
 			<div class="tab" @click="slide(0)" :class="isIndex == 0 ? 'isActive' : ''">活动简介</div>
 			<div class="tab" @click="slide(1)" :class="isIndex == 1 ? 'isActive' : ''">节目单</div>
-			<!-- <div class="tab" @click="slide(2)" :class="isIndex == 2 ? 'isActive' : ''">直播互动</div> -->
+			<div class="tab" @click="slide(2)" :class="isIndex == 2 ? 'isActive' : ''">直播互动</div>
 		</div>
 		<component :is="componentId"></component>
 		<pay v-show="isShow"></pay>
@@ -50,8 +50,9 @@ export default {
 	},
 	methods:{
 		_isStart() {
-			let targetTime = (new Date('2018-04-27 18:00:00')).getTime()
+			let targetTime = Date.parse(new Date('2018-04-27 19:10:0')) || Date.parse(new Date('2018/04/27 19:10:0'))
 			let nowTime = (new Date()).getTime()
+			alert(targetTime)
 			if(nowTime >= targetTime) {
 				this._visit()
 			}else{

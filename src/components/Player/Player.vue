@@ -13,7 +13,7 @@ import './custom-theme.css'
 import videojs from 'video.js'
 window.videojs = videojs
 // hls plugin for videojs6
-// require('videojs-contrib-hls') //TODO:开启hls直播
+require('videojs-contrib-hls') //TODO:开启hls直播
 
 export default {
     name:'player',
@@ -25,9 +25,9 @@ export default {
                 sources: [
                     {
                         withCredentials: false,
-                        // type: "application/x-mpegURL",  //TODO:开启hls直播
-                        type: "video/mp4",
-                        src: "http://www.hndt.com/h5/yule/video/976.mp4"
+                        type: "application/x-mpegURL",  //TODO:开启hls直播                        
+                        src: "http://livepull.hndt.com/live/20180427/playlist.m3u8"
+                        // src:'http://ivi.bupt.edu.cn/hls/chchd.m3u8'
                     }
                 ],
                 controlBar: {
@@ -53,22 +53,17 @@ export default {
             video.setAttribute('x5-playsinline',true)                     
         },500)
 
-        // setTimeout(() => {
-        //     this.player.src({
-        //         src: 'http://ivi.bupt.edu.cn/hls/chchd.m3u8',
-        //         type: 'application/x-mpegURL',
-        //     });
-        // },5000)
+      
     },
     methods: {
         playerReadied(player) {
             console.log(player)
-            //TODO:开启hls直播
-            // var hls = player.tech({ IWillNotUseThisInPlugins: true }).hls
-            //     player.tech_.hls.xhr.beforeRequest = function(options) {
-            //     // console.log(options)
-            //     return options
-            // }
+            // TODO:开启hls直播
+            var hls = player.tech({ IWillNotUseThisInPlugins: true }).hls
+                player.tech_.hls.xhr.beforeRequest = function(options) {
+                // console.log(options)
+                return options
+            }
         }
         
     },
