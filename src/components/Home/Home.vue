@@ -50,8 +50,8 @@ export default {
 	},
 	methods:{
 		_isStart() {
-			let startTime = Date.parse(new Date('2018-04-28 19:20:0')) || Date.parse(new Date('2018/04/28 19:20:0'))
-			let endTime = Date.parse(new Date('2018-04-28 22:0:0')) || Date.parse(new Date('2018/04/28 22:0:0'))
+			let startTime = Date.parse(new Date('2018-04-28 18:0:0')) || Date.parse(new Date('2018/04/28 18:0:0'))
+			let endTime = Date.parse(new Date('2018-04-28 21:30:0')) || Date.parse(new Date('2018/04/28 21:30:0'))
 			let nowTime = (new Date()).getTime()
 			// alert(endTime)
 			if(nowTime >= startTime && nowTime <= endTime) {
