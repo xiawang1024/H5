@@ -25,9 +25,10 @@ export default {
                 sources: [
                     {
                         withCredentials: false,
-                        type: "application/x-mpegURL",  //TODO:开启hls直播                        
-                        src: "http://livepull.hndt.com/live/20180427/playlist.m3u8"
-                        // src:'http://ivi.bupt.edu.cn/hls/chchd.m3u8'
+                        // type: "application/x-mpegURL",  //TODO:开启hls直播                        
+                        // src: "http://livepull.hndt.com/live/20180427/playlist.m3u8",
+                        type:'video/mp4',
+                        src:'http://www.hndt.com/h5/yule/video/976.mp4',
                     }
                 ],
                 controlBar: {
@@ -59,9 +60,17 @@ export default {
         playerReadied(player) {
             console.log(player)
             // TODO:开启hls直播
+
+            // setTimeout(() => {
+            //     this.$nextTick(() => {
+            //          player.src({
+            //             type: "application/x-mpegURL",  //TODO:开启hls直播                        
+            //             src: "http://ivi.bupt.edu.cn/hls/chchd.m3u8",
+            //         })
+            //     })
+            // },1000)
             var hls = player.tech({ IWillNotUseThisInPlugins: true }).hls
                 player.tech_.hls.xhr.beforeRequest = function(options) {
-                // console.log(options)
                 return options
             }
         }

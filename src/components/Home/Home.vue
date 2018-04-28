@@ -1,7 +1,7 @@
 <template>
 	<div class="home">		
 		<player v-show="!isShow"></player>
-		<div class="tips">‘素韵梅香’ 祥符调品赏会直播中</div>
+		<div class="tips">正在播放活动宣传片，第二场直播于今天19:20进行直播</div>
 		<div class="tab-wrap">
 			<div class="tab" @click="slide(0)" :class="isIndex == 0 ? 'isActive' : ''">活动简介</div>
 			<div class="tab" @click="slide(1)" :class="isIndex == 1 ? 'isActive' : ''">节目单</div>
@@ -50,14 +50,25 @@ export default {
 	},
 	methods:{
 		_isStart() {
-			let targetTime = Date.parse(new Date('2018-04-27 19:20:0')) || Date.parse(new Date('2018/04/27 19:20:0'))
+			let startTime = Date.parse(new Date('2018-04-28 19:20:0')) || Date.parse(new Date('2018/04/28 19:20:0'))
+			let endTime = Date.parse(new Date('2018-04-28 22:0:0')) || Date.parse(new Date('2018/04/28 22:0:0'))
 			let nowTime = (new Date()).getTime()
-			// alert(targetTime)
-			if(nowTime >= targetTime) {
+			// alert(endTime)
+			if(nowTime >= startTime && nowTime <= endTime) {
 				this._visit()
 			}else{
-				console.log('直播未开始')
-				return false
+				if(nowTime <= startTime) {
+					console.log('直播未开始')
+					return false
+				}
+				if(nowTime >= endTime) {
+					console.log('直播已结束')
+					Toast.info({
+                        message:'直播已结束，谢谢您的支持！',
+                        duration:10000
+                    })
+					return false
+				}
 			}
 		},
 		_visit() {
