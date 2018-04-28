@@ -1,7 +1,7 @@
 /**
  * 回转地址
  */
-var backUrl = 'http://www.hndt.com/h5/fmlive/fm999/index.html'
+var backUrl = 'http://www.hndt.com/h5/fmlive/fm900/index.html'
 
 ;(function(url) {
     if (!getQueryString('openId')) {
