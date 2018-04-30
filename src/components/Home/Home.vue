@@ -1,7 +1,7 @@
 <template>
 	<div class="home">		
 		<player v-show="!isShow"></player>
-		<div class="tips">正在播放活动宣传片，第二场直播于今天19:20进行直播</div>
+		<div class="tips">祥符调品赏会第二场正在直播中</div>
 		<div class="tab-wrap">
 			<div class="tab" @click="slide(0)" :class="isIndex == 0 ? 'isActive' : ''">活动简介</div>
 			<div class="tab" @click="slide(1)" :class="isIndex == 1 ? 'isActive' : ''">节目单</div>
