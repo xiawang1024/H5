@@ -1,14 +1,14 @@
 <template>
     <div class="four">
         <!-- <div class="logo ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="1s"></div> -->
-        <div class="top-left"></div>
-        <div class="top-right"></div>
-        <div class="bottom-left"></div>
-        <div class="bottom-right"></div>
+        <div class="top-left ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="0s"></div>
+        <div class="top-right ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.5s" swiper-animate-delay="0s"></div>
+        <div class="bottom-left ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.25s" swiper-animate-delay="0s"></div>
+        <div class="bottom-right ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1.3s" swiper-animate-delay="0s"></div>
         <div class="g-body">
-          <div class="m-title"></div>
+          <div class="m-title ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s" swiper-animate-delay="0.75s"></div>
           <div class="m-body">
-            <div class="item">
+            <div class="item ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1.25s" swiper-animate-delay="0.25s">
               <div class="m-order">
 
               </div>
@@ -33,7 +33,7 @@
                   </li>
               </ul>
             </div>
-            <div class="item">
+            <div class="item ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1.25s" swiper-animate-delay="0.5s">
                 <div class="m-order">
 
                 </div>
@@ -64,7 +64,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="item">
+            <div class="item ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1.25s" swiper-animate-delay="0.75s">
                 <div class="m-order">
 
                 </div>

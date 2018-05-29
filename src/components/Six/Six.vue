@@ -1,16 +1,16 @@
 <template>
     <div class="six">
         <!-- <div class="logo ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="1s"></div> -->
-        <div class="top-left"></div>
-        <div class="top-right"></div>
-        <div class="bottom-left"></div>
-        <div class="bottom-right"></div>
+        <div class="top-left ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="0s"></div>
+        <div class="top-right ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.5s" swiper-animate-delay="0s"></div>
+        <div class="bottom-left ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.25s" swiper-animate-delay="0s"></div>
+        <div class="bottom-right ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1.3s" swiper-animate-delay="0s"></div>
         <div class="g-body">
-          <div class="m-title"></div>
+          <div class="m-title ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s" swiper-animate-delay="1s"></div>
           <div class="m-body">
-            <h3 class="title-3 red">二、交广领航线上记步“点亮党旗”活动</h3>
+            <h3 class="title-3 red ani" swiper-animate-effect="fadeIn" swiper-animate-duration="1.25s" swiper-animate-delay="0.25s">二、交广领航线上记步“点亮党旗”活动</h3>
             <ul class="u-list">
-                <li class="list">
+                <li class="list ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.25s" swiper-animate-delay="0.25s">
                     <h4 class="title-4">1、
                         <span class="red">6月6日</span>
                     </h4>
@@ -18,16 +18,16 @@
                         与启动仪式同步启动交广领航线上 “千人拼党旗”活动
                     </p>
                 </li>
-                <li class="list">
+                <li class="list ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.25s" swiper-animate-delay="0.5s">
                     <h4 class="title-4">2、 参与者通过交广领航提交姓名、电话号码、入党时间等信息完成报名。
                     </h4>
 
                 </li>
-                <li class="list">
+                <li class="list ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.25s" swiper-animate-delay="0.75s">
                     <h4 class="title-4">3、 报名通过后，交广领航活动为用户在未着色党旗拼图中随机为报名者分配区块。
                     </h4>
                 </li>
-                <li class="list">
+                <li class="list ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.25s" swiper-animate-delay="1s">
                     <h4 class="title-4">4、
                         <span class="red">7月1日</span>
                     </h4>

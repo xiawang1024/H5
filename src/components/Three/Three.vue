@@ -1,14 +1,14 @@
 <template>
     <div class="three">
         <!-- <div class="logo ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="1s"></div> -->
-        <div class="top-left"></div>
-        <div class="top-right"></div>
-        <div class="bottom-left"></div>
-        <div class="bottom-right"></div>
+        <div class="top-left ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="0s"></div>
+        <div class="top-right ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.5s" swiper-animate-delay="0s"></div>
+        <div class="bottom-left ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.25s" swiper-animate-delay="0s"></div>
+        <div class="bottom-right ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1.3s" swiper-animate-delay="0s"></div>
         <div class="g-body">
-          <div class="m-title"></div>
+          <div class="m-title ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s" swiper-animate-delay="1s"></div>
           <div class="m-body">
-            <div class="item">
+            <div class="item ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1.25s" swiper-animate-delay="0.25s">
               <div class="m-order">
                   1
               </div>
@@ -32,90 +32,90 @@
                       </span>
                   </li>
               </ul>
-          </div>
-          <div class="item">
-              <div class="m-order">
-                  2
-              </div>
-              <ul class="m-list">
-                  <li class="list">
-                      <span class="u-block"></span>
-                      <span class="u-text">
-                          6月20日
-                      </span>
-                  </li>
-                  <li class="list">
-                      <span class="u-block"></span>
-                      <span class="u-text">
-                          (场地：广播大厦三楼)
-                      </span>
-                  </li>
-                  <li class="list">
-                      <span class="u-block"></span>
-                      <span class="u-text">
-                          "党的生日主题诗会"
-                      </span>
-                  </li>
-              </ul>
-          </div>
-          <div class="item">
-              <div class="m-order">
-                  3
-              </div>
-              <ul class="m-list">
-                  <li class="list">
-                      <span class="u-block"></span>
-                      <span class="u-text">
-                          6月29日
-                      </span>
-                  </li>
-                  <li class="list">
-                      <span class="u-block"></span>
-                      <span class="u-text">
-                          (场地：八号演播厅暂定)
-                      </span>
-                  </li>
-                  <li class="list">
-                      <span class="u-block"></span>
-                      <span class="u-text">
-                          "给党唱支生日歌"主题歌会
-                      </span>
-                  </li>
-              </ul>
-          </div>
-          <div class="item">
-              <div class="m-order">
-                  4
-              </div>
-              <ul class="m-list">
-                  <li class="list">
-                      <span class="u-block"></span>
-                      <span class="u-text">
-                          7月1日
-                      </span>
-                  </li>
-                  <li class="list">
-                      <span class="u-block"></span>
-                      <span class="u-text">
-                          (场地：郑东新区如意湖广场暂定)
-                      </span>
-                  </li>
-                  <li class="list">
-                      <span class="u-block"></span>
-                      <span class="u-text">
-                          千人拼党旗暨河南广播电视台处级以上党员领导 干部重温入党誓词仪式
-                      </span>
-                  </li>
-                  <li class="list">
-                      <span class="u-block"></span>
-                      <span class="u-text">
-                          交广领航线上启动记步“点亮党旗”活动
-                      </span>
-                  </li>
-              </ul>
+            </div>
+            <div class="item ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1.25s" swiper-animate-delay="0.5s">
+                <div class="m-order">
+                    2
+                </div>
+                <ul class="m-list">
+                    <li class="list">
+                        <span class="u-block"></span>
+                        <span class="u-text">
+                            6月20日
+                        </span>
+                    </li>
+                    <li class="list">
+                        <span class="u-block"></span>
+                        <span class="u-text">
+                            (场地：广播大厦三楼)
+                        </span>
+                    </li>
+                    <li class="list">
+                        <span class="u-block"></span>
+                        <span class="u-text">
+                            "党的生日主题诗会"
+                        </span>
+                    </li>
+                </ul>
+            </div>
+            <div class="item ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1.25s" swiper-animate-delay="0.75s">
+                <div class="m-order">
+                    3
+                </div>
+                <ul class="m-list">
+                    <li class="list">
+                        <span class="u-block"></span>
+                        <span class="u-text">
+                            6月29日
+                        </span>
+                    </li>
+                    <li class="list">
+                        <span class="u-block"></span>
+                        <span class="u-text">
+                            (场地：八号演播厅暂定)
+                        </span>
+                    </li>
+                    <li class="list">
+                        <span class="u-block"></span>
+                        <span class="u-text">
+                            "给党唱支生日歌"主题歌会
+                        </span>
+                    </li>
+                </ul>
+            </div>
+            <div class="item ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1.25s" swiper-animate-delay="1s">
+                <div class="m-order">
+                    4
+                </div>
+                <ul class="m-list">
+                    <li class="list">
+                        <span class="u-block"></span>
+                        <span class="u-text">
+                            7月1日
+                        </span>
+                    </li>
+                    <li class="list">
+                        <span class="u-block"></span>
+                        <span class="u-text">
+                            (场地：郑东新区如意湖广场暂定)
+                        </span>
+                    </li>
+                    <li class="list">
+                        <span class="u-block"></span>
+                        <span class="u-text">
+                            千人拼党旗暨河南广播电视台处级以上党员领导 干部重温入党誓词仪式
+                        </span>
+                    </li>
+                    <li class="list">
+                        <span class="u-block"></span>
+                        <span class="u-text">
+                            交广领航线上启动记步“点亮党旗”活动
+                        </span>
+                    </li>
+                </ul>
+            </div>
           </div>
         </div>
-      </div>
     </div>
 </template>
 

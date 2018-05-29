@@ -1,15 +1,15 @@
 <template>
     <div class="five">
         <!-- <div class="logo ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="1s"></div> -->
-        <div class="top-left"></div>
-        <div class="top-right"></div>
-        <div class="bottom-left"></div>
-        <div class="bottom-right"></div>
+        <div class="top-left ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="0s"></div>
+        <div class="top-right ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.5s" swiper-animate-delay="0s"></div>
+        <div class="bottom-left ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.25s" swiper-animate-delay="0s"></div>
+        <div class="bottom-right ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1.3s" swiper-animate-delay="0s"></div>
         <div class="g-body">
-          <div class="m-title"></div>
+          <div class="m-title ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s" swiper-animate-delay="1s"></div>
           <div class="m-body">
             <ul class="m-list clearfix">
-              <li class="list">
+              <li class="list ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.25s">
                   <div class="img-wrap">
                       <img src="../../assets/active-1.png" alt="" class="img">
                   </div>
@@ -20,7 +20,7 @@
                       <p class="desc">朗诵经典诗歌作品，重温七月的记忆。</p>
                   </div>
               </li>
-              <li class="list">
+              <li class="list ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s" swiper-animate-delay="0.5s">
                   <div class="img-wrap">
                       <img src="../../assets/active-2.png" alt="" class="img">
                   </div>
@@ -32,7 +32,7 @@
                       <p class="desc">"给党唱支生日歌"大型主题歌会。</p>
                   </div>
               </li>
-              <li class="list">
+              <li class="list ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.75s">
                   <div class="img-wrap">
                       <img src="../../assets/active-3.png" alt="" class="img">
                   </div>
