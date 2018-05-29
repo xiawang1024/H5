@@ -5,15 +5,9 @@
  * DEFAULT_DESC String 分享描述
  */
 
-const DEFAULT_TITLE  = '《好久不见》 —— My Radio 14周年台庆特别策划'
-const DEFAULT_LINK   = '河南广播电视台'
-const DEFAULT_IMGURL = 'http://www.hndt.com/fm/900/res/dJkNYkGj.jpg?1503459110283'
-const DEFAULT_DESC   = '《好久不见》 —— My Radio 14周年台庆特别策划'
+const DEFAULT_TITLE = '给党唱支生日歌--庆祝中国共产党建党97周年';
+const DEFAULT_LINK = 'http://www.hndt.com/h5/partysday/index.html';
+const DEFAULT_IMGURL = 'http://www.hndt.com/h5/partysday/PartysDay.jpg';
+const DEFAULT_DESC = '给党唱支生日歌--庆祝中国共产党建党97周年大型系列文化活动。';
 
-
-export {
-    DEFAULT_TITLE,
-    DEFAULT_LINK,
-    DEFAULT_IMGURL,
-    DEFAULT_DESC
-}
+export { DEFAULT_TITLE, DEFAULT_LINK, DEFAULT_IMGURL, DEFAULT_DESC };

@@ -1,5 +1,5 @@
 <template>
-    <div class="three">
+    <div class="four">
         <!-- <div class="logo ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="1s"></div> -->
         <div class="top-left"></div>
         <div class="top-right"></div>
@@ -10,112 +10,93 @@
           <div class="m-body">
             <div class="item">
               <div class="m-order">
-                  1
+
               </div>
               <ul class="m-list">
                   <li class="list">
                       <span class="u-block"></span>
                       <span class="u-text">
-                          6月6日 启动仪式
+                          6月6日（周三）上午
                       </span>
                   </li>
                   <li class="list">
                       <span class="u-block"></span>
                       <span class="u-text">
-                          河南广播网线上启动“给党唱支生日歌”歌曲征集
+                          广播大厦一楼大厅
                       </span>
                   </li>
                   <li class="list">
                       <span class="u-block"></span>
                       <span class="u-text">
-                          交广领航线上启动记步“点亮党旗”活动
+                          举行“给党唱支生日歌”活动启动仪式
                       </span>
                   </li>
               </ul>
-          </div>
-          <div class="item">
-              <div class="m-order">
-                  2
-              </div>
-              <ul class="m-list">
-                  <li class="list">
-                      <span class="u-block"></span>
-                      <span class="u-text">
-                          6月20日
-                      </span>
-                  </li>
-                  <li class="list">
-                      <span class="u-block"></span>
-                      <span class="u-text">
-                          (场地：广播大厦三楼)
-                      </span>
-                  </li>
-                  <li class="list">
-                      <span class="u-block"></span>
-                      <span class="u-text">
-                          "党的生日主题诗会"
-                      </span>
-                  </li>
-              </ul>
-          </div>
-          <div class="item">
-              <div class="m-order">
-                  3
-              </div>
-              <ul class="m-list">
-                  <li class="list">
-                      <span class="u-block"></span>
-                      <span class="u-text">
-                          6月29日
-                      </span>
-                  </li>
-                  <li class="list">
-                      <span class="u-block"></span>
-                      <span class="u-text">
-                          (场地：八号演播厅暂定)
-                      </span>
-                  </li>
-                  <li class="list">
-                      <span class="u-block"></span>
-                      <span class="u-text">
-                          "给党唱支生日歌"主题歌会
-                      </span>
-                  </li>
-              </ul>
-          </div>
-          <div class="item">
-              <div class="m-order">
-                  4
-              </div>
-              <ul class="m-list">
-                  <li class="list">
-                      <span class="u-block"></span>
-                      <span class="u-text">
-                          7月1日
-                      </span>
-                  </li>
-                  <li class="list">
-                      <span class="u-block"></span>
-                      <span class="u-text">
-                          (场地：郑东新区如意湖广场暂定)
-                      </span>
-                  </li>
-                  <li class="list">
-                      <span class="u-block"></span>
-                      <span class="u-text">
-                          千人拼党旗暨河南广播电视台处级以上党员领导 干部重温入党誓词仪式
-                      </span>
-                  </li>
-                  <li class="list">
-                      <span class="u-block"></span>
-                      <span class="u-text">
-                          交广领航线上启动记步“点亮党旗”活动
-                      </span>
-                  </li>
-              </ul>
+            </div>
+            <div class="item">
+                <div class="m-order">
+
+                </div>
+                <ul class="m-list">
+                    <li class="list">
+                        <span class="u-block"></span>
+                        <span class="u-text">
+                            拟邀请嘉宾
+                        </span>
+                    </li>
+                    <li class="list">
+                        <span class="u-block"></span>
+                        <span class="u-text">
+                            河南省委组织部领导&nbsp;&nbsp;河南省委宣传部领导
+                        </span>
+                    </li>
+                    <li class="list">
+                        <span class="u-block"></span>
+                        <span class="u-text">
+                            河南省新闻出版广电局领导&nbsp;&nbsp;驻村第一书记代表
+                        </span>
+                    </li>
+                    <li class="list">
+                        <span class="u-block"></span>
+                        <span class="u-text">
+                            恒丰银行郑州分行领导
+                        </span>
+                    </li>
+                </ul>
+            </div>
+            <div class="item">
+                <div class="m-order">
+
+                </div>
+                <ul class="m-list">
+                    <li class="list">
+                        <span class="u-block"></span>
+                        <span class="u-text">
+                            参加人员
+                        </span>
+                    </li>
+                    <li class="list">
+                        <span class="u-block"></span>
+                        <span class="u-text">
+                            基层党组织代表&nbsp;&nbsp;各行业优秀党员代表
+                        </span>
+                    </li>
+                    <li class="list">
+                        <span class="u-block"></span>
+                        <span class="u-text">
+                            热心听众代表&nbsp;&nbsp;高校学生代表
+                        </span>
+                    </li>
+                    <li class="list">
+                        <span class="u-block"></span>
+                        <span class="u-text">
+                            社会合唱团体代表&nbsp;&nbsp;河南广播电视台党员代表
+                        </span>
+                    </li>
+                </ul>
+            </div>
           </div>
         </div>
-      </div>
     </div>
 </template>
 
@@ -123,13 +104,13 @@
 
 
 export default {
-  name:'three'
+  name:'four'
 }
 </script>
 
 
 <style lang="stylus" scoped>
-.three {
+.four {
   width: 100%;
   height: 100%;
   background: url('../common/bg.jpg') center center no-repeat;
@@ -177,18 +158,18 @@ export default {
 
   .g-body {
     position: absolute;
-    top: 240px;
+    top: 325px;
     left: 0;
     right: 0;
     width: 100%;
 
     .m-title {
       position: absolute;
-      top: 150px;
+      top: -100px;
       right: 60px;
-      width: 117px;
-      height: 270px;
-      background: url('../common/02.png') center center no-repeat;
+      width: 270px;
+      height: 116px;
+      background: url('../common/03.png') center center no-repeat;
       background-size: contain;
     }
 
@@ -208,6 +189,27 @@ export default {
         align-items: center;
         margin-bottom: 30px;
 
+        &:nth-child(1) {
+          .m-order {
+            background: url('../common/icon-start-1.png') center center no-repeat;
+            background-size: contain;
+          }
+        }
+
+        &:nth-child(2) {
+          .m-order {
+            background: url('../common/icon-start-2.png') center center no-repeat;
+            background-size: contain;
+          }
+        }
+
+        &:nth-child(3) {
+          .m-order {
+            background: url('../common/icon-start-3.png') center center no-repeat;
+            background-size: contain;
+          }
+        }
+
         .m-order {
           flex: 0 0 60px;
           width: 60px;
@@ -216,8 +218,6 @@ export default {
           text-align: center;
           font-size: 32px;
           color: #ffffff;
-          background: url('../common/icon-rule.png') center center no-repeat;
-          background-size: cover;
         }
 
         .m-list {

@@ -1,36 +1,26 @@
 <template>
     <div class="two">
-        <div class="logo ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="1s"></div>  
-        <div class="logoc ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s" swiper-animate-delay="1s"></div>            
-        <div class="black ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="1s">
-            <svg class="bd-bg" viewBox="0 0 70 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" preserveAspectRatio="none meet" >
-                <!-- Generator: Sketch 3.4.3 (16044) - http://www.bohemiancoding.com/sketch -->
-                <title>shape01</title>
-                <desc>Created with Sketch.</desc>
-                <defs></defs>
-                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-                    <rect id="shape01" class="color1-fill" fill="#000000" sketch:type="MSShapeGroup" x="0" y="0" width="70" height="70"></rect>
-                </g>
-            </svg>
-            <div class="body">
-                <div class="title">[活动介绍]</div>
-                <img src="http://www.hndt.com/h5/9000423/imgs/1.png" alt="" class="img">
-                <div class="text">
-                    创意市集————《潮市》
-                </div>
-                <div class="text desc">
-                    两天时间，在七盛角两条商业街上设置创意市集区，开封小吃、台湾美食、生活手作，原创尖货应有尽有；
-                </div>
-               
+        <!-- <div class="logo ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="1s"></div> -->
+        <div class="top-left"></div>
+        <div class="top-right"></div>
+        <div class="bottom-left"></div>
+        <div class="bottom-right"></div>
+        <div class="g-body">
+          <div class="m-title"></div>
+          <div class="m-body">
+            <div aspectratio w-16-9 class="img-wrap">
+                <img aspectratio-content src="../../assets/img.png" alt="">
+            </div>
+            <div class="text-wrap">
+                <p>
+                    2018年是中国共产党建党97周年，为深入学习领会习近平新时代中国特色社会主义思想，强化主流媒体的政治担当，饱含热情说好“三句话”，展现全省各界人士的爱党情怀和奋斗热情，让中原更加出彩。我台拟举办“给党唱支生日歌——庆祝中国共产党建党97周年大型系列文化活动。”
+                </p>
+                <p>
+                    通过两场线上和三场线下活动的持续呈现渐次把民众的参与热情推向高潮，凝聚起奋进新时代的强大动力，推动我党新的伟大思想往深里走、往实里走、往心里走，倾情讲好河南故事、中国故事。
+                </p>
             </div>
         </div>
-        <div class="contain">
-            <div class="bg ani" swiper-animate-effect="zoomIn" swiper-animate-duration="2s" swiper-animate-delay="0.5s"></div>
-            <div class="text ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="0.05s"></div>
-            <div class="text-1 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="0.05s"></div>
-        </div>
-        <div class="bt-1 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1.5s" swiper-animate-delay="1.25s"></div>
-        <div class="bt-2 ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1.5s" swiper-animate-delay="1.75s"></div>
+      </div>
     </div>
 </template>
 
@@ -44,121 +34,94 @@ export default {
 
 
 <style lang="stylus" scoped>
+.two {
+  width: 100%;
+  height: 100%;
+  background: url('../common/bg.jpg') center center no-repeat;
+  background-size: cover;
 
-.two
-    width 100%
-    height 100%
-    background #0b0812  
-    .logo
-        position absolute
-        top 30px
-        left 30px
-        width 305px
-        height 81px
-        background url('../common/logo.png') center center no-repeat
-        background-size cover
-    .logoc
-        position absolute
-        top 30px
-        right 30px
-        width 129px
-        height 64px
-        background url('../common/logoc.png') center center no-repeat
-        background-size cover
-    .black
-        position absolute
-        top 120px
-        left 50px
-        width 650px
-        z-index 100
-        color #ffffff
-        .body
-            position absolute
-            z-index 1024
-            overflow hidden
-            padding 0 40px
-            box-sizing border-box
-            .title
-                width 100%
-                margin 20px 0 40px 0
-                text-align center
-                font-size 63px
-                letter-spacing 12px      
-            .img
-                width 100% 
-                border 1px solid #fff 
-                padding 10px
-                box-sizing border-box           
-            .text
-                margin-top 60px
-                font-size 27px
-                line-height 1.815
-                &.desc
-                    text-indent 2em
-                    margin-top 10px
-                &.info
-                    margin-top 20px
-                    color #e4007f
-                    text-align center
-        .bd-bg
-            position absolute            
-            left 0
-            top 0              
-            width 100%
-            height 1000px
-            opacity 0.75
-    .contain
-        position absolute
-        left 0
-        top 120px
-        width 100%
-        height 850px
-        opacity 0.85
-        .bg
-            position absolute
-            z-index 10
-            left 0
-            top 120px
-            width 100%
-            height 812px
-            opacity 0.85
-            background url('../common/bg.png') center center no-repeat
-            background-size cover
-        .text
-            position absolute
-            top 0
-            left 0
-            width 100%
-            height 854px
-            background url('../common/title-1.png') center center no-repeat
-            background-size contain
-        .text-1
-            position absolute
-            top 610px
-            left 290px
-            width 357px
-            height 272px
-            background url('../common/title-2.png') center center no-repeat
-            background-size contain
-    .bt-1
-        position absolute
-        z-index 1024
-        bottom 120px
-        left 0px
-        width 100%
-        height 38px 
-        background url('../common/bt-1.png') center center no-repeat
-        background-size contain
-    .bt-2
-        position absolute
-        z-index 1024
-        bottom 70px
-        right 0px
-        width 100%
-        height 38px        
-        background url('../common/bt-2.png') center center no-repeat
-        background-size contain
-    
-    
+  .top-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 493px;
+    height: 217px;
+    background: url('../common/001.png') center center no-repeat;
+    background-size: cover;
+  }
+
+  .top-right {
+    position: absolute;
+    top: 22px;
+    right: 59px;
+    width: 138px;
+    height: 248px;
+    background: url('../common/002.png') center center no-repeat;
+    background-size: cover;
+  }
+
+  .bottom-left {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 750px;
+    height: 239px;
+    background: url('../common/004.png') center center no-repeat;
+    background-size: cover;
+  }
+
+  .bottom-right {
+    position: absolute;
+    right: 0;
+    bottom: 50px;
+    width: 475px;
+    height: 307px;
+    background: url('../common/003.png') center center no-repeat;
+    background-size: cover;
+  }
+
+  .g-body {
+    position: absolute;
+    top: 232px;
+    left: 0;
+    right: 0;
+    width: 100%;
+
+    .m-title {
+      position: absolute;
+      top: 0px;
+      left: 0;
+      width: 100%;
+      height: 116px;
+      background: url('../common/01.png') center center no-repeat;
+      background-size: contain;
+    }
+
+    .m-body {
+      position: absolute;
+      top: 150px;
+      left: 0;
+      width: 100%;
+      text-align: left;
+      color: #333;
+      letter-spacing: 0.2px;
+      padding: 0 40px;
+      box-sizing: border-box;
+
+      .img-wrap {
+        width: 300px;
+        float: right;
+        margin-top: 15px;
+        margin-left: 20px;
+      }
+
+      .text-wrap {
+        line-height: 1.7;
+        font-size: 24px;
+        text-indent: 2em;
+      }
+    }
+  }
+}
 </style>
 
