@@ -39,7 +39,7 @@
 
                     <p class="text">
                         启动基础党组织、驻村第一书记
-                        <span class="red">系列采访全媒体宣传。</span>。
+                        <span class="red">系列采访全媒体宣传。</span>
                     </p>
                 </li>
                 <li class="list ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.25s" swiper-animate-delay="1s">
@@ -48,7 +48,7 @@
                     </h4>
                     <p class="text">
                         截止内容上传，
-                        <span class="red">评选出优秀作品。</span>。
+                        <span class="">评选出优秀作品。</span>
                     </p>
                 </li>
             </ul>
