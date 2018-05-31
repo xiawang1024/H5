@@ -8,16 +8,11 @@
         <div class="g-body">
           <div class="m-title ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="0.75s"></div>
           <div class="m-body ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="0.5s">
-            <div aspectratio w-16-9 class="img-wrap">
+            <!-- <div aspectratio w-16-9 class="img-wrap">
                 <img aspectratio-content src="../../assets/img.png" alt="">
-            </div>
+            </div> -->
             <div class="text-wrap">
-                <p>
-                    2018年是中国共产党建党97周年，为深入学习领会习近平新时代中国特色社会主义思想，强化主流媒体的政治担当，饱含热情说好“三句话”，展现全省各界人士的爱党情怀和奋斗热情，让中原更加出彩。我台拟举办“给党唱支生日歌——庆祝中国共产党建党97周年大型系列文化活动。”
-                </p>
-                <p>
-                    通过两场线上和三场线下活动的持续呈现渐次把民众的参与热情推向高潮，凝聚起奋进新时代的强大动力，推动我党新的伟大思想往深里走、往实里走、往心里走，倾情讲好河南故事、中国故事。
-                </p>
+                今年是中国共产党建党97周年，是全面贯彻落实党的十九大精神的开局之年，是改革开放40周年，也是开启新时代河南全面建设社会主义现代化新征程的重要一年。为深入学习领会习近平新时代中国特色社会主义思想，强化主流媒体的政治担当，河南广播电视台特别策划推出“给党唱支生日歌——庆祝中国共产党建党97周年大型系列文化活动”，为“让中原更加出彩” 营造良好的舆论氛围。
             </div>
         </div>
       </div>
@@ -37,7 +32,7 @@ export default {
 .two {
   width: 100%;
   height: 100%;
-  background: url('../common/bg.jpg') center center no-repeat;
+  background: url('../../assets/bg.jpg') center center no-repeat;
   background-size: cover;
 
   .top-left {
@@ -82,7 +77,7 @@ export default {
 
   .g-body {
     position: absolute;
-    top: 232px;
+    top: 273px;
     left: 0;
     right: 0;
     width: 100%;
@@ -92,14 +87,14 @@ export default {
       top: 0px;
       left: 0;
       width: 100%;
-      height: 116px;
+      height: 149px;
       background: url('../common/01.png') center center no-repeat;
       background-size: contain;
     }
 
     .m-body {
       position: absolute;
-      top: 150px;
+      top: 198px;
       left: 0;
       width: 100%;
       text-align: left;
@@ -116,9 +111,8 @@ export default {
       }
 
       .text-wrap {
-        line-height: 1.7;
+        line-height: 2;
         font-size: 24px;
-        text-indent: 2em;
       }
     }
   }

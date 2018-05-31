@@ -6,9 +6,9 @@
         <div class="bottom-left ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.25s" swiper-animate-delay="0s"></div>
         <div class="bottom-right ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1.3s" swiper-animate-delay="0s"></div>
         <div class="g-body">
-          <div class="m-title ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s" swiper-animate-delay="1s"></div>
+          <div class="m-title ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s" swiper-animate-delay="0.5s"></div>
           <div class="m-body">
-            <div class="item ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1.25s" swiper-animate-delay="0.25s">
+            <!-- <div class="item ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1.25s" swiper-animate-delay="0.25s">
               <div class="m-order">
                   1
               </div>
@@ -113,6 +113,10 @@
                         </span>
                     </li>
                 </ul>
+            </div> -->
+            <div class="u-time red ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.25s" swiper-animate-delay="0.5s">时间：6月6日--7月1日</div>
+            <div class="text-wrap ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.25s" swiper-animate-delay="0.75s">
+                向全社会各界人士发出邀请给党唱支生日歌。河南广播电视台十大广播频率河南广播网线上征歌，燃情歌唱，建立活动互动专区，展播基层党员干部群众演唱的优秀歌唱作品。
             </div>
           </div>
         </div>
@@ -132,7 +136,7 @@ export default {
 .three {
   width: 100%;
   height: 100%;
-  background: url('../common/bg.jpg') center center no-repeat;
+  background: url('../../assets/bg.jpg') center center no-repeat;
   background-size: cover;
 
   .top-left {
@@ -177,31 +181,45 @@ export default {
 
   .g-body {
     position: absolute;
-    top: 240px;
+    top: 290px;
     left: 0;
     right: 0;
     width: 100%;
 
     .m-title {
       position: absolute;
-      top: 150px;
-      right: 60px;
-      width: 117px;
-      height: 270px;
+      top: 0px;
+      left: 0;
+      width: 100%;
+      height: 149px;
       background: url('../common/02.png') center center no-repeat;
       background-size: contain;
     }
 
     .m-body {
       position: absolute;
-      top: 0px;
+      top: 230px;
       left: 0;
       width: 100%;
       text-align: left;
       color: #333;
       letter-spacing: 0.2px;
-      padding: 0 40px;
+      padding: 0 100px;
       box-sizing: border-box;
+
+      .red {
+        color: #b11f23;
+      }
+
+      .u-time {
+        font-size: 24px;
+      }
+
+      .text-wrap {
+        margin-top: 34px;
+        font-size: 24px;
+        line-height: 2;
+      }
 
       .item {
         display: flex;

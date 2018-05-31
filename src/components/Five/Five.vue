@@ -6,9 +6,9 @@
         <div class="bottom-left ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.25s" swiper-animate-delay="0s"></div>
         <div class="bottom-right ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1.3s" swiper-animate-delay="0s"></div>
         <div class="g-body">
-          <div class="m-title ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s" swiper-animate-delay="1s"></div>
+          <div class="m-title ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s" swiper-animate-delay="0.5s"></div>
           <div class="m-body">
-            <h3 class="title-3 red ani" swiper-animate-effect="fadeIn" swiper-animate-duration="1.25s" swiper-animate-delay="0.25s">一、“给党唱支生日歌”音视频歌曲征集</h3>
+            <!-- <h3 class="title-3 red ani" swiper-animate-effect="fadeIn" swiper-animate-duration="1.25s" swiper-animate-delay="0.25s">一、“给党唱支生日歌”音视频歌曲征集</h3>
             <ul class="u-list">
                 <li class="list ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.25s" swiper-animate-delay="0.25s">
                     <h4 class="title-4">1、
@@ -51,7 +51,11 @@
                         <span class="">评选出优秀作品。</span>
                     </p>
                 </li>
-            </ul>
+            </ul> -->
+            <div class="u-time red ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.25s" swiper-animate-delay="0.5s">时间：6月20日，地点：河南广播大厦</div>
+            <div class="text-wrap ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.25s" swiper-animate-delay="0.75s">
+                朗诵经典诗歌作品，重温七月的记忆。回顾中国共产党97年来风雨激荡与壮丽辉煌的史诗。
+            </div>
           </div>
         </div>
     </div>
@@ -70,7 +74,7 @@ export default {
 .five {
   width: 100%;
   height: 100%;
-  background: url('../common/bg.jpg') center center no-repeat;
+  background: url('../../assets/bg.jpg') center center no-repeat;
   background-size: cover;
 
   .top-left {
@@ -115,24 +119,24 @@ export default {
 
   .g-body {
     position: absolute;
-    top: 338px;
+    top: 294px;
     left: 0;
     right: 0;
     width: 100%;
 
     .m-title {
       position: absolute;
-      top: -175px;
-      right: 80px;
-      width: 117px;
-      height: 270px;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 149px;
       background: url('../common/04.png') center center no-repeat;
       background-size: contain;
     }
 
     .m-body {
       position: absolute;
-      top: 0px;
+      top: 235px;
       left: 0;
       width: 100%;
       text-align: left;
@@ -143,7 +147,17 @@ export default {
       box-sizing: border-box;
 
       .red {
-        color: #da222b;
+        color: #b11f23;
+      }
+
+      .u-time {
+        font-size: 24px;
+      }
+
+      .text-wrap {
+        margin-top: 34px;
+        font-size: 24px;
+        line-height: 2;
       }
 
       .title-3 {

@@ -6,9 +6,9 @@
         <div class="bottom-left ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.25s" swiper-animate-delay="0s"></div>
         <div class="bottom-right ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1.3s" swiper-animate-delay="0s"></div>
         <div class="g-body">
-          <div class="m-title ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s" swiper-animate-delay="1s"></div>
+          <div class="m-title ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s" swiper-animate-delay="0.5s"></div>
           <div class="m-body">
-            <ul class="m-list clearfix">
+            <!-- <ul class="m-list clearfix">
               <li class="list ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.25s">
                   <div class="img-wrap">
                       <img src="../../assets/active-1.png" alt="" class="img">
@@ -44,7 +44,11 @@
                       </p>
                   </div>
               </li>
-            </ul>
+            </ul> -->
+            <div class="u-time red ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.25s" swiper-animate-delay="0.5s">时间：7月1日，地点：河南师范大学新联学院</div>
+            <div class="text-wrap ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.25s" swiper-animate-delay="0.75s">
+                献礼党的生日，激发年轻党员和优秀团员的历史责任感，坚定广大党员干部群众的理想信念，不忘初心、砥砺前行。
+            </div>
           </div>
         </div>
     </div>
@@ -63,7 +67,7 @@ export default {
 .five {
   width: 100%;
   height: 100%;
-  background: url('../common/bg.jpg') center center no-repeat;
+  background: url('../../assets/bg.jpg') center center no-repeat;
   background-size: cover;
 
   .top-left {
@@ -108,32 +112,46 @@ export default {
 
   .g-body {
     position: absolute;
-    top: 220px;
+    top: 328px;
     left: 0;
     right: 0;
     width: 100%;
 
     .m-title {
       position: absolute;
-      top: 30px;
-      right: 65px;
-      width: 270px;
-      height: 116px;
-      background: url('../common/05.png') center center no-repeat;
+      top: 0px;
+      right: 100px;
+      width: 276px;
+      height: 149px;
+      background: url('../common/07.png') center center no-repeat;
       background-size: contain;
     }
 
     .m-body {
       position: absolute;
-      top: 0px;
+      top: 214px;
       left: 0;
       width: 100%;
       text-align: left;
       color: #333;
       letter-spacing: 0.2px;
-      padding: 0 40px;
+      padding: 0 80px;
       font-size: 24px;
       box-sizing: border-box;
+
+      .red {
+        color: #b11f23;
+      }
+
+      .u-time {
+        font-size: 24px;
+      }
+
+      .text-wrap {
+        margin-top: 34px;
+        font-size: 24px;
+        line-height: 2;
+      }
 
       .m-list {
         width: 100%;

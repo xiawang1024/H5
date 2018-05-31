@@ -6,9 +6,9 @@
         <div class="bottom-left ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.25s" swiper-animate-delay="0s"></div>
         <div class="bottom-right ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1.3s" swiper-animate-delay="0s"></div>
         <div class="g-body">
-          <div class="m-title ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s" swiper-animate-delay="0.75s"></div>
+          <div class="m-title ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s" swiper-animate-delay="0.5s"></div>
           <div class="m-body">
-            <div class="item ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1.25s" swiper-animate-delay="0.25s">
+            <!-- <div class="item ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1.25s" swiper-animate-delay="0.25s">
               <div class="m-order">
 
               </div>
@@ -94,6 +94,10 @@
                         </span>
                     </li>
                 </ul>
+            </div> -->
+            <div class="u-time red ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.25s" swiper-animate-delay="0.5s">时间：6月6日--7月1日</div>
+            <div class="text-wrap ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.25s" swiper-animate-delay="0.75s">
+                交广领航线上全民运动记步“千人拼党旗”活动。参与者通过交广领航APP报名，在活动期间平台为每一位参与者分配一块记步区域，完成记步目标，即可点亮党旗中的一块记步区域。
             </div>
           </div>
         </div>
@@ -113,7 +117,7 @@ export default {
 .four {
   width: 100%;
   height: 100%;
-  background: url('../common/bg.jpg') center center no-repeat;
+  background: url('../../assets/bg.jpg') center center no-repeat;
   background-size: cover;
 
   .top-left {
@@ -158,31 +162,45 @@ export default {
 
   .g-body {
     position: absolute;
-    top: 325px;
+    top: 276px;
     left: 0;
     right: 0;
     width: 100%;
 
     .m-title {
       position: absolute;
-      top: -100px;
-      right: 60px;
-      width: 270px;
-      height: 116px;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 149px;
       background: url('../common/03.png') center center no-repeat;
       background-size: contain;
     }
 
     .m-body {
       position: absolute;
-      top: 0px;
+      top: 228px;
       left: 0;
       width: 100%;
       text-align: left;
       color: #333;
       letter-spacing: 0.2px;
-      padding: 0 40px;
+      padding: 0 80px;
       box-sizing: border-box;
+
+      .red {
+        color: #b11f23;
+      }
+
+      .u-time {
+        font-size: 24px;
+      }
+
+      .text-wrap {
+        margin-top: 34px;
+        font-size: 24px;
+        line-height: 2;
+      }
 
       .item {
         display: flex;

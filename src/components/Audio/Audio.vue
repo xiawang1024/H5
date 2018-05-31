@@ -1,6 +1,6 @@
 <template>
     <div class="audio-wrap music" :class="noMusic ? 'no-music' : ''" @click="pauseAudio">
-    	<audio id="audio" autoplay loop width="0" height="0" src="http://www.hndt.com/h5/audio/900/90.mp3"></audio>
+    	<audio id="audio" autoplay loop width="0" height="0" src="http://www.hndt.com/h5/partysday/bgm.mp3"></audio>
     </div>
 </template>
 
@@ -33,24 +33,34 @@ export default {
 
 
 <style lang="stylus" scoped>
-@keyframes music 
-    0% 
-        transform rotate(0)
-    100% 
-        transform rotate(360deg)
-.music
-    animation music 2.5s linear infinite 
-.audio-wrap
-    display none
-    position absolute
-    z-index 2041
-    right 30px
-    top 30px
-    width 80px
-    height 80px
-    background url('./music-black.png') center center no-repeat
-    background-size cover
-    &.no-music 
-        animation-play-state paused
-        animation none
+@keyframes music {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.music {
+  animation: music 2.5s linear infinite;
+}
+
+.audio-wrap {
+  // display: none;
+  position: absolute;
+  z-index: 2041;
+  right: 30px;
+  top: 30px;
+  width: 80px;
+  height: 80px;
+  background: url('./music.png') center center no-repeat;
+  background-size: cover;
+
+  &.no-music {
+    animation-play-state: paused;
+    animation: none;
+  }
+}
 </style>

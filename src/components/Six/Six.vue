@@ -6,9 +6,9 @@
         <div class="bottom-left ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.25s" swiper-animate-delay="0s"></div>
         <div class="bottom-right ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1.3s" swiper-animate-delay="0s"></div>
         <div class="g-body">
-          <div class="m-title ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s" swiper-animate-delay="1s"></div>
+          <div class="m-title ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s" swiper-animate-delay="0.5s"></div>
           <div class="m-body">
-            <h3 class="title-3 red ani" swiper-animate-effect="fadeIn" swiper-animate-duration="1.25s" swiper-animate-delay="0.25s">二、交广领航线上记步“点亮党旗”活动</h3>
+            <!-- <h3 class="title-3 red ani" swiper-animate-effect="fadeIn" swiper-animate-duration="1.25s" swiper-animate-delay="0.25s">二、交广领航线上记步“点亮党旗”活动</h3>
             <ul class="u-list">
                 <li class="list ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.25s" swiper-animate-delay="0.25s">
                     <h4 class="title-4">1、
@@ -35,7 +35,11 @@
                         当天，交广领航APP结合线下的千人拼党旗和宣誓，最终完成 党旗线上的全部点亮。
                     </p>
                 </li>
-            </ul>
+            </ul> -->
+            <div class="u-time red ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.25s" swiper-animate-delay="0.5s">时间：6月29日，地点：8号演播厅</div>
+            <div class="text-wrap ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.25s" swiper-animate-delay="0.75s">
+                演绎时代歌曲，展现建党97年来改革开放发展历程，展现中国的巨大变化，牢记使命，燃情开唱。
+            </div>
           </div>
         </div>
     </div>
@@ -54,7 +58,7 @@ export default {
 .six {
   width: 100%;
   height: 100%;
-  background: url('../common/bg.jpg') center center no-repeat;
+  background: url('../../assets/bg.jpg') center center no-repeat;
   background-size: cover;
 
   .top-left {
@@ -99,24 +103,24 @@ export default {
 
   .g-body {
     position: absolute;
-    top: 365px;
+    top: 292px;
     left: 0;
     right: 0;
     width: 100%;
 
     .m-title {
       position: absolute;
-      top: -200px;
-      right: 80px;
-      width: 117px;
-      height: 270px;
-      background: url('../common/04.png') center center no-repeat;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 149px;
+      background: url('../common/05.png') center center no-repeat;
       background-size: contain;
     }
 
     .m-body {
       position: absolute;
-      top: 0px;
+      top: 242px;
       left: 0;
       width: 100%;
       text-align: left;
@@ -127,7 +131,17 @@ export default {
       box-sizing: border-box;
 
       .red {
-        color: #da222b;
+        color: #b11f23;
+      }
+
+      .u-time {
+        font-size: 24px;
+      }
+
+      .text-wrap {
+        margin-top: 34px;
+        font-size: 24px;
+        line-height: 2;
       }
 
       .title-3 {
