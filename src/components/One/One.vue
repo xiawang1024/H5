@@ -19,6 +19,7 @@
                 <p class="u-name">主办：</p>
                 <ul class="u-list">
                   <li class="list">河南广播电视台</li>
+                  <li class="list">恒丰银行郑州分行</li>
                 </ul>
               </div>
               <div class="u-wrap ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1.25s" swiper-animate-delay="1.5s">
@@ -26,7 +27,7 @@
                 <ul class="u-list">
                   <li class="list">河南广播电视台广播广告经营中心</li>
                   <li class="list">河南广播电视台新闻广播、音乐广播、教育广播</li>
-                  <li class="list">恒丰银行郑州分行</li>
+
                 </ul>
               </div>
               <div class="u-wrap ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1.25s" swiper-animate-delay="1.75s">
@@ -156,7 +157,7 @@ export default {
 
       .u-users {
         margin: 60px auto 0;
-        width: 510px;
+        width: 515px;
 
         .u-wrap {
           display: flex;
