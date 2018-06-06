@@ -1,7 +1,7 @@
 <template>
     <div class="player">
-        <video-player ref="videoPlayer" class="vjs-custom-skin" 
-        :options="playerOptions" 
+        <video-player ref="videoPlayer" class="vjs-custom-skin"
+        :options="playerOptions"
         @ready="playerReadied">
         </video-player>
     </div>
@@ -47,32 +47,32 @@ export default {
         return this.$refs.videoPlayer.player
       }
     },
-    mounted() {    
+    mounted() {
         setTimeout(() => {
             let video = document.querySelector('.vjs-tech')
             video.setAttribute('webkit-playsinline',true)
             video.setAttribute('playsinline',true)
-            video.setAttribute('x5-playsinline',true)                     
+            video.setAttribute('x5-playsinline',true)
         },850)
     },
     methods: {
         _getStream() {
-            return getChannelItem(channelInfo.cid).then((res) => {
-                let data = res.data
-                return new Promise((resolve, reject) => {
-                    try{
-                        resolve(data)
-                    }catch(err) {
-                        console.log(err)
-                    }
-                })
-            })
+            // return getChannelItem(channelInfo.cid).then((res) => {
+            //     let data = res.data
+            //     return new Promise((resolve, reject) => {
+            //         try{
+            //             resolve(data)
+            //         }catch(err) {
+            //             console.log(err)
+            //         }
+            //     })
+            // })
         },
         playerReadied(player) {
             ;(async () => {
-                let data = await this._getStream()
-                let liveStream = data.video_streams[0]
-                let poster = `http://program.hndt.com${data.image}`
+                // let data = await this._getStream()
+                let liveStream = 'http://livepull.hndt.com/live/gdczsrg/playlist.m3u8'
+                let poster = `http://www.hndt.com/h5/20180606/banner.png`
                 player.src({
                     type:'application/x-mpegURL',
                     src:liveStream
@@ -97,5 +97,4 @@ export default {
 
 
 <style lang="stylus" scoped>
-
 </style>
