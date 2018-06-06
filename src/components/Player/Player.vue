@@ -1,8 +1,9 @@
 <template>
     <div class="player">
-        <video-player ref="videoPlayer" class="vjs-custom-skin" 
-        :options="playerOptions" 
-        @ready="playerReadied">
+        <video-player ref="videoPlayer" class="vjs-custom-skin"
+        :options="playerOptions"
+        @ready="playerReadied"
+        :playsinline="true">
         </video-player>
     </div>
 </template>
@@ -47,12 +48,12 @@ export default {
         return this.$refs.videoPlayer.player
       }
     },
-    mounted() {    
+    mounted() {
         setTimeout(() => {
-            let video = document.querySelector('.vjs-tech')
-            video.setAttribute('webkit-playsinline',true)
-            video.setAttribute('playsinline',true)
-            video.setAttribute('x5-playsinline',true)                     
+            // let video = document.querySelector('.vjs-tech')
+            // video.setAttribute('webkit-playsinline',true)
+            // video.setAttribute('playsinline',true)
+            // video.setAttribute('x5-playsinline',true)
         },850)
     },
     methods: {
@@ -97,5 +98,4 @@ export default {
 
 
 <style lang="stylus" scoped>
-
 </style>
