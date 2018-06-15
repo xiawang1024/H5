@@ -13,7 +13,7 @@
       <swiper-slide>
 				<four></four>
 			</swiper-slide>
-      <swiper-slide>
+      <!-- <swiper-slide>
 				<five></five>
 			</swiper-slide>
       <swiper-slide>
@@ -21,7 +21,7 @@
 			</swiper-slide>
       <swiper-slide>
 				<seven></seven>
-			</swiper-slide>
+			</swiper-slide> -->
 		</swiper>
 	</div>
 </template>
@@ -33,9 +33,9 @@ import One from '../One/One.vue'
 import Two from '../Two/Two.vue'
 import Three from '../Three/Three.vue'
 import Four from '../Four/Four.vue'
-import Five from '../Five/Five.vue'
-import Six from '../Six/Six.vue'
-import Seven from '../Seven/Seven.vue'
+// import Five from '../Five/Five.vue'
+// import Six from '../Six/Six.vue'
+// import Seven from '../Seven/Seven.vue'
 
 
 export default {
@@ -45,9 +45,9 @@ export default {
     Two,
     Three,
     Four,
-    Five,
-    Six,
-    Seven
+    // Five,
+    // Six,
+    // Seven
 	},
 	data () {
 		return {

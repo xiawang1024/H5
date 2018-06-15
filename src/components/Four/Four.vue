@@ -1,109 +1,34 @@
 <template>
     <div class="four">
-        <!-- <div class="logo ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="1s"></div> -->
+
         <div class="top-left ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="0s"></div>
         <div class="top-right ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.5s" swiper-animate-delay="0s"></div>
         <div class="bottom-left ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.25s" swiper-animate-delay="0s"></div>
         <div class="bottom-right ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1.3s" swiper-animate-delay="0s"></div>
         <div class="g-body">
-          <div class="m-title ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s" swiper-animate-delay="0.5s"></div>
-          <div class="m-body">
-            <!-- <div class="item ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1.25s" swiper-animate-delay="0.25s">
-              <div class="m-order">
+          <div class="m-order ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="0.25s">第三篇章</div>
+          <div class="m-title ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="0.5s">美好·心中那个梦</div>
+          <div class="m-body" >
+            <img src="../../assets/03-01.png" alt="" class="img img-01 ani" swiper-animate-effect="zoomIn" swiper-animate-duration="1.25s" swiper-animate-delay="0.5s">
+            <img src="../../assets/03-02.png" alt="" class="img img-02 ani" swiper-animate-effect="zoomIn" swiper-animate-duration="1.25s" swiper-animate-delay="1.5s">
+            <img src="../../assets/03-03.png" alt="" class="img img-03 ani" swiper-animate-effect="zoomIn" swiper-animate-duration="1.25s" swiper-animate-delay="2.5s">
+            <img src="../../assets/03-04.png" alt="" class="img img-04 ani" swiper-animate-effect="zoomIn" swiper-animate-duration="1.25s" swiper-animate-delay="2s">
+            <img src="../../assets/03-05.png" alt="" class="img img-05 ani" swiper-animate-effect="zoomIn" swiper-animate-duration="1.25s" swiper-animate-delay="0.75s">
+            <img src="../../assets/03-06.png" alt="" class="img img-06 ani" swiper-animate-effect="zoomIn" swiper-animate-duration="1.25s" swiper-animate-delay="1.25s">
+            <img src="../../assets/03-07.png" alt="" class="img img-07 ani" swiper-animate-effect="zoomIn" swiper-animate-duration="1.25s" swiper-animate-delay="2.25s">
+            <img src="../../assets/03-08.png" alt="" class="img img-08 ani" swiper-animate-effect="zoomIn" swiper-animate-duration="1.25s" swiper-animate-delay="0.25s">
+            <img src="../../assets/03-09.png" alt="" class="img img-09 ani" swiper-animate-effect="zoomIn" swiper-animate-duration="1.25s" swiper-animate-delay="2.75s">
+            <img src="../../assets/03-10.png" alt="" class="img img-10 ani" swiper-animate-effect="zoomIn" swiper-animate-duration="1.25s" swiper-animate-delay="0s">
+            <img src="../../assets/03-11.png" alt="" class="img img-11 ani" swiper-animate-effect="zoomIn" swiper-animate-duration="1.25s" swiper-animate-delay="1s">
+            <img src="../../assets/03-12.png" alt="" class="img img-12 ani" swiper-animate-effect="zoomIn" swiper-animate-duration="1.25s" swiper-animate-delay="1.75s">
 
-              </div>
-              <ul class="m-list">
-                  <li class="list">
-                      <span class="u-block"></span>
-                      <span class="u-text">
-                          6月6日（周三）上午
-                      </span>
-                  </li>
-                  <li class="list">
-                      <span class="u-block"></span>
-                      <span class="u-text">
-                          广播大厦一楼大厅
-                      </span>
-                  </li>
-                  <li class="list">
-                      <span class="u-block"></span>
-                      <span class="u-text">
-                          举行“给党唱支生日歌”活动启动仪式
-                      </span>
-                  </li>
-              </ul>
-            </div>
-            <div class="item ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1.25s" swiper-animate-delay="0.5s">
-                <div class="m-order">
-
-                </div>
-                <ul class="m-list">
-                    <li class="list">
-                        <span class="u-block"></span>
-                        <span class="u-text">
-                            拟邀请嘉宾
-                        </span>
-                    </li>
-                    <li class="list">
-                        <span class="u-block"></span>
-                        <span class="u-text">
-                            河南省委组织部领导&nbsp;&nbsp;河南省委宣传部领导
-                        </span>
-                    </li>
-                    <li class="list">
-                        <span class="u-block"></span>
-                        <span class="u-text">
-                            河南省新闻出版广电局领导&nbsp;&nbsp;驻村第一书记代表
-                        </span>
-                    </li>
-                    <li class="list">
-                        <span class="u-block"></span>
-                        <span class="u-text">
-                            恒丰银行郑州分行领导
-                        </span>
-                    </li>
-                </ul>
-            </div>
-            <div class="item ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1.25s" swiper-animate-delay="0.75s">
-                <div class="m-order">
-
-                </div>
-                <ul class="m-list">
-                    <li class="list">
-                        <span class="u-block"></span>
-                        <span class="u-text">
-                            参加人员
-                        </span>
-                    </li>
-                    <li class="list">
-                        <span class="u-block"></span>
-                        <span class="u-text">
-                            基层党组织代表&nbsp;&nbsp;各行业优秀党员代表
-                        </span>
-                    </li>
-                    <li class="list">
-                        <span class="u-block"></span>
-                        <span class="u-text">
-                            热心听众代表&nbsp;&nbsp;高校学生代表
-                        </span>
-                    </li>
-                    <li class="list">
-                        <span class="u-block"></span>
-                        <span class="u-text">
-                            社会合唱团体代表&nbsp;&nbsp;河南广播电视台党员代表
-                        </span>
-                    </li>
-                </ul>
-            </div> -->
-            <div class="u-time red ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.25s" swiper-animate-delay="0.5s">时间：6月6日--7月1日</div>
-            <div class="text-wrap ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.25s" swiper-animate-delay="0.75s">
-                交广领航线上全民运动记步“千人拼党旗”活动。参与者通过交广领航APP报名，在活动期间平台为每一位参与者分配一块记步区域，完成记步目标，即可点亮党旗中的一块记步区域。
-            </div>
           </div>
+
         </div>
+      </div>
     </div>
 </template>
-
+mm
 <script>
 
 
@@ -162,114 +87,126 @@ export default {
 
   .g-body {
     position: absolute;
-    top: 276px;
+    top: 220px;
     left: 0;
     right: 0;
     width: 100%;
+    letter-spacing: 0.2px;
+
+    .m-order {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      color: #b9160a;
+      font-size: 40px;
+    }
 
     .m-title {
       position: absolute;
-      top: 0px;
-      left: 0px;
+      top: 65px;
+      left: 0;
       width: 100%;
       height: 149px;
-      background: url('../common/03.png') center center no-repeat;
-      background-size: contain;
+      text-align: center;
+      color: #b9160a;
+      font-size: 39px;
     }
 
     .m-body {
       position: absolute;
-      top: 228px;
+      top: 130px;
       left: 0;
       width: 100%;
       text-align: left;
       color: #333;
-      letter-spacing: 0.2px;
-      padding: 0 80px;
+      padding: 0 40px;
       box-sizing: border-box;
+      font-size: 0;
 
-      .red {
-        color: #b11f23;
+      .img-01 {
+        position: absolute;
+        top: 23px;
+        left: 304px;
+        width: 264px;
       }
 
-      .u-time {
-        font-size: 24px;
+      .img-02 {
+        position: absolute;
+        left: 308px;
+        top: 402px;
+        width: 264px;
       }
 
-      .text-wrap {
-        margin-top: 34px;
-        font-size: 24px;
-        line-height: 2;
+      .img-03 {
+        position: absolute;
+        left: 170px;
+        top: 214px;
+        width: 264px;
       }
 
-      .item {
-        display: flex;
-        align-items: center;
-        margin-bottom: 30px;
+      .img-04 {
+        position: absolute;
+        left: 40px;
+        top: 402px;
+        width: 154px;
+      }
 
-        &:nth-child(1) {
-          .m-order {
-            background: url('../common/icon-start-1.png') center center no-repeat;
-            background-size: contain;
-          }
-        }
+      .img-05 {
+        position: absolute;
+        right: 40px;
+        top: 0px;
+        width: 154px;
+      }
 
-        &:nth-child(2) {
-          .m-order {
-            background: url('../common/icon-start-2.png') center center no-repeat;
-            background-size: contain;
-          }
-        }
+      .img-06 {
+        position: absolute;
+        right: 40px;
+        top: 334px;
+        width: 154px;
+      }
 
-        &:nth-child(3) {
-          .m-order {
-            background: url('../common/icon-start-3.png') center center no-repeat;
-            background-size: contain;
-          }
-        }
+      .img-07 {
+        position: absolute;
+        left: 40px;
+        top: 216px;
+        width: 154px;
+      }
 
-        .m-order {
-          flex: 0 0 60px;
-          width: 60px;
-          height: 69px;
-          line-height: 69px;
-          text-align: center;
-          font-size: 32px;
-          color: #ffffff;
-        }
+      .img-08 {
+        position: absolute;
+        left: 170px;
+        top: 70px;
+        width: 154px;
+      }
 
-        .m-list {
-          width: 622px;
-          flex: 0 0 622px;
-          padding-left: 28px;
-          line-height: 1.625;
-          font-size: 23px;
-          box-sizing: border-box;
+      .img-09 {
+        position: absolute;
+        left: 416px;
+        top: 216px;
+        width: 154px;
+      }
 
-          .list {
-            width: 100%;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            // white-space nowrap
-            box-sizing: border-box;
+      .img-10 {
+        position: absolute;
+        left: 40px;
+        top: 70px;
+        width: 154px;
+      }
 
-            &:first-child {
-              color: #c7000a;
-            }
+      .img-11 {
+        position: absolute;
+        right: 40px;
+        top: 188px;
+        width: 154px;
+      }
 
-            .u-block {
-              vertical-align: middle;
-              display: inline-block;
-              width: 4px;
-              height: 4px;
-              background: #c7000a;
-            }
-
-            .u-text {
-              vertical-align: middle;
-            }
-          }
-        }
+      .img-12 {
+        position: absolute;
+        left: 175px;
+        top: 402px;
+        width: 154px;
       }
     }
   }

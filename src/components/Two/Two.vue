@@ -1,19 +1,20 @@
 <template>
     <div class="two">
-        <!-- <div class="logo ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="1s"></div> -->
+
         <div class="top-left ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="0s"></div>
         <div class="top-right ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.5s" swiper-animate-delay="0s"></div>
         <div class="bottom-left ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.25s" swiper-animate-delay="0s"></div>
         <div class="bottom-right ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1.3s" swiper-animate-delay="0s"></div>
         <div class="g-body">
-          <div class="m-title ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="0.75s"></div>
+          <div class="m-order ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="0.75s">第一篇章</div>
+          <div class="m-title ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="0.75s">传承·七月是首歌</div>
           <div class="m-body ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="0.5s">
-            <!-- <div aspectratio w-16-9 class="img-wrap">
-                <img aspectratio-content src="../../assets/img.png" alt="">
-            </div> -->
-            <div class="text-wrap">
-                今年是中国共产党建党97周年，是全面贯彻落实党的十九大精神的开局之年，是改革开放40周年，也是开启新时代河南全面建设社会主义现代化新征程的重要一年。为深入学习领会习近平新时代中国特色社会主义思想，强化主流媒体的政治担当，河南广播电视台特别策划推出“给党唱支生日歌——庆祝中国共产党建党97周年大型系列文化活动”，为“让中原更加出彩” 营造良好的舆论氛围。
-            </div>
+            <img src="../../assets/01-01.png" alt="" class="img img-01 ani" swiper-animate-effect="rollIn" swiper-animate-duration="1.25s" swiper-animate-delay="0.25s">
+            <img src="../../assets/01-02.png" alt="" class="img img-02 ani" swiper-animate-effect="rollIn" swiper-animate-duration="1.25s" swiper-animate-delay="0.5s">
+            <img src="../../assets/01-03.png" alt="" class="img img-03 ani" swiper-animate-effect="rollIn" swiper-animate-duration="1.25s" swiper-animate-delay="0.75s">
+            <img src="../../assets/01-04.png" alt="" class="img img-04 ani" swiper-animate-effect="rollIn" swiper-animate-duration="1.25s" swiper-animate-delay="1s">
+          </div>
+
         </div>
       </div>
     </div>
@@ -77,42 +78,70 @@ export default {
 
   .g-body {
     position: absolute;
-    top: 273px;
+    top: 223px;
     left: 0;
     right: 0;
     width: 100%;
+    letter-spacing: 0.2px;
+
+    .m-order {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      color: #b9160a;
+      font-size: 40px;
+    }
 
     .m-title {
       position: absolute;
-      top: 0px;
+      top: 65px;
       left: 0;
       width: 100%;
       height: 149px;
-      background: url('../common/01.png') center center no-repeat;
-      background-size: contain;
+      text-align: center;
+      color: #b9160a;
+      font-size: 39px;
     }
 
     .m-body {
       position: absolute;
-      top: 198px;
+      top: 130px;
       left: 0;
       width: 100%;
       text-align: left;
       color: #333;
-      letter-spacing: 0.2px;
       padding: 0 40px;
       box-sizing: border-box;
+      font-size: 0;
 
-      .img-wrap {
-        width: 300px;
-        float: right;
-        margin-top: 15px;
-        margin-left: 20px;
+      .img-01 {
+        position: absolute;
+        top: 100px;
+        left: 385px;
+        width: 220px;
       }
 
-      .text-wrap {
-        line-height: 2;
-        font-size: 24px;
+      .img-02 {
+        position: absolute;
+        left: 99px;
+        top: 293px;
+        width: 220px;
+      }
+
+      .img-03 {
+        position: absolute;
+        left: 315px;
+        top: 316px;
+        width: 347px;
+      }
+
+      .img-04 {
+        position: absolute;
+        left: 40px;
+        top: 0;
+        width: 347px;
       }
     }
   }

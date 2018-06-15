@@ -1,128 +1,28 @@
 <template>
     <div class="three">
-        <!-- <div class="logo ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="1s"></div> -->
+
         <div class="top-left ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="0s"></div>
         <div class="top-right ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.5s" swiper-animate-delay="0s"></div>
         <div class="bottom-left ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.25s" swiper-animate-delay="0s"></div>
         <div class="bottom-right ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1.3s" swiper-animate-delay="0s"></div>
         <div class="g-body">
-          <div class="m-title ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1s" swiper-animate-delay="0.5s"></div>
-          <div class="m-body">
-            <!-- <div class="item ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1.25s" swiper-animate-delay="0.25s">
-              <div class="m-order">
-                  1
-              </div>
-              <ul class="m-list">
-                  <li class="list">
-                      <span class="u-block"></span>
-                      <span class="u-text">
-                          6月6日 启动仪式
-                      </span>
-                  </li>
-                  <li class="list">
-                      <span class="u-block"></span>
-                      <span class="u-text">
-                          河南广播网线上启动“给党唱支生日歌”歌曲征集
-                      </span>
-                  </li>
-                  <li class="list">
-                      <span class="u-block"></span>
-                      <span class="u-text">
-                          交广领航线上启动记步“点亮党旗”活动
-                      </span>
-                  </li>
-              </ul>
-            </div>
-            <div class="item ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1.25s" swiper-animate-delay="0.5s">
-                <div class="m-order">
-                    2
-                </div>
-                <ul class="m-list">
-                    <li class="list">
-                        <span class="u-block"></span>
-                        <span class="u-text">
-                            6月20日
-                        </span>
-                    </li>
-                    <li class="list">
-                        <span class="u-block"></span>
-                        <span class="u-text">
-                            (场地：广播大厦三楼)
-                        </span>
-                    </li>
-                    <li class="list">
-                        <span class="u-block"></span>
-                        <span class="u-text">
-                            "党的生日主题诗会"
-                        </span>
-                    </li>
-                </ul>
-            </div>
-            <div class="item ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1.25s" swiper-animate-delay="0.75s">
-                <div class="m-order">
-                    3
-                </div>
-                <ul class="m-list">
-                    <li class="list">
-                        <span class="u-block"></span>
-                        <span class="u-text">
-                            6月29日
-                        </span>
-                    </li>
-                    <li class="list">
-                        <span class="u-block"></span>
-                        <span class="u-text">
-                            (场地：八号演播厅暂定)
-                        </span>
-                    </li>
-                    <li class="list">
-                        <span class="u-block"></span>
-                        <span class="u-text">
-                            "给党唱支生日歌"主题歌会
-                        </span>
-                    </li>
-                </ul>
-            </div>
-            <div class="item ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1.25s" swiper-animate-delay="1s">
-                <div class="m-order">
-                    4
-                </div>
-                <ul class="m-list">
-                    <li class="list">
-                        <span class="u-block"></span>
-                        <span class="u-text">
-                            7月1日
-                        </span>
-                    </li>
-                    <li class="list">
-                        <span class="u-block"></span>
-                        <span class="u-text">
-                            (场地：郑东新区如意湖广场暂定)
-                        </span>
-                    </li>
-                    <li class="list">
-                        <span class="u-block"></span>
-                        <span class="u-text">
-                            千人拼党旗暨河南广播电视台处级以上党员领导 干部重温入党誓词仪式
-                        </span>
-                    </li>
-                    <li class="list">
-                        <span class="u-block"></span>
-                        <span class="u-text">
-                            交广领航线上启动记步“点亮党旗”活动
-                        </span>
-                    </li>
-                </ul>
-            </div> -->
-            <div class="u-time red ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.25s" swiper-animate-delay="0.5s">时间：6月6日--7月1日</div>
-            <div class="text-wrap ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.25s" swiper-animate-delay="0.75s">
-                向全社会各界人士发出邀请给党唱支生日歌。河南广播电视台十大广播频率河南广播网线上征歌，燃情歌唱，建立活动互动专区，展播基层党员干部群众演唱的优秀歌唱作品。
-            </div>
+          <div class="m-order ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="0.75s">第二篇章</div>
+          <div class="m-title ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="0.75s">深沉·河南这片土</div>
+          <div class="m-body ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="0.5s">
+            <img src="../../assets/02-01.png" alt="" class="img img-01 ani" swiper-animate-effect="rotateIn" swiper-animate-duration="1.25s" swiper-animate-delay="0.25s">
+            <img src="../../assets/02-02.png" alt="" class="img img-02 ani" swiper-animate-effect="rotateIn" swiper-animate-duration="1.25s" swiper-animate-delay="0.5s">
+            <img src="../../assets/02-03.png" alt="" class="img img-03 ani" swiper-animate-effect="rotateIn" swiper-animate-duration="1.25s" swiper-animate-delay="0.75s">
+            <img src="../../assets/02-04.png" alt="" class="img img-04 ani" swiper-animate-effect="rotateIn" swiper-animate-duration="1.25s" swiper-animate-delay="1s">
+            <img src="../../assets/02-05.png" alt="" class="img img-05 ani" swiper-animate-effect="rotateIn" swiper-animate-duration="1.25s" swiper-animate-delay="1.25s">
+            <img src="../../assets/02-06.png" alt="" class="img img-06 ani" swiper-animate-effect="rotateIn" swiper-animate-duration="1.25s" swiper-animate-delay="1.5s">
+            <img src="../../assets/02-07.png" alt="" class="img img-07 ani" swiper-animate-effect="rotateIn" swiper-animate-duration="1.25s" swiper-animate-delay="1.75s">
           </div>
+
         </div>
+      </div>
     </div>
 </template>
-
+mm
 <script>
 
 
@@ -181,95 +81,91 @@ export default {
 
   .g-body {
     position: absolute;
-    top: 290px;
+    top: 220px;
     left: 0;
     right: 0;
     width: 100%;
+    letter-spacing: 0.2px;
+
+    .m-order {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      color: #b9160a;
+      font-size: 40px;
+    }
 
     .m-title {
       position: absolute;
-      top: 0px;
+      top: 65px;
       left: 0;
       width: 100%;
       height: 149px;
-      background: url('../common/02.png') center center no-repeat;
-      background-size: contain;
+      text-align: center;
+      color: #b9160a;
+      font-size: 39px;
     }
 
     .m-body {
       position: absolute;
-      top: 230px;
+      top: 130px;
       left: 0;
       width: 100%;
       text-align: left;
       color: #333;
-      letter-spacing: 0.2px;
-      padding: 0 100px;
+      padding: 0 40px;
       box-sizing: border-box;
+      font-size: 0;
 
-      .red {
-        color: #b11f23;
+      .img-01 {
+        position: absolute;
+        top: 0px;
+        left: 40px;
+        width: 254px;
       }
 
-      .u-time {
-        font-size: 24px;
+      .img-02 {
+        position: absolute;
+        right: 40px;
+        top: 80px;
+        width: 254px;
       }
 
-      .text-wrap {
-        margin-top: 34px;
-        font-size: 24px;
-        line-height: 2;
+      .img-03 {
+        position: absolute;
+        left: 40px;
+        top: 260px;
+        width: 254px;
       }
 
-      .item {
-        display: flex;
-        align-items: center;
-        margin-bottom: 30px;
+      .img-04 {
+        position: absolute;
+        right: 40px;
+        top: 340px;
+        width: 254px;
+      }
 
-        .m-order {
-          flex: 0 0 60px;
-          width: 60px;
-          height: 69px;
-          line-height: 69px;
-          text-align: center;
-          font-size: 32px;
-          color: #ffffff;
-          background: url('../common/icon-rule.png') center center no-repeat;
-          background-size: cover;
-        }
+      .img-05 {
+        position: absolute;
+        left: 282px;
+        top: 385px;
+        width: 185px;
+      }
 
-        .m-list {
-          width: 622px;
-          flex: 0 0 622px;
-          padding-left: 28px;
-          line-height: 1.625;
-          font-size: 23px;
-          box-sizing: border-box;
+      .img-06 {
+        position: absolute;
+        left: 282px;
+        top: 28px;
+        width: 185px;
+      }
 
-          .list {
-            width: 100%;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            // white-space nowrap
-            box-sizing: border-box;
-
-            &:first-child {
-              color: #c7000a;
-            }
-
-            .u-block {
-              vertical-align: middle;
-              display: inline-block;
-              width: 4px;
-              height: 4px;
-              background: #c7000a;
-            }
-
-            .u-text {
-              vertical-align: middle;
-            }
-          }
-        }
+      .img-07 {
+        position: absolute;
+        left: 282px;
+        top: 208px;
+        width: 185px;
       }
     }
   }
