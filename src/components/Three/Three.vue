@@ -10,12 +10,13 @@
           <div class="m-title ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="0.75s">深沉·河南这片土</div>
           <div class="m-body ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="0.5s">
             <img src="../../assets/02-01.png" alt="" class="img img-01 ani" swiper-animate-effect="rotateIn" swiper-animate-duration="1.25s" swiper-animate-delay="0.25s">
-            <img src="../../assets/02-02.png" alt="" class="img img-02 ani" swiper-animate-effect="rotateIn" swiper-animate-duration="1.25s" swiper-animate-delay="0.5s">
-            <img src="../../assets/02-03.png" alt="" class="img img-03 ani" swiper-animate-effect="rotateIn" swiper-animate-duration="1.25s" swiper-animate-delay="0.75s">
+            <img src="../../assets/02-02.png" alt="" class="img img-02 ani" swiper-animate-effect="rotateIn" swiper-animate-duration="1.25s" swiper-animate-delay="0.75s">
+            <img src="../../assets/02-03.png" alt="" class="img img-03 ani" swiper-animate-effect="rotateIn" swiper-animate-duration="1.25s" swiper-animate-delay="1.25s">
             <img src="../../assets/02-04.png" alt="" class="img img-04 ani" swiper-animate-effect="rotateIn" swiper-animate-duration="1.25s" swiper-animate-delay="1s">
-            <img src="../../assets/02-05.png" alt="" class="img img-05 ani" swiper-animate-effect="rotateIn" swiper-animate-duration="1.25s" swiper-animate-delay="1.25s">
+            <img src="../../assets/02-05.png" alt="" class="img img-05 ani" swiper-animate-effect="rotateIn" swiper-animate-duration="1.25s" swiper-animate-delay="1.75s">
             <img src="../../assets/02-06.png" alt="" class="img img-06 ani" swiper-animate-effect="rotateIn" swiper-animate-duration="1.25s" swiper-animate-delay="1.5s">
-            <img src="../../assets/02-07.png" alt="" class="img img-07 ani" swiper-animate-effect="rotateIn" swiper-animate-duration="1.25s" swiper-animate-delay="1.75s">
+            <img src="../../assets/02-07.png" alt="" class="img img-07 ani" swiper-animate-effect="rotateIn" swiper-animate-duration="1.25s" swiper-animate-delay="0.5s">
+            <img src="../../assets/02-08.png" alt="" class="img img-08 ani" swiper-animate-effect="rotateIn" swiper-animate-duration="1.25s" swiper-animate-delay="2s">
           </div>
 
         </div>
@@ -81,7 +82,7 @@ export default {
 
   .g-body {
     position: absolute;
-    top: 220px;
+    top: 210px;
     left: 0;
     right: 0;
     width: 100%;
@@ -128,43 +129,50 @@ export default {
 
       .img-02 {
         position: absolute;
-        right: 40px;
-        top: 80px;
+        left: 282px;
+        top: 28px;
         width: 254px;
       }
 
       .img-03 {
         position: absolute;
         left: 40px;
-        top: 260px;
+        top: 240px;
         width: 254px;
       }
 
       .img-04 {
         position: absolute;
         right: 40px;
-        top: 340px;
+        top: 260px;
         width: 254px;
       }
 
       .img-05 {
         position: absolute;
-        left: 282px;
-        top: 385px;
+        left: 130px;
+        top: 470px;
         width: 185px;
       }
 
       .img-06 {
         position: absolute;
         left: 282px;
-        top: 28px;
+        top: 260px;
         width: 185px;
       }
 
       .img-07 {
         position: absolute;
-        left: 282px;
-        top: 208px;
+        left: 295px;
+        top: 420px;
+        width: 185px;
+      }
+
+      .img-08 {
+        position: absolute;
+        right: 40px;
+        top: 96px;
         width: 185px;
       }
     }
