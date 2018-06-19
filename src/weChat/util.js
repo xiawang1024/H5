@@ -73,12 +73,12 @@ class WeChatConf extends WeChat {
 	constructor(props) {
 		super(props);
 		this.title = '给党唱支生日歌--主题诗会正在直播';
-		this.link = super.redirect_uri; //分享链接
+		this.link = 'https://a.weixin.hndt.com/h5/partysday/live/index.html'; //分享链接
 		this.img_url = 'http://www.hndt.com/h5/partysday/PartysDay.jpg';
 		this.desc = '庆祝中国共产党建党97周年--大型系列文化活动！';
 	}
 	init() {
-		// this.hasCode();
+		this.hasCode();
 		axios.post('https://a.weixin.hndt.com/at/sign', Qs.stringify({ url: window.location.href })).then((res) => {
 			let data = res.data;
 			wx.config({

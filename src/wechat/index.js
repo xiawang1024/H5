@@ -18,9 +18,9 @@ wx.ready(function() {
 	});
 	wx.onMenuShareAppMessage({
 		title: weChatConf.title,
-		desc: weChatConf.link,
-		link: weChatConf.img_url,
-		imgUrl: weChatConf.desc,
+		link: weChatConf.link,
+		imgUrl: weChatConf.img_url,
+		desc: weChatConf.desc,
 		type: '',
 		dataUrl: '',
 		success: function() {},
