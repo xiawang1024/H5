@@ -1,14 +1,15 @@
 <template>
-	<div class="home">		
+	<div class="home">
 		<player v-show="!isShow"></player>
-		<div class="tips">祥符调品赏会第二场正在直播中</div>
 		<div class="tab-wrap">
 			<div class="tab" @click="slide(0)" :class="isIndex == 0 ? 'isActive' : ''">活动简介</div>
 			<div class="tab" @click="slide(1)" :class="isIndex == 1 ? 'isActive' : ''">节目单</div>
 			<div class="tab" @click="slide(2)" :class="isIndex == 2 ? 'isActive' : ''">直播互动</div>
 		</div>
-		<component :is="componentId"></component>
-		<pay v-show="isShow"></pay>
+    <keep-alive>
+		  <component :is="componentId"></component>
+    </keep-alive>
+		<!-- <pay v-show="isShow"></pay> -->
 	</div>
 </template>
 
@@ -20,18 +21,18 @@ import Player from 'components/Player/Player'
 import Comment from 'components/Comment/Comment'
 import Info from 'components/Info/Info'
 import Program from 'components/Program/Program'
-import Pay from 'components/Pay/Pay'
+// import Pay from 'components/Pay/Pay'
 
-import Toast from 'v-toast'
+
 
 export default {
-	name: 'Home',	
+	name: 'Home',
 	components:{
 		Player,
 		Comment,
 		Info,
 		Program,
-		Pay
+		// Pay
 	},
 	data () {
 		return {
@@ -43,10 +44,7 @@ export default {
 	},
 	created() {
 		this.openid = this._getQueryString('openid')
-		this._isStart()
-	},
-	mounted() {
-		// this._visit() //TODO:直播付费
+		// this._isStart()
 	},
 	methods:{
 		_isStart() {
@@ -79,31 +77,25 @@ export default {
 						this.startTime()
 					}else{
 						if(data.data.isPay) {
-							return 
+							return
 						}else{
 							this._pay()
 						}
 					}
 				}else{
 					Toast.error({
-                        message:'好像哪里出现问题了！',
-                        duration:2000
-                    })
+              message:'好像哪里出现问题了！',
+              duration:2000
+          })
 				}
 			})
 		},
-		_getQueryString(name) {
-            let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
-            let r = window.location.search.substr(1).match(reg);
-            if (r != null) return unescape(r[2]);
-            return null;
-        },
 		startTime() {
 			this.timerId = setTimeout(() => {
 				this.$nextTick(() => {
 					this.isShow = true
 					let video = document.querySelector('video')
-					video.pause()				
+					video.pause()
 				})
 			}, TIMER_ID)
 		},
@@ -111,10 +103,10 @@ export default {
 			this.$nextTick(() => {
 				this.isShow = true
 				let video = document.querySelector('video')
-				video.pause()				
+				video.pause()
 			})
 		},
-		
+
 		slide(type) {
 			this.isIndex = type
 			if(type == 0) {
@@ -133,35 +125,39 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-.tips{
-	width: 100%;
-	height: 20px;
-	line-height: 20px;
-	font-size: 12px;
-	color:#666;
-	border-bottom:1px solid #eee;
-	box-sizing: border-box;
-	text-align: center;
+<style lang="stylus" scoped>
+.tips {
+  width: 100%;
+  height: 20px;
+  line-height: 20px;
+  font-size: 12px;
+  color: #666;
+  border-bottom: 1px solid #eee;
+  box-sizing: border-box;
+  text-align: center;
 }
-.tab-wrap{
-	width: 100%;
-	height: 40px;
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	padding:0 5px;
-	border-bottom:1px solid #eee;
-	box-sizing: border-box;
+
+.tab-wrap {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 10px;
+  font-size: 28px;
+  border-bottom: 1px solid #eee;
+  box-sizing: border-box;
 }
-.tab{
-	flex:1;
-	text-align: center;
+
+.tab {
+  flex: 1;
+  text-align: center;
 }
-.tab.isActive{
-	padding:6px 0;
-	border-radius:4px;
-	color:#fff;
-	background: #0081dc;
+
+.tab.isActive {
+  padding: 15px 0;
+  border-radius: 4px;
+  color: #fff;
+  background: #0081dc;
 }
 </style>

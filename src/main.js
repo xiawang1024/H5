@@ -1,14 +1,16 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
-import Vue from 'vue'
-import App from './App'
+import Vue from 'vue';
+import App from './App';
 // import router from 'router'
-import 'base/stylus/index.styl'
+import 'base/stylus/index.styl';
 
-/* 微信自定义分享 */ 
-import 'wechat/index.js'
+/* 微信自定义分享 */
 
-/* swiper插件 */ 
+import './weChat/index';
+
+/* swiper插件 */
+
 // import VueAwesomeSwiper　from 'vue-awesome-swiper'
 // import 'animate.css'
 // import 'swiper/dist/css/swiper.css'
@@ -21,24 +23,24 @@ import 'wechat/index.js'
 /**
  * 视频直播
  */
-import VueVideoPlayer from 'vue-video-player'
-import 'video.js/dist/video-js.css'
-Vue.use(VueVideoPlayer, /* {
+import VueVideoPlayer from 'vue-video-player';
+import 'video.js/dist/video-js.css';
+Vue.use(VueVideoPlayer /* {
   options: global default options,
   events: global videojs events
-} */)
+} */);
 
 /**
  * 过滤器
  */
-require('./filter')
+require('./filter');
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
-  // router,
-  components: { App },
-  template: '<App/>'
-})
+	el: '#app',
+	// router,
+	components: { App },
+	template: '<App/>'
+});

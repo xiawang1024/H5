@@ -12,7 +12,7 @@
                 :pullUpLoad="pullUpLoad"
                 @pullingDown = "onPullingDown"
                 @pullingUp="onPullingUp"
-            > 
+            >
             <div class="list" v-for="item of commentList" :key="item.id">
                 <!-- {{item.comment.icon}} -->
                 <img :src="item.comment.icon || defaultAvatar" alt="" class="avatar">
@@ -20,7 +20,7 @@
                     <span class="time">{{item.comment.create_time | timeStamp2LocalTime}}</span>
                     <h5 class="name">{{item.comment.creater}}</h5>
                     <div class="content">
-                        <p v-if="item.comment.file_type == 'TEXT'" v-html="item.comment.content"></p>                            
+                        <p v-if="item.comment.file_type == 'TEXT'" v-html="item.comment.content"></p>
                         <img class="img" width="300" v-if="item.comment.file_type == 'PIC'" :src="item.comment.content" />
                     </div>
                     <div class="anchor-reply" v-show="item.commentChildList && item.commentChildList.length > 0">
@@ -32,7 +32,7 @@
                         </div>
                     </div>
                 </div>
-            </div>     
+            </div>
         </scroll>
         <send-msg @sendMsg="onSendMsg"></send-msg>
     </div>
@@ -57,7 +57,7 @@ export default {
             commentList:[],
             online:'',
             pullDownRefresh:{
-				txt:'更新成功',
+				        txt:'更新成功',
                 stop:40,
                 threshold:60
             },
@@ -80,9 +80,9 @@ export default {
     },
     mounted() {
         // this.openid = this._getQueryString('openId')
-        setInterval(() => {            
+        setInterval(() => {
             this._fetchOnline()
-            
+
         },15000)
 
         setInterval(() => {
@@ -109,7 +109,7 @@ export default {
                 let data = res.data
                 if(data.success) {
                     this.commentList = data.result.list
-                    this.pages = data.result.pages                    
+                    this.pages = data.result.pages
                 }
             }).catch((err) => {
                 console.log(err)
@@ -126,18 +126,6 @@ export default {
             this._fetchData(1)
         },
         onPullingDown() {
-            // 模拟更新数据
-            // console.log('pulling down and load data')
-            // setTimeout(() => {
-           
-            // if (Math.random() > 0.5) {
-            //     // 如果有新数据
-            //     this.commentList.unshift(new Date())
-            // } else {
-            //     // 如果没有新数据
-            //     this.$refs.scroll.forceUpdate()
-            // }
-            // }, 2000)
             this._fetchData(1)
         },
         onPullingUp() {
@@ -150,7 +138,7 @@ export default {
                     // console.log(res)
                     let data = res.data
                     if(data.success) {
-                        this.commentList = this.commentList.concat(data.result.list) 
+                        this.commentList = this.commentList.concat(data.result.list)
                         this.pages = data.result.pages
                     }else{
                         this.$refs.scroll.forceUpdate()
@@ -160,7 +148,7 @@ export default {
                 })
             }else{
                  this.$refs.scroll.forceUpdate()
-            }           
+            }
         }
     }
 }
@@ -168,86 +156,117 @@ export default {
 
 
 <style lang="stylus" scoped>
-.comment
-    position absolute
-    top 290px
-    left 0
-    right 0
-    bottom 0px
-    .online-people
-        width 100%
-        height 20px
-        line-height 20px
-        font-size 12px
-        padding-left 20px
-        box-sizing border-box
-        border-bottom 1px solid #eee
-        .icon-people
-            vertical-align middle
-            display inline-block
-            width 14px 
-            height 18px
-            background url('./icon-people.png') center center no-repeat
-            background-size contain
-        .online-num
-            vertical-align middle
-            color #666
-    .list-wrap
-        position absolute
-        top 20px
-        bottom 60px
-        .list
-            display flex
-            width 100%
-            padding 20px            
-            box-sizing border-box
-            border-bottom 1px dashed #eee
-            .avatar 
-                display block
-                width 40px
-                height 40px
-                flex 0 0 40
-                border-radius 50%
-            .text-wrap
-                position relative
-                flex 1
-                margin-left 15px
-                padding-right 10px
-                box-sizing border-box
-                .time
-                    position absolute
-                    top 0
-                    right 0
-                    font-size 12px
-                    color #999999
-                .name
-                    font-size 15px
-                    font-weight 500
-                    color #666666
-                .content
-                    margin-top 10px
-                    line-height 1.6125
-                    font-size 16px
-                    color #000000
-                    word-wrap:break-word
-                    word-break:break-all
-                    .img
-                        display inline-block
-                        height 300px
-                        max-width 400px                        
-                        border-radius 20px
-                .anchor-reply
-                    width 100%
-                    margin-top 10px
-                    padding-top 8px
-                    border-top 1px dashed #eee
-                    .anchor
-                        font-size 15px
-                        color #333
-                    .child-list-wrap
-                        width 100%
-                        margin-top 8px
-                        .child-list
-                            text-indent 2em
-                            line-height 1.8
+.comment {
+  position: absolute;
+  top: 502px;
+  left: 0;
+  right: 0;
+  bottom: 0px;
+
+  .online-people {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 24px;
+    padding-left: 40px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #eee;
+
+    .icon-people {
+      vertical-align: middle;
+      display: inline-block;
+      width: 28px;
+      height: 36px;
+      background: url('./icon-people.png') center center no-repeat;
+      background-size: contain;
+    }
+
+    .online-num {
+      vertical-align: middle;
+      color: #666;
+    }
+  }
+
+  .list-wrap {
+    position: absolute;
+    top: 40px;
+    bottom: 90px;
+
+    .list {
+      display: flex;
+      width: 100%;
+      padding: 40px;
+      box-sizing: border-box;
+      border-bottom: 1px dashed #eee;
+
+      .avatar {
+        display: block;
+        width: 80px;
+        height: 80px;
+        flex: 0 0 80;
+        border-radius: 50%;
+      }
+
+      .text-wrap {
+        position: relative;
+        flex: 1;
+        margin-left: 30px;
+        padding-right: 20px;
+        box-sizing: border-box;
+
+        .time {
+          position: absolute;
+          top: 0;
+          right: 0;
+          font-size: 24px;
+          color: #999999;
+        }
+
+        .name {
+          font-size: 30px;
+          font-weight: 500;
+          color: #666666;
+        }
+
+        .content {
+          margin-top: 20px;
+          line-height: 1.6125;
+          font-size: 32px;
+          color: #000000;
+          word-wrap: break-word;
+          word-break: break-all;
+
+          .img {
+            display: inline-block;
+            // height: 600px;
+            width: 400px;
+            border-radius: 40px;
+          }
+        }
+
+        .anchor-reply {
+          width: 100%;
+          margin-top: 20px;
+          padding-top: 16px;
+          border-top: 1px dashed #eee;
+
+          .anchor {
+            font-size: 30px;
+            color: #333;
+          }
+
+          .child-list-wrap {
+            width: 100%;
+            margin-top: 16px;
+
+            .child-list {
+              text-indent: 2em;
+              line-height: 1.8;
+            }
+          }
+        }
+      }
+    }
+  }
+}
 </style>

@@ -8,7 +8,10 @@
 
 <script>
 import { getUser, postMsg } from 'api/index'
-import Toast from 'v-toast'
+import { WeChat } from 'weChat/util'
+import weui from 'weui.js';
+
+const weChat = new WeChat()
 export default {
     name:'send-msg',
     data() {
@@ -20,76 +23,77 @@ export default {
         }
     },
     mounted() {
-        this.openid = this._getQueryString('openId')
+        let userInfo = JSON.parse(weChat.getStorage('WXHNDTOPENID'))
+        this.openid = userInfo.openid;
         setTimeout(() => {
-            getUser(this.openid).then((res) => {
-                let data = res.data
-                if(data.status === 1) {
-                    this.creater = data.data.name
-                    this.fromUid = data.data.id
-                }else{
-                    console.log('获取用户信息失败')
-                }
-            }).catch((err) => {
-                console.log(err)
-            })
-        },100)
+          getUser(this.openid).then((res) => {
+              let data = res.data
+              if(data.status === 1) {
+                  this.creater = data.data.name
+                  this.fromUid = data.data.id
+              }else{
+                  console.log('获取用户信息失败')
+              }
+          }).catch((err) => {
+              console.log(err)
+          })
+        },20)
     },
     methods:{
-        _getQueryString(name) {
-            let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
-            let r = window.location.search.substr(1).match(reg);
-            if (r != null) return unescape(r[2]);
-            return null;
-        },
-        sendMsg() {
-            if(!this.msg){
-                Toast.warn('消息不能为空！')
-                return 
-            }
-            this._postMsg()
-            this.$emit('sendMsg')
-        },
-        _postMsg() {
-            postMsg(0, 4 , this.creater, this.fromUid, this.msg).then((res) => {
-                Toast.success('消息发送成功，等待审核！')
-                this.msg = ''
-                console.log(res)
-            })
+      sendMsg() {
+        if(!this.msg){
+            weui.topTips('消息不能为空！')
+            return
         }
+        this._postMsg()
+        this.$emit('sendMsg')
+      },
+      _postMsg() {
+        postMsg(0, 4 , this.creater, this.fromUid, this.msg).then((res) => {
+            weui.toast('发送成功，等待审核！')
+            this.msg = ''
+            console.log(res)
+        })
+      }
     }
 }
 </script>
 
 <style lang="stylus" scoped>
-.send-msg
-    position absolute
-    bottom 0
-    left 0
-    right 0
-    width 100%
-    height 60px
-    display flex
-    align-items center
-    border-top 1px solid #cccccc
-    padding 0 15px
-    box-sizing border-box
-    .ipt
-        flex 1
-        height 40px
-        border 1px solid #0081dc
-        padding-left 8px
-        border-radius 6px
-        outline none
-    .sendBtn
-        margin-left 10px
-        height 40px
-        width 75px    
-        outline none 
-        border none
-        background #0081dc
-        border-radius 4px
-        font-size 16px
-        color #ffffff
+.send-msg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #cccccc;
+  padding: 0 30px;
+  box-sizing: border-box;
+
+  .ipt {
+    flex: 1;
+    height: 60px;
+    border: 1px solid #0081dc;
+    padding-left: 16px;
+    border-radius: 12px;
+    outline: none;
+    -webkit-appearance: none;
+  }
+
+  .sendBtn {
+    margin-left: 20px;
+    height: 60px;
+    width: 150px;
+    outline: none;
+    border: none;
+    background: #0081dc;
+    border-radius: 8px;
+    font-size: 32px;
+    color: #ffffff;
+  }
+}
 </style>
 
