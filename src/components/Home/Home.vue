@@ -5,10 +5,19 @@
 				<one></one>
 			</swiper-slide>
       <swiper-slide>
+				<two1></two1>
+			</swiper-slide>
+      <swiper-slide>
 				<two></two>
 			</swiper-slide>
       <swiper-slide>
+				<three1></three1>
+			</swiper-slide>
+      <swiper-slide>
 				<three></three>
+			</swiper-slide>
+      <swiper-slide>
+				<four1></four1>
 			</swiper-slide>
       <swiper-slide>
 				<four></four>
@@ -30,8 +39,11 @@
 const { swiperAnimateCache, swiperAnimate } = require('base/js/animate.min.js')
 
 import One from '../One/One.vue'
+import Two1 from '../Two/Two1.vue'
 import Two from '../Two/Two.vue'
+import Three1 from '../Three/Three1.vue'
 import Three from '../Three/Three.vue'
+import Four1 from '../Four/Four1.vue'
 import Four from '../Four/Four.vue'
 // import Five from '../Five/Five.vue'
 // import Six from '../Six/Six.vue'
@@ -42,8 +54,11 @@ export default {
 	name: 'Home',
 	components:{
     One,
+    Two1,
     Two,
+    Three1,
     Three,
+    Four1,
     Four,
     // Five,
     // Six,

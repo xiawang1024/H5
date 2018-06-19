@@ -10,31 +10,34 @@
           <div class="m-title ani" swiper-animate-effect="fadeIn" swiper-animate-duration="1s" swiper-animate-delay="0.5s"></div>
           <div class="m-body">
             <p class="u-time ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="0.6s">1921-2018</p>
-            <p class="u-theme ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="0.75s">庆祝中国共产党建党<span class="year">97</span>周年</p>
-            <p class="u-sub-theme ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="1s">大型系列文化活动</p>
+            <p class="u-theme ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="0.75s"></p>
+            <p class="u-sub-theme ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="1s">6月20日 为梦而来</p>
             <!-- <p class="u-zhu ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="1.25s">主办方：河南省委组织部&nbsp;&nbsp;河南省委宣传部&nbsp;&nbsp;河南广播电视台</p>
             <p class="u-cheng ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="1.5s">承办方：河南广播电视台广播广告经营部&nbsp;&nbsp;恒丰银行郑州分行</p> -->
             <div class="u-users">
               <div class="u-wrap ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1.25s" swiper-animate-delay="1.25s">
-                <p class="u-name">主办：</p>
+                <!-- <p class="u-name">主办：</p> -->
+
                 <ul class="u-list">
-                  <li class="list">河南广播电视台</li>
-                  <li class="list">恒丰银行郑州分行</li>
-                </ul>
-              </div>
-              <div class="u-wrap ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1.25s" swiper-animate-delay="1.5s">
-                <p class="u-name">承办：</p>
-                <ul class="u-list">
-                  <li class="list">河南广播电视台广播广告经营中心</li>
-                  <li class="list">河南广播电视台新闻广播、音乐广播、教育广播</li>
+                  <li class="list">97年风雨历程</li>
+                  <li class="list">97年砥砺前行</li>
+                  <li class="list">中国共产党即将迎来97岁华诞</li>
 
                 </ul>
               </div>
-              <div class="u-wrap ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1.25s" swiper-animate-delay="1.75s">
-                <p class="u-name">协办：</p>
+              <div class="u-wrap ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1.25s" swiper-animate-delay="1.5s">
+                <!-- <p class="u-name">承办：</p> -->
+                 <ul class="u-list">
+                  <li class="list" style=" font-weight: bold;">河南广播电视台</li>
+                  <li class="list" style=" font-weight: bold;">庆祝中国共产党建党97周年大型系列文化活动</li>
+                  <li class="list" style=" font-weight: bold;">“给党唱支生日歌主题诗会”</li>
+                </ul>
+              </div>
+              <div class="u-wrap address ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1.25s" swiper-animate-delay="1.75s">
+                <!-- <p class="u-name">协办：</p> -->
                 <ul class="u-list">
-                  <li class="list">河南师范大学新联学院</li>
-                  <li class="list">河南声利企业营销策划有限公司</li>
+                  <li class="list">河南·郑州·广播大厦</li>
+                  <!-- <li class="list">河南声利企业营销策划有限公司</li> -->
                 </ul>
               </div>
             </div>
@@ -101,7 +104,7 @@ export default {
 
   .g-body {
     position: absolute;
-    top: 250px;
+    top: 230px;
     left: 0;
     right: 0;
     width: 100%;
@@ -118,7 +121,7 @@ export default {
 
     .m-title {
       position: absolute;
-      top: 125px;
+      top: 110px;
       left: 0;
       width: 100%;
       height: 151px;
@@ -128,7 +131,7 @@ export default {
 
     .m-body {
       position: absolute;
-      top: 297px;
+      top: 280px;
       left: 0;
       width: 100%;
       text-align: center;
@@ -136,13 +139,17 @@ export default {
       letter-spacing: 0.2px;
 
       .u-time {
-        font-size: 26px;
+        margin-top: -30px;
+        font-size: 24px;
       }
 
       .u-theme {
-        margin-top: 25px;
-        font-size: 28px;
-        font-weight: bold;
+        margin-top: 8px;
+        // font-size: 28px;
+        height: 56px;
+        // font-weight: bold;
+        background: url('../common/icon-titlec.png') center center no-repeat;
+        background-size: contain;
 
         .year {
           font-size: 34px;
@@ -151,19 +158,20 @@ export default {
 
       .u-sub-theme {
         margin-top: 20px;
-        font-size: 28px;
-        font-weight: bold;
+        font-size: 32px;
+        // font-weight: bold;
       }
 
       .u-users {
-        margin: 60px auto 0;
-        width: 515px;
+        margin: 20px auto 0;
+        width: 600px;
 
         .u-wrap {
           display: flex;
-          font-size: 20px;
+          font-size: 23px;
           font-weight: bolder;
-          text-align: left;
+          text-align: center;
+          margin-bottom: 15px;
 
           .u-name {
             flex: 0 0 65px;
@@ -172,7 +180,7 @@ export default {
 
           .u-list {
             flex: 1;
-            text-align: left;
+            text-align: center;
 
             .list {
               margin-bottom: 16px;
