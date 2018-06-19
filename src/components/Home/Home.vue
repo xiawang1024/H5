@@ -42,10 +42,6 @@ export default {
 			openid:''
 		}
 	},
-	created() {
-		this.openid = this._getQueryString('openid')
-		// this._isStart()
-	},
 	methods:{
 		_isStart() {
 			let startTime = Date.parse(new Date('2018-04-28 18:0:0')) || Date.parse(new Date('2018/04/28 18:0:0'))

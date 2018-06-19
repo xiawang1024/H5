@@ -5,7 +5,7 @@ class WeChat {
 	constructor() {
 		this.baseUrl = 'https://open.weixin.qq.com/connect/oauth2/authorize?';
 		this.appId = 'wx5f789dea59c6c2c5';
-		this.redirect_uri = 'https://a.weixin.hndt.com/h5/test/index.html?cid=' + this.getQueryString('cid');
+		this.redirect_uri = 'https://a.weixin.hndt.com/h5/partysday/live/index.html';
 		this.response_type = 'code';
 		this.scope = 'snsapi_userinfo'; //snsapi_base 只获取openId ， snsapi_userinfo 获取用户信息;
 		this.state = Date.parse(new Date());
@@ -70,10 +70,10 @@ class WeChat {
 }
 
 class WeChatConf extends WeChat {
-	constructor() {
-		super();
-		this.title = '给党唱支生日歌--庆祝中国共产党建党97周年';
-		this.link = 'https://a.weixin.hndt.com/h5/test/index.html?cid=' + this.getQueryString('cid'); //分享链接
+	constructor(props) {
+		super(props);
+		this.title = '给党唱支生日歌--主题诗会正在直播';
+		this.link = super.redirect_uri; //分享链接
 		this.img_url = 'http://www.hndt.com/h5/partysday/PartysDay.jpg';
 		this.desc = '庆祝中国共产党建党97周年--大型系列文化活动！';
 	}
