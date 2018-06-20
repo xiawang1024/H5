@@ -127,12 +127,12 @@
     },
     computed: {
       pullUpTxt() {
-        const moreTxt = this.pullUpLoad && this.pullUpLoad.txt && this.pullUpLoad.txt.more 
-        const noMoreTxt = this.pullUpLoad && this.pullUpLoad.txt && this.pullUpLoad.txt.noMore 
+        const moreTxt = this.pullUpLoad && this.pullUpLoad.txt && this.pullUpLoad.txt.more
+        const noMoreTxt = this.pullUpLoad && this.pullUpLoad.txt && this.pullUpLoad.txt.noMore
         return this.pullUpDirty ? moreTxt : noMoreTxt
       },
       refreshTxt() {
-        return this.pullDownRefresh && this.pullDownRefresh.txt 
+        return this.pullDownRefresh && this.pullDownRefresh.txt
       }
     },
     created() {
@@ -162,7 +162,7 @@
           startX: this.startX,
           startY: this.startY,
           freeScroll: this.freeScroll,
-          mouseWheel: this.mouseWheel,          
+          mouseWheel: this.mouseWheel,
         }
         this.scroll = new BScroll(this.$refs.wrapper, options)
         if (this.listenScroll) {
@@ -277,41 +277,54 @@
 </script>
 
 <style lang="stylus" rel="stylesheet/stylus">
-  .list-wrapper
-    position: absolute
-    left: 0
-    top: 0
-    right: 0
-    bottom: 0
-    overflow: hidden
-    background: #fff
-    .scroll-content
-      position: relative
-      z-index: 1
-    .list-content
-      position: relative
-      z-index: 10
-      background: #fff
-      .list-item
-        height: 60px
-        line-height: 60px
-        font-size: 18px
-        padding-left: 20px
-        border-bottom: 1px solid #e5e5e5
-  .pulldown-wrapper
-    position: absolute
-    width: 100%
-    left: 0
-    display: flex
-    justify-content center
-    align-items center
-    transition: all
-    .after-trigger
-      margin-top: 10px
-  .pullup-wrapper
-    width: 100%
-    display: flex
-    justify-content center
-    align-items center
-    padding: 30px 0 30px
+.list-wrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  background: #fff;
+
+  .scroll-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .list-content {
+    position: relative;
+    z-index: 10;
+    background: #fff;
+
+    .list-item {
+      height: 60px;
+      line-height: 60px;
+      font-size: 18px;
+      padding-left: 20px;
+      border-bottom: 1px solid #e5e5e5;
+    }
+  }
+}
+
+.pulldown-wrapper {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all;
+
+  .after-trigger {
+    margin-top: 10px;
+  }
+}
+
+.pullup-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 0 30px;
+}
 </style>

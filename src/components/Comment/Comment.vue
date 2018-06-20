@@ -42,7 +42,7 @@
 <script>
 import Scroll from 'common/scroll/scroll'
 import SendMsg from '../SendMsg/SendMsg'
-
+import weui from 'weui.js'
 import { postMsg } from 'api/index'
 
 export default {
@@ -59,7 +59,7 @@ export default {
             pullDownRefresh:{
 				        txt:'更新成功',
                 stop:40,
-                threshold:60
+                threshold:70
             },
             pullUpLoad:{
                 txt:{
@@ -74,15 +74,15 @@ export default {
         }
     },
     created() {
+        this.loading = weui.loading('努力加载中...');
         this._fetchData(1)
         this._fetchOnline(-1)
         postMsg(-2)
     },
     mounted() {
-        // this.openid = this._getQueryString('openId')
+
         setInterval(() => {
             this._fetchOnline()
-
         },15000)
 
         setInterval(() => {
@@ -108,6 +108,7 @@ export default {
                 // console.log(res)
                 let data = res.data
                 if(data.success) {
+                    this.loading.hide()
                     this.commentList = data.result.list
                     this.pages = data.result.pages
                 }

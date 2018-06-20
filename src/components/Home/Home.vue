@@ -1,5 +1,6 @@
 <template>
 	<div class="home">
+    <down-tips></down-tips>
 		<player v-show="!isShow"></player>
 		<div class="tab-wrap">
 			<div class="tab" @click="slide(0)" :class="isIndex == 0 ? 'isActive' : ''">活动简介</div>
@@ -17,6 +18,8 @@
 const TIMER_ID = 5 * 60 * 1000
 
 import { visit } from 'api/index'
+
+import DownTips from 'components/DownTips/DownTips'
 import Player from 'components/Player/Player'
 import Comment from 'components/Comment/Comment'
 import Info from 'components/Info/Info'
@@ -31,7 +34,8 @@ export default {
 		Player,
 		Comment,
 		Info,
-		Program,
+    Program,
+    DownTips,
 		// Pay
 	},
 	data () {

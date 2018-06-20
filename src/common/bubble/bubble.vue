@@ -140,7 +140,7 @@
 
 <style scoped lang="stylus" rel="stylesheet/stylus">
 .canvas {
-  width: 50px;
-  height: 80px;
+  width: 60px;
+  height: 96px;
 }
 </style>

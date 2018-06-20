@@ -3,6 +3,7 @@
  */
 import axios from 'axios';
 import Qs from 'qs';
+import HU_DONG_ID from '@/config.js';
 
 // axios.defaults.baseURL = '/api';
 // axios.defaults.baseURL = 'http://www.softzztiedu.top/test/upRadio.do';
@@ -22,7 +23,7 @@ const checkOpenId = (openId, origin) =>
 
 const getUser = (openid) => axios.get('https://a.weixin.hndt.com/user/find/openid?openid=' + openid);
 
-const postMsg = (page, cid = 4, creater = '', fromUid = '', content = '') =>
+const postMsg = (page, cid = HU_DONG_ID, creater = '', fromUid = '', content = '') =>
 	axios.post(
 		'https://talk.hndt.com/test/upRadio.do',
 		Qs.stringify({

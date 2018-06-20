@@ -10,6 +10,7 @@
 import { getUser, postMsg } from 'api/index'
 import { WeChat } from 'weChat/util'
 import weui from 'weui.js';
+import HU_DONG_ID from '@/config.js'
 
 const weChat = new WeChat()
 export default {
@@ -49,7 +50,7 @@ export default {
         this.$emit('sendMsg')
       },
       _postMsg() {
-        postMsg(0, 4 , this.creater, this.fromUid, this.msg).then((res) => {
+        postMsg(0, HU_DONG_ID , this.creater, this.fromUid, this.msg).then((res) => {
             weui.toast('发送成功，等待审核！')
             this.msg = ''
             console.log(res)
