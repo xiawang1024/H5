@@ -24,24 +24,32 @@ export default {
         }
     },
     mounted() {
-        let userInfo = JSON.parse(weChat.getStorage('WXHNDTOPENID'))
-        this.openid = userInfo.openid;
-        setTimeout(() => {
-          getUser(this.openid).then((res) => {
-              let data = res.data
-              if(data.status === 1) {
-                  this.creater = data.data.name
-                  this.fromUid = data.data.id
-              }else{
-                  console.log('获取用户信息失败')
-              }
-          }).catch((err) => {
-              console.log(err)
-          })
-        },20)
+        if(weChat.getStorage('WXHNDTOPENID') == null) {
+          this.isNotWeixin = true
+        }else{
+          let userInfo = JSON.parse(weChat.getStorage('WXHNDTOPENID'))
+          this.openid = userInfo.openid;
+          setTimeout(() => {
+            getUser(this.openid).then((res) => {
+                let data = res.data
+                if(data.status === 1) {
+                    this.creater = data.data.name
+                    this.fromUid = data.data.id
+                }else{
+                    console.log('获取用户信息失败')
+                }
+            }).catch((err) => {
+                console.log(err)
+            })
+          },20)
+        }
     },
     methods:{
       sendMsg() {
+        if(this.isNotWeixin) {
+          weui.alert('请用微信打开进行发言！')
+          return
+        }
         if(!this.msg){
             weui.topTips('消息不能为空！')
             return
