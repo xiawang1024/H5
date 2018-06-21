@@ -28,9 +28,9 @@
               <div class="u-wrap ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1.25s" swiper-animate-delay="1.5s">
                 <!-- <p class="u-name">承办：</p> -->
                  <ul class="u-list">
-                  <li class="list" style=" font-weight: bold;">河南广播电视台</li>
-                  <li class="list" style=" font-weight: bold;">庆祝中国共产党建党97周年大型系列文化活动</li>
-                  <li class="list" style=" font-weight: bold;">“给党唱支生日歌主题诗会”</li>
+                  <li class="list" style=" font-weight: bold;">主办：河南广播电视台&nbsp;&nbsp;恒丰银行郑州分行</li>
+                  <li class="list" style=" font-weight: bold;">承办方：河南广播电视台广播广告经营部、教育广播</li>
+                  <li class="list" style=" font-weight: bold;">协办：河南师范大学新联学院、河南声利企业营销策划有限公司</li>
                 </ul>
               </div>
               <div class="u-wrap address ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1.25s" swiper-animate-delay="1.75s">
@@ -164,7 +164,7 @@ export default {
 
       .u-users {
         margin: 20px auto 0;
-        width: 600px;
+        width: 700px;
 
         .u-wrap {
           display: flex;
