@@ -21,7 +21,7 @@
                     <h5 class="name">{{item.comment.creater}}</h5>
                     <div class="content">
                         <p v-if="item.comment.file_type == 'TEXT'" v-html="item.comment.content"></p>
-                        <img class="img" width="300" v-if="item.comment.file_type == 'PIC'" :src="item.comment.content" />
+                        <img class="img" width="300" v-if="item.comment.file_type == 'PIC'" :src="item.comment.content" @click="previewImage(item.comment.content)"/>
                     </div>
                     <div class="anchor-reply" v-show="item.commentChildList && item.commentChildList.length > 0">
                         <span class="anchor">主播回复:</span>
@@ -43,6 +43,7 @@
 import Scroll from 'common/scroll/scroll'
 import SendMsg from '../SendMsg/SendMsg'
 import weui from 'weui.js'
+import wx from 'weixin-js-sdk';
 import { postMsg } from 'api/index'
 
 export default {
@@ -151,6 +152,13 @@ export default {
             }else{
                  this.$refs.scroll.forceUpdate()
             }
+        },
+        previewImage(url){
+          // weui.alert(url)
+          wx.previewImage({
+            current: url, // 当前显示图片的http链接
+            urls: [url]
+          });
         }
     }
 }

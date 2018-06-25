@@ -74,15 +74,17 @@ export default {
           sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
           sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
           success: (res) => {
-            this.mediaImgId = res.localIds; // 返回选定照片的本地ID列表，localId可以作为img标签的src属性显示图片
-            let uploading = weui.loading('努力提交中...')
+            this.mediaImgId = res.localIds[0].toString(); // 返回选定照片的本地ID列表，localId可以作为img标签的src属性显示图片
+
+
             wx.uploadImage({
-              localId: res.localIds, // 需要上传的图片的本地ID，由chooseImage接口获得
+              localId: this.mediaImgId, // 需要上传的图片的本地ID，由chooseImage接口获得
               isShowProgressTips: 1, // 默认为1，显示进度提示
               success: (res) => {
-                var serverId = res.serverId; // 返回图片的服务器端ID
-                postMsg(-1, HU_DONG_ID , this.creater, this.fromUid, res.serverId).then((res) => {
-                  uploading.hide()
+                let serverId = res.serverId; // 返回图片的服务器端ID
+                // weui.alert(serverId)
+                postMsg('PIC', HU_DONG_ID , this.creater, this.fromUid, res.serverId).then((res) => {
+                  // uploading.hide()
                   weui.toast('发送成功，等待审核！')
                 })
               }
