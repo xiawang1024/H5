@@ -1,8 +1,10 @@
 <template>
     <div class="send-msg">
-        <span class="sengImg" @click="postImg"></span>
-        <input class="ipt" type="text" v-model="msg">
-        <button class="sendBtn" @click="sendMsg">发送</button>
+        <span class="sendVoice" :class="isVoice?'':'sendMsg'" @click="switchBtn"></span>
+        <span class="sendImg" @click="postImg"></span>
+        <input v-show="isVoice" class="ipt" type="text" v-model="msg">
+        <voice v-show="!isVoice" class="voice"></voice>
+        <button v-show="isVoice" class="sendBtn" @click="sendMsg">发送</button>
     </div>
 </template>
 
@@ -14,13 +16,19 @@ import weui from 'weui.js';
 import wx from 'weixin-js-sdk';
 import HU_DONG_ID from '@/config.js'
 
+import Voice from '../Voice/Voice'
+
 const weChat = new WeChat()
 export default {
     name:'send-msg',
+    components:{
+      Voice
+    },
     data() {
         return {
             msg:'',
             mediaImgId:'',
+            isVoice:true,
             openid:'',
             creater:'',
             fromUid:''
@@ -68,6 +76,9 @@ export default {
             console.log(res)
         })
       },
+      switchBtn() {
+        this.isVoice =  !this.isVoice
+      },
       postImg() {
         wx.chooseImage({
           count: 1, // 默认9
@@ -110,11 +121,28 @@ export default {
   padding: 0 30px;
   box-sizing: border-box;
 
-  .sengImg {
+  .sendVoice {
+    flex: 0 0 70px;
+    height: 55px;
+    background: url('./icon-voice.png') center center no-repeat;
+    background-size: contain;
+
+    &.sendMsg {
+      background: url('./icon-ipt.png') center center no-repeat;
+      background-size: contain;
+    }
+  }
+
+  .sendImg {
     flex: 0 0 80px;
     height: 55px;
     background: url('./icon-img.png') center center no-repeat;
     background-size: contain;
+  }
+
+  .voice {
+    flex: 1;
+    height: 60px;
   }
 
   .ipt {

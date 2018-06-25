@@ -38,17 +38,17 @@
   .ctrl {
     position: absolute;
     right: 30px;
-    top: 20px;
-    height: 40px;
+    top: 15px;
+    height: 50px;
 
     .downlink {
       vertical-align: middle;
       display: inline-block;
       padding: 0px 20px;
-      height: 40px;
-      line-height: 40px;
+      height: 50px;
+      line-height: 50px;
       border-radius: 8px;
-      font-size: 28px;
+      font-size: 26px;
       color: #fff;
       background: #0081dc;
     }
