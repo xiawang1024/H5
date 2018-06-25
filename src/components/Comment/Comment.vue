@@ -76,14 +76,14 @@ export default {
     created() {
         this.loading = weui.loading('努力加载中...');
         this._fetchData(1)
-        this._fetchOnline(-1)
-        postMsg(-2)
+        // this._fetchOnline(-1)
+        // postMsg(-2)
     },
     mounted() {
 
-        setInterval(() => {
-            this._fetchOnline()
-        },15000)
+        // setInterval(() => {
+        //     this._fetchOnline()
+        // },15000)
 
         setInterval(() => {
             this._fetchData(1)
@@ -91,7 +91,7 @@ export default {
     },
     methods:{
         _fetchOnline() {
-            postMsg(-1).then((res) => {
+            postMsg(1).then((res) => {
                 // console.log(res)
                 let data = res.data
                 if(data.success) {
@@ -111,6 +111,7 @@ export default {
                     this.loading.hide()
                     this.commentList = data.result.list
                     this.pages = data.result.pages
+                    this.online = data.message
                 }
             }).catch((err) => {
                 console.log(err)

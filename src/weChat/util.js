@@ -1,11 +1,14 @@
 import wx from 'weixin-js-sdk';
 import axios from 'axios';
 import Qs from 'qs';
+
+const LINK = 'https://a.weixin.hndt.com/h5/wximg/index.html';
+
 class WeChat {
 	constructor() {
 		this.baseUrl = 'https://open.weixin.qq.com/connect/oauth2/authorize?';
 		this.appId = 'wx5f789dea59c6c2c5';
-		this.redirect_uri = 'https://a.weixin.hndt.com/h5/partysday/live/index.html';
+		this.redirect_uri = LINK;
 		this.response_type = 'code';
 		this.scope = 'snsapi_userinfo'; //snsapi_base 只获取openId ， snsapi_userinfo 获取用户信息;
 		this.state = Date.parse(new Date());
@@ -73,7 +76,7 @@ class WeChatConf extends WeChat {
 	constructor(props) {
 		super(props);
 		this.title = '给党唱支生日歌--主题诗会正在直播';
-		this.link = 'https://a.weixin.hndt.com/h5/partysday/live/index.html'; //分享链接
+		this.link = LINK; //分享链接
 		this.img_url = 'http://www.hndt.com/h5/partysday/PartysDay.jpg';
 		this.desc = '庆祝中国共产党建党97周年--大型系列文化活动！';
 	}
@@ -91,6 +94,7 @@ class WeChatConf extends WeChat {
 					'onMenuShareTimeline',
 					'onMenuShareAppMessage',
 					'chooseImage',
+					'uploadImage',
 					'previewImage',
 					'startRecord',
 					'playVoice',

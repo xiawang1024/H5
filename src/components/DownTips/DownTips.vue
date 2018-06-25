@@ -38,18 +38,24 @@
   .ctrl {
     position: absolute;
     right: 30px;
-    top: 15px;
-    height: 50px;
+    top: 20px;
+    height: 40px;
 
     .downlink {
+      vertical-align: middle;
       display: inline-block;
-      padding: 10px 20px;
+      padding: 0px 20px;
+      height: 40px;
+      line-height: 40px;
       border-radius: 8px;
+      font-size: 28px;
       color: #fff;
       background: #0081dc;
     }
 
     .icon-close {
+      vertical-align: middle;
+      display: inline-block;
       position: relative;
       margin-left: 16px;
       display: inline-block;

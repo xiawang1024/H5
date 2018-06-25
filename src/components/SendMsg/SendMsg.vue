@@ -1,5 +1,6 @@
 <template>
     <div class="send-msg">
+        <span class="sengImg" @click="postImg"></span>
         <input class="ipt" type="text" v-model="msg">
         <button class="sendBtn" @click="sendMsg">发送</button>
     </div>
@@ -10,6 +11,7 @@
 import { getUser, postMsg } from 'api/index'
 import { WeChat } from 'weChat/util'
 import weui from 'weui.js';
+import wx from 'weixin-js-sdk';
 import HU_DONG_ID from '@/config.js'
 
 const weChat = new WeChat()
@@ -18,6 +20,7 @@ export default {
     data() {
         return {
             msg:'',
+            mediaImgId:'',
             openid:'',
             creater:'',
             fromUid:''
@@ -58,10 +61,31 @@ export default {
         this.$emit('sendMsg')
       },
       _postMsg() {
+
         postMsg(0, HU_DONG_ID , this.creater, this.fromUid, this.msg).then((res) => {
             weui.toast('发送成功，等待审核！')
             this.msg = ''
             console.log(res)
+        })
+      },
+      postImg() {
+        wx.chooseImage({
+          count: 1, // 默认9
+          sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+          sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+          success: (res) => {
+            this.mediaImgId = res.localIds; // 返回选定照片的本地ID列表，localId可以作为img标签的src属性显示图片
+            wx.uploadImage({
+              localId: res.localIds, // 需要上传的图片的本地ID，由chooseImage接口获得
+              isShowProgressTips: 1, // 默认为1，显示进度提示
+              success: (res) => {
+                var serverId = res.serverId; // 返回图片的服务器端ID
+                postMsg(-1, HU_DONG_ID , this.creater, this.fromUid, res.serverId).then((res) => {
+                  weui.toast('发送成功，等待审核！')
+                })
+              }
+            });
+          }
         })
       }
     }
@@ -81,6 +105,13 @@ export default {
   border-top: 1px solid #cccccc;
   padding: 0 30px;
   box-sizing: border-box;
+
+  .sengImg {
+    flex: 0 0 80px;
+    height: 55px;
+    background: url('./icon-img.png') center center no-repeat;
+    background-size: contain;
+  }
 
   .ipt {
     flex: 1;
