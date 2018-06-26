@@ -13,7 +13,7 @@
                 @pullingDown = "onPullingDown"
                 @pullingUp="onPullingUp"
             >
-            <div class="list" v-for="item of commentList" :key="item.id">
+            <div class="list" v-for="(item,index) of commentList" :key="item.id">
                 <!-- {{item.comment.icon}} -->
                 <img :src="item.comment.icon || defaultAvatar" alt="" class="avatar">
                 <div class="text-wrap">
@@ -22,6 +22,7 @@
                     <div class="content">
                         <p v-if="item.comment.file_type == 'TEXT'" v-html="item.comment.content"></p>
                         <img class="img" width="300" v-if="item.comment.file_type == 'PIC'" :src="item.comment.content" @click="previewImage(item.comment.content)"/>
+                        <voice @click="playVoice(item.comment.content,index)" :isPlay="voicePlay === index"></voice>
                     </div>
                     <div class="anchor-reply" v-show="item.commentChildList && item.commentChildList.length > 0">
                         <span class="anchor">主播回复:</span>
@@ -42,6 +43,7 @@
 <script>
 import Scroll from 'common/scroll/scroll'
 import SendMsg from '../SendMsg/SendMsg'
+import Voice from './Voice'
 import weui from 'weui.js'
 import wx from 'weixin-js-sdk';
 import { postMsg } from 'api/index'
@@ -50,7 +52,8 @@ export default {
     name:'comment',
     components:{
        Scroll,
-       SendMsg
+       SendMsg,
+       Voice
     },
     data() {
         return {
@@ -71,7 +74,8 @@ export default {
             },
             page:1,
             pages:0,
-            openid:''
+            openid:'',
+            voiceIndex:-1
         }
     },
     created() {
@@ -159,6 +163,12 @@ export default {
             current: url, // 当前显示图片的http链接
             urls: [url]
           });
+        },
+        playVoice(src,index) {
+          this.voiceIndex = index;
+          this.$nextTick(() => {
+
+          })
         }
     }
 }
