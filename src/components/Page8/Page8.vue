@@ -4,13 +4,13 @@
         <div class="top-left ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="0s"></div>
         <div class="top-right ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.5s" swiper-animate-delay="0s"></div>
         <div class="bottom-left ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.25s" swiper-animate-delay="0s"></div>
-        <div class="bottom-right ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1.3s" swiper-animate-delay="0s"></div>
+        <!-- <div class="bottom-right ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1.3s" swiper-animate-delay="0s"></div> -->
         <div class="g-body">
-          <div class="info-wrap">
+          <div class="info-wrap ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1.3s" swiper-animate-delay="0.45s">
 
             <div class="text-wrap">
               <h3 class="name">领唱与合唱：《不忘初心》</h3>
-              <p class="desc">词：朱  海  曲：舒  楠</p>
+              <p class="desc">词：朱海  曲：舒楠</p>
               <p class="desc">领唱：肖威 袁多艺 崔智勇</p>
               <p class="desc">李田苗 杨进凯 赵怡冰 丁晴晴</p>
               <p class="desc">合唱：河南师范大学新联学院合唱团</p>
@@ -20,7 +20,7 @@
             </div> -->
           </div>
 
-          <div class="info-wrap">
+          <div class="info-wrap ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1.3s" swiper-animate-delay="0.85s">
 
             <div class="avatar-wrap">
               <img src="./host-2.png" alt="" class="avatar">
@@ -28,9 +28,9 @@
             <div class="text-wrap">
               <h3 class="name">女声独唱：《最美是你》</h3>
 
-              <p class="desc">词：房  千  曲：姚晓强</p>
+              <p class="desc">词：房千  曲：姚晓强</p>
               <p class="desc">演唱：河南歌舞演艺集团歌剧团</p>
-              <p class="desc">青年女高音歌唱家  薛  青</p>
+              <p class="desc">青年女高音歌唱家  薛青</p>
             </div>
 
           </div>

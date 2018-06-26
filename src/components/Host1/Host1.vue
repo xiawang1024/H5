@@ -6,7 +6,7 @@
         <div class="bottom-left ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.25s" swiper-animate-delay="0s"></div>
         <div class="bottom-right ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1.3s" swiper-animate-delay="0s"></div>
         <div class="g-body">
-          <div class="info-wrap">
+          <div class="info-wrap ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1.2s" swiper-animate-delay="0.45s">
             <div class="avatar-wrap">
               <img src="./host-1.png" alt="" class="avatar">
             </div>
@@ -16,7 +16,7 @@
             </div>
           </div>
 
-          <div class="info-wrap">
+          <div class="info-wrap ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1.2s" swiper-animate-delay="0.85s">
 
             <div class="text-wrap">
               <h3 class="name">雨薇</h3>
@@ -81,7 +81,7 @@ $color = #e60012;
   .bottom-right {
     position: absolute;
     right: 0;
-    bottom: 50px;
+    bottom: 20px;
     width: 475px;
     height: 307px;
     background: url('../common/003.png') center center no-repeat;

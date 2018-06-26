@@ -4,13 +4,13 @@
         <div class="top-left ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="0s"></div>
         <div class="top-right ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.5s" swiper-animate-delay="0s"></div>
         <div class="bottom-left ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.25s" swiper-animate-delay="0s"></div>
-        <div class="bottom-right ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1.3s" swiper-animate-delay="0s"></div>
+        <!-- <div class="bottom-right ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1.3s" swiper-animate-delay="0s"></div> -->
         <div class="g-body">
-          <div class="info-wrap">
+          <div class="info-wrap ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1.3s" swiper-animate-delay="0.45s">
 
             <div class="text-wrap">
               <h3 class="name">齐唱：《再一次出发》</h3>
-              <p class="desc">词：屈  塬  曲：王  备</p>
+              <p class="desc">词：屈塬  曲：王备</p>
               <p class="desc">演唱：全体演员</p>
             </div>
             <!-- <div class="avatar-wrap">
@@ -18,7 +18,7 @@
             </div> -->
           </div>
 
-          <div class="info-wrap">
+          <div class="info-wrap ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1.3s" swiper-animate-delay="0.85s">
 
             <!-- <div class="avatar-wrap">
               <img src="./host-2.png" alt="" class="avatar">
@@ -26,7 +26,7 @@
             <div class="text-wrap">
               <h3 class="name">齐唱：《前进吧，中国共产党》</h3>
 
-              <p class="desc">词：朱  海  曲：王黎光</p>
+              <p class="desc">词：朱海  曲：王黎光</p>
               <p class="desc">演唱：全场人员</p>
 
             </div>

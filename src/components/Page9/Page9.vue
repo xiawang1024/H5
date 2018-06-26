@@ -4,27 +4,27 @@
         <div class="top-left ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="0s"></div>
         <div class="top-right ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.5s" swiper-animate-delay="0s"></div>
         <div class="bottom-left ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.25s" swiper-animate-delay="0s"></div>
-        <div class="bottom-right ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1.3s" swiper-animate-delay="0s"></div>
+        <!-- <div class="bottom-right ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1.3s" swiper-animate-delay="0s"></div> -->
         <div class="g-body">
-          <div class="info-wrap">
+          <div class="info-wrap ani" swiper-animate-effect="fadeIn" swiper-animate-duration="1.3s" swiper-animate-delay="0.45s">
 
             <div class="text-wrap">
               <h3 class="name">《在田野 在山岗》</h3>
-              <p class="desc">词：远  山  曲：近  水</p>
+              <p class="desc">词：远山  曲：近水</p>
               <p class="desc">演唱：河南广播电视台—SEVEN、佳阳、月阳</p>
               <p class="desc">佳雨、依璐、圈圈、第一书记代表</p>
 
             </div>
             <div class="avatar-wrap">
-              <img src="./host-1.png" alt="" class="avatar">
+              <img src="./host-1.png" alt="" class="avatar ani" swiper-animate-effect="rotateIn" swiper-animate-duration="1.3s" swiper-animate-delay="0s">
             </div>
           </div>
 
           <div class="avatars-wrap">
-            <img src="./1.png" alt="" class="avatar1">
-            <img src="./2.png" alt="" class="avatar2">
-            <img src="./3.png" alt="" class="avatar3">
-            <img src="./4.png" alt="" class="avatar4">
+            <img src="./1.png" alt="" class="avatar1 ani" swiper-animate-effect="rotateIn" swiper-animate-duration="1.3s" swiper-animate-delay="0.65s">
+            <img src="./2.png" alt="" class="avatar2 ani" swiper-animate-effect="rotateIn" swiper-animate-duration="1.3s" swiper-animate-delay="1.05s">
+            <img src="./3.png" alt="" class="avatar3 ani" swiper-animate-effect="rotateIn" swiper-animate-duration="1.3s" swiper-animate-delay="1.45s">
+            <img src="./4.png" alt="" class="avatar4 ani" swiper-animate-effect="rotateIn" swiper-animate-duration="1.3s" swiper-animate-delay="1.05s">
           </div>
 
         </div>

@@ -4,9 +4,9 @@
         <div class="top-left ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="0s"></div>
         <div class="top-right ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.5s" swiper-animate-delay="0s"></div>
         <div class="bottom-left ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.25s" swiper-animate-delay="0s"></div>
-        <div class="bottom-right ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1.3s" swiper-animate-delay="0s"></div>
+        <!-- <div class="bottom-right ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1.3s" swiper-animate-delay="0s"></div> -->
         <div class="g-body">
-          <div class="info-wrap">
+          <div class="info-wrap ani" swiper-animate-effect="fadeIn" swiper-animate-duration="1.3s" swiper-animate-delay="0.45s">
 
             <div class="text-wrap">
               <h3 class="name">男女声二重唱：《大海啊，故乡》</h3>
@@ -19,12 +19,12 @@
             </div> -->
           </div>
 
-          <div class="info-wrap">
+          <div class="info-wrap ani" swiper-animate-effect="fadeIn" swiper-animate-duration="1.3s" swiper-animate-delay="0.85s">
 
             <div class="text-wrap">
               <h3 class="name">男声独唱：《小白杨》</h3>
 
-              <p class="desc">词：梁上泉  曲：士  心</p>
+              <p class="desc">词：梁上泉  曲：士心</p>
               <p class="desc">演唱：郑州升达大学</p>
               <p class="desc">青年男高音歌唱家  池浩东</p>
             </div>

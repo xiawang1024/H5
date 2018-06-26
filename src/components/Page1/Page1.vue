@@ -4,9 +4,9 @@
         <div class="top-left ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="0s"></div>
         <div class="top-right ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.5s" swiper-animate-delay="0s"></div>
         <div class="bottom-left ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.25s" swiper-animate-delay="0s"></div>
-        <div class="bottom-right ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1.3s" swiper-animate-delay="0s"></div>
+        <!-- <div class="bottom-right ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1.3s" swiper-animate-delay="0s"></div> -->
         <div class="g-body">
-          <div class="info-wrap">
+          <div class="info-wrap ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1.2s" swiper-animate-delay="0.45s">
 
             <div class="text-wrap">
               <h3 class="name">序一</h3>
@@ -20,7 +20,7 @@
             </div>
           </div>
 
-          <div class="info-wrap">
+          <div class="info-wrap ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1.2s" swiper-animate-delay="0.85s">
             <div class="avatar-wrap">
               <img src="./host-2.png" alt="" class="avatar">
             </div>
@@ -29,7 +29,7 @@
               <h3 class="name"><span>小提琴独奏：</span><br>《红军战士想念毛泽东》</h3>
 
               <p class="desc">演奏：河南交响乐团  </p>
-              <p class="desc">青年小提琴演奏家  管  鑫</p>
+              <p class="desc">青年小提琴演奏家  管鑫</p>
 
             </div>
 
