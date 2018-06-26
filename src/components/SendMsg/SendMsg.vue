@@ -80,6 +80,10 @@ export default {
         this.isVoice =  !this.isVoice
       },
       postImg() {
+        if(this.isNotWeixin) {
+          weui.alert('请用微信打开进行发言！')
+          return
+        }
         wx.chooseImage({
           count: 1, // 默认9
           sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有

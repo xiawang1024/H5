@@ -1,19 +1,131 @@
 <template>
- <div class="voice">
-   <button class="btn">按住说话</button>
- </div>
+	<div class="voice">
+		<button class="btn" :class="isTouch ? 'istouch':'' " @touchstart.prevent="startRecord" @touchend.prevent="stopRecord" v-html="tipsMsg"></button>
+	</div>
 </template>
 
 <script>
+ import weui from 'weui.js';
+ import wx from 'weixin-js-sdk';
+ import { WeChat } from 'weChat/util';
+ import { getUser, postMsg } from 'api/index';
+ import HU_DONG_ID from '@/config.js';
+
+ const weChat = new WeChat()
+
  export default {
-   data () {
-     return {
+	data () {
+		return {
+      openid:'',
+      creater:'',
+      fromUid:'',
+			tipsMsg:'按住&nbsp;&nbsp;说话',
+			isTouch:false,
+      startRecordTime:0,
+      endRecordTime:0
+		}
+	},
+	components: {
 
-     }
-   },
-   components: {
-
-   }
+	},
+  mounted() {
+    if (!localStorage.rainAllowRecord || localStorage.rainAllowRecord !== 'true') {
+      wx.startRecord({
+        success: function() {
+          localStorage.rainAllowRecord = 'true';
+          wx.stopRecord();
+        },
+        cancel: function() {
+          weui.alert('用户拒绝授权录音');
+        }
+      });
+    }
+    if(weChat.getStorage('WXHNDTOPENID') == null) {
+      this.isNotWeixin = true
+    }else{
+      let userInfo = JSON.parse(weChat.getStorage('WXHNDTOPENID'))
+      this.openid = userInfo.openid;
+      setTimeout(() => {
+        getUser(this.openid).then((res) => {
+            let data = res.data
+            if(data.status === 1) {
+                this.creater = data.data.name
+                this.fromUid = data.data.id
+            }else{
+                console.log('获取用户信息失败')
+            }
+        }).catch((err) => {
+            console.log(err)
+        })
+      },20)
+    }
+  },
+	methods:{
+		startRecord() {
+      if(this.isNotWeixin) {
+        weui.alert('请用微信打开进行发言！')
+        return
+      }
+      this.startRecordTime = Date.parse(new Date())
+			this.isTouch = true
+			this.tipsMsg = '松开&nbsp;&nbsp;结束'
+      this.recordLoading = weui.loading('录音中...')
+		},
+		stopRecord() {
+      if(this.isNotWeixin){
+        return
+      }
+      this.recordLoading.hide()
+      this.endRecordTime = Date.parse(new Date())
+			this.isTouch = false
+			this.tipsMsg = '按住&nbsp;&nbsp;说话'
+      if(this.endRecordTime - this.startRecordTime < 300){
+        return
+      }
+		},
+    _stopHandler() {
+      wx.stopRecord({
+        success:(res) => {
+          let voiceLocalId = res.localId;
+          wx.playVoice({
+            localId:voiceLocalId
+          })
+          weui.confirm('确定发送',{
+            buttons:[
+              {
+                label:'返回',
+                type:'default',
+                onClick:() => {
+                  console.log('no')
+                }
+              },
+              {
+                label: '确定',
+								type: 'primary',
+								onClick: () => {
+									this._uploadVoice(voiceLocalId);
+								}
+              }
+            ]
+          })
+        },
+        fail:(res) => {
+					console.log(JSON.stringify(res));
+				}
+      })
+    },
+    _uploadVoice(voiceLocalId) {
+      wx.uploadVoice({
+        localId: voiceLocalId, // 需要上传的音频的本地ID，由stopRecord接口获得
+        isShowProgressTips: 1, // 默认为1，显示进度提示
+        success: (res) => {
+          postMsg(-2, HU_DONG_ID , this.creater, this.fromUid, res.serverId).then((res) => {
+            weui.toast('发送成功，等待审核！')
+          })
+        }
+      });
+    }
+	}
  }
 </script>
 
@@ -32,6 +144,10 @@
     outline: none;
     background: none;
     user-select: none;
+
+    &.istouch {
+      background: #ddd;
+    }
   }
 }
 </style>

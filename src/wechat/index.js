@@ -3,6 +3,8 @@ import axios from 'axios';
 import weui from 'weui.js';
 import Qs from 'qs';
 import { WeChatConf } from './util';
+import HU_DONG_ID from '@/config.js';
+import { getUser, postMsg } from 'api/index';
 
 const weChatConf = new WeChatConf();
 
@@ -40,24 +42,24 @@ wx.ready(function() {
 
 	wx.onVoiceRecordEnd({
 		// 录音时间超过一分钟没有停止的时候会执行 complete 回调
-		complete: function(res) {
+		complete: (res) => {
 			const localId = res.localId;
 			wx.playVoice({
 				localId: localId // 需要播放的音频的本地ID，由stopRecord接口获得
 			});
-			weui.confirm('回听已录制的歌曲', {
+			weui.confirm('确定发送', {
 				buttons: [
 					{
-						label: '重新录制',
+						label: '返回',
 						type: 'default',
-						onClick: function() {
+						onClick: () => {
 							console.log('no');
 						}
 					},
 					{
-						label: '确定上传',
+						label: '确定',
 						type: 'primary',
-						onClick: function() {
+						onClick: () => {
 							uploadVoice(localId);
 						}
 					}
@@ -72,18 +74,29 @@ function uploadVoice(voiceLocalId) {
 	wx.uploadVoice({
 		localId: voiceLocalId, // 需要上传的音频的本地ID，由stopRecord接口获得
 		isShowProgressTips: 1, // 默认为1，显示进度提示
-		success: function(res) {
-			const userInfo = weChatConf.getStorage('WXHNDTOPENID');
-			const openId = JSON.parse(userInfo).openid;
-			const songName = document.querySelector('#selectSong').html();
-			//把录音在微信服务器上的id（res.serverId）发送到自己的服务器供下载。
-			axios({
-				method: 'get',
-				url: 'https://a.weixin.hndt.com/boom/api/wx/radio/download',
-				data: Qs.stringify({ mediaId: res.serverId, openId: openId, name: songName })
-			}).then(() => {
-				weui.toast('上传成功！');
-			});
+		success: (res) => {
+			let serverId = res.serverId;
+			let userInfo = JSON.parse(weChat.getStorage('WXHNDTOPENID'));
+			setTimeout(() => {
+				let openid = userInfo.openid;
+				getUser(openid)
+					.then((response) => {
+						let data = response.data;
+						if (data.status === 1) {
+							let creater = data.data.name;
+							let fromUid = data.data.id;
+
+							postMsg(-2, HU_DONG_ID, creater, fromUid, serverId).then(() => {
+								weui.toast('发送成功，等待审核！');
+							});
+						} else {
+							console.log('获取用户信息失败');
+						}
+					})
+					.catch((err) => {
+						console.log(err);
+					});
+			}, 20);
 		}
 	});
 }
