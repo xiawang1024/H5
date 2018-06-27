@@ -110,7 +110,7 @@ $color = #e60012;
       left: 0;
       right: 0;
       width: 100%;
-      height: 312px;
+      height: 325px;
       padding: 0 40px;
       box-sizing: border-box;
 
