@@ -1,42 +1,35 @@
 <template>
-    <div class="host2">
+    <div class="page1">
         <!-- <div class="logo ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="1s"></div> -->
         <div class="top-left ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="0s"></div>
         <div class="top-right ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.5s" swiper-animate-delay="0s"></div>
         <div class="bottom-left ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.25s" swiper-animate-delay="0s"></div>
         <!-- <div class="bottom-right ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1.3s" swiper-animate-delay="0s"></div> -->
         <div class="g-body">
-          <div class="info-wrap ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1.3s" swiper-animate-delay="0.45s">
-
-            <div class="text-wrap">
-              <h3 class="name">男女声二重唱：《入党申请书》</h3>
-              <p class="desc">词：贺沛轩  曲：方岩</p>
-              <p class="desc">演唱：河南歌舞演艺集团歌剧团</p>
-              <p class="desc">郑州升达大学、青年歌手  郭亚琼</p>
-              <p class="desc">青年歌唱家  燕峰</p>
-
+          <div class="info-wrap first ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1.2s" swiper-animate-delay="0.45s">
+            <div class="avatar-wrap avatar1">
+              <img src="./host-3.png" alt="" class="avatar ani" swiper-animate-effect="flipInX" swiper-animate-duration="1.25s" swiper-animate-delay="1.05s">
             </div>
             <div class="avatar-wrap">
-              <img src="./host-1.png" alt="" class="avatar ani" swiper-animate-effect="fadeIn" swiper-animate-duration="1.3s" swiper-animate-delay="1s">
-              <img src="./host-3.png" alt="" class="avatar1 ani" swiper-animate-effect="fadeIn" swiper-animate-duration="1.3s" swiper-animate-delay="1.25s">
+              <img src="./host-1.png" alt="" class="avatar ani" swiper-animate-effect="flipInX" swiper-animate-duration="1.25s" swiper-animate-delay="1.5s">
+            </div>
+
+            <div class="text-wrap">
+              <!-- <h3 class="name">TONNY</h3>
+              <p class="desc">魅力881品牌推广部负责人，《魅力左岸》等节目的主持人，并打造了品牌活动“Tonny先生的黑胶分享会”。</p> -->
             </div>
           </div>
 
-          <div class="info-wrap ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1.3s" swiper-animate-delay="0.85s">
+          <div class="info-wrap second ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1.2s" swiper-animate-delay="0.85s">
 
             <div class="text-wrap">
-              <h3 class="name">女声独唱：《江山》</h3>
-
-              <p class="desc">词：晓光  曲：印青</p>
-              <p class="desc">演唱：郑州师范学院</p>
-              <p class="desc">青年女高音歌唱家  张伟芳</p>
+              <!-- <h3 class="name">雨薇</h3>
+              <p class="desc">魅力881河南音乐广播主持人，主持风格：魅力、优雅、大气、温婉</p> -->
             </div>
             <div class="avatar-wrap">
-              <img src="./host-2.png" alt="" class="avatar ani" swiper-animate-effect="fadeIn" swiper-animate-duration="1.3s" swiper-animate-delay="1.5s">
+              <img src="./host-2.png" alt="" class="avatar ani" swiper-animate-effect="flipInX" swiper-animate-duration="1.25s" swiper-animate-delay="1.75s">
             </div>
-
           </div>
-
         </div>
     </div>
 </template>
@@ -45,7 +38,7 @@
 
 
 export default {
-  name:'host2'
+  name:'page1'
 }
 </script>
 
@@ -53,7 +46,7 @@ export default {
 <style lang="stylus" scoped>
 $color = #e60012;
 
-.host2 {
+.page1 {
   width: 100%;
   height: 100%;
   background: url('../../assets/bg.jpg') center center no-repeat;
@@ -92,7 +85,7 @@ $color = #e60012;
   .bottom-right {
     position: absolute;
     right: 0;
-    bottom: 50px;
+    bottom: 20px;
     width: 475px;
     height: 307px;
     background: url('../common/003.png') center center no-repeat;
@@ -101,77 +94,84 @@ $color = #e60012;
 
   .g-body {
     position: absolute;
-    top: 250px;
+    top: 300px;
     left: 0;
     right: 0;
     width: 100%;
     padding: 0 40px;
     box-sizing: border-box;
 
+    .m-title {
+      text-align: center;
+      font-size: 48px;
+      color: $color;
+    }
+
     .info-wrap {
-      position: relative;
-      // display: flex;
-      align-items: center;
-      margin-bottom: 80px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 230px;
+      padding: 0 40px;
+      box-sizing: border-box;
 
       .avatar-wrap {
+        position: absolute;
         font-size: 0;
-        margin-top: 40px;
-        flex: 0 0 200px;
-        width: 200px;
-
-        .avatar, .avatar1 {
-          position: absolute;
-          width: 180px;
-          height: 180px;
-        }
 
         .avatar {
-          top: -40px;
-          right: -30px;
-        }
-
-        .avatar1 {
-          top: 150px;
-          right: 40px;
+          width: 184px;
+          height: 184px;
         }
       }
 
       .text-wrap {
-        margin-left: 10px;
-        line-height: 1.8;
-        font-size: 28px;
-
-        .name {
-          font-size: 38px;
-          color: $color;
-
-          span {
-            font-size: 36px;
-          }
-        }
-
-        .desc {
-          color: $color;
-          // white-space: nowrap;
-        }
+        position: absolute;
       }
 
-      &:nth-child(1) {
+      &.first {
         .text-wrap {
-          // margin-left: 40px;
-        }
-      }
-
-      &:nth-child(2) {
-        .text-wrap {
-          margin-left: 40px;
+          // top: 35px;
+          width: 485px;
+          height: 330px;
+          background: url('./text-1.png') center center no-repeat;
+          background-size: 485px 330px;
         }
 
         .avatar-wrap {
-          position: absolute;
+          top: 188px;
+          left: 438px;
+          z-index: 10;
+
+          &.avatar1 {
+            top: -30px;
+            left: 530px;
+          }
+        }
+      }
+
+      &.second {
+        top: 384px;
+        height: 265px;
+
+        .text-wrap {
+          left: 80px;
+          width: 434px;
+          height: 213px;
+          background: url('./text-2.png') center center no-repeat;
+          background-size: 434px 213px;
+        }
+
+        .avatar-wrap {
           top: 40px;
-          right: 40px;
+          right: 60px;
+
+          .avatar {
+            width: 185px;
+            height: 185px;
+          }
         }
       }
     }

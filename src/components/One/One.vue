@@ -10,8 +10,8 @@
           <div class="m-title ani" swiper-animate-effect="fadeIn" swiper-animate-duration="1s" swiper-animate-delay="0.5s"></div>
           <div class="m-body">
             <p class="u-time ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="0.6s">1921-2018</p>
-            <p class="u-sub-theme ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="1s"></p>
-            <p class="u-theme ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="0.75s"></p>
+            <p class="u-sub-theme ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="0.75s"></p>
+            <p class="u-theme ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="1s"></p>
             <!-- <p class="u-zhu ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="1.25s">主办方：河南省委组织部&nbsp;&nbsp;河南省委宣传部&nbsp;&nbsp;河南广播电视台</p>
             <p class="u-cheng ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="1.5s">承办方：河南广播电视台广播广告经营部&nbsp;&nbsp;恒丰银行郑州分行</p> -->
             <div class="u-users">
@@ -26,7 +26,7 @@
                 <p class="u-name">承办：</p>
                 <ul class="u-list">
                   <li class="list">河南广播电视台广播广告经营中心</li>
-                  <li class="list">音乐广播</li>
+                  <li class="list">河南广播电视台音乐广播</li>
 
                 </ul>
               </div>
