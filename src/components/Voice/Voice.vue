@@ -82,6 +82,7 @@
       if(this.endRecordTime - this.startRecordTime < 300){
         return
       }
+      this._stopHandler()
 		},
     _stopHandler() {
       wx.stopRecord({
