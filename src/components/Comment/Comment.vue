@@ -22,7 +22,7 @@
                     <div class="content">
                         <p v-if="item.comment.file_type == 'TEXT'" v-html="item.comment.content"></p>
                         <img class="img" width="300" v-if="item.comment.file_type == 'PIC'" :src="item.comment.content" @click="previewImage(item.comment.content)"/>
-                        <voice v-on:click.native="playVoice(item.comment.content,index)" :isPlay="voicePlayindex === index" :restTime="voiceRestTime"></voice>
+                        <voice v-if="item.comment.file_type == 'VOICE'" v-on:click.native="playVoice(item.comment.content,index)" :isPlay="voicePlayindex === index" :restTime="voiceRestTime"></voice>
                     </div>
                     <div class="anchor-reply" v-show="item.commentChildList && item.commentChildList.length > 0">
                         <span class="anchor">主播回复:</span>
@@ -177,8 +177,8 @@ export default {
             }
           }else {
             this.audio.pause()
-            this.voiceSrc = 'http://owaup0bqu.bkt.clouddn.com/wangfei.mp3'
-            this.audio.setAttribute('src','http://owaup0bqu.bkt.clouddn.com/0802%20%E6%B2%B3%E5%8D%97%E5%B9%BF%E6%92%ADAPP%E5%AE%A3%E4%BC%A0%EF%BC%88%E6%A6%82%E5%BF%B5%E7%AF%87%E4%B8%8B%E7%AF%87%EF%BC%89%20Banana%20Studio%E5%87%BA%E5%93%81.mp3')
+
+            this.audio.setAttribute('src',src)
 
             this.$refs.audio.play()
             this.voiceRestTime = 0;

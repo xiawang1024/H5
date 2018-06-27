@@ -102,7 +102,7 @@
 					wx.playVoice({
 						localId: voiceLocalId
           });
-          weui.alert(voiceLocalId)
+          // weui.alert(voiceLocalId)
           weui.confirm('确定发送',{
             buttons:[
               {
