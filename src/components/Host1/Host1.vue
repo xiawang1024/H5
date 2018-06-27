@@ -132,9 +132,9 @@ $color = #e60012;
         .text-wrap {
           // top: 35px;
           width: 420px;
-          height: 312px;
+          height: 325px;
           background: url('./text-1.png') center center no-repeat;
-          background-size: 420px 312px;
+          background-size: 420px 325px;
         }
 
         .avatar-wrap {
