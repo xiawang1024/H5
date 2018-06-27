@@ -24,7 +24,7 @@
               <p class="desc">魅力881河南音乐广播主持人，主持风格：魅力、优雅、大气、温婉</p> -->
             </div>
             <div class="avatar-wrap">
-              <img src="./host-2.png" alt="" class="avatar ani" swiper-animate-effect="rotateInDownRight" swiper-animate-duration="1.25s" swiper-animate-delay="1.5s">
+              <img src="./host-2.png" alt="" class="avatar ani" swiper-animate-effect="rotateInDownLeft" swiper-animate-duration="1.25s" swiper-animate-delay="1.5s">
             </div>
           </div>
         </div>
@@ -131,15 +131,16 @@ $color = #e60012;
       &.first {
         .text-wrap {
           // top: 35px;
-          width: 420px;
+          left: 50px;
+          width: 389px;
           height: 325px;
           background: url('./text-1.png') center center no-repeat;
-          background-size: 420px 325px;
+          background-size: 389px 325px;
         }
 
         .avatar-wrap {
-          top: 0;
-          right: 40px;
+          top: 100px;
+          right: 60px;
         }
       }
 
@@ -149,15 +150,16 @@ $color = #e60012;
 
         .text-wrap {
           // top: 35px;
-          width: 610px;
-          height: 265px;
+          right: 50px;
+          width: 423px;
+          height: 212px;
           background: url('./text-2.png') center center no-repeat;
-          background-size: 610px 265px;
+          background-size: 423px 212px;
         }
 
         .avatar-wrap {
-          top: -80px;
-          right: 40px;
+          top: 80px;
+          left: 80px;
 
           .avatar {
             width: 242px;

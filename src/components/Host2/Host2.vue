@@ -119,8 +119,8 @@ $color = #e60012;
         font-size: 0;
 
         .avatar {
-          width: 230px;
-          height: 230px;
+          width: 220px;
+          height: 220px;
         }
       }
 
@@ -139,7 +139,7 @@ $color = #e60012;
 
         .avatar-wrap {
           top: 0;
-          right: 40px;
+          right: 30px;
         }
       }
 
@@ -156,12 +156,12 @@ $color = #e60012;
         }
 
         .avatar-wrap {
-          top: 20px;
-          right: 40px;
+          top: 60px;
+          right: 80px;
 
           .avatar {
-            width: 248px;
-            height: 248px;
+            width: 220px;
+            height: 220px;
           }
         }
       }

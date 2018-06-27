@@ -146,8 +146,8 @@ $color = #e60012;
           z-index: 10;
 
           &.avatar1 {
-            top: -154px;
-            left: 470px;
+            top: -100px;
+            left: 485px;
           }
         }
       }
@@ -169,8 +169,8 @@ $color = #e60012;
           left: 70px;
 
           .avatar {
-            width: 185px;
-            height: 185px;
+            width: 220px;
+            height: 220px;
           }
         }
       }

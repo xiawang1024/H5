@@ -46,6 +46,9 @@
       <swiper-slide>
 				<people-2></people-2>
 			</swiper-slide>
+      <swiper-slide>
+				<end></end>
+			</swiper-slide>
 		</swiper>
 	</div>
 </template>
@@ -68,6 +71,8 @@ import Page9 from '../Page9/Page9'
 import Page10 from '../Page10/Page10'
 import People1 from '../People1/People1'
 import People2 from '../People2/People2'
+import End from '../End/End'
+
 
 
 export default {
@@ -87,7 +92,8 @@ export default {
     Page9,
     Page10,
     People1,
-    People2
+    People2,
+    End
 	},
 	data () {
 		return {
