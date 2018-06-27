@@ -69,7 +69,17 @@
       this.startRecordTime = Date.parse(new Date())
 			this.isTouch = true
 			this.tipsMsg = '松开&nbsp;&nbsp;结束'
-      this.recordLoading = weui.loading('录音中...')
+      this.recordLoading = weui.loading('录音中...');
+      this.recordTimer = setTimeout(() => {
+        wx.startRecord({
+          success: () => {
+            localStorage.rainAllowRecord = 'true';
+          },
+          cancel: () => {
+            weui.alert('用户拒绝授权录音');
+          }
+        });
+      }, 300);
 		},
 		stopRecord() {
       if(this.isNotWeixin){
@@ -80,6 +90,7 @@
 			this.isTouch = false
 			this.tipsMsg = '按住&nbsp;&nbsp;说话'
       if(this.endRecordTime - this.startRecordTime < 300){
+        clearTimeout(recordTimer);
         return
       }
       this._stopHandler()
@@ -88,9 +99,10 @@
       wx.stopRecord({
         success:(res) => {
           let voiceLocalId = res.localId;
-          wx.playVoice({
-            localId:voiceLocalId
-          })
+					wx.playVoice({
+						localId: voiceLocalId
+          });
+          weui.alert(voiceLocalId)
           weui.confirm('确定发送',{
             buttons:[
               {
@@ -120,7 +132,7 @@
         localId: voiceLocalId, // 需要上传的音频的本地ID，由stopRecord接口获得
         isShowProgressTips: 1, // 默认为1，显示进度提示
         success: (res) => {
-          postMsg(-2, HU_DONG_ID , this.creater, this.fromUid, res.serverId).then((res) => {
+          postMsg('VOICE', HU_DONG_ID , this.creater, this.fromUid, res.serverId).then((res) => {
             weui.toast('发送成功，等待审核！')
           })
         }
