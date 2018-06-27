@@ -8,6 +8,7 @@
         <div class="g-body">
           <img src="./1.png" alt="" class="img img-1 ani"  swiper-animate-effect="fadeInDown" swiper-animate-duration="1.25s" swiper-animate-delay="0.3s">
           <img src="./2.png" alt="" class="img img-2 ani"  swiper-animate-effect="fadeInUp" swiper-animate-duration="1.25s" swiper-animate-delay="0.3s">
+          <div class="map"><a href="http://apis.map.qq.com/uri/v1/marker?marker=coord:34.844920,113.678530;title:河南电视台8号演播厅;addr:河南省郑州市金水区花园路北段8号&referer=myapp" class="link ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.25s" swiper-animate-delay="0.5s">去导航</a></div>
         </div>
     </div>
 </template>
@@ -18,6 +19,7 @@
 export default {
   name:'people'
 }
+
 </script>
 
 
@@ -88,7 +90,20 @@ $color = #e60012;
     .img-2 {
       margin-top: 50px;
       width: 581px;
-      height: 433px;
+      height: 326px;
+    }
+
+    .link {
+      margin-top: 50px;
+      display: inline-block;
+      width: 200px;
+      height: 60px;
+      line-height: 60px;
+      text-align: center;
+      font-size: 28px;
+      color: $color;
+      border: 1px solid $color;
+      border-radius: 6px;
     }
   }
 }
