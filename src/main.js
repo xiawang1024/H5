@@ -17,8 +17,8 @@ import './weChat/index';
 // Vue.use(VueAwesomeSwiper)
 
 /* fastclick修复移动端点击延迟300ms */
-// import fastclick from 'fastclick'
-// fastclick.attach(document.body)
+import fastclick from 'fastclick';
+fastclick.attach(document.body);
 
 /**
  * 视频直播

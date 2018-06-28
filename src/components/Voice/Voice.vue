@@ -71,6 +71,7 @@
 			this.tipsMsg = '松开&nbsp;&nbsp;结束'
       this.recordLoading = weui.loading('录音中...');
       this.recordTimer = setTimeout(() => {
+
         wx.startRecord({
           success: () => {
             localStorage.rainAllowRecord = 'true';
@@ -82,18 +83,39 @@
       }, 300);
 		},
 		stopRecord() {
+
       if(this.isNotWeixin){
         return
       }
       this.recordLoading.hide()
       this.endRecordTime = Date.parse(new Date())
-			this.isTouch = false
-			this.tipsMsg = '按住&nbsp;&nbsp;说话'
-      if(this.endRecordTime - this.startRecordTime < 300){
-        clearTimeout(recordTimer);
+      this.isTouch = false
+      this.tipsMsg = '按住&nbsp;&nbsp;说话'
+      console.log(this.endRecordTime)
+      console.log(this.startRecordTime)
+      console.log(this.endRecordTime - this.startRecordTime)
+      if(this.endRecordTime - this.startRecordTime <= 1000){
+        this.endRecordTime = 0;
+        this.startRecordTime = 0;
+        weui.alert('时间太短，请重录！')
+        clearTimeout(this.recordTimer);
+        setTimeout(() => {
+          wx.stopRecord({
+            success:(res) => {
+              console.log(res)
+            },
+            fail:(err) => {
+              console.log(err)
+            }
+          })
+        },1000)
         return
+
+      }else {
+
+        this._stopHandler()
       }
-      this._stopHandler()
+      this.$nextTick(() => {})
 		},
     _stopHandler() {
       wx.stopRecord({
@@ -149,6 +171,7 @@
   height: 100%;
 
   .btn {
+    display: inline-block;
     width: 100%;
     height: 60px;
     border: 1px solid #0081dc;
