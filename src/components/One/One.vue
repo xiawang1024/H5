@@ -53,6 +53,8 @@ export default {
 
 
 <style lang="stylus" scoped>
+$color = #e60012;
+
 .one {
   width: 100%;
   height: 100%;
@@ -132,7 +134,7 @@ export default {
       left: 0;
       width: 100%;
       text-align: center;
-      color: #b60005;
+      color: $color;
       letter-spacing: 0.2px;
 
       .u-time {

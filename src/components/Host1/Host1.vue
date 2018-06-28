@@ -150,7 +150,7 @@ $color = #e60012;
 
         .text-wrap {
           // top: 35px;
-          right: 50px;
+          right: 100px;
           width: 423px;
           height: 212px;
           background: url('./text-2.png') center center no-repeat;
@@ -158,8 +158,8 @@ $color = #e60012;
         }
 
         .avatar-wrap {
-          top: 80px;
-          left: 80px;
+          top: 120px;
+          left: 100px;
 
           .avatar {
             width: 242px;

@@ -131,15 +131,15 @@ $color = #e60012;
       &.first {
         .text-wrap {
           // top: 35px;
-          width: 450px;
+          width: 506px;
           height: 209px;
           background: url('./text-1.png') center center no-repeat;
-          background-size: 450px 209px;
+          background-size: 506px 209px;
         }
 
         .avatar-wrap {
-          top: 0;
-          right: 30px;
+          top: 60px;
+          right: 10px;
         }
       }
 
@@ -149,14 +149,14 @@ $color = #e60012;
 
         .text-wrap {
           // top: 35px;
-          width: 422px;
+          width: 512px;
           height: 275px;
           background: url('./text-2.png') center center no-repeat;
-          background-size: 422px 275px;
+          background-size: 512px 275px;
         }
 
         .avatar-wrap {
-          top: 60px;
+          top: 110px;
           right: 80px;
 
           .avatar {
