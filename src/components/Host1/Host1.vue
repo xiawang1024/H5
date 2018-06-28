@@ -132,15 +132,15 @@ $color = #e60012;
         .text-wrap {
           // top: 35px;
           left: 50px;
-          width: 389px;
-          height: 325px;
+          width: 447px;
+          height: 268px;
           background: url('./text-1.png') center center no-repeat;
-          background-size: 389px 325px;
+          background-size: 447px 268px;
         }
 
         .avatar-wrap {
-          top: 100px;
-          right: 60px;
+          top: 0px;
+          right: 40px;
         }
       }
 
