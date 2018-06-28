@@ -126,7 +126,7 @@ export default {
   box-sizing: border-box;
 
   .sendVoice {
-    flex: 0 0 70px;
+    flex: 0 0 60px;
     height: 55px;
     background: url('./icon-voice.png') center center no-repeat;
     background-size: contain;
@@ -138,8 +138,8 @@ export default {
   }
 
   .sendImg {
-    flex: 0 0 80px;
-    height: 55px;
+    flex: 0 0 100px;
+    height: 65px;
     background: url('./icon-img.png') center center no-repeat;
     background-size: contain;
   }

@@ -1,6 +1,6 @@
 <template>
   <div class="program">
-    <div class="list-box">
+    <!-- <div class="list-box">
       <h3 class="title">序言</h3>
       <ul class="list-wrap">
         <li class="list">《中国有个河南》</li>
@@ -66,7 +66,9 @@
     </div>
     <div class="list-box">
       <h3 class="title">尾声：《中国共产党章程》</h3>
-    </div>
+    </div> -->
+    <img src="./01.jpg" alt="" class="img">
+    <img src="./02.jpg" alt="" class="img">
   </div>
 </template>
 
@@ -86,8 +88,13 @@ export default {
   bottom: 0px;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
-  padding: 30px 60px 200px;
+  // padding: 30px 60px 200px;
   box-sizing: border-box;
+
+  .img {
+    display: block;
+    width: 100%;
+  }
 
   .list-box {
     width: 100%;
