@@ -69,6 +69,8 @@
     </div> -->
     <img src="./01.jpg" alt="" class="img">
     <img src="./02.jpg" alt="" class="img">
+    <img src="./03.jpg" alt="" class="img">
+    <img src="./04.jpg" alt="" class="img">
   </div>
 </template>
 
