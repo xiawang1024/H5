@@ -38,7 +38,7 @@ export default {
                 },
                 flash: { hls: { withCredentials: false }},
                 html5: { hls: { withCredentials: false }},
-                poster: "http://www.hndt.com/h5/partysday/livePostSongs.jpg"
+                poster: "http://www.hndt.com/h5/partysday/livePostEnd.jpg"
             }
         }
     },
