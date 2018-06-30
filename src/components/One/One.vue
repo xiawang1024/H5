@@ -26,7 +26,7 @@
                 <p class="u-name">承办：</p>
                 <ul class="u-list">
                   <li class="list">河南广播电视台广播广告经营中心</li>
-                  <li class="list">河南广播电视台音乐广播</li>
+                  <li class="list">河南广播电视台新闻广播</li>
 
                 </ul>
               </div>

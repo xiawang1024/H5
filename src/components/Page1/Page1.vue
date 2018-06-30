@@ -6,26 +6,13 @@
         <div class="bottom-left ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.25s" swiper-animate-delay="0s"></div>
         <!-- <div class="bottom-right ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1.3s" swiper-animate-delay="0s"></div> -->
         <div class="g-body">
-          <div class="info-wrap first ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1.2s" swiper-animate-delay="0.45s">
-            <div class="avatar-wrap">
-              <img src="./host-1.png" alt="" class="avatar ani" swiper-animate-effect="flipInY" swiper-animate-duration="1.25s" swiper-animate-delay="1s">
-            </div>
-            <div class="text-wrap">
-              <!-- <h3 class="name">TONNY</h3>
-              <p class="desc">魅力881品牌推广部负责人，《魅力左岸》等节目的主持人，并打造了品牌活动“Tonny先生的黑胶分享会”。</p> -->
-            </div>
+          <div class="m-title ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1.25s" swiper-animate-delay="0.25s"></div>
+          <div class="img-wrap">
+            <img src="./1.png" alt="" class="img img-1 ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1.25s" swiper-animate-delay="0.5s">
+            <img src="./2.png" alt="" class="img img-2 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1.25s" swiper-animate-delay="0.75s">
+            <img src="./3.png" alt="" class="img img-3 ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1.25s" swiper-animate-delay="0.75s">
           </div>
-
-          <div class="info-wrap second ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1.2s" swiper-animate-delay="0.85s">
-
-            <div class="text-wrap">
-              <!-- <h3 class="name">雨薇</h3>
-              <p class="desc">魅力881河南音乐广播主持人，主持风格：魅力、优雅、大气、温婉</p> -->
-            </div>
-            <div class="avatar-wrap">
-              <img src="./host-2.png" alt="" class="avatar ani" swiper-animate-effect="flipInY" swiper-animate-duration="1.25s" swiper-animate-delay="1.5s">
-            </div>
-          </div>
+          <div class="text-wrap ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.25s" swiper-animate-delay="0.75s"></div>
         </div>
     </div>
 </template>
@@ -98,72 +85,53 @@ $color = #e60012;
     box-sizing: border-box;
 
     .m-title {
-      text-align: center;
-      font-size: 48px;
-      color: $color;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 86px;
+      background: url('./title.png') center center no-repeat;
+      background-size: contain;
     }
 
-    .info-wrap {
+    .img-wrap {
       position: absolute;
-      top: 40px;
+      top: 110px;
       left: 0;
-      right: 0;
       width: 100%;
-      height: 230px;
-      padding: 0 40px;
-      box-sizing: border-box;
+      font-size: 0;
+      text-align: center;
 
-      .avatar-wrap {
+      .img {
+        display: block;
         position: absolute;
-        font-size: 0;
-
-        .avatar {
-          width: 180px;
-          height: 180px;
-        }
+        width: 275px;
+        height: 204px;
       }
 
-      .text-wrap {
-        position: absolute;
+      .img-1 {
+        left: 240px;
       }
 
-      &.first {
-        .text-wrap {
-          // top: 35px;
-          width: 432px;
-          height: 240px;
-          background: url('./text-1.png') center center no-repeat;
-          background-size: 432px 240px;
-        }
-
-        .avatar-wrap {
-          top: 60px;
-          right: 60px;
-        }
+      .img-2 {
+        top: 220px;
+        left: 92px;
       }
 
-      &.second {
-        top: 350px;
-        height: 265px;
-
-        .text-wrap {
-          right: 40px;
-          width: 419px;
-          height: 298px;
-          background: url('./text-2.png') center center no-repeat;
-          background-size: 419px 298px;
-        }
-
-        .avatar-wrap {
-          top: 100px;
-          left: 60px;
-
-          .avatar {
-            width: 185px;
-            height: 185px;
-          }
-        }
+      .img-3 {
+        top: 220px;
+        right: 92px;
       }
+    }
+
+    .text-wrap {
+      position: absolute;
+      top: 570px;
+      left: 0;
+      width: 100%;
+      height: 85px;
+      background: url('./text.png') center center no-repeat;
+      background-size: contain;
     }
   }
 }

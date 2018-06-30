@@ -5,9 +5,9 @@
  * DEFAULT_DESC String 分享描述
  */
 
-const DEFAULT_TITLE = '给党唱支生日歌--主题歌会';
-const DEFAULT_LINK = 'http://www.hndt.com/h5/partysday/songs/index.html';
+const DEFAULT_TITLE = '给党唱支生日歌--千人拼党旗';
+const DEFAULT_LINK = 'http://www.hndt.com/h5/partysday/flags/index.html';
 const DEFAULT_IMGURL = 'http://www.hndt.com/h5/partysday/PartysDay.jpg';
-const DEFAULT_DESC = '主题歌会--《给党唱支生日歌》庆祝中国共产党建党97周年大型系列文化活动。';
+const DEFAULT_DESC = '千人拼党旗--《给党唱支生日歌》庆祝中国共产党建党97周年大型系列文化活动。';
 
 module.exports = { DEFAULT_TITLE, DEFAULT_LINK, DEFAULT_IMGURL, DEFAULT_DESC };

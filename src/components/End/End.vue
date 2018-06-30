@@ -8,7 +8,7 @@
         <div class="g-body">
           <img src="./1.png" alt="" class="img img-1 ani"  swiper-animate-effect="fadeInDown" swiper-animate-duration="1.25s" swiper-animate-delay="0.3s">
           <img src="./2.png" alt="" class="img img-2 ani"  swiper-animate-effect="fadeInUp" swiper-animate-duration="1.25s" swiper-animate-delay="0.3s">
-          <div class="map"><a href="http://apis.map.qq.com/uri/v1/marker?marker=coord:34.844920,113.678530;title:河南电视台8号演播厅;addr:河南省郑州市金水区花园路北段8号&referer=myapp" class="link ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.25s" swiper-animate-delay="0.5s">去导航</a></div>
+          <div class="map"><a href="http://apis.map.qq.com/uri/v1/marker?marker=coord:34.779540,113.850210;title:河南师范大学新联学院;addr:河南省郑州市中牟县郑东新区郑开大道(近党校)&referer=myapp" class="link ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.25s" swiper-animate-delay="0.5s">去导航</a></div>
         </div>
     </div>
 </template>
@@ -83,18 +83,18 @@ $color = #e60012;
     box-sizing: border-box;
 
     .img-1 {
-      width: 537px;
-      height: 277px;
+      width: 480px;
+      height: 269px;
     }
 
     .img-2 {
-      margin-top: 50px;
-      width: 581px;
-      height: 326px;
+      margin-top: 30px;
+      width: 588px;
+      height: 380px;
     }
 
     .link {
-      margin-top: 50px;
+      margin-top: 30px;
       display: inline-block;
       width: 200px;
       height: 60px;
