@@ -111,7 +111,7 @@ $color = #e60012;
       top: 480px;
       left: 0;
       width: 100%;
-      height: 164px;
+      height: 209px;
       background: url('./text.png') center center no-repeat;
       background-size: contain;
     }
