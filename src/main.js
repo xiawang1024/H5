@@ -9,7 +9,7 @@ import 'base/stylus/animate.css';
 
 /* 微信自定义分享 */
 
-import 'wechat/index.js';
+import './weChat/index.js';
 
 /* swiper插件 */
 

@@ -1,18 +1,16 @@
 <template>
     <div class="page1">
         <!-- <div class="logo ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" swiper-animate-delay="1s"></div> -->
-        <div class="top-left ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="0s"></div>
-        <div class="top-right ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.5s" swiper-animate-delay="0s"></div>
-        <div class="bottom-left ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.25s" swiper-animate-delay="0s"></div>
-        <!-- <div class="bottom-right ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1.3s" swiper-animate-delay="0s"></div> -->
+        <!-- <div class="top-left ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1s" swiper-animate-delay="0s"></div> -->
+        <div class="top-right ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1.5s" swiper-animate-delay="0s"></div>
+        <div class="bottom-left ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1.25s" swiper-animate-delay="0s"></div>
+        <div class="bottom-right ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.3s" swiper-animate-delay="0s"></div>
+        <div class="logo ani" swiper-animate-effect="rotateIn" swiper-animate-duration="1.3s" swiper-animate-delay="0s"></div>
         <div class="g-body">
-          <div class="m-title ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1.25s" swiper-animate-delay="0.25s"></div>
-          <div class="img-wrap">
-            <img src="./1.png" alt="" class="img img-1 ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1.25s" swiper-animate-delay="0.5s">
-            <img src="./2.png" alt="" class="img img-2 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="1.25s" swiper-animate-delay="0.75s">
-            <img src="./3.png" alt="" class="img img-3 ani" swiper-animate-effect="fadeInRight" swiper-animate-duration="1.25s" swiper-animate-delay="0.75s">
-          </div>
-          <div class="text-wrap ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.25s" swiper-animate-delay="0.75s"></div>
+          <div class="m-title ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="1.3s" swiper-animate-delay="0s"></div>
+          <div class="m-body ani" swiper-animate-effect="fadeIn" swiper-animate-duration="1.3s" swiper-animate-delay="0.5s"></div>
+          <div class="m-tips-1 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.3s" swiper-animate-delay="0.75s"></div>
+          <div class="m-tips-2 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1.3s" swiper-animate-delay="1s"></div>
         </div>
     </div>
 </template>
@@ -32,26 +30,16 @@ $color = #e60012;
 .page1 {
   width: 100%;
   height: 100%;
-  background: url('../../assets/bg.jpg') center center no-repeat;
-  background-size: cover;
-
-  .top-left {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 493px;
-    height: 217px;
-    background: url('../common/001.png') center center no-repeat;
-    background-size: cover;
-  }
+  background: url('../../assets/bg.png') center center no-repeat #d9f7fc;
+  background-size: contain;
 
   .top-right {
     position: absolute;
-    top: 22px;
-    right: 59px;
-    width: 138px;
-    height: 248px;
-    background: url('../common/002.png') center center no-repeat;
+    top: 0;
+    right: 0;
+    width: 173px;
+    height: 181px;
+    background: url('./icon-tp.png') center center no-repeat;
     background-size: cover;
   }
 
@@ -59,78 +47,70 @@ $color = #e60012;
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 750px;
-    height: 239px;
-    background: url('../common/004.png') center center no-repeat;
+    width: 218px;
+    height: 189px;
+    background: url('./icon-bt-lt.png') center center no-repeat;
     background-size: cover;
   }
 
   .bottom-right {
     position: absolute;
     right: 0;
-    bottom: 20px;
-    width: 475px;
-    height: 307px;
-    background: url('../common/003.png') center center no-repeat;
+    bottom: 0px;
+    width: 340px;
+    height: 436px;
+    background: url('./icon-bt.png') center center no-repeat;
+    background-size: cover;
+  }
+
+  .logo {
+    position: absolute;
+    top: 32px;
+    left: 22px;
+    width: 120px;
+    height: 114px;
+    background: url('./icon-logo.png') center center no-repeat;
     background-size: cover;
   }
 
   .g-body {
-    position: absolute;
-    top: 210px;
-    left: 0;
-    right: 0;
-    width: 100%;
-    padding: 0 40px;
-    box-sizing: border-box;
-
     .m-title {
       position: absolute;
-      top: 0;
+      top: 140px;
       left: 0;
       width: 100%;
-      height: 86px;
-      background: url('./title.png') center center no-repeat;
+      height: 200px;
+      background: url('./icon-title.png') center center no-repeat;
       background-size: contain;
     }
 
-    .img-wrap {
+    .m-body {
       position: absolute;
-      top: 110px;
+      top: 405px;
       left: 0;
       width: 100%;
-      font-size: 0;
-      text-align: center;
-
-      .img {
-        display: block;
-        position: absolute;
-        width: 275px;
-        height: 204px;
-      }
-
-      .img-1 {
-        left: 240px;
-      }
-
-      .img-2 {
-        top: 220px;
-        left: 92px;
-      }
-
-      .img-3 {
-        top: 220px;
-        right: 92px;
-      }
+      height: 325px;
+      background: url('./icon-text.png') center center no-repeat;
+      background-size: contain;
     }
 
-    .text-wrap {
+    .m-tips-1 {
       position: absolute;
-      top: 570px;
+      top: 796px;
       left: 0;
       width: 100%;
-      height: 77px;
-      background: url('./text.png') center center no-repeat;
+      height: 29px;
+      background: url('./icon-tips-1.png') left 140px center no-repeat;
+      background-size: contain;
+    }
+
+    .m-tips-2 {
+      position: absolute;
+      top: 864px;
+      left: 0;
+      width: 100%;
+      height: 29px;
+      background: url('./icon-tips-2.png') left 140px center no-repeat;
       background-size: contain;
     }
   }

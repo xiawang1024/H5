@@ -27,7 +27,7 @@ module.exports = {
 			base: resolve('src/base'),
 			components: resolve('src/components'),
 			api: resolve('src/api'),
-			wechat: resolve('src/wechat')
+			weChat: resolve('src/weChat')
 		}
 	},
 	module: {

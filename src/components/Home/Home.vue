@@ -1,17 +1,11 @@
 <template>
 	<div class="home">
 		<swiper :options="swiperOption">
-			<swiper-slide>
-				<one></one>
-			</swiper-slide>
       <swiper-slide>
 				<page-1></page-1>
 			</swiper-slide>
       <swiper-slide>
 				<page-2></page-2>
-			</swiper-slide>
-      <swiper-slide>
-				<end></end>
 			</swiper-slide>
 		</swiper>
 	</div>
@@ -20,22 +14,24 @@
 <script>
 const { swiperAnimateCache, swiperAnimate } = require('base/js/animate.min.js')
 
-import One from '../One/One.vue'
+
 
 import Page1 from '../Page1/Page1'
+
 import Page2 from '../Page2/Page2'
 
-import End from '../End/End'
+
+
 
 
 
 export default {
 	name: 'Home',
 	components:{
-    One,
+
     Page1,
     Page2,
-    End
+
 	},
 	data () {
 		return {
