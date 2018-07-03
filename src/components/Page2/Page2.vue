@@ -146,7 +146,7 @@ export default {
         let userInfo = JSON.parse(weChat.getStorage('WXHNDTOPENID'))
         openId = userInfo.openid
       }
-      postUserInfo(this.name,this.description,this.age,this.mobile,'936',openId).then(res => {
+      postUserInfo(this.name,this.description,this.age,this.mobile,'国乐悠扬',openId).then(res => {
         weui.toast('提交成功！')
         setTimeout(() => {
           this.name = ''
