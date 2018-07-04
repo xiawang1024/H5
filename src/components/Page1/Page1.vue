@@ -79,7 +79,7 @@ $color = #e60012;
       top: 140px;
       left: 0;
       width: 100%;
-      height: 200px;
+      height: 220px;
       background: url('./icon-title.png') center center no-repeat;
       background-size: contain;
     }

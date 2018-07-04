@@ -75,10 +75,10 @@ class WeChat {
 class WeChatConf extends WeChat {
 	constructor(props) {
 		super(props);
-		this.title = '国乐悠扬 2018“乐不思蜀”遇见——大提琴公益活动';
+		this.title = '国乐悠扬 2018“乐不思暑”遇见——大提琴公益活动';
 		this.link = LINK; //分享链接
 		this.img_url = 'https://a.weixin.hndt.com/h5/936/icon-logo.png';
-		this.desc = '就在这个盛夏，为普及和宣传我省高雅音乐，河南广播电视台网络广播《国乐悠扬》，举办国乐悠扬2018“乐不思蜀”豫见——大提琴公益活动!';
+		this.desc = '就在这个盛夏，为普及和宣传我省高雅音乐，河南广播电视台网络广播《国乐悠扬》，举办国乐悠扬2018“乐不思暑”豫见——大提琴公益活动!';
 	}
 	init() {
 		this.hasCode();
