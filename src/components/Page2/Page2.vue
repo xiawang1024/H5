@@ -195,8 +195,8 @@ $color = #e60012;
     position: absolute;
     right: 0;
     bottom: 0px;
-    width: 340px;
-    height: 436px;
+    width: 750px;
+    height: 460px;
     background: url('./icon-bt.png') center center no-repeat;
     background-size: cover;
   }
