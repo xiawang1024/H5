@@ -65,7 +65,6 @@ export default {
         playerReadied(player) {
 
             if(this.isLive) {
-
               // TODO:开启hls直播
               this.$nextTick(() => {
                   player.src({
@@ -79,7 +78,6 @@ export default {
                   player.tech_.hls.xhr.beforeRequest = function(options) {
                   return options
               }
-
             }else {
               this.$nextTick(() => {
                   player.src({
