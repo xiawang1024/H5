@@ -3,14 +3,12 @@
     <down-tips></down-tips>
 		<player v-show="!isShow"></player>
 		<div class="tab-wrap">
-      活动简介
-			<!-- <div class="tab" @click="slide(0)" :class="isIndex == 0 ? 'isActive' : ''">活动简介</div> -->
-			<!-- <div class="tab" @click="slide(1)" :class="isIndex == 1 ? 'isActive' : ''">节目单</div>
-			<div class="tab" @click="slide(2)" :class="isIndex == 2 ? 'isActive' : ''">直播互动</div> -->
+			<div class="tab" @click="slide(0)" :class="isIndex == 0 ? 'isActive' : ''">活动简介</div>
+			<div class="tab" @click="slide(1)" :class="isIndex == 1 ? 'isActive' : ''">节目单</div>
+			<div class="tab" @click="slide(2)" :class="isIndex == 2 ? 'isActive' : ''">直播互动</div>
 		</div>
     <keep-alive>
-		  <!-- <component :is="componentId"></component> -->
-      <info></info>
+		  <component :is="componentId"></component>
     </keep-alive>
 		<!-- <pay v-show="isShow"></pay> -->
 	</div>
@@ -23,9 +21,9 @@ import { visit } from 'api/index'
 
 import DownTips from 'components/DownTips/DownTips'
 import Player from 'components/Player/Player'
-// import Comment from 'components/Comment/Comment'
+import Comment from 'components/Comment/Comment'
 import Info from 'components/Info/Info'
-// import Program from 'components/Program/Program'
+import Program from 'components/Program/Program'
 // import Pay from 'components/Pay/Pay'
 
 
@@ -34,9 +32,9 @@ export default {
 	name: 'Home',
 	components:{
 		Player,
-		// Comment,
+		Comment,
 		Info,
-    // Program,
+    Program,
     DownTips,
 		// Pay
 	},
@@ -146,7 +144,7 @@ export default {
   justify-content: space-around;
   align-items: center;
   padding: 0 10px;
-  font-size: 32px;
+  font-size: 28px;
   border-bottom: 1px solid #eee;
   box-sizing: border-box;
 }

@@ -9,9 +9,16 @@ import 'base/stylus/index.styl';
 
 import './weChat/index';
 
+/* swiper插件 */
+
+// import VueAwesomeSwiper　from 'vue-awesome-swiper'
+// import 'animate.css'
+// import 'swiper/dist/css/swiper.css'
+// Vue.use(VueAwesomeSwiper)
+
 /* fastclick修复移动端点击延迟300ms */
-// import fastclick from 'fastclick';
-// fastclick.attach(document.body);
+import fastclick from 'fastclick';
+fastclick.attach(document.body);
 
 /**
  * 视频直播
