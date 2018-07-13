@@ -23,13 +23,13 @@ export default {
             isLive:false,
             isShow:true,
             playerOptions: {
-                sources: [
-                    {
-                        withCredentials: false,
-                        type:'video/mp4',
-                        src:'http://www.hndt.com/h5/20180714/999.mp4'
-                    }
-                ],
+                // sources: [
+                //     {
+                //         withCredentials: false,
+                //         type: "application/x-mpegURL",
+                      // src: "http://livepull.hndt.com/live/20180714/playlist.m3u8",
+                //     }
+                // ],
                 controlBar: {
                     timeDivider: false,
                     durationDisplay: false
@@ -46,7 +46,9 @@ export default {
       }
     },
     created () {
-
+      this.$nextTick(() => {
+        this._isLive()
+      })
     },
     mounted() {
 
@@ -69,6 +71,7 @@ export default {
                   player.src({
                       type: "application/x-mpegURL",  //TODO:开启hls直播
                       src: "http://livepull.hndt.com/live/20180714/playlist.m3u8",
+                      // src:'http://ivi.bupt.edu.cn/hls/cctv5phd.m3u8'
                   })
                   player.play()
               })
@@ -78,13 +81,13 @@ export default {
               }
 
             }else {
-              // this.$nextTick(() => {
-              //     player.src({
-              //         type:'video/mp4',
-              //         src:'http://www.hndt.com/h5/20180714/999.mp4',
-              //     })
-              //     player.play()
-              // })
+              this.$nextTick(() => {
+                  player.src({
+                      type:'video/mp4',
+                      src:'http://www.hndt.com/h5/20180714/999.mp4',
+                  })
+                  player.play()
+              })
             }
 
 

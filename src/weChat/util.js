@@ -81,7 +81,7 @@ class WeChatConf extends WeChat {
 		this.desc = '两个月的努力付出，汗水与泪水，交织出她们的仲夏夜之梦。追逐永无止尽。洛阳白云山杯999的足球宝贝总决赛迎来收官之战，首度以视频直播形式放送';
 	}
 	init() {
-		this.hasCode();
+		// this.hasCode();
 		axios.post('https://a.weixin.hndt.com/at/sign', Qs.stringify({ url: window.location.href })).then((res) => {
 			let data = res.data;
 			wx.config({
