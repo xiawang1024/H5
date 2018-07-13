@@ -150,8 +150,7 @@ export default {
   }
 
   .ipt {
-    flex: 0 0 360px;
-    width: 360px;
+    flex: 1;
     height: 60px;
     border: 1px solid #0081dc;
     padding-left: 16px;
