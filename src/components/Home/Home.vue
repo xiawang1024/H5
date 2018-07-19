@@ -4,7 +4,7 @@
 		<player v-show="!isShow"></player>
 		<div class="tab-wrap">
 			<div class="tab" @click="slide(0)" :class="isIndex == 0 ? 'isActive' : ''">活动简介</div>
-			<div class="tab" @click="slide(1)" :class="isIndex == 1 ? 'isActive' : ''">节目单</div>
+			<!-- <div class="tab" @click="slide(1)" :class="isIndex == 1 ? 'isActive' : ''">节目单</div> -->
 			<div class="tab" @click="slide(2)" :class="isIndex == 2 ? 'isActive' : ''">直播互动</div>
 		</div>
     <keep-alive>

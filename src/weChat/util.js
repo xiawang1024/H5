@@ -2,7 +2,7 @@ import wx from 'weixin-js-sdk';
 import axios from 'axios';
 import Qs from 'qs';
 
-const LINK = 'https://a.weixin.hndt.com/h5/partysday/songlive/index.html';
+const LINK = 'https://a.weixin.hndt.com/h5/20180719/index.html';
 
 class WeChat {
 	constructor() {
@@ -75,10 +75,10 @@ class WeChat {
 class WeChatConf extends WeChat {
 	constructor(props) {
 		super(props);
-		this.title = '给党唱支生日歌--主题歌会正在直播';
+		this.title = '第6届中国创业者大会--正在直播';
 		this.link = LINK; //分享链接
-		this.img_url = 'http://www.hndt.com/h5/partysday/PartysDay.jpg';
-		this.desc = '庆祝中国共产党建党97周年--大型系列文化活动！';
+		this.img_url = 'http://www.hndt.com/zt/entre/res/wap/img/dahui.jpg';
+		this.desc = '第6届中国创业者大会';
 	}
 	init() {
 		this.hasCode();

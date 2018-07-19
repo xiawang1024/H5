@@ -26,7 +26,7 @@ export default {
                     {
                         withCredentials: false,
                         type: "application/x-mpegURL",  //TODO:开启hls直播
-                        src: "http://livepull.hndt.com/live/gdczsrg/playlist.m3u8",
+                        src: "http://livepull.hndt.com/live/jiaoyu1066zhiboshi/playlist.m3u8",
                         // src:"http://ivi.bupt.edu.cn/hls/chchd.m3u8",
                         // type:'video/mp4',
                         // src:'http://111.7.176.235/6773ABFC70F4A740AA9C157DC/03000B02005B285E4AADF9558DE04A42B12276-7D9C-4AA2-9CA7-40CD1F322555.mp4?ccode=0502&duration=200&expire=18000&psid=0bc3e795d1f941cb014f5d06a019cbb2&sp=&ups_client_netip=759e9852&ups_ts=1529385641&ups_userid=&utid=3nEVE60l9TcCAXWemFICu8nh&vid=XMzY3Mjk4NTk0OA%3D%3D&vkey=B4a4b90f9e8b3859efe8c18f8ae354462&s=0d48da8e0805446bbd54',
@@ -38,7 +38,7 @@ export default {
                 },
                 flash: { hls: { withCredentials: false }},
                 html5: { hls: { withCredentials: false }},
-                poster: "http://www.hndt.com/h5/partysday/livePostSongs.jpg"
+                poster: "http://www.hndt.com/zt/entre/res/wap/img/dahui.jpg"
             }
         }
     },
