@@ -5,10 +5,10 @@ import App from './App';
 // import router from 'router'
 import 'base/stylus/index.styl';
 
-import 'base/stylus/animate.css';
+import Carousel3d from 'vue-carousel-3d';
+Vue.use(Carousel3d);
 
 /* 微信自定义分享 */
-
 import 'wechat/index.js';
 
 /* swiper插件 */

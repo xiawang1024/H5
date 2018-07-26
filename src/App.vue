@@ -3,7 +3,7 @@
     <wx-audio></wx-audio>
     <!-- <router-view/> -->
     <home/>
-    <up-arrow></up-arrow>
+    <!-- <up-arrow></up-arrow> -->
   </div>
 </template>
 
