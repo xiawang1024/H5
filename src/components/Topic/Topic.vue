@@ -1,8 +1,8 @@
 <template>
   <div class="topic">
-    <div class="logo"></div>
-    <h2 class="title">{{showData.title}}</h2>
-    <div class="text-wrap" v-for="(item,index) in showData.imgTextList" :key="index">
+    <div class="logo ani"  swiper-animate-effect="flipInY" swiper-animate-duration="1s" swiper-animate-delay="0s"></div>
+    <h2 class="title ani"  swiper-animate-effect="fadeInDown" swiper-animate-duration="0.6s" swiper-animate-delay="0s">{{showData.title}}</h2>
+    <div class="text-wrap ani" v-for="(item,index) in showData.imgTextList" :key="index"  swiper-animate-effect="fadeInLeft" swiper-animate-duration="1s" :swiper-animate-delay="(index + 0.8) + 's'">
       <img :src="item.imgUrl" alt="" class="img">
       <p class="desc">{{item.text}}</p>
     </div>

@@ -81,10 +81,10 @@ export default {
 				// direction : 'vertical',
         // loop : true,
         speed:800,
-        // autoplay:{
-        //   delay:15000,
-        //   disableOnInteraction:false
-        // },
+        autoplay:{
+          delay:15000,
+          disableOnInteraction:false
+        },
 				pagination: {
 					el: '.swiper-pagination'
 				},
