@@ -26,7 +26,7 @@ export default {
   position: relative;
   width: 1080px;
   height: 1920px;
-  padding-top: 520px;
+  padding-top: 320px;
   text-align: center;
   color: #ffffff;
   background: url('http://www.hndt.com/h5/show/imgs/bg.png') center center no-repeat;

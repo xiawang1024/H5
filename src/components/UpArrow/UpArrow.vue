@@ -25,7 +25,7 @@ export default {
 .up-arrow {
   position: absolute;
   bottom: 10px;
-  left: 340px;
+  left: 505px;
   z-index: 1024;
   width: 70px;
   height: 70px;

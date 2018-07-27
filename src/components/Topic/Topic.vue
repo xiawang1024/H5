@@ -36,7 +36,7 @@ export default {
   position: relative;
   width: 1080px;
   height: 1920px;
-  padding-top: 250px;
+  padding-top: 200px;
   text-align: center;
   color: #ffffff;
   background: url('http://www.hndt.com/h5/show/imgs/bg.png') center center no-repeat;
@@ -55,13 +55,13 @@ export default {
   }
 
   .title {
-    margin-bottom: 115px;
+    margin-bottom: 70px;
     font-size: 64px;
   }
 
   .text-wrap {
     width: 873px;
-    margin: 0 auto 75px;
+    margin: 0 auto 50px;
     font-size: 0;
     text-align: left;
 

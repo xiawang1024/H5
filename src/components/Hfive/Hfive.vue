@@ -3,7 +3,7 @@
     <div class="logo ani" swiper-animate-effect="flipInY" swiper-animate-duration="1s" swiper-animate-delay="0s"></div>
     <h1 class="title ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.6s" swiper-animate-delay="0s">{{showData.title}}</h1>
     <h2 class="titlec ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.6s" swiper-animate-delay="0s">{{showData.subTitle}}</h2>
-    <carousel-3d :autoplay="true" :autoplay-timeout="3000" :width='500' :height='793' :border="0" class="carousel-wrap">
+    <carousel-3d :autoplay="true" :autoplay-timeout="3000" :width='width' :height='height' :border="0" class="carousel-wrap">
       <slide v-for="(slide, i) in showData.imgUrlList" :index="i" :key="i">
         <img :src="slide.url">
       </slide>
@@ -20,7 +20,8 @@ export default {
   name:'hfive',
   data () {
     return {
-
+      width:180,
+      height:285
     }
   },
   props:{
@@ -30,6 +31,14 @@ export default {
         return {}
       }
     }
+  },
+  mounted() {
+    let screenWidth = window.innerWidth
+    let width = (screenWidth / 2) | 0
+    this.$nextTick(() => {
+      this.width = width;
+      this.height = (width * 1.586) | 0;
+    })
   },
   components: {
 
@@ -46,7 +55,7 @@ export default {
   position: relative;
   width: 1080px;
   height: 1920px;
-  padding-top: 360px;
+  padding-top: 200px;
   text-align: center;
   color: #ffffff;
   background: url('http://www.hndt.com/h5/show/imgs/bg.png') center center no-repeat;
