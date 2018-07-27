@@ -6,7 +6,7 @@
  */
 
 const DEFAULT_TITLE = '新媒体技术研发组--融媒体产品（服务类）展示';
-const DEFAULT_LINK = 'http://www.hndt.com/h5/show/index.html';
+const DEFAULT_LINK = 'http://www.hndt.com/h5/show/wap/index.html';
 const DEFAULT_IMGURL = 'http://hndt.com/res/logo_300.png';
 const DEFAULT_DESC = '新媒体技术研发组--融媒体产品（服务类）展示';
 
