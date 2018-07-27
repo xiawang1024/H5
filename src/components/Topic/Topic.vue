@@ -1,23 +1,17 @@
 <template>
-  <div class="hfive">
+  <div class="topic">
     <div class="logo"></div>
-    <h1 class="title">{{showData.title}}</h1>
-    <h2 class="titlec">{{showData.subTitle}}</h2>
-    <carousel-3d :autoplay="true" :autoplay-timeout="3000" :width='500' :height='793' :border="0" class="carousel-wrap">
-      <slide v-for="(slide, i) in showData.imgUrlList" :index="i" :key="i">
-        <img :src="slide.url">
-      </slide>
-    </carousel-3d>
-    <div class="text-wrap">
-      <p class="text" v-for="(item,index) in showData.descText" :key="index">{{item.text}}</p>
+    <h2 class="title">{{showData.title}}</h2>
+    <div class="text-wrap" v-for="(item,index) in showData.imgTextList" :key="index">
+      <img :src="item.imgUrl" alt="" class="img">
+      <p class="desc">{{item.text}}</p>
     </div>
   </div>
 </template>
 
 <script>
-
 export default {
-  name:'hfive',
+  name:'topic',
   data () {
     return {
 
@@ -38,15 +32,11 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.carousel-3d-slide {
-  background: none;
-}
-
-.hfive {
+.topic {
   position: relative;
   width: 1080px;
   height: 1920px;
-  padding-top: 360px;
+  padding-top: 250px;
   text-align: center;
   color: #ffffff;
   background: url('http://www.hndt.com/h5/show/imgs/bg.png') center center no-repeat;
@@ -64,23 +54,27 @@ export default {
     background-size: cover;
   }
 
-  .title, .titlec {
-    letter-spacing: 4px;
+  .title {
+    margin-bottom: 115px;
     font-size: 64px;
-    margin-bottom: 20px;
-  }
-
-  .titlec {
-    margin-bottom: 70px;
   }
 
   .text-wrap {
-    margin-top: 40px;
-    font-size: 38px;
+    width: 873px;
+    margin: 0 auto 75px;
+    font-size: 0;
+    text-align: left;
 
-    .text {
-      margin-top: 14px;
+    .img {
+      width: 100%;
+    }
+
+    .desc {
+      margin-top: 20px;
+      line-height: 1.25;
+      font-size: 38px;
     }
   }
 }
 </style>
+

@@ -1,0 +1,61 @@
+<template>
+  <div class="start">
+    <div class="logo"></div>
+    <div class="light"></div>
+    <h2 class="title">新媒体技术研发组 </h2>
+    <h3 class="titlec">融媒体产品（服务类）展示</h3>
+  </div>
+</template>
+
+<script>
+export default {
+  name:'start',
+  data () {
+    return {
+
+    }
+  },
+  components: {
+
+  }
+}
+</script>
+
+<style lang="stylus" scoped>
+.start {
+  position: relative;
+  width: 1080px;
+  height: 1920px;
+  padding-top: 520px;
+  text-align: center;
+  color: #ffffff;
+  background: url('http://www.hndt.com/h5/show/imgs/bg.png') center center no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  box-sizing: border-box;
+
+  .logo {
+    width: 100%;
+    height: 332px;
+    background: url('./logo.png') center center no-repeat;
+    background-size: contain;
+  }
+
+  .light {
+    margin-top: -60px;
+    width: 100%;
+    height: 224px;
+    background: url('./light.png') center center no-repeat;
+    background-size: contain;
+  }
+
+  .title, .titlec {
+    font-size: 66px;
+  }
+
+  .titlec {
+    margin-top: 36px;
+  }
+}
+</style>
+
