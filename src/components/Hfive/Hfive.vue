@@ -93,11 +93,11 @@ export default {
   }
 
   .text-wrap {
-    margin-top: 40px;
-    font-size: 38px;
+    margin-top: 60px;
+    font-size: 44px;
 
     .text {
-      margin-top: 14px;
+      margin-top: 20px;
     }
   }
 }

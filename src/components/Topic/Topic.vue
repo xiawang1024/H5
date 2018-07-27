@@ -72,8 +72,8 @@ export default {
     width: 873px;
     margin: 0 auto 50px;
     font-size: 0;
-    text-align: left;
 
+    // text-align: left;
     .img {
       width: 100%;
     }

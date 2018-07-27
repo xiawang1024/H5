@@ -3,15 +3,15 @@ const data = {
 	title: 'PC端专题页面展示',
 	imgTextList: [
 		{
-			imgUrl: `${dirUrl}01.png`,
-			text: '融媒体全平台专题报道 把精彩汇聚呈现给用户'
+			imgUrl: `${dirUrl}07.png`,
+			text: '同步热点新闻事件报道 融媒体各平台全线宣传'
 		},
 		{
-			imgUrl: `${dirUrl}02.png`,
-			text: '融媒体全平台专题报道 把精彩汇聚呈现给用户'
+			imgUrl: `${dirUrl}08.png`,
+			text: '同步热点新闻事件报道 融媒体各平台全线宣传'
 		},
 		{
-			imgUrl: `${dirUrl}03.png`,
+			imgUrl: `${dirUrl}09.png`,
 			text: '热门话题关注每个人的关注 不同角度讲述心中美好生活'
 		}
 	]

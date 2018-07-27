@@ -28,9 +28,7 @@
       <swiper-slide>
 				<topic :showData="showData8"></topic>
 			</swiper-slide>
-      <swiper-slide>
-				<topic :showData="showData9"></topic>
-			</swiper-slide>
+
       <swiper-slide>
 				<end></end>
 			</swiper-slide>

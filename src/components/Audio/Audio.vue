@@ -1,6 +1,6 @@
 <template>
     <div class="audio-wrap music" :class="noMusic ? 'no-music' : ''" @click="pauseAudio">
-    	<audio id="audio" autoplay loop width="0" height="0" src="http://www.hndt.com/h5/promotion/static/mp3/mp3.mp3"></audio>
+    	<audio id="audio" autoplay loop width="0" height="0" src="http://www.hndt.com/h5/show/show.mp3"></audio>
     </div>
 </template>
 

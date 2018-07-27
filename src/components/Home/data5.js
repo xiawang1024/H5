@@ -5,13 +5,13 @@ const data = {
 	imgUrlList: [ { url: `${dirUrl}33.png` }, { url: `${dirUrl}34.png` }, { url: `${dirUrl}35.png` } ],
 	descText: [
 		{
-			text: '报名、优惠券、信息采集、地图'
+			text: '报名、优惠券、H5海报'
 		},
 		{
-			text: '导航  H5海报快速实现'
+			text: '投票、调查、导航'
 		},
 		{
-			text: '活动信息展示'
+			text: '各种玩法   一网打尽'
 		}
 	]
 };
