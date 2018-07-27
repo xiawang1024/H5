@@ -1,6 +1,6 @@
 <template>
   <div class="start">
-    <p class="top">新媒体技术研发组产品展示（软件开发类）</p>
+    <p class="top">新媒体技术研发组产品展示（服务类）</p>
     <div class="logo ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.6s" swiper-animate-delay="0s"></div>
     <div class="light ani" swiper-animate-effect="zoomIn" swiper-animate-duration="0.6s" swiper-animate-delay="0.5s"></div>
     <p class="desc ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="1s" swiper-animate-delay="0.8s">
