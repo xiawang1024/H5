@@ -1,5 +1,6 @@
 <template>
   <div class="hfive">
+    <p class="top">新媒体技术研发组产品展示（软件开发类）</p>
     <div class="logo ani" swiper-animate-effect="flipInY" swiper-animate-duration="1s" swiper-animate-delay="0s"></div>
     <h1 class="title ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.6s" swiper-animate-delay="0s">{{showData.title}}</h1>
     <h2 class="titlec ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.6s" swiper-animate-delay="0s">{{showData.subTitle}}</h2>
@@ -53,6 +54,14 @@ export default {
   background-size: cover;
   overflow: hidden;
   box-sizing: border-box;
+
+  .top {
+    position: absolute;
+    top: 75px;
+    left: 0;
+    width: 100%;
+    font-size: 34px;
+  }
 
   .logo {
     position: absolute;
