@@ -2,7 +2,7 @@ import wx from 'weixin-js-sdk';
 import axios from 'axios';
 import Qs from 'qs';
 
-const LINK = 'https://a.weixin.hndt.com/h5/partysday/endlive/index.html';
+const LINK = 'https://a.weixin.hndt.com/h5/1066/live/index.html';
 
 class WeChat {
 	constructor() {
@@ -75,37 +75,39 @@ class WeChat {
 class WeChatConf extends WeChat {
 	constructor(props) {
 		super(props);
-		this.title = '给党唱支生日歌--"千人拼党旗"正在直播';
+		this.title = '穿越时空，赴一场赫本的中秋之约！';
 		this.link = LINK; //分享链接
-		this.img_url = 'http://www.hndt.com/h5/partysday/PartysDay.jpg';
-		this.desc = '庆祝中国共产党建党97周年--大型系列文化活动！';
+		this.img_url = 'http://www.hndt.com/fm/1066/res/1A1YTh4p.jpg?1507631272960';
+		this.desc = '我当然不会试图摘月，我要月亮奔我而来';
 	}
 	init() {
 		this.hasCode();
-		axios.post('https://a.weixin.hndt.com/at/sign', Qs.stringify({ url: window.location.href })).then((res) => {
-			let data = res.data;
-			wx.config({
-				debug: false,
-				appId: data.appId,
-				timestamp: data.timestamp,
-				nonceStr: data.nonceStr,
-				signature: data.signature,
-				jsApiList: [
-					'onMenuShareTimeline',
-					'onMenuShareAppMessage',
-					'chooseImage',
-					'uploadImage',
-					'previewImage',
-					'startRecord',
-					'playVoice',
-					'stopRecord',
-					'downloadVoice',
-					'uploadVoice',
-					'stopVoice',
-					'openLocation'
-				]
+		axios
+			.post('https://a.weixin.hndt.com/boom/at/sign', Qs.stringify({ url: window.location.href }))
+			.then((res) => {
+				let data = res.data;
+				wx.config({
+					debug: false,
+					appId: data.appId,
+					timestamp: data.timestamp,
+					nonceStr: data.nonceStr,
+					signature: data.signature,
+					jsApiList: [
+						'onMenuShareTimeline',
+						'onMenuShareAppMessage',
+						'chooseImage',
+						'uploadImage',
+						'previewImage',
+						'startRecord',
+						'playVoice',
+						'stopRecord',
+						'downloadVoice',
+						'uploadVoice',
+						'stopVoice',
+						'openLocation'
+					]
+				});
 			});
-		});
 	}
 }
 

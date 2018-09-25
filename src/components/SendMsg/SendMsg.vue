@@ -1,11 +1,11 @@
 <template>
-    <div class="send-msg">
-        <span class="sendVoice" :class="isVoice?'':'sendMsg'" @click="switchBtn"></span>
-        <span class="sendImg" @click="postImg"></span>
-        <input v-show="isVoice" class="ipt" type="text" v-model="msg">
-        <voice v-show="!isVoice" class="voice"></voice>
-        <button v-show="isVoice" class="sendBtn" @click="sendMsg">发送</button>
-    </div>
+  <div class="send-msg">
+    <span class="sendVoice" :class="isVoice?'':'sendMsg'" @click="switchBtn"></span>
+    <span class="sendImg" @click="postImg"></span>
+    <input v-show="isVoice" class="ipt" type="text" v-model="msg">
+    <voice v-show="!isVoice" class="voice"></voice>
+    <button v-show="isVoice" class="sendBtn" @click="sendMsg">发送</button>
+  </div>
 </template>
 
 
@@ -41,17 +41,17 @@ export default {
           let userInfo = JSON.parse(weChat.getStorage('WXHNDTOPENID'))
           this.openid = userInfo.openid;
           setTimeout(() => {
-            getUser(this.openid).then((res) => {
-                let data = res.data
-                if(data.status === 1) {
-                    this.creater = data.data.name
-                    this.fromUid = data.data.id
-                }else{
-                    console.log('获取用户信息失败')
-                }
-            }).catch((err) => {
-                console.log(err)
-            })
+            // getUser(this.openid).then((res) => {
+            //     let data = res.data
+            //     if(data.status === 1) {
+            //         this.creater = data.data.name
+            //         this.fromUid = data.data.id
+            //     }else{
+            //         console.log('获取用户信息失败')
+            //     }
+            // }).catch((err) => {
+            //     console.log(err)
+            // })
           },20)
         }
     },
@@ -70,7 +70,7 @@ export default {
       },
       _postMsg() {
 
-        postMsg(0, HU_DONG_ID , this.creater, this.fromUid, this.msg).then((res) => {
+        postMsg(0, HU_DONG_ID , this.msg).then((res) => {
             weui.toast('发送成功，等待审核！')
             this.msg = ''
             console.log(res)
@@ -98,7 +98,7 @@ export default {
               success: (res) => {
                 let serverId = res.serverId; // 返回图片的服务器端ID
                 // weui.alert(serverId)
-                postMsg('PIC', HU_DONG_ID , this.creater, this.fromUid, res.serverId).then((res) => {
+                postMsg('PIC', HU_DONG_ID ,  res.serverId).then((res) => {
                   // uploading.hide()
                   weui.toast('发送成功，等待审核！')
                 })

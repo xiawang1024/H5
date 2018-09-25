@@ -1,7 +1,7 @@
 <template>
-	<div class="voice">
-		<button class="btn" :class="isTouch ? 'istouch':'' " @touchstart.prevent="startRecord" @touchend.prevent="stopRecord" v-html="tipsMsg"></button>
-	</div>
+  <div class="voice">
+    <button class="btn" :class="isTouch ? 'istouch':'' " @touchstart.prevent="startRecord" @touchend.prevent="stopRecord" v-html="tipsMsg"></button>
+  </div>
 </template>
 
 <script>
@@ -154,7 +154,7 @@
         localId: voiceLocalId, // 需要上传的音频的本地ID，由stopRecord接口获得
         isShowProgressTips: 1, // 默认为1，显示进度提示
         success: (res) => {
-          postMsg('VOICE', HU_DONG_ID , this.creater, this.fromUid, res.serverId).then((res) => {
+          postMsg('VOICE', HU_DONG_ID , res.serverId).then((res) => {
             weui.toast('发送成功，等待审核！')
           })
         }

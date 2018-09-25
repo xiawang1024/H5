@@ -1,43 +1,35 @@
 <template>
-    <div class="comment">
-        <div class="online-people">
-            <i class="icon-people"></i>
-            <span class="online-num">浏览人数：{{online}}</span>
-        </div>
-        <scroll
-                class="list-wrap"
-                ref="scroll"
-                :data="commentList"
-                :pullDownRefresh = "pullDownRefresh"
-                :pullUpLoad="pullUpLoad"
-                @pullingDown = "onPullingDown"
-                @pullingUp="onPullingUp"
-            >
-            <div class="list" v-for="(item,index) of commentList" :key="item.id">
-                <!-- {{item.comment.icon}} -->
-                <img :src="item.comment.icon || defaultAvatar" alt="" class="avatar">
-                <div class="text-wrap">
-                    <span class="time">{{item.comment.create_time | timeStamp2LocalTime}}</span>
-                    <h5 class="name">{{item.comment.creater}}</h5>
-                    <div class="content">
-                        <p v-if="item.comment.file_type == 'TEXT'" v-html="item.comment.content"></p>
-                        <img class="img" width="300" v-if="item.comment.file_type == 'PIC'" :src="item.comment.content" @click="previewImage(item.comment.content)"/>
-                        <voice v-if="item.comment.file_type == 'VOICE'" v-on:click.native="playVoice(item.comment.content,index)" :isPlay="voicePlayindex === index" :restTime="voiceRestTime"></voice>
-                    </div>
-                    <div class="anchor-reply" v-show="item.commentChildList && item.commentChildList.length > 0">
-                        <span class="anchor">主播回复:</span>
-                        <div class="child-list-wrap">
-                            <div class="child-list" v-for="childItem of item.commentChildList" :key="childItem.create_time">
-                                {{childItem.content}}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </scroll>
-        <send-msg @sendMsg="onSendMsg"></send-msg>
-        <audio src="" ref="audio" style="display:none" @timeupdate="timeupdate" @ended="playEnd"></audio>
+  <div class="comment">
+    <div class="online-people">
+      <i class="icon-people"></i>
+      <span class="online-num">浏览人数：{{online}}</span>
     </div>
+    <scroll class="list-wrap" ref="scroll" :data="commentList" :pullDownRefresh="pullDownRefresh" :pullUpLoad="pullUpLoad" @pullingDown="onPullingDown" @pullingUp="onPullingUp">
+      <div class="list" v-for="(item,index) of commentList" :key="item.id">
+        <!-- {{item.comment.icon}} -->
+        <img :src="item.comment.icon || defaultAvatar" alt="" class="avatar">
+        <div class="text-wrap">
+          <span class="time">{{item.comment.create_time | timeStamp2LocalTime}}</span>
+          <h5 class="name">{{item.comment.creater}}</h5>
+          <div class="content">
+            <p v-if="item.comment.file_type == 'TEXT'" v-html="item.comment.content"></p>
+            <img class="img" width="300" v-if="item.comment.file_type == 'PIC'" :src="item.comment.content" @click="previewImage(item.comment.content)" />
+            <voice v-if="item.comment.file_type == 'VOICE'" v-on:click.native="playVoice(item.comment.content,index)" :isPlay="voicePlayindex === index" :restTime="voiceRestTime"></voice>
+          </div>
+          <div class="anchor-reply" v-show="item.commentChildList && item.commentChildList.length > 0">
+            <span class="anchor">主播回复:</span>
+            <div class="child-list-wrap">
+              <div class="child-list" v-for="childItem of item.commentChildList" :key="childItem.create_time">
+                {{childItem.content}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </scroll>
+    <send-msg @sendMsg="onSendMsg"></send-msg>
+    <audio src="" ref="audio" style="display:none" @timeupdate="timeupdate" @ended="playEnd"></audio>
+  </div>
 </template>
 
 
@@ -209,7 +201,7 @@ export default {
 <style lang="stylus" scoped>
 .comment {
   position: absolute;
-  top: 502px;
+  top: 420px;
   left: 0;
   right: 0;
   bottom: 0px;
