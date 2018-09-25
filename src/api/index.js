@@ -23,7 +23,7 @@ const checkOpenId = (openId, origin) =>
 
 const getUser = (openid) => axios.get('https://a.weixin.hndt.com/user/find/openid?openid=' + openid);
 
-const postMsg = (page, cid = HU_DONG_ID, creater = '游客', fromUid = '0', content = '') =>
+const postMsg = (page, cid = HU_DONG_ID, content = '', creater = '游客', fromUid = '0') =>
 	axios.post(
 		'https://talk.hndt.com/test/upRadio.do',
 		Qs.stringify({
