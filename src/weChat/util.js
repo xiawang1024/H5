@@ -78,7 +78,7 @@ class WeChatConf extends WeChat {
 		this.title = '《赫本来了》视频直播';
 		this.link = LINK; //分享链接
 		this.img_url = 'http://www.hndt.com/fm/1066/res/1A1YTh4p.jpg?1507631272960';
-		this.desc = '穿越时空，赴一场赫本的中秋之约！';
+		this.desc = 'UP Radio1066 音视频同步直播中！ 戳视频即可观看！';
 	}
 	init() {
 		// this.hasCode();
