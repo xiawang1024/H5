@@ -75,10 +75,10 @@ class WeChat {
 class WeChatConf extends WeChat {
 	constructor(props) {
 		super(props);
-		this.title = '穿越时空，赴一场赫本的中秋之约！';
+		this.title = '《赫本来了》视频直播';
 		this.link = LINK; //分享链接
 		this.img_url = 'http://www.hndt.com/fm/1066/res/1A1YTh4p.jpg?1507631272960';
-		this.desc = '我当然不会试图摘月，我要月亮奔我而来';
+		this.desc = '穿越时空，赴一场赫本的中秋之约！';
 	}
 	init() {
 		// this.hasCode();
