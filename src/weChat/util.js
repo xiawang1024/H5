@@ -81,7 +81,7 @@ class WeChatConf extends WeChat {
 		this.desc = '我当然不会试图摘月，我要月亮奔我而来';
 	}
 	init() {
-		this.hasCode();
+		// this.hasCode();
 		axios
 			.post('https://a.weixin.hndt.com/boom/at/sign', Qs.stringify({ url: window.location.href }))
 			.then((res) => {

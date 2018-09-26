@@ -35,12 +35,12 @@ export default {
         }
     },
     mounted() {
-        if(weChat.getStorage('WXHNDTOPENID') == null) {
-          this.isNotWeixin = true
-        }else{
-          let userInfo = JSON.parse(weChat.getStorage('WXHNDTOPENID'))
-          this.openid = userInfo.openid;
-          setTimeout(() => {
+        // if(weChat.getStorage('WXHNDTOPENID') == null) {
+        //   this.isNotWeixin = true
+        // }else{
+        //   let userInfo = JSON.parse(weChat.getStorage('WXHNDTOPENID'))
+        //   this.openid = userInfo.openid;
+        //   setTimeout(() => {
             // getUser(this.openid).then((res) => {
             //     let data = res.data
             //     if(data.status === 1) {
@@ -52,10 +52,19 @@ export default {
             // }).catch((err) => {
             //     console.log(err)
             // })
-          },20)
-        }
+        //   },20)
+        // }
+        this.isNotWeixin = !this.isWeixinBrowser()
     },
     methods:{
+      isWeixinBrowser() {
+        var agent = navigator.userAgent.toLowerCase();
+        if (agent.match(/MicroMessenger/i) == 'micromessenger') {
+          return true;
+        } else {
+          return false;
+        }
+      },
       sendMsg() {
         if(this.isNotWeixin) {
           weui.alert('请用微信打开进行发言！')
@@ -152,6 +161,7 @@ export default {
   .ipt {
     flex: 0 0 360px;
     width: 360px;
+    height: 56px;
     border: 1px solid #0081dc;
     padding-left: 16px;
     border-radius: 12px;
