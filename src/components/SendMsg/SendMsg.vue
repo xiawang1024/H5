@@ -80,7 +80,7 @@ export default {
       _postMsg() {
 
         postMsg(0, HU_DONG_ID , this.msg).then((res) => {
-            weui.toast('发送成功，等待审核！')
+            weui.toast('审核中！')
             this.msg = ''
             console.log(res)
         })
@@ -109,7 +109,7 @@ export default {
                 // weui.alert(serverId)
                 postMsg('PIC', HU_DONG_ID ,  res.serverId).then((res) => {
                   // uploading.hide()
-                  weui.toast('发送成功，等待审核！')
+                  weui.toast('审核中！')
                 })
               }
             });

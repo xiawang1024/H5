@@ -91,10 +91,6 @@ amdefine@>=0.0.4:
   version "1.0.1"
   resolved "http://registry.npm.taobao.org/amdefine/download/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
 
-animate.css@^3.6.1:
-  version "3.7.0"
-  resolved "http://registry.npm.taobao.org/animate.css/download/animate.css-3.7.0.tgz#5de25d1ee5fba11ba6a1e2c4fa568f512eb7d4da"
-
 ansi-html@0.0.7:
   version "0.0.7"
   resolved "http://registry.npm.taobao.org/ansi-html/download/ansi-html-0.0.7.tgz#813584021962a9e9e6fd039f940d12f56ca7859e"
@@ -745,14 +741,6 @@ babel-plugin-transform-vue-jsx@^3.5.0:
   resolved "http://registry.npm.taobao.org/babel-plugin-transform-vue-jsx/download/babel-plugin-transform-vue-jsx-3.7.0.tgz#d40492e6692a36b594f7e9a1928f43e969740960"
   dependencies:
     esutils "^2.0.2"
-
-babel-polyfill@^6.26.0:
-  version "6.26.0"
-  resolved "http://registry.npm.taobao.org/babel-polyfill/download/babel-polyfill-6.26.0.tgz#379937abc67d7895970adc621f284cd966cf2153"
-  dependencies:
-    babel-runtime "^6.26.0"
-    core-js "^2.5.0"
-    regenerator-runtime "^0.10.5"
 
 babel-preset-env@^1.3.2:
   version "1.7.0"
@@ -1843,10 +1831,6 @@ currently-unhandled@^0.4.1:
   dependencies:
     array-find-index "^1.0.1"
 
-custom-event-polyfill@^1.0.6:
-  version "1.0.6"
-  resolved "http://registry.npm.taobao.org/custom-event-polyfill/download/custom-event-polyfill-1.0.6.tgz#6b026e81cd9f7bc896bd6b016a427407bb068db1"
-
 cyclist@~0.2.2:
   version "0.2.2"
   resolved "http://registry.npm.taobao.org/cyclist/download/cyclist-0.2.2.tgz#1b33792e11e914a2fd6d6ed6447464444e5fa640"
@@ -2030,12 +2014,6 @@ dom-serializer@0:
 dom-walk@^0.1.0:
   version "0.1.1"
   resolved "http://registry.npm.taobao.org/dom-walk/download/dom-walk-0.1.1.tgz#672226dc74c8f799ad35307df936aba11acd6018"
-
-dom7@^2.1.2:
-  version "2.1.2"
-  resolved "http://registry.npm.taobao.org/dom7/download/dom7-2.1.2.tgz#a914070c0abe8465384997a9c4f34475f67f75bd"
-  dependencies:
-    ssr-window "^1.0.1"
 
 domain-browser@^1.1.1:
   version "1.2.0"
@@ -3492,10 +3470,6 @@ loader-utils@^1.0.2, loader-utils@^1.1.0:
     emojis-list "^2.0.0"
     json5 "^0.5.0"
 
-loadjs@^3.5.4:
-  version "3.5.4"
-  resolved "http://registry.npm.taobao.org/loadjs/download/loadjs-3.5.4.tgz#ef0f4eb5a6ac2b86c7597a3d4de97b83816e36b8"
-
 locate-path@^2.0.0:
   version "2.0.0"
   resolved "http://registry.npm.taobao.org/locate-path/download/locate-path-2.0.0.tgz#2b568b265eec944c6d9c0de9c3dbbbca0354cd8e"
@@ -4388,16 +4362,6 @@ pleeease-filters@^4.0.0:
   dependencies:
     onecolor "^3.0.4"
     postcss "^6.0.1"
-
-plyr@^3.3.22, plyr@^3.4.3:
-  version "3.4.3"
-  resolved "http://registry.npm.taobao.org/plyr/download/plyr-3.4.3.tgz#7e4466cee4c13efc1cf3fa4dd1f450339eab1ad3"
-  dependencies:
-    babel-polyfill "^6.26.0"
-    custom-event-polyfill "^1.0.6"
-    loadjs "^3.5.4"
-    raven-js "^3.26.4"
-    url-polyfill "^1.0.14"
 
 portfinder@^1.0.13, portfinder@^1.0.9:
   version "1.0.17"
@@ -5371,10 +5335,6 @@ range-parser@^1.0.3, range-parser@~1.2.0:
   version "1.2.0"
   resolved "http://registry.npm.taobao.org/range-parser/download/range-parser-1.2.0.tgz#f49be6b487894ddc40dcc94a322f611092e00d5e"
 
-raven-js@^3.26.4:
-  version "3.27.0"
-  resolved "http://registry.npm.taobao.org/raven-js/download/raven-js-3.27.0.tgz#9f47c03e17933ce756e189f3669d49c441c1ba6e"
-
 raw-body@2.3.2:
   version "2.3.2"
   resolved "http://registry.npm.taobao.org/raw-body/download/raw-body-2.3.2.tgz#bcd60c77d3eb93cde0050295c3f379389bc88f89"
@@ -5495,10 +5455,6 @@ reduce-function-call@^1.0.1, reduce-function-call@^1.0.2:
 regenerate@^1.2.1:
   version "1.4.0"
   resolved "http://registry.npm.taobao.org/regenerate/download/regenerate-1.4.0.tgz#4a856ec4b56e4077c557589cae85e7a4c8869a11"
-
-regenerator-runtime@^0.10.5:
-  version "0.10.5"
-  resolved "http://registry.npm.taobao.org/regenerator-runtime/download/regenerator-runtime-0.10.5.tgz#336c3efc1220adcedda2c9fab67b5a7955a33658"
 
 regenerator-runtime@^0.11.0:
   version "0.11.1"
@@ -6004,10 +5960,6 @@ sprintf-js@~1.0.2:
   version "1.0.3"
   resolved "http://registry.npm.taobao.org/sprintf-js/download/sprintf-js-1.0.3.tgz#04e6926f662895354f3dd015203633b857297e2c"
 
-ssr-window@^1.0.1:
-  version "1.0.1"
-  resolved "http://registry.npm.taobao.org/ssr-window/download/ssr-window-1.0.1.tgz#30752a6a4666e7767f0b7e6aa6fc2fdbd0d9b369"
-
 ssri@^5.2.4:
   version "5.3.0"
   resolved "http://registry.npm.taobao.org/ssri/download/ssri-5.3.0.tgz#ba3872c9c6d33a0704a7d71ff045e5ec48999d06"
@@ -6209,13 +6161,6 @@ svgo@^1.0.0:
     stable "~0.1.6"
     unquote "~1.1.1"
     util.promisify "~1.0.0"
-
-swiper@^4.0.7:
-  version "4.4.1"
-  resolved "http://registry.npm.taobao.org/swiper/download/swiper-4.4.1.tgz#9eeca17c5bfa4a27663963b2640119e5fc668255"
-  dependencies:
-    dom7 "^2.1.2"
-    ssr-window "^1.0.1"
 
 tapable@^0.2.7:
   version "0.2.8"
@@ -6458,10 +6403,6 @@ url-parse@^1.1.8, url-parse@^1.4.3:
     querystringify "^2.0.0"
     requires-port "^1.0.0"
 
-url-polyfill@^1.0.14:
-  version "1.1.0"
-  resolved "http://registry.npm.taobao.org/url-polyfill/download/url-polyfill-1.1.0.tgz#d34e1a596d954b864bc8608f84c592820df422db"
-
 url-toolkit@^2.1.1, url-toolkit@^2.1.3:
   version "2.1.6"
   resolved "http://registry.npm.taobao.org/url-toolkit/download/url-toolkit-2.1.6.tgz#6d03246499e519aad224c44044a4ae20544154f2"
@@ -6515,10 +6456,6 @@ utils-merge@1.0.1:
 uuid@^3.0.1:
   version "3.3.2"
   resolved "http://registry.npm.taobao.org/uuid/download/uuid-3.3.2.tgz#1b4af4955eb3077c501c23872fc6513811587131"
-
-v-toast@^2.1.7:
-  version "2.1.7"
-  resolved "http://registry.npm.taobao.org/v-toast/download/v-toast-2.1.7.tgz#beb30e115c1145537e3977a00c6f3e4f2f57ee2e"
 
 validate-npm-package-license@^3.0.1:
   version "3.0.4"
@@ -6635,13 +6572,6 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
-vue-awesome-swiper@^3.1.3:
-  version "3.1.3"
-  resolved "http://registry.npm.taobao.org/vue-awesome-swiper/download/vue-awesome-swiper-3.1.3.tgz#05500b501ffb3fec9bf7eb9985bcf4ae8360ed9e"
-  dependencies:
-    object-assign "^4.1.1"
-    swiper "^4.0.7"
-
 vue-hot-reload-api@^2.2.0:
   version "2.3.1"
   resolved "http://registry.npm.taobao.org/vue-hot-reload-api/download/vue-hot-reload-api-2.3.1.tgz#b2d3d95402a811602380783ea4f566eb875569a2"
@@ -6663,12 +6593,6 @@ vue-loader@^13.3.0:
     vue-hot-reload-api "^2.2.0"
     vue-style-loader "^3.0.0"
     vue-template-es2015-compiler "^1.6.0"
-
-vue-plyr@^4.0.0:
-  version "4.0.0"
-  resolved "http://registry.npm.taobao.org/vue-plyr/download/vue-plyr-4.0.0.tgz#160ed20ee2d63818687cc7e0e6236de911d311df"
-  dependencies:
-    plyr "^3.3.22"
 
 vue-router@^3.0.1:
   version "3.0.1"
@@ -6701,6 +6625,16 @@ vue-video-player@^5.0.2:
     videojs-contrib-hls "^5.12.2"
     videojs-flash "^2.1.0"
     videojs-hotkeys "^0.2.20"
+
+vue2-simplert-core@1.0.3:
+  version "1.0.3"
+  resolved "http://registry.npm.taobao.org/vue2-simplert-core/download/vue2-simplert-core-1.0.3.tgz#dc1a7ea2a54472b68414e6af65782a62ebdeb21b"
+
+vue2-simplert@^0.8.0:
+  version "0.8.0"
+  resolved "http://registry.npm.taobao.org/vue2-simplert/download/vue2-simplert-0.8.0.tgz#dcb9838a25f062bedf3ae20f831f154790fa1876"
+  dependencies:
+    vue2-simplert-core "1.0.3"
 
 vue@^2.5.2:
   version "2.5.17"

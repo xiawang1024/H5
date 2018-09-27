@@ -10,7 +10,7 @@
     <keep-alive>
       <component :is="componentId"></component>
     </keep-alive>
-    <!-- <pay v-show="isShow"></pay> -->
+    <pay v-show="isShow"></pay>
   </div>
 </template>
 
@@ -24,9 +24,9 @@ import Player from 'components/Player/Player'
 import Comment from 'components/Comment/Comment'
 // import Info from 'components/Info/Info'
 // import Program from 'components/Program/Program'
-// import Pay from 'components/Pay/Pay'
+import Pay from 'components/Pay/Pay'
 
-
+import Bus from 'base/js/bus'
 
 export default {
 	name: 'Home',
@@ -36,16 +36,23 @@ export default {
 		// Info,
     // Program,
     DownTips,
-		// Pay
+		Pay
 	},
 	data () {
 		return {
-			isShow:false,
+			isShow:true,
 			isIndex:0,
 			componentId:Comment,
 			openid:''
 		}
-	},
+  },
+  mounted() {
+    Bus.$on('closePayPage',() => {
+      this.$nextTick(() => {
+        this.isShow = false;
+      })
+    })
+  },
 	methods:{
 		_isStart() {
 			let startTime = Date.parse(new Date('2018-04-28 18:0:0')) || Date.parse(new Date('2018/04/28 18:0:0'))

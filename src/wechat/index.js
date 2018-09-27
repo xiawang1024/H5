@@ -1,7 +1,7 @@
 import wx from 'weixin-js-sdk';
-import axios from 'axios';
+
 import weui from 'weui.js';
-import Qs from 'qs';
+
 import { WeChatConf } from './util';
 import HU_DONG_ID from '@/config.js';
 import { getUser, postMsg } from 'api/index';

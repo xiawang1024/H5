@@ -2,12 +2,12 @@ import wx from 'weixin-js-sdk';
 import axios from 'axios';
 import Qs from 'qs';
 
-const LINK = 'https://a.weixin.hndt.com/h5/1066/live/index.html';
+const LINK = 'https://a.weixin.hndt.com/h5/1066/paylive/index.html';
 
 class WeChat {
 	constructor() {
 		this.baseUrl = 'https://open.weixin.qq.com/connect/oauth2/authorize?';
-		this.appId = 'wx5f789dea59c6c2c5';
+		this.appId = 'wx9760b6876d5e339f';
 		this.redirect_uri = LINK;
 		this.response_type = 'code';
 		this.scope = 'snsapi_userinfo'; //snsapi_base 只获取openId ， snsapi_userinfo 获取用户信息;
@@ -75,13 +75,13 @@ class WeChat {
 class WeChatConf extends WeChat {
 	constructor(props) {
 		super(props);
-		this.title = '《赫本来了》视频直播';
+		this.title = '9月29日郑州，对话王利芬 《想成长，享创业》';
 		this.link = LINK; //分享链接
 		this.img_url = 'http://www.hndt.com/fm/1066/res/1A1YTh4p.jpg?1507631272960';
-		this.desc = 'UP Radio1066 音视频同步直播中！ 戳视频即可观看！';
+		this.desc = '2018年9月29日，王利芬再次登陆中原，对话河南企业家。';
 	}
 	init() {
-		// this.hasCode();
+		this.hasCode();
 		axios
 			.post('https://a.weixin.hndt.com/boom/at/sign', Qs.stringify({ url: window.location.href }))
 			.then((res) => {
