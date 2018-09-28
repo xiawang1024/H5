@@ -56,7 +56,7 @@ export default {
             pullDownRefresh:{
 				        txt:'更新成功',
                 stop:40,
-                threshold:70
+                threshold:80
             },
             pullUpLoad:{
                 txt:{

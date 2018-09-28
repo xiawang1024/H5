@@ -1,5 +1,5 @@
 <template>
-  <canvas ref="bubble" class="canvas"></canvas>
+  <canvas ref="bubble" :width="width" :height="height" class="canvas"></canvas>
 </template>
 
 <script type="text/ecmascript-6">
@@ -138,9 +138,9 @@
   }
 </script>
 
-<style scoped lang="scss" >
+<style scoped lang="stylus" >
 .canvas {
-  width: 60px;
-  height: 96px;
+  width: 100px;
+  height: 160px;
 }
 </style>
