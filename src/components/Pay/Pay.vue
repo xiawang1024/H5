@@ -30,7 +30,7 @@ export default {
     },
     data() {
         return {
-          isEffectiveDate:false,
+          isEffectiveDate:true,
           isLiveBegin:false,
           isPay:false,
           msg:'预约'
@@ -40,12 +40,15 @@ export default {
 
     },
     mounted () {
-      this.fetchVisit()
+      Bus.$on('visit',() => {
+        this.fetchVisit()
+      })
     },
     methods:{
       fetchVisit() {
         let userInfo = JSON.parse(weChat.getStorage('WXHNDTOPENID'))
         let openid = userInfo.openid;
+        // let openid = 'ofiRq0SL8sLcG8NtJt3qaeiorMv4'
         visit(openid).then(res => {
 
           let {code,data} = res.data
@@ -56,6 +59,7 @@ export default {
             if(isEffectiveDate) {
               let {isPay} = data
               this.isPay = isPay
+              // this.isPay = true
             }
             if(!this.isLiveBegin && this.isPay) {
 

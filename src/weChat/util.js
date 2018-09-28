@@ -1,6 +1,7 @@
 import wx from 'weixin-js-sdk';
 import axios from 'axios';
 import Qs from 'qs';
+import Bus from 'base/js/bus';
 
 const LINK = 'https://a.weixin.hndt.com/h5/1066/paylive/index.html';
 
@@ -56,6 +57,7 @@ class WeChat {
 				let data = res.data;
 				if (data.status == 'ok') {
 					this.setStorage('WXHNDTOPENID', JSON.stringify(data.data));
+					Bus.$emit('visit');
 				} else {
 					this.redirectUrl();
 				}

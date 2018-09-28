@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <down-tips></down-tips>
+    <down-tips v-show="!isShow"></down-tips>
     <player v-show="!isShow"></player>
     <div class="tab-wrap">
       <!-- <div class="tab" @click="slide(0)" :class="isIndex == 0 ? 'isActive' : ''">活动简介</div> -->
