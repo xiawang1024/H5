@@ -100,8 +100,9 @@ export default {
             this.msg = '预约'
             let userInfo = JSON.parse(weChat.getStorage('WXHNDTOPENID'))
             let openid = userInfo.openid;
+            let name = userInfo.nickname
             // let openid = 'ofiRq0QVHAYVFhLN48DTwvPv-qt8';
-            pay(openid).then((res) => {
+            pay(openid,name).then((res) => {
               let data = res.data
               console.log(res)
               if(data.success){

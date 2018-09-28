@@ -35,14 +35,14 @@ const postMsg = (page, cid = HU_DONG_ID, content = '', creater = '游客', fromU
 		})
 	);
 
-const pay = (openId, source = 100, name = '1066', phone = '1066') =>
+const pay = (openId, name = '1066', phone = '1066', source = 100) =>
 	axios.post(
 		'https://a.weixin.hndt.com/passport/order/create.do',
 		JSON.stringify({
 			openId,
-			source,
 			name,
 			phone,
+			source,
 			orderDetailList: [
 				{
 					productId: 3,
