@@ -10,7 +10,7 @@
     <keep-alive>
       <component :is="componentId"></component>
     </keep-alive>
-    <pay v-show="isShow"></pay>
+    <!-- <pay v-show="isShow"></pay> -->
   </div>
 </template>
 
@@ -24,7 +24,7 @@ import Player from 'components/Player/Player'
 import Comment from 'components/Comment/Comment'
 // import Info from 'components/Info/Info'
 // import Program from 'components/Program/Program'
-import Pay from 'components/Pay/Pay'
+// import Pay from 'components/Pay/Pay'
 
 import Bus from 'base/js/bus'
 
@@ -36,11 +36,11 @@ export default {
 		// Info,
     // Program,
     DownTips,
-		Pay
+		// Pay
 	},
 	data () {
 		return {
-			isShow:true,
+			isShow:false,
 			isIndex:0,
 			componentId:Comment,
 			openid:''
