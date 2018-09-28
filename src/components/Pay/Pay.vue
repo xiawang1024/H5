@@ -64,7 +64,7 @@ export default {
             }
             if(this.isLiveBegin && this.isPay) {
               this.msg = '看直播'
-
+              this._successTips()
               return
             }
             if(!this.isPay) {
@@ -85,7 +85,7 @@ export default {
 
           //未开始已付费的用户
           if(!this.isLiveBegin && this.isPay) {
-            this._warnTips('直播暂未开始','直播于29日14点开始，请准时收看')
+            this._warnTips('恭喜您成功预订网络席位','请于2018年9月29日14点打开视频链接，第一时间关注现场动态，并可参与网络互动')
             this.msg = '已预约'
             return
           }
