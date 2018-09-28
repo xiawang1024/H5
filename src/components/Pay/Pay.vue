@@ -85,7 +85,7 @@ export default {
 
           //未开始已付费的用户
           if(!this.isLiveBegin && this.isPay) {
-            this._warnTips('恭喜您成功预订网络席位','请于2018年9月29日14点打开视频链接，第一时间关注现场动态，并可参与网络互动')
+            this._warnTips('恭喜您成功预订网络席位','请收藏本页面，并于2018年9月29日14点通过本页面观看直播')
             this.msg = '已预约'
             return
           }
