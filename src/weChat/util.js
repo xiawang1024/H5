@@ -49,8 +49,8 @@ class WeChat {
 	getOpenId() {
 		axios({
 			method: 'post',
-			url: 'https://a.weixin.hndt.com/boom/api/token/access/redirect2',
-			data: Qs.stringify({ code: this.getQueryString('code'), cate: this.appId })
+			url: 'https://a.weixin.hndt.com/boom/wx/access/subscribe',
+			data: Qs.stringify({ code: this.getQueryString('code'), state: this.appId, subscribe: 'false' })
 		})
 			.then((res) => {
 				let data = res.data;
