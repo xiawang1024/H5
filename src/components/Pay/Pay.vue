@@ -123,7 +123,7 @@ export default {
       _successTips() {
 
         let obj = {
-          title: '直播已开始',
+          title: '正在直播',
           type: 'success',
           onClose:this.closePay,
           customCloseBtnText:'看直播'
@@ -134,7 +134,7 @@ export default {
         let obj = {
           title,
           message,
-          type: 'warning',
+          type: 'success',
           customCloseBtnText:'知道了'
         }
         this.$refs.simplert.openSimplert(obj)
