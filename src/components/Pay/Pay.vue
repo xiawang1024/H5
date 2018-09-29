@@ -3,8 +3,8 @@
     <div class='title'></div>
     <div class="info-wrap">
       <div class='titlec'></div>
-      <button v-if="isEffectiveDate" class="btn" @click="payFor">{{msg}}</button>
-      <button v-else class="btn" @click="tips">预约</button>
+      <button class="btn" @click="payFor">{{msg}}</button>
+      <!-- <button v-else class="btn" @click="tips">预约</button> -->
       <p class="tips">每席 <span class="red" style="color:red">5</span>元，席位递减中 </p>
     </div>
     <div class="bottom">
@@ -53,14 +53,14 @@ export default {
 
           let {code,data} = res.data
           if(!code){
-            let {isEffectiveDate,isLiveBegin} = data
+            let {isEffectiveDate,isLiveBegin,isPay} = data
             this.isEffectiveDate = isEffectiveDate
             this.isLiveBegin = isLiveBegin
-            if(isEffectiveDate) {
-              let {isPay} = data
-              this.isPay = isPay
-              // this.isPay = true
-            }
+            this.isPay = isPay
+            // if(isEffectiveDate) {
+            //   let {isPay} = data
+            //   this.isPay = isPay
+            // }
             if(!this.isLiveBegin && this.isPay) {
 
               this.msg = '已预约'
@@ -85,14 +85,14 @@ export default {
         }
       },
       payFor() {
-        if(this.isEffectiveDate) {
+        if(true) {
 
           //未开始已付费的用户
-          if(!this.isLiveBegin && this.isPay) {
-            this._warnTips('恭喜您成功预订网络席位','请收藏本页面，并于2018年9月29日14点通过本页面观看直播')
-            this.msg = '已预约'
-            return
-          }
+          // if(!this.isLiveBegin && this.isPay) {
+          //   this._warnTips('恭喜您成功预订网络席位','请收藏本页面，并于2018年9月29日14点通过本页面观看直播')
+          //   this.msg = '已预约'
+          //   return
+          // }
           //已开始，已付费
           if(this.isLiveBegin && this.isPay) {
             this.msg = '看直播'
