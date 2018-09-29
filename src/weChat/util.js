@@ -83,7 +83,7 @@ class WeChatConf extends WeChat {
 		this.desc = '2018年9月29日，王利芬再次登陆中原，对话河南企业家。';
 	}
 	init() {
-		// this.hasCode();
+		this.hasCode();
 		axios
 			.post('https://a.weixin.hndt.com/boom/at/sign', Qs.stringify({ url: window.location.href }))
 			.then((res) => {

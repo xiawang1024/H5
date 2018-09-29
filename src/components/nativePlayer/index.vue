@@ -11,7 +11,7 @@ export default {
   props:{
     src:{
       type:String,
-      default:'http://live.muzhifm.com/shuazhibo/room322_pc.m3u8?auth_key=1540792203-0-0-9d557cb06d2772c24ea9a06d638f0e0c'
+      default:'http://live.muzhifm.com/shuazhibo/room322_pc.m3u8?auth_key=1540793728-0-0-aa8828b06ec530d871ba2c2c341157c1'
     },
     poster:{
       type:String,
