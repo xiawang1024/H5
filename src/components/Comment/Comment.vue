@@ -207,6 +207,7 @@ export default {
   bottom: 0px;
 
   .online-people {
+    display :none;
     width: 100%;
     height: 40px;
     line-height: 40px;
@@ -232,7 +233,7 @@ export default {
 
   .list-wrap {
     position: absolute;
-    top: 40px;
+    top: 0px;
     bottom: 90px;
 
     .list {
