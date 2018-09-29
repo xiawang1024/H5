@@ -20,7 +20,8 @@ const TIMER_ID = 5 * 60 * 1000
 import { visit } from 'api/index'
 
 import DownTips from 'components/DownTips/DownTips'
-import Player from 'components/Player/Player'
+import Player from 'components/nativePlayer/index'
+// import Player from 'components/Player/Player'
 import Comment from 'components/Comment/Comment'
 // import Info from 'components/Info/Info'
 // import Program from 'components/Program/Program'
