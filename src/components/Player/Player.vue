@@ -24,7 +24,7 @@ export default {
                         withCredentials: false,
                         type: "application/x-mpegURL",  //TODO:开启hls直播
                         // src: "http://stream.hndt.com/live/jiaoyu/playlist.m3u8",
-                        src: "http://live.muzhifm.com/shuazhibo/room322_pc.m3u8?auth_key=1526006127-0-0-fe1acb8daf5215fef1024ffc674071c0",
+                        src: "http://live.muzhifm.com/shuazhibo/room322_pc.m3u8?auth_key=1540792203-0-0-9d557cb06d2772c24ea9a06d638f0e0c",
                         // src:"http://ivi.bupt.edu.cn/hls/chchd.m3u8",
                         // type:'video/mp4',
                         // src:'http://111.7.176.235/6773ABFC70F4A740AA9C157DC/03000B02005B285E4AADF9558DE04A42B12276-7D9C-4AA2-9CA7-40CD1F322555.mp4?ccode=0502&duration=200&expire=18000&psid=0bc3e795d1f941cb014f5d06a019cbb2&sp=&ups_client_netip=759e9852&ups_ts=1529385641&ups_userid=&utid=3nEVE60l9TcCAXWemFICu8nh&vid=XMzY3Mjk4NTk0OA%3D%3D&vkey=B4a4b90f9e8b3859efe8c18f8ae354462&s=0d48da8e0805446bbd54',
