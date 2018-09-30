@@ -24,7 +24,7 @@ fastclick.attach(document.body);
  * 视频直播
  */
 import VueVideoPlayer from 'vue-video-player';
-import 'video.js/dist/video-js.css';
+// import 'video.js/dist/video-js.css';
 Vue.use(VueVideoPlayer /* {
   options: global default options,
   events: global videojs events
