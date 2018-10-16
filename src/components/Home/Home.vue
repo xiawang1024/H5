@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <down-tips></down-tips>
-    <player v-show="!isShow"></player>
+    <player :src='liveStream' :poster='poster'></player>
     <div class="tab-wrap">
       <!-- <div class="tab" @click="slide(0)" :class="isIndex == 0 ? 'isActive' : ''">活动简介</div> -->
       <!-- <div class="tab" @click="slide(1)" :class="isIndex == 1 ? 'isActive' : ''">节目单</div> -->
@@ -15,106 +15,50 @@
 </template>
 
 <script>
-const TIMER_ID = 5 * 60 * 1000
 
-import { visit } from 'api/index'
+
+import { getChannelItem } from 'api/index'
+import {HU_DONG_ID} from '@/config.js'
 
 import DownTips from 'components/DownTips/DownTips'
 import Player from 'components/nativePlayer/index'
-// import Player from 'components/Player/Player'
 import Comment from 'components/Comment/Comment'
-// import Info from 'components/Info/Info'
-// import Program from 'components/Program/Program'
-// import Pay from 'components/Pay/Pay'
 
-import Bus from 'base/js/bus'
+
 
 export default {
 	name: 'Home',
 	components:{
 		Player,
 		Comment,
-		// Info,
-    // Program,
-    DownTips,
-		// Pay
+    DownTips
 	},
 	data () {
 		return {
-			isShow:false,
+
 			isIndex:0,
 			componentId:Comment,
-			openid:''
+      openid:'',
+      liveStream:'',
+      poster:''
 		}
   },
   mounted() {
-    Bus.$on('closePayPage',() => {
-      this.$nextTick(() => {
-        this.isShow = false;
-      })
-    })
+    this._getStream()
   },
 	methods:{
-		_isStart() {
-			let startTime = Date.parse(new Date('2018-04-28 18:0:0')) || Date.parse(new Date('2018/04/28 18:0:0'))
-			let endTime = Date.parse(new Date('2018-04-28 21:30:0')) || Date.parse(new Date('2018/04/28 21:30:0'))
-			let nowTime = (new Date()).getTime()
-			// alert(endTime)
-			if(nowTime >= startTime && nowTime <= endTime) {
-				this._visit()
-			}else{
-				if(nowTime <= startTime) {
-					console.log('直播未开始')
-					return false
-				}
-				if(nowTime >= endTime) {
-					console.log('直播已结束')
-					Toast.info({
-                        message:'直播已结束，谢谢您的支持！',
-                        duration:10000
-                    })
-					return false
-				}
-			}
-		},
-		_visit() {
-			visit(this.openid).then((res) => {
-				let data = res.data
-				if(data.code == 0) {
-					if(data.data == 0) {
-						this.startTime()
-					}else{
-						if(data.data.isPay) {
-							return
-						}else{
-							this._pay()
-						}
-					}
-				}else{
-					Toast.error({
-              message:'好像哪里出现问题了！',
-              duration:2000
-          })
-				}
-			})
-		},
-		startTime() {
-			this.timerId = setTimeout(() => {
-				this.$nextTick(() => {
-					this.isShow = true
-					let video = document.querySelector('video')
-					video.pause()
-				})
-			}, TIMER_ID)
-		},
-		_pay() {
-			this.$nextTick(() => {
-				this.isShow = true
-				let video = document.querySelector('video')
-				video.pause()
-			})
-		},
 
+    _getStream() {
+        getChannelItem(HU_DONG_ID).then((res) => {
+            let data = res.data
+            console.log(data)
+            this.liveStream = data.video_streams[0]
+            this.poster = `http://program.hndt.com${data.image}`
+            this.$nextTick(() => {
+
+            })
+        })
+    },
 		slide(type) {
 			this.isIndex = type
 			if(type == 0) {
@@ -126,9 +70,7 @@ export default {
 			}
 		}
 	},
-	destroyed() {
-		clearTimeout(this.timerId)
-	}
+
 }
 </script>
 

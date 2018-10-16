@@ -1,7 +1,8 @@
 <template>
   <div class="live-player">
     <video id="video" class="v-hls" controls playsinline="playsinline" webkit-playsinline="true" x5-playsinline="true" width="100%" height='100%' :poster='poster'>
-      <source :src="src" type="video/mp4"></source>
+      <source :src="src" type="video/mp4">
+      </source>
     </video>
   </div>
 </template>
@@ -13,14 +14,15 @@ export default {
   props:{
     src:{
       type:String,
-      default:'http://ivi.bupt.edu.cn/hls/cctv6hd0.m3u8'
+      default:''
     },
     poster:{
       type:String,
-      default:'https://a.weixin.hndt.com/h5/1066/paylive/livePost.jpg'
+      default:''
     }
   },
   mounted() {
+    console.log(this.src)
     let video = document.getElementById('video')
     console.log(video.networkState )
     video.addEventListener('play',() => {

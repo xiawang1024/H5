@@ -14,7 +14,7 @@ import { getUser, postMsg } from 'api/index'
 import { WeChat } from 'weChat/util'
 import weui from 'weui.js';
 import wx from 'weixin-js-sdk';
-import HU_DONG_ID from '@/config.js'
+import {HU_DONG_ID} from '@/config.js'
 
 import Voice from '../Voice/Voice'
 

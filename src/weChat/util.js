@@ -2,13 +2,14 @@ import wx from 'weixin-js-sdk';
 import axios from 'axios';
 import Qs from 'qs';
 
-const LINK = 'https://a.weixin.hndt.com/h5/1066/nopaylive/index.html';
-
+import { title, link } from './config';
+import { getChannelItem } from 'api/index';
+import { HU_DONG_ID } from '@/config.js';
 class WeChat {
 	constructor() {
 		this.baseUrl = 'https://open.weixin.qq.com/connect/oauth2/authorize?';
 		this.appId = 'wx9760b6876d5e339f';
-		this.redirect_uri = LINK;
+		this.redirect_uri = link;
 		this.response_type = 'code';
 		this.scope = 'snsapi_userinfo'; //snsapi_base 只获取openId ， snsapi_userinfo 获取用户信息;
 		this.state = Date.parse(new Date());
@@ -75,39 +76,46 @@ class WeChat {
 class WeChatConf extends WeChat {
 	constructor(props) {
 		super(props);
-		this.title = '9月29日郑州，对话王利芬 《想成长，享创业》';
-		this.link = LINK; //分享链接
-		this.img_url = 'http://www.hndt.com/fm/1066/res/1A1YTh4p.jpg?1507631272960';
-		this.desc = '2018年9月29日，王利芬再次登陆中原，对话河南企业家。';
+		this.title = title;
+		this.link = link; //分享链接
+		this.img_url = '';
+		this.desc = '';
 	}
 	init() {
 		// this.hasCode();
-		axios
-			.post('https://a.weixin.hndt.com/boom/at/sign', Qs.stringify({ url: window.location.href }))
-			.then((res) => {
-				let data = res.data;
-				wx.config({
-					debug: false,
-					appId: data.appId,
-					timestamp: data.timestamp,
-					nonceStr: data.nonceStr,
-					signature: data.signature,
-					jsApiList: [
-						'onMenuShareTimeline',
-						'onMenuShareAppMessage',
-						'chooseImage',
-						'uploadImage',
-						'previewImage',
-						'startRecord',
-						'playVoice',
-						'stopRecord',
-						'downloadVoice',
-						'uploadVoice',
-						'stopVoice',
-						'openLocation'
-					]
+		getChannelItem(HU_DONG_ID).then((res) => {
+			let data = res.data;
+
+			this.imgUrl = `http://program.hndt.com${data.image}`;
+			this.desc = data.description;
+
+			axios
+				.post('https://a.weixin.hndt.com/boom/at/sign', Qs.stringify({ url: window.location.href }))
+				.then((res) => {
+					let data = res.data;
+					wx.config({
+						debug: false,
+						appId: data.appId,
+						timestamp: data.timestamp,
+						nonceStr: data.nonceStr,
+						signature: data.signature,
+						jsApiList: [
+							'onMenuShareTimeline',
+							'onMenuShareAppMessage',
+							'chooseImage',
+							'uploadImage',
+							'previewImage',
+							'startRecord',
+							'playVoice',
+							'stopRecord',
+							'downloadVoice',
+							'uploadVoice',
+							'stopVoice',
+							'openLocation'
+						]
+					});
 				});
-			});
+		});
 	}
 }
 

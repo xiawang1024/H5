@@ -3,7 +3,7 @@
  */
 import axios from 'axios';
 import Qs from 'qs';
-import HU_DONG_ID from '@/config.js';
+import { HU_DONG_ID } from '@/config.js';
 
 // axios.defaults.baseURL = '/api';
 // axios.defaults.baseURL = 'http://www.softzztiedu.top/test/upRadio.do';
@@ -60,4 +60,11 @@ const pay = (openId, source = 100, name = '1066', phone = '1066') =>
 const visit = (openId) =>
 	axios.get('https://a.weixin.hndt.com/passport/pay_to_live/pay_and_time_auth.do?openId=' + openId);
 
-export { postUserInfo, checkOpenId, getUser, postMsg, pay, visit };
+/**
+ * 获取指定频率列表接口
+ * @param  {[type]} channelId [cid]
+ * @return {[type]}           [description]
+ */
+const getChannelItem = (channelId) => axios.get('http://program.hndt.com/get/live/channel/' + channelId);
+
+export { postUserInfo, checkOpenId, getUser, postMsg, pay, visit, getChannelItem };

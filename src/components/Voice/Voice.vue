@@ -9,7 +9,7 @@
  import wx from 'weixin-js-sdk';
  import { WeChat } from 'weChat/util';
  import { getUser, postMsg } from 'api/index';
- import HU_DONG_ID from '@/config.js';
+ import {HU_DONG_ID} from '@/config.js';
 
  const weChat = new WeChat()
 
