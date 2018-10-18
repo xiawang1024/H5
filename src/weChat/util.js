@@ -90,11 +90,13 @@ class WeChatConf extends WeChat {
     getLiveData().then(res => {
       let data = res.data
       this.title = data.title
-      document.title = data.title
-      this.img_url = data.icon
-      this.desc = data.desc
+      document.title = data.title || '直播间'
+      this.img_url =
+        data.icon || 'https://a.weixin.hndt.com/h5/logo/root-logo.png'
+      this.desc = data.desc || '河南广播网视频直播间'
       let src = data.video
-      let poster = data.icon
+      let poster =
+        data.icon || 'https://a.weixin.hndt.com/h5/logo/root-logo.png'
       Bus.$emit('initPlayer', { src, poster })
       axios
         .post(

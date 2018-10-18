@@ -11,7 +11,7 @@ export default {
   name: 'livePlayer',
   data() {
     return {
-      poster: 'http://www.hndt.com/static/v3/icons/root-logo.png'
+      poster: ''
     }
   },
   mounted() {
