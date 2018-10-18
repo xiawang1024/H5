@@ -1,2 +1,2 @@
-const HU_DONG_ID = 1
+const HU_DONG_ID = 8
 export default HU_DONG_ID
