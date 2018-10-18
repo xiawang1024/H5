@@ -5,95 +5,80 @@
 </template>
 
 <script>
- import weui from 'weui.js';
- import wx from 'weixin-js-sdk';
- import { WeChat } from 'weChat/util';
- import { getUser, postMsg } from 'api/index';
- import HU_DONG_ID from '@/config.js';
+import weui from 'weui.js'
+import wx from 'weixin-js-sdk'
+import Bus from 'base/js/bus'
+import { postMsg } from 'api/index'
+import HU_DONG_ID from '@/config.js'
 
- const weChat = new WeChat()
 
- export default {
-	data () {
-		return {
-      openid:'',
-      creater:'',
-      fromUid:'',
-			tipsMsg:'按住&nbsp;&nbsp;说话',
-			isTouch:false,
-      startRecordTime:0,
-      endRecordTime:0
-		}
-	},
-	components: {
-
-	},
-  mounted() {
-    if (!localStorage.rainAllowRecord || localStorage.rainAllowRecord !== 'true') {
-      wx.startRecord({
-        success: function() {
-          localStorage.rainAllowRecord = 'true';
-          wx.stopRecord();
-        },
-        cancel: function() {
-          weui.alert('用户拒绝授权录音');
-        }
-      });
+export default {
+  data() {
+    return {
+      openid: '',
+      creater: '',
+      fromUid: '',
+      tipsMsg: '按住&nbsp;&nbsp;说话',
+      isTouch: false,
+      startRecordTime: 0,
+      endRecordTime: 0
     }
-    // if(weChat.getStorage('WXHNDTOPENID') == null) {
-    //   this.isNotWeixin = true
-    // }else{
-    //   let userInfo = JSON.parse(weChat.getStorage('WXHNDTOPENID'))
-    //   this.openid = userInfo.openid;
-    //   setTimeout(() => {
-    //     getUser(this.openid).then((res) => {
-    //         let data = res.data
-    //         if(data.status === 1) {
-    //             this.creater = data.data.name
-    //             this.fromUid = data.data.id
-    //         }else{
-    //             console.log('获取用户信息失败')
-    //         }
-    //     }).catch((err) => {
-    //         console.log(err)
-    //     })
-    //   },20)
-    // }
-    this.isNotWeixin = !this.isWeixinBrowser()
   },
-	methods:{
+  components: {},
+  mounted() {
+    Bus.$on('initPlayer',() => {
+      if (
+        !localStorage.rainAllowRecord ||
+        localStorage.rainAllowRecord !== 'true'
+      ) {
+        wx.startRecord({
+          success: function() {
+            localStorage.rainAllowRecord = 'true'
+            wx.stopRecord()
+          },
+          cancel: function() {
+            weui.alert('用户拒绝授权录音')
+          }
+        })
+      }
+    })
+    
+    
+
+    this.isNotWeixin = !this.isWeixinBrowser()
+    
+  },
+  methods: {
     isWeixinBrowser() {
-      var agent = navigator.userAgent.toLowerCase();
+      var agent = navigator.userAgent.toLowerCase()
       if (agent.match(/MicroMessenger/i) == 'micromessenger') {
-        return true;
+        return true
       } else {
-        return false;
+        return false
       }
     },
-		startRecord() {
-      if(this.isNotWeixin) {
+    startRecord() {
+      if (this.isNotWeixin) {
         weui.alert('请用微信打开进行发言！')
         return
       }
       this.startRecordTime = Date.parse(new Date())
-			this.isTouch = true
-			this.tipsMsg = '松开&nbsp;&nbsp;结束'
-      this.recordLoading = weui.loading('录音中...');
+      this.isTouch = true
+      this.tipsMsg = '松开&nbsp;&nbsp;结束'
+      this.recordLoading = weui.loading('录音中...')
       this.recordTimer = setTimeout(() => {
-
         wx.startRecord({
           success: () => {
-            localStorage.rainAllowRecord = 'true';
+            localStorage.rainAllowRecord = 'true'
           },
           cancel: () => {
-            weui.alert('用户拒绝授权录音');
+            weui.alert('用户拒绝授权录音')
           }
-        });
-      }, 300);
-		},
-		stopRecord() {
-
-      if(this.isNotWeixin){
+        })
+      }, 300)
+    },
+    stopRecord() {
+      if (this.isNotWeixin) {
         return
       }
       this.recordLoading.hide()
@@ -103,74 +88,72 @@
       console.log(this.endRecordTime)
       console.log(this.startRecordTime)
       console.log(this.endRecordTime - this.startRecordTime)
-      if(this.endRecordTime - this.startRecordTime <= 1000){
-        this.endRecordTime = 0;
-        this.startRecordTime = 0;
+      if (this.endRecordTime - this.startRecordTime <= 1000) {
+        this.endRecordTime = 0
+        this.startRecordTime = 0
         weui.alert('时间太短，请重录！')
-        clearTimeout(this.recordTimer);
+        clearTimeout(this.recordTimer)
         setTimeout(() => {
           wx.stopRecord({
-            success:(res) => {
+            success: res => {
               console.log(res)
             },
-            fail:(err) => {
+            fail: err => {
               console.log(err)
             }
           })
-        },1000)
+        }, 1000)
         return
-
-      }else {
-
+      } else {
         this._stopHandler()
       }
       this.$nextTick(() => {})
-		},
+    },
     _stopHandler() {
       wx.stopRecord({
-        success:(res) => {
-          let voiceLocalId = res.localId;
-					wx.playVoice({
-						localId: voiceLocalId
-          });
+        success: res => {
+          let voiceLocalId = res.localId
+          wx.playVoice({
+            localId: voiceLocalId
+          })
           // weui.alert(voiceLocalId)
-          weui.confirm('确定发送',{
-            buttons:[
+          weui.confirm('确定发送', {
+            buttons: [
               {
-                label:'返回',
-                type:'default',
-                onClick:() => {
+                label: '返回',
+                type: 'default',
+                onClick: () => {
                   console.log('no')
                 }
               },
               {
                 label: '确定',
-								type: 'primary',
-								onClick: () => {
-									this._uploadVoice(voiceLocalId);
-								}
+                type: 'primary',
+                onClick: () => {
+                  this._uploadVoice(voiceLocalId)
+                }
               }
             ]
           })
         },
-        fail:(res) => {
-					console.log(JSON.stringify(res));
-				}
+        fail: res => {
+          console.log(JSON.stringify(res))
+        }
       })
     },
     _uploadVoice(voiceLocalId) {
       wx.uploadVoice({
         localId: voiceLocalId, // 需要上传的音频的本地ID，由stopRecord接口获得
         isShowProgressTips: 1, // 默认为1，显示进度提示
-        success: (res) => {
-          postMsg('VOICE', HU_DONG_ID , res.serverId).then((res) => {
+        success: res => {
+          postMsg('VOICE', HU_DONG_ID, res.serverId).then(res => {
             weui.toast('审核中！')
           })
         }
-      });
+      })
     }
-	}
- }
+  }
+}
 </script>
 
 

@@ -1,51 +1,28 @@
 <template>
   <div class="live-player">
-    <video id="video" class="v-hls" controls playsinline="playsinline" webkit-playsinline="true" x5-playsinline="true" width="100%" height='100%' :poster='poster'>
-      <source :src="src" type="video/mp4"></source>
-    </video>
+    <video  id="video" class="v-hls" controls playsinline="playsinline" webkit-playsinline="true" x5-playsinline="true" width="100%" height='100%' :poster='poster' />
   </div>
 </template>
 
 <script>
 // import Hls from 'hls.js'
+import Bus from 'base/js/bus'
 export default {
-  name:'livePlayer',
-  props:{
-    src:{
-      type:String,
-      default:'http://ivi.bupt.edu.cn/hls/cctv6hd0.m3u8'
-    },
-    poster:{
-      type:String,
-      default:'https://a.weixin.hndt.com/h5/1066/paylive/livePost.jpg'
+  name: 'livePlayer',
+  data () {
+    return {
+      poster:'http://www.hndt.com/static/v3/icons/root-logo.png'
     }
   },
   mounted() {
     let video = document.getElementById('video')
-    console.log(video.networkState )
-    video.addEventListener('play',() => {
-      console.log('play')
-      console.log(video.readyState)
+    Bus.$on('initPlayer', ({ src, poster }) => {
+      this.$nextTick(() => {
+        this.poster = poster
+        video.setAttribute('src',src)
+      })
     })
-    video.addEventListener('playing',() => {
-      console.log('playing')
-      console.log(video.readyState)
-    })
-
-    video.addEventListener('pause',() => {
-      console.log('pause')
-    })
-    video.addEventListener('ended',() => {
-      console.log('------------------------------------');
-      console.log(video.readyState);
-      console.log('------------------------------------');
-    })
-
-    let source = document.getElementById('video').querySelector('source')
-    source.addEventListener('error',() => {
-      console.log('error')
-    })
-
+    
   }
 }
 </script>
@@ -54,6 +31,8 @@ export default {
 .live-player {
   width: 750px;
   height: 422px;
+  background: #000;
+  overflow:hidden
 }
 </style>
 

@@ -1,63 +1,43 @@
 /**
  * api
  */
-import axios from 'axios';
-import Qs from 'qs';
-import HU_DONG_ID from '@/config.js';
+import axios from 'axios'
+import Qs from 'qs'
+import HU_DONG_ID from '@/config.js'
+import channelData from '@/channelData'
 
-// axios.defaults.baseURL = '/api';
-// axios.defaults.baseURL = 'http://www.softzztiedu.top/test/upRadio.do';
+/**
+ * 互动
+ * @param {*} page
+ * @param {*} cid
+ * @param {*} content
+ * @param {*} creater
+ * @param {*} fromUid
+ */
+const postMsg = (
+  page,
+  cid = HU_DONG_ID,
+  content = '',
+  creater = '游客',
+  fromUid = '0'
+) =>
+  axios.post(
+    'https://talk.hndt.com/test/upRadio.do',
+    Qs.stringify({
+      page,
+      cid,
+      creater,
+      fromUid,
+      content
+    })
+  )
+/**
+ * 获取直播信息
+ */
+let url = `https://api.hndt.com/api/page?template_id=393&channel_id=${
+  channelData[HU_DONG_ID - 1]['channel_id']
+}`
 
-// ?openid=ofiRq0VYx1ccPYzqlffbh_kwMPaQ&appid=wx9760b6876d5e339f&content=1234567&page=0
+const getLiveData = () => axios.get(url)
 
-const postUserInfo = (name, mobile, origin, openId) =>
-	axios.post('https://a.weixin.hndt.com/user/add/hn', {
-		name,
-		mobile,
-		origin,
-		openId
-	});
-
-const checkOpenId = (openId, origin) =>
-	axios.get('https://a.weixin.hndt.com/user/check/?openid=' + openId + '&origin=' + origin);
-
-const getUser = (openid) => axios.get('https://a.weixin.hndt.com/user/find/openid?openid=' + openid);
-
-const postMsg = (page, cid = HU_DONG_ID, content = '', creater = '游客', fromUid = '0') =>
-	axios.post(
-		'https://talk.hndt.com/test/upRadio.do',
-		Qs.stringify({
-			page,
-			cid,
-			creater,
-			fromUid,
-			content
-		})
-	);
-
-const pay = (openId, source = 100, name = '1066', phone = '1066') =>
-	axios.post(
-		'https://a.weixin.hndt.com/passport/order/create.do',
-		JSON.stringify({
-			openId,
-			source,
-			name,
-			phone,
-			orderDetailList: [
-				{
-					productId: 3,
-					productQuantity: 1
-				}
-			]
-		}),
-		{
-			headers: {
-				'Content-Type': 'application/json;charset=UTF-8'
-			}
-		}
-	);
-
-const visit = (openId) =>
-	axios.get('https://a.weixin.hndt.com/passport/pay_to_live/pay_and_time_auth.do?openId=' + openId);
-
-export { postUserInfo, checkOpenId, getUser, postMsg, pay, visit };
+export { postMsg, getLiveData }
