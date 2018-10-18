@@ -1,17 +1,17 @@
 <template>
   <div class="live-player">
-    <video  id="video" class="v-hls" controls playsinline="playsinline" webkit-playsinline="true" x5-playsinline="true" width="100%" height='100%' :poster='poster' />
+    <video id="video" class="v-hls" controls playsinline="playsinline" webkit-playsinline="true" x5-playsinline="true" width="100%" height='100%' :poster='poster' />
   </div>
 </template>
 
 <script>
-// import Hls from 'hls.js'
+import Hls from 'hls.js'
 import Bus from 'base/js/bus'
 export default {
   name: 'livePlayer',
-  data () {
+  data() {
     return {
-      poster:'http://www.hndt.com/static/v3/icons/root-logo.png'
+      poster: 'http://www.hndt.com/static/v3/icons/root-logo.png'
     }
   },
   mounted() {
@@ -19,10 +19,20 @@ export default {
     Bus.$on('initPlayer', ({ src, poster }) => {
       this.$nextTick(() => {
         this.poster = poster
-        video.setAttribute('src',src)
+        if (src.indexOf('.m3u8') !== -1) {
+          if (Hls.isSupported()) {
+            var hls = new Hls()
+            hls.loadSource(src)
+            hls.attachMedia(video)
+            hls.on(Hls.Events.MANIFEST_PARSED, function() {
+              video.play()
+            })
+          }
+        } else {
+          video.setAttribute('src', src)
+        }
       })
     })
-    
   }
 }
 </script>
@@ -32,7 +42,7 @@ export default {
   width: 750px;
   height: 422px;
   background: #000;
-  overflow:hidden
+  overflow: hidden;
 }
 </style>
 
