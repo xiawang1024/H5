@@ -91,13 +91,13 @@ class WeChatConf extends WeChat {
       let data = res.data
       this.title = data.title
       document.title = data.title || '直播间'
-      this.img_url =
-        data.icon || 'https://a.weixin.hndt.com/h5/logo/root-logo.png'
-      this.desc = data.desc || '河南广播网视频直播间'
+      this.img_url = data.icon
+      this.desc = data.desc
       let src = data.video
-      let poster =
-        data.icon || 'https://a.weixin.hndt.com/h5/logo/root-logo.png'
-      Bus.$emit('initPlayer', { src, poster })
+      let poster = data.icon
+      let content = data.body
+
+      Bus.$emit('initPlayer', data)
       axios
         .post(
           'https://a.weixin.hndt.com/boom/at/sign',

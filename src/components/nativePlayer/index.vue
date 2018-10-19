@@ -1,6 +1,6 @@
 <template>
   <div class="live-player">
-    <video id="video" class="v-hls" controls playsinline="playsinline" webkit-playsinline="true" x5-playsinline="true" width="100%" height='100%' :poster='poster' />
+    <video id="video" class="v-hls" controls playsinline="playsinline" webkit-playsinline="true"  x5-playsinline="true" width="100%" height='100%' :poster='poster' />
   </div>
 </template>
 
@@ -16,22 +16,27 @@ export default {
   },
   mounted() {
     let video = document.getElementById('video')
-    Bus.$on('initPlayer', ({ src, poster }) => {
+    Bus.$on('initPlayer', data => {
+      let { live, icon } = data
       this.$nextTick(() => {
-        this.poster = poster
-        if (src.indexOf('.m3u8') !== -1) {
+        this.poster = icon
+        if (live.indexOf('.m3u8') !== -1) {
           if (Hls.isSupported()) {
             var hls = new Hls()
-            hls.loadSource(src)
+            hls.loadSource(live)
             hls.attachMedia(video)
             hls.on(Hls.Events.MANIFEST_PARSED, function() {
               video.play()
             })
           }
         } else {
-          video.setAttribute('src', src)
+          video.setAttribute('src', live)
         }
       })
+    })
+    Bus.$on('backPlay', backSrc => {
+      video.setAttribute('src', backSrc)
+      video.play()
     })
   }
 }

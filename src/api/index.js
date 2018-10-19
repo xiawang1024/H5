@@ -34,10 +34,24 @@ const postMsg = (
 /**
  * 获取直播信息
  */
-let url = `https://api.hndt.com/api/page?template_id=393&channel_id=${
-  channelData[HU_DONG_ID - 1]['channel_id']
-}`
+// let url = `https://api.hndt.com/api/page?template_id=393&channel_id=${
+//   channelData[HU_DONG_ID - 1]['channel_id']
+// }`
+
+let url = `http://api.hndt.com/api/page?template_id=394&channel_id=1502&article_id=${getQueryString(
+  'id'
+)}`
 
 const getLiveData = () => axios.get(url)
+
+function getQueryString(name) {
+  var url = new RegExp('(^|&)' + name + '=([^&]*)(&|$)')
+  var newUrl = window.location.search.substr(1).match(url)
+  if (newUrl != null) {
+    return unescape(newUrl[2])
+  } else {
+    return false
+  }
+}
 
 export { postMsg, getLiveData }

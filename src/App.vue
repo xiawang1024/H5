@@ -1,9 +1,9 @@
 <template>
-  <div id="app">    
-    
+  <div id="app">
+
     <!-- <router-view/> -->
     <home></home>
-    
+
   </div>
 </template>
 
@@ -11,12 +11,11 @@
 import Home from './components/Home/Home'
 export default {
   name: 'App',
-  components:{
+  components: {
     Home
   }
 }
 </script>
 
-<style>
-
+<style lang='stylus'>
 </style>

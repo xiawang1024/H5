@@ -38,162 +38,166 @@ import Scroll from 'common/scroll/scroll'
 import SendMsg from '../SendMsg/SendMsg'
 import Voice from './Voice'
 import weui from 'weui.js'
-import wx from 'weixin-js-sdk';
+import wx from 'weixin-js-sdk'
 import { postMsg } from 'api/index'
 
 export default {
-    name:'comment',
-    components:{
-       Scroll,
-       SendMsg,
-       Voice
-    },
-    data() {
-        return {
-            defaultAvatar:'http://www.hndt.com/res/logo_300.png',
-            commentList:[],
-            online:'',
-            pullDownRefresh:{
-				        txt:'更新成功',
-                stop:40,
-                threshold:80
-            },
-            pullUpLoad:{
-                txt:{
-                    more:'玩命加载中',
-                    noMore:'没有更多数据'
-                },
-                threshold:0
-            },
-            page:1,
-            pages:0,
-            openid:'',
-            voicePlayindex:-1,
-            voiceRestTime:0
-        }
-    },
-    created() {
-        this.loading = weui.loading('努力加载中...');
-        this._fetchData(1)
-        // this._fetchOnline(-1)
-        // postMsg(-2)
-    },
-    mounted() {
-        this.audio = this.$refs.audio;
-
-        // setInterval(() => {
-        //     this._fetchOnline()
-        // },15000)
-
-        setInterval(() => {
-            this._fetchData(1)
-        },60000)
-    },
-    methods:{
-        _fetchOnline() {
-            postMsg(1).then((res) => {
-                // console.log(res)
-                let data = res.data
-                if(data.success) {
-                    // this.commentList = data.result.list
-                    this.pages = data.result.pages
-                    this.online = data.message
-                }
-            }).catch((err) => {
-                console.log(err)
-            })
+  name: 'comment',
+  components: {
+    Scroll,
+    SendMsg,
+    Voice
+  },
+  data() {
+    return {
+      defaultAvatar: 'http://www.hndt.com/res/logo_300.png',
+      commentList: [],
+      online: '',
+      pullDownRefresh: {
+        txt: '更新成功',
+        stop: 40,
+        threshold: 80
+      },
+      pullUpLoad: {
+        txt: {
+          more: '玩命加载中',
+          noMore: '没有更多数据'
         },
-        _fetchData(page) {
-            postMsg(page).then((res) => {
-                // console.log(res)
-                let data = res.data
-                if(data.success) {
-                    this.loading.hide()
-                    this.commentList = data.result.list
-                    this.pages = data.result.pages
-                    this.online = data.message
-                }
-            }).catch((err) => {
-                console.log(err)
-            })
-        },
-        _getQueryString(name) {
-            let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
-            let r = window.location.search.substr(1).match(reg);
-            if (r != null) return unescape(r[2]);
-            return null;
-        },
-        onSendMsg() {
-            // alert('fasongxinxi')
-            this._fetchData(1)
-        },
-        onPullingDown() {
-            this._fetchData(1)
-        },
-        onPullingUp() {
-            // 更新数据
-            console.log('pulling up and load data')
-
-            this.page++;
-            if(this.page <= this.pages) {
-                postMsg(this.page).then((res) => {
-                    // console.log(res)
-                    let data = res.data
-                    if(data.success) {
-                        this.commentList = this.commentList.concat(data.result.list)
-                        this.pages = data.result.pages
-                    }else{
-                        this.$refs.scroll.forceUpdate()
-                    }
-                }).catch((err) => {
-                    console.log(err)
-                })
-            }else{
-                 this.$refs.scroll.forceUpdate()
-            }
-        },
-        previewImage(url){
-          // weui.alert(url)
-          wx.previewImage({
-            current: url, // 当前显示图片的http链接
-            urls: [url]
-          });
-        },
-        playVoice(src,index) {
-          if(this.voicePlayindex == index){
-            if(this.audio.paused){
-              this.audio.play()
-            }else {
-               this.voicePlayindex = -1
-                this.audio.pause()
-            }
-          }else {
-            this.audio.pause()
-
-            this.audio.setAttribute('src',src)
-
-            this.$refs.audio.play()
-            this.voiceRestTime = 0;
-            this.$nextTick(() => {
-
-            })
-            setTimeout(() => {
-              this.voicePlayindex = index;
-            },20)
-          }
-        },
-        timeupdate(e) {
-          let target = e.target;
-          let restTime = (target.duration - target.currentTime) | 0
-
-          this.voiceRestTime = restTime
-          this.$nextTick(() => {})
-        },
-        playEnd(){
-          console.log('end')
-          this.voicePlayindex = -1;
-        }
+        threshold: 0
+      },
+      page: 1,
+      pages: 0,
+      openid: '',
+      voicePlayindex: -1,
+      voiceRestTime: 0
     }
+  },
+  created() {
+    this.loading = weui.loading('努力加载中...')
+    this._fetchData(1)
+    // this._fetchOnline(-1)
+    // postMsg(-2)
+  },
+  mounted() {
+    this.audio = this.$refs.audio
+
+    // setInterval(() => {
+    //     this._fetchOnline()
+    // },15000)
+
+    setInterval(() => {
+      this._fetchData(1)
+    }, 60000)
+  },
+  methods: {
+    _fetchOnline() {
+      postMsg(1)
+        .then(res => {
+          // console.log(res)
+          let data = res.data
+          if (data.success) {
+            // this.commentList = data.result.list
+            this.pages = data.result.pages
+            this.online = data.message
+          }
+        })
+        .catch(err => {
+          console.log(err)
+        })
+    },
+    _fetchData(page) {
+      postMsg(page)
+        .then(res => {
+          // console.log(res)
+          let data = res.data
+          if (data.success) {
+            this.loading.hide()
+            this.commentList = data.result.list
+            this.pages = data.result.pages
+            this.online = data.message
+          }
+        })
+        .catch(err => {
+          console.log(err)
+        })
+    },
+    _getQueryString(name) {
+      let reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i')
+      let r = window.location.search.substr(1).match(reg)
+      if (r != null) return unescape(r[2])
+      return null
+    },
+    onSendMsg() {
+      // alert('fasongxinxi')
+      this._fetchData(1)
+    },
+    onPullingDown() {
+      this._fetchData(1)
+    },
+    onPullingUp() {
+      // 更新数据
+      console.log('pulling up and load data')
+
+      this.page++
+      if (this.page <= this.pages) {
+        postMsg(this.page)
+          .then(res => {
+            // console.log(res)
+            let data = res.data
+            if (data.success) {
+              this.commentList = this.commentList.concat(data.result.list)
+              this.pages = data.result.pages
+            } else {
+              this.$refs.scroll.forceUpdate()
+            }
+          })
+          .catch(err => {
+            console.log(err)
+          })
+      } else {
+        this.$refs.scroll.forceUpdate()
+      }
+    },
+    previewImage(url) {
+      // weui.alert(url)
+      wx.previewImage({
+        current: url, // 当前显示图片的http链接
+        urls: [url]
+      })
+    },
+    playVoice(src, index) {
+      if (this.voicePlayindex == index) {
+        if (this.audio.paused) {
+          this.audio.play()
+        } else {
+          this.voicePlayindex = -1
+          this.audio.pause()
+        }
+      } else {
+        this.audio.pause()
+
+        this.audio.setAttribute('src', src)
+
+        this.$refs.audio.play()
+        this.voiceRestTime = 0
+        this.$nextTick(() => {})
+        setTimeout(() => {
+          this.voicePlayindex = index
+        }, 20)
+      }
+    },
+    timeupdate(e) {
+      let target = e.target
+      let restTime = (target.duration - target.currentTime) | 0
+
+      this.voiceRestTime = restTime
+      this.$nextTick(() => {})
+    },
+    playEnd() {
+      console.log('end')
+      this.voicePlayindex = -1
+    }
+  }
 }
 </script>
 
@@ -201,7 +205,7 @@ export default {
 <style lang="stylus" scoped>
 .comment {
   position: absolute;
-  top: 420px;
+  top: 500px;
   left: 0;
   right: 0;
   bottom: 0px;

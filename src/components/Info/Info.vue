@@ -1,21 +1,25 @@
 <template>
-  <div class="info">
-    <!-- <h2 class="title" style="color:#e60811">
-        河南广播电视台“给党唱支生日歌”大型系列文化活动之主题歌会即将燃情开唱！
-    </h2>
-    <p class="desc">
-      今晚19：40，由河南广播电视台策划推出的“给党唱支生日歌”大型系列文化活动之主题歌会将在河南广播电视台8号演播厅燃情开唱。本次主题歌会由河南广播电视台、恒丰银行郑州分行主办，广播广告经营中心和魅力881河南音乐广播承办，歌会将以群众性歌咏演唱的方式回顾党的光辉历程，用一首首难忘的经典旋律回顾建党97周年辉煌成就。
-    </p> -->
-    <p class="desc">
-      今年是中国共产党建党97周年，也是全面贯彻落实党的十九大精神的开局之年，是改革开放40周年，是开启新时代河南全面建设社会主义现代化新征程的重要一年。为深入学习领会习近平新时代中国特色社会主义思想，强化主流媒体的担当，生动反映河南党建工作新气象，河南广播电视台特别策划推出了“给党唱支生日歌——庆祝中国共产党建党97周年大型系列文化活动”。今天是系列活动最重要的活动――“千人拼党旗暨河南广播电视台党员领导干部重温入党誓词”。
-    </p>
-
+  <div class="info" id='info'>
+    <div v-html='bodyContent'></div>
   </div>
 </template>
 
 <script>
+import Bus from 'base/js/bus'
 export default {
-  name:'info'
+  name: 'info',
+  data() {
+    return {
+      bodyContent: ''
+    }
+  },
+  mounted() {
+    Bus.$on('initPlayer', data => {
+      let { live, icon, body } = data
+      let newContent = body.replace(/src="\//gi, 'src="http://www.hndt.com/')
+      this.bodyContent = newContent
+    })
+  }
 }
 </script>
 
@@ -31,20 +35,6 @@ export default {
   -webkit-overflow-scrolling: touch;
   padding: 20px 30px 200px;
   box-sizing: border-box;
-
-  .title {
-    line-height: 1.6;
-    font-size: 40px;
-    color: #5f4a7a;
-  }
-
-  .desc {
-    margin-top: 16px;
-    line-height: 1.8125;
-    text-indent: 2em;
-    font-size: 30px;
-    color: #333;
-  }
 }
 </style>
 
