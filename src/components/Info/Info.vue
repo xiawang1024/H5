@@ -1,6 +1,6 @@
 <template>
   <div class="info" id='info'>
-    <div v-html='bodyContent'></div>
+    <div v-if="bodyContent" v-html='bodyContent' class='content'></div>
   </div>
 </template>
 
@@ -26,15 +26,11 @@ export default {
 
 <style lang="stylus" scoped>
 .info {
-  position: absolute;
-  top: 502px;
-  left: 0;
-  right: 0;
-  bottom: 0px;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-  padding: 20px 30px 200px;
-  box-sizing: border-box;
+  min-height: calc(100vh - 450px);
+
+  .content {
+    min-height: 300px;
+  }
 }
 </style>
 

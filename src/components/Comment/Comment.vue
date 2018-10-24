@@ -41,6 +41,8 @@ import weui from 'weui.js'
 import wx from 'weixin-js-sdk'
 import { postMsg } from 'api/index'
 
+import Bus from 'base/js/bus'
+
 export default {
   name: 'comment',
   components: {
@@ -74,12 +76,17 @@ export default {
   },
   created() {
     this.loading = weui.loading('努力加载中...')
-    this._fetchData(1)
     // this._fetchOnline(-1)
     // postMsg(-2)
   },
   mounted() {
+    Bus.$on('tabClick', () => {
+      setTimeout(() => {
+        this.$refs.scroll.forceUpdate()
+      }, 200)
+    })
     this.audio = this.$refs.audio
+    this._fetchData(1)
 
     // setInterval(() => {
     //     this._fetchOnline()
@@ -115,6 +122,7 @@ export default {
             this.commentList = data.result.list
             this.pages = data.result.pages
             this.online = data.message
+            Bus.$emit('initComment', data.message)
           }
         })
         .catch(err => {
@@ -205,10 +213,11 @@ export default {
 <style lang="stylus" scoped>
 .comment {
   position: absolute;
-  top: 500px;
+  top: 0px;
   left: 0;
   right: 0;
   bottom: 0px;
+  height: 100%;
 
   .online-people {
     display: none;

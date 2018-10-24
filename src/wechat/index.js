@@ -17,12 +17,9 @@ function isWeixinBrowser() {
   }
 }
 
-
 if (isWeixinBrowser()) {
-  
+  weChatConf.init()
 }
-weChatConf.init()
-
 
 wx.ready(function() {
   wx.onMenuShareTimeline({

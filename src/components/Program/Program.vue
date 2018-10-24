@@ -1,13 +1,75 @@
 <template>
   <div class="program">
-    <img src="./01.jpg" alt="" class="img">
-    <img src="./02.jpg" alt="" class="img">
+    <ul v-if="backList && backList.length>0" class="list-wrap">
+      <li class="item" v-for="item of backList" :key='item.id' @click="goToLive(item.id)">
+        <div class="img-wrap">
+          <img src="http://www.hndt.com/original/201810/19/2249212/res/zEHivVHY.jpg" alt="" class="img">
+        </div>
+        <div class="text-wrap">
+          <h3 class="title">河南首届高博会举行第二次新闻发布会河南首届高博会举行第二次新闻发布会</h3>
+          <p class="desc">河南首届高博会举行第二次新闻发布会河南首届高博会举行第二次新闻发布会</p>
+        </div>
+      </li>
+      <li class="more-txt" @click="fetchMore">
+        <p v-show="isMore" class="more">点击更多</p>
+        <p v-show='!isMore' class="no-more">没有更多数据了</p>
+      </li>
+    </ul>
+    <div v-else class="no-list">
+      {{msg}}
+    </div>
   </div>
 </template>
 
 <script>
+import { getLiveList } from 'api/index'
+import weui from 'weui.js'
 export default {
-  name: 'program'
+  name: 'program',
+  data() {
+    return {
+      backList: [],
+      isMore: true,
+      msg: '请稍等，加载中...'
+    }
+  },
+  mounted() {
+    this.page = 1
+    this.fetchData(this.page)
+  },
+  methods: {
+    fetchData(page) {
+      let loading = weui.loading('努力加载中...')
+      getLiveList(page)
+        .then(res => {
+          loading.hide()
+          let { page, pages, list } = res.data
+          this.pages = pages
+          this.backList = list
+          if (list.lenght == 0) {
+            this.msg = '暂无回看数据，小编正在努力增加中'
+          }
+        })
+        .catch(() => {
+          weui.alert('网络超时，请刷新页面')
+        })
+    },
+    fetchMore() {
+      let page = this.page
+      ++page
+
+      if (page <= this.pages) {
+        this.page = page
+        this.fetchData(page)
+      } else {
+        this.isMore = false
+      }
+    },
+    goToLive(id) {
+      let url = `http://a.weixin.hndt.com/h5/1066/liveroom/1502/index.html?id=${id}`
+      window.location.href = url
+    }
+  }
 }
 </script>
 
@@ -15,46 +77,79 @@ export default {
 <style lang="stylus" scoped>
 .program {
   position: absolute;
-  top: 502px;
+  top: 0px;
   left: 0;
   right: 0;
   bottom: 0px;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
-  // padding: 30px 60px 200px;
   box-sizing: border-box;
 
-  .img {
-    display: block;
+  .list-wrap {
     width: 100%;
-  }
-
-  .list-box {
-    width: 100%;
-    margin-bottom: 20px;
+    height: 100%;
+    padding: 30px 20px;
     box-sizing: border-box;
-    overflow: hidden;
 
-    .title {
-      font-size: 30px;
-      color: #e60811;
-    }
+    .item {
+      display: flex;
+      width: 100%;
+      margin-bottom: 40px;
+      box-sizing: border-box;
 
-    .list-wrap {
-      padding: 15px 0;
-      font-size: 26px;
-      color: #666;
+      .img-wrap {
+        flex: 0 0 260px;
+        width: 260px;
 
-      .list {
-        line-height: 1.8;
-        text-indent: 15px;
+        .img {
+          width: 100%;
+          height: 146px;
+        }
+      }
 
-        &:first-child {
-          text-indent: 0;
-          color: #000;
+      .text-wrap {
+        margin-left: 20px;
+        flex: 0 0 430px;
+        width: 430px;
+        text-align: left;
+
+        .title {
+          width: 100%;
+          margin-top: 6px;
+          font-size: 36px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+
+        .desc {
+          margin-top: 20px;
+          line-height: 1.35;
+          font-size: 30px;
+          color: #555;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
         }
       }
     }
+
+    .more-txt {
+      width: 100%;
+      padding: 20px 0 40px;
+      text-align: center;
+      font-size: 34px;
+      color: #333;
+    }
+  }
+
+  .no-list {
+    width: 100%;
+    margin-top: 100px;
+    text-align: center;
+    font-size: 32px;
   }
 }
 </style>
