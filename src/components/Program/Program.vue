@@ -3,11 +3,11 @@
     <ul v-if="backList && backList.length>0" class="list-wrap">
       <li class="item" v-for="item of backList" :key='item.id' @click="goToLive(item.id)">
         <div class="img-wrap">
-          <img src="http://www.hndt.com/original/201810/19/2249212/res/zEHivVHY.jpg" alt="" class="img">
+          <img :src="item.icon" alt="" class="img">
         </div>
         <div class="text-wrap">
-          <h3 class="title">河南首届高博会举行第二次新闻发布会河南首届高博会举行第二次新闻发布会</h3>
-          <p class="desc">河南首届高博会举行第二次新闻发布会河南首届高博会举行第二次新闻发布会</p>
+          <h3 class="title">{{item.title}}</h3>
+          <p class="desc">{{item.desc}}</p>
         </div>
       </li>
       <li class="more-txt" @click="fetchMore">
