@@ -1,6 +1,6 @@
 <template>
   <div class="live-player">
-    <video id="video" class="v-hls" controls playsinline="playsinline" webkit-playsinline="true"  x5-playsinline="true" width="100%" height='100%' :poster='poster' />
+    <video id="video" class="v-hls" controls playsinline="playsinline" webkit-playsinline="true" x5-playsinline="true" width="100%" height='100%' :poster='poster' />
   </div>
 </template>
 
@@ -20,7 +20,8 @@ export default {
       let { live, icon } = data
       this.$nextTick(() => {
         this.poster = icon
-        if (live.indexOf('.m3u8') !== -1) {
+
+        if (live.indexOf('.m3u8') !== -1 && this.isPc()) {
           if (Hls.isSupported()) {
             var hls = new Hls()
             hls.loadSource(live)
@@ -38,6 +39,15 @@ export default {
       video.setAttribute('src', backSrc)
       video.play()
     })
+  },
+  methods: {
+    isPc() {
+      if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+        return false
+      } else {
+        return true
+      }
+    }
   }
 }
 </script>

@@ -86,7 +86,7 @@ export default {
       }, 200)
     })
     this.audio = this.$refs.audio
-    this._fetchData(1)
+    this._fetchData(-1)
 
     // setInterval(() => {
     //     this._fetchOnline()
