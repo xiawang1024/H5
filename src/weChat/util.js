@@ -56,7 +56,8 @@ class WeChat {
       url: 'https://a.weixin.hndt.com/boom/wx/access/subscribe',
       data: Qs.stringify({
         code: this.getQueryString('code'),
-        state: this.appId
+        state: this.appId,
+        subscribe: false
       })
     })
       .then(res => {
