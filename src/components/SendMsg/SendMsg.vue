@@ -14,7 +14,6 @@ import { getUser, postMsg } from 'api/index'
 import { WeChat } from 'weChat/util'
 import weui from 'weui.js'
 import wx from 'weixin-js-sdk'
-import HU_DONG_ID from '@/config.js'
 
 import Voice from '../Voice/Voice'
 
@@ -78,7 +77,9 @@ export default {
       this.$emit('sendMsg')
     },
     _postMsg() {
-      postMsg(0, HU_DONG_ID, this.msg).then(res => {
+      let userInfo = JSON.parse(weChat.getStorage('WXHNDTOPENID'))
+      let openid = userInfo.openid
+      postMsg(0, openid, this.msg).then(res => {
         weui.toast('审核中！')
         this.msg = ''
         console.log(res)
@@ -105,7 +106,9 @@ export default {
             success: res => {
               let serverId = res.serverId // 返回图片的服务器端ID
               // weui.alert(serverId)
-              postMsg('PIC', HU_DONG_ID, res.serverId).then(res => {
+              let userInfo = JSON.parse(weChat.getStorage('WXHNDTOPENID'))
+              let openid = userInfo.openid
+              postMsg('PIC', openid, res.serverId).then(res => {
                 // uploading.hide()
                 weui.toast('审核中！')
               })

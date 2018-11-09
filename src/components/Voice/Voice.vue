@@ -9,9 +9,8 @@ import weui from 'weui.js'
 import wx from 'weixin-js-sdk'
 import Bus from 'base/js/bus'
 import { postMsg } from 'api/index'
-import HU_DONG_ID from '@/config.js'
-
-
+import { WeChat } from 'weChat/util'
+const weChat = new WeChat()
 export default {
   data() {
     return {
@@ -26,7 +25,7 @@ export default {
   },
   components: {},
   mounted() {
-    Bus.$on('initPlayer',() => {
+    Bus.$on('initPlayer', () => {
       if (
         !localStorage.rainAllowRecord ||
         localStorage.rainAllowRecord !== 'true'
@@ -42,11 +41,8 @@ export default {
         })
       }
     })
-    
-    
 
     this.isNotWeixin = !this.isWeixinBrowser()
-    
   },
   methods: {
     isWeixinBrowser() {
@@ -146,7 +142,9 @@ export default {
         localId: voiceLocalId, // 需要上传的音频的本地ID，由stopRecord接口获得
         isShowProgressTips: 1, // 默认为1，显示进度提示
         success: res => {
-          postMsg('VOICE', HU_DONG_ID, res.serverId).then(res => {
+          let userInfo = JSON.parse(weChat.getStorage('WXHNDTOPENID'))
+          let openid = userInfo.openid
+          postMsg('VOICE', openid, res.serverId).then(res => {
             weui.toast('审核中！')
           })
         }

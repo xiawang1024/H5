@@ -6,7 +6,7 @@ import { getLiveData } from 'api/index'
 import Bus from 'base/js/bus'
 
 // const LINK = window.location.href
-const LINK = 'https://a.weixin.hndt.com/h5/fmlive/hami/index.html'
+const LINK = 'https://a.weixin.hndt.com/h5/fmlive/hamidztd/index.html'
 
 class WeChat {
   constructor() {

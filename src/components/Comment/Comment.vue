@@ -42,7 +42,8 @@ import wx from 'weixin-js-sdk'
 import { postMsg } from 'api/index'
 
 import Bus from 'base/js/bus'
-
+import { WeChat } from 'weChat/util'
+const weChat = new WeChat()
 export default {
   name: 'comment',
   components: {
@@ -113,7 +114,9 @@ export default {
         })
     },
     _fetchData(page) {
-      postMsg(page)
+      let userInfo = JSON.parse(weChat.getStorage('WXHNDTOPENID'))
+      let openid = userInfo.openid
+      postMsg(page, openid)
         .then(res => {
           // console.log(res)
           let data = res.data
@@ -148,7 +151,9 @@ export default {
 
       this.page++
       if (this.page <= this.pages) {
-        postMsg(this.page)
+        let userInfo = JSON.parse(weChat.getStorage('WXHNDTOPENID'))
+        let openid = userInfo.openid
+        postMsg(this.page, openid)
           .then(res => {
             // console.log(res)
             let data = res.data
