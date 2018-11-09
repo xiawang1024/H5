@@ -17,10 +17,13 @@
     </div> -->
 
     <!-- <component :is="componentId"></component> -->
-    <div class="tab-content">
+    <!-- <div class="tab-content">
       <info v-show="isIndex == 0"></info>
       <comment v-show="isIndex==1"></comment>
       <program v-show="isIndex == 2"></program>
+    </div> -->
+    <div class="tab-content">
+      <component :is="componentId"></component>
     </div>
 
   </div>
