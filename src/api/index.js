@@ -39,9 +39,8 @@ const postMsg = (
 // }`
 
 let channel_id = 1511
-let url = `http://api.hndt.com/api/page?template_id=394&channel_id=${channel_id}&article_id=${getQueryString(
-  'id'
-)}`
+let article_id = 2256953
+let url = `https://api.hndt.com/api/page?template_id=394&channel_id=${channel_id}&article_id=${article_id}`
 
 const getLiveData = () => axios.get(url)
 
@@ -61,7 +60,7 @@ function getQueryString(name) {
  * @param {*} channel_id 1511： 哈密
  */
 const getLiveList = (page, channel_id = '1511') => {
-  let url = `http://api.hndt.com/api/page?template_id=395&channel_id=${channel_id}&page=${page}`
+  let url = `https://api.hndt.com/api/page?template_id=395&channel_id=${channel_id}&page=${page}`
   return axios.get(url)
 }
 

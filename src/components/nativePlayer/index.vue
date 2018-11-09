@@ -1,6 +1,6 @@
 <template>
   <div class="live-player">
-    <video id="video" class="v-hls" controls playsinline="playsinline" webkit-playsinline="true" x5-playsinline="true" width="100%" height='100%' :poster='poster' />
+    <video id="video" class="v-hls" controls playsinline="playsinline" autoplay="autoplay" autowebkit-playsinline="true" x5-playsinline="true" width="100%" height='100%' :poster='poster' />
   </div>
 </template>
 
@@ -27,11 +27,17 @@ export default {
             hls.loadSource(live)
             hls.attachMedia(video)
             hls.on(Hls.Events.MANIFEST_PARSED, function() {
-              video.play()
+              setTimeout(() => {
+                video.play()
+              },200)
             })
           }
         } else {
           video.setAttribute('src', live)
+          setTimeout(() => {
+            
+            video.play()
+          },200)
         }
       })
     })

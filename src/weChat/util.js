@@ -5,12 +5,13 @@ import Qs from 'qs'
 import { getLiveData } from 'api/index'
 import Bus from 'base/js/bus'
 
-const LINK = window.location.href
+// const LINK = window.location.href
+const LINK = 'https://a.weixin.hndt.com/h5/fmlive/hami/index.html'
 
 class WeChat {
   constructor() {
     this.baseUrl = 'https://open.weixin.qq.com/connect/oauth2/authorize?'
-    this.appId = 'wx9760b6876d5e339f'
+    this.appId = 'wx5f789dea59c6c2c5'
     this.redirect_uri = LINK
     this.response_type = 'code'
     this.scope = 'snsapi_userinfo' //snsapi_base 只获取openId ， snsapi_userinfo 获取用户信息;
@@ -52,10 +53,10 @@ class WeChat {
   getOpenId() {
     axios({
       method: 'post',
-      url: 'https://a.weixin.hndt.com/boom/api/token/access/redirect2',
+      url: 'https://a.weixin.hndt.com/boom/wx/access/subscribe',
       data: Qs.stringify({
         code: this.getQueryString('code'),
-        cate: this.appId
+        state: this.appId
       })
     })
       .then(res => {
@@ -87,6 +88,7 @@ class WeChatConf extends WeChat {
     this.desc = ''
   }
   init() {
+    this.hasCode()
     getLiveData().then(res => {
       let data = res.data
       this.title = data.title
