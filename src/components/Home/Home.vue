@@ -3,6 +3,10 @@
     <!-- <down-tips></down-tips> -->
     <Down></Down>
     <player></player>
+    <div class="online">
+      <span class="name">累计观看人数 : </span>
+      <span class="num">&nbsp; {{online}}</span>
+    </div>
     <!-- <div class="wrap">
       <div v-if="isShowOnline" class="online">
         <p class="name">观看人数:</p>
@@ -144,9 +148,21 @@ export default {
   }
 }
 
+.online {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+  border-bottom: 1px solid #eee;
+  font-size: 24px;
+  color: #666;
+  box-sizing: border-box;
+}
+
 .tab-content {
   position: absolute;
-  top: 420px;
+  top: 475px;
   left: 0;
   right: 0;
   bottom: 0px;

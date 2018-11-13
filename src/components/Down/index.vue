@@ -19,24 +19,25 @@ export default {
   },
   methods: {
     click() {
-      weui.dialog({
-        title: '河南广播APP',
-        content: '下载河南广播APP，‘听河南，览天下’',
-        className: 'custom-classname',
-        buttons: [
-          {
-            label: '取消',
-            type: 'default'
-          },
-          {
-            label: '确定',
-            type: 'primary',
-            onClick: function() {
-              window.location = 'http://www.hndt.com/app/download/index.html'
-            }
-          }
-        ]
-      })
+      window.location = 'http://a.weixin.hndt.com/h5/fmlive/hamilist/index.html'
+      // weui.dialog({
+      //   title: '河南广播APP',
+      //   content: '下载河南广播APP，‘听河南，览天下’',
+      //   className: 'custom-classname',
+      //   buttons: [
+      //     {
+      //       label: '取消',
+      //       type: 'default'
+      //     },
+      //     {
+      //       label: '确定',
+      //       type: 'primary',
+      //       onClick: function() {
+      //         window.location = 'http://www.hndt.com/app/download/index.html'
+      //       }
+      //     }
+      //   ]
+      // })
     },
     winResize() {
       window.onresize = () => {
