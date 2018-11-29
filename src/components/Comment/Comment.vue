@@ -53,7 +53,8 @@ export default {
   },
   data() {
     return {
-      defaultAvatar: 'http://www.hndt.com/res/logo_300.png',
+      // defaultAvatar: 'http://www.hndt.com/res/logo_300.png',
+      defaultAvatar:require('./icon-people.png'),
       commentList: [],
       online: '',
       pullDownRefresh: {
