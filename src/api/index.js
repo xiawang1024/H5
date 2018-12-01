@@ -40,7 +40,8 @@ const postMsg = (
 
 let channel_id = 1511
 let article_id = 2257422
-let url = `https://api.hndt.com/api/page?template_id=394&channel_id=${channel_id}&article_id=${article_id}`
+// let url = `https://api.hndt.com/api/page?template_id=394&channel_id=${channel_id}&article_id=${article_id}`
+let url = 'https://a.weixin.hndt.com/h5/fmlive/900/index.json'
 
 const getLiveData = () => axios.get(url)
 

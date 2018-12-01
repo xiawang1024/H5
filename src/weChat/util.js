@@ -6,7 +6,7 @@ import { getLiveData } from 'api/index'
 import Bus from 'base/js/bus'
 
 // const LINK = window.location.href
-const LINK = 'https://a.weixin.hndt.com/h5/fmlive/hamidztd/index.html'
+const LINK = 'https://a.weixin.hndt.com/h5/fmlive/900/index.html'
 
 class WeChat {
   constructor() {
@@ -96,9 +96,6 @@ class WeChatConf extends WeChat {
       document.title = data.title || '直播间'
       this.img_url = data.icon
       this.desc = data.desc
-      let src = data.video
-      let poster = data.icon
-      let content = data.body
 
       Bus.$emit('initPlayer', data)
       axios
