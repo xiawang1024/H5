@@ -5,9 +5,9 @@
  * DEFAULT_DESC String 分享描述
  */
 
-const DEFAULT_TITLE = '新媒体技术研发组--融媒体产品（服务类）展示';
-const DEFAULT_LINK = 'http://www.hndt.com/h5/show/wap/index.html';
-const DEFAULT_IMGURL = 'http://hndt.com/res/logo_300.png';
-const DEFAULT_DESC = '新媒体技术研发组--融媒体产品（服务类）展示';
+const DEFAULT_TITLE = '新闻广播'
+const DEFAULT_LINK = 'http://www.hndt.com/h5/xinwen/index.html'
+const DEFAULT_IMGURL = 'http://www.hndt.com/fm/954/res/xCcVd4HJ.png?1487664358981'
+const DEFAULT_DESC = '河南广播电视台新闻广播'
 
-module.exports = { DEFAULT_TITLE, DEFAULT_LINK, DEFAULT_IMGURL, DEFAULT_DESC };
+module.exports = { DEFAULT_TITLE, DEFAULT_LINK, DEFAULT_IMGURL, DEFAULT_DESC }
