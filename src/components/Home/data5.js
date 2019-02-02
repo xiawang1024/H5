@@ -1,18 +1,12 @@
-const dirUrl = 'http://www.hndt.com/h5/show/imgsh5/';
+const dirUrl = 'http://www.hndt.com/h5/xinwen/imgs/'
 const data = {
-	title: '广播电视主题活动',
-	subTitle: '融媒体实施案例',
-	imgUrlList: [ { url: `${dirUrl}33.png` }, { url: `${dirUrl}34.png` }, { url: `${dirUrl}35.png` } ],
-	descText: [
-		{
-			text: '报名、优惠券、H5海报'
-		},
-		{
-			text: '投票、调查、导航'
-		},
-		{
-			text: '各种玩法   一网打尽'
-		}
-	]
-};
-module.exports = data;
+  title: '',
+  subTitle: '两会报道：H5《小新带您一起跑进“政府工作报告”》',
+  top: '5',
+  imgObj: {
+    src: `${dirUrl}5.png`,
+    url:
+      'https://filedc17b58b0d9f.iamh5.cn/v3/idea/NCN4bnEb?latestUser=1&unid=ohAJ7wXTG09dOYdmslh9VMGf9gNI&suid=70F7F2E5-366B-4F40-BF25-748BA7A2BC3C&sl=1&from=singlemessage'
+  }
+}
+module.exports = data

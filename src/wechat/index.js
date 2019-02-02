@@ -26,7 +26,7 @@ let configData = {
 	]
 };
 
-axios.post('https://a.weixin.hndt.com/at/sign', Qs.stringify({ url: configData.url })).then((res) => {
+axios.post('https://a.weixin.hndt.com/boom/at/sign', Qs.stringify({ url: configData.url })).then((res) => {
 	let data = res.data;
 	wx.config({
 		debug: false,

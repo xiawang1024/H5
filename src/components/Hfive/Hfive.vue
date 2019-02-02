@@ -1,50 +1,80 @@
 <template>
   <div class="hfive">
     <p class="top">新媒体技术研发组产品展示（服务类）</p>
-    <div class="logo ani" swiper-animate-effect="flipInY" swiper-animate-duration="1s" swiper-animate-delay="0s"></div>
-    <h1 class="title ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.6s" swiper-animate-delay="0s">{{showData.title}}</h1>
-    <h2 class="titlec ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.6s" swiper-animate-delay="0s">{{showData.subTitle}}</h2>
-    <carousel-3d :autoplay="true" :autoplay-timeout="3000" :width='width' :height='height' :border="0" class="carousel-wrap">
-      <slide v-for="(slide, i) in showData.imgUrlList" :index="i" :key="i">
+    <div
+      class="logo ani"
+      swiper-animate-effect="flipInY"
+      swiper-animate-duration="1s"
+      swiper-animate-delay="0s"
+    ></div>
+    <h1
+      class="title ani"
+      swiper-animate-effect="fadeInDown"
+      swiper-animate-duration="0.6s"
+      swiper-animate-delay="0s"
+    >{{showData.title}}</h1>
+    <h2
+      class="titlec ani"
+      swiper-animate-effect="fadeInDown"
+      swiper-animate-duration="0.6s"
+      swiper-animate-delay="0s"
+    >{{showData.subTitle}}</h2>
+    <carousel-3d
+      :autoplay="true"
+      :autoplay-timeout="3000"
+      :width='width'
+      :height='height'
+      :border="0"
+      class="carousel-wrap"
+    >
+      <slide
+        v-for="(slide, i) in showData.imgUrlList"
+        :index="i"
+        :key="i"
+      >
         <img :src="slide.url">
       </slide>
     </carousel-3d>
     <div class="text-wrap">
-      <p class="text ani"  swiper-animate-effect="fadeIn" swiper-animate-duration="0.8s" swiper-animate-delay="0.5s"  v-for="(item,index) in showData.descText" :key="index">{{item.text}}</p>
+      <p
+        class="text ani"
+        swiper-animate-effect="fadeIn"
+        swiper-animate-duration="0.8s"
+        swiper-animate-delay="0.5s"
+        v-for="(item,index) in showData.descText"
+        :key="index"
+      >{{item.text}}</p>
     </div>
   </div>
 </template>
 
 <script>
-
 export default {
-  name:'hfive',
-  data () {
+  name: "hfive",
+  data() {
     return {
-      width:180,
-      height:285
-    }
+      width: 180,
+      height: 285
+    };
   },
-  props:{
-    showData:{
-      type:Object,
-      default:() => {
-        return {}
+  props: {
+    showData: {
+      type: Object,
+      default: () => {
+        return {};
       }
     }
   },
   mounted() {
-    let screenWidth = window.innerWidth
-    let width = (screenWidth / 2) | 0
+    let screenWidth = window.innerWidth;
+    let width = (screenWidth / 2) | 0;
     this.$nextTick(() => {
       this.width = width;
       this.height = (width * 1.586) | 0;
-    })
+    });
   },
-  components: {
-
-  }
-}
+  components: {}
+};
 </script>
 
 <style lang="stylus" scoped>
@@ -59,7 +89,7 @@ export default {
   padding-top: 200px;
   text-align: center;
   color: #ffffff;
-  background: url('http://www.hndt.com/h5/show/imgs/bg.png') center center no-repeat;
+  background: url('http://www.hndt.com/h5/xinwen/imgs/bg.png') center center no-repeat;
   background-size: cover;
   overflow: hidden;
   box-sizing: border-box;

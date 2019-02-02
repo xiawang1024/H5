@@ -1,12 +1,12 @@
 <template>
-    <div class="up-arrow"></div>
+  <div class="up-arrow"></div>
 </template>
 
 
 <script>
 export default {
-    name:'up-arrow'
-}
+  name: "up-arrow"
+};
 </script>
 
 <style lang="stylus" scoped>
@@ -25,7 +25,7 @@ export default {
 .up-arrow {
   position: absolute;
   bottom: 10px;
-  left: 505px;
+  left: 340px;
   z-index: 1024;
   width: 70px;
   height: 70px;

@@ -1,19 +1,8 @@
-const dirUrl = 'http://www.hndt.com/h5/show/imgstopic/';
+const dirUrl = 'http://www.hndt.com/h5/xinwen/imgs/'
 const data = {
-	title: 'PC端专题页面展示',
-	imgTextList: [
-		{
-			imgUrl: `${dirUrl}10.png`,
-			text: '节庆专题 弘扬传统 倡导新风'
-		},
-		{
-			imgUrl: `${dirUrl}11.png`,
-			text: '节庆专题 弘扬传统 倡导新风'
-		},
-		{
-			imgUrl: `${dirUrl}12.png`,
-			text: '从报名征集到门票核销 技术手段减少瓶颈制约'
-		}
-	]
-};
-module.exports = data;
+  title: '五、节目融合传播',
+  subTitle: '大医生来了',
+  top: '9',
+  imgObj: { src: `${dirUrl}9.png`, url: '' }
+}
+module.exports = data
