@@ -1,7 +1,7 @@
 const dirUrl = 'http://www.hndt.com/h5/xinwen/imgs/'
 const data = {
   title: '',
-  subTitle: '两会报道：H5《小新带您一起跑进“政府工作报告”》',
+  subTitle: '省两会报道：H5《小新带您一起跑进“政府工作报告”》',
   top: '5',
   imgObj: {
     src: `${dirUrl}5.png`,

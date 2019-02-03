@@ -29,10 +29,10 @@
         <xin-wen :showData="showData8"></xin-wen>
       </swiper-slide>
       <swiper-slide>
-        <xin-wen :showData="showData9"></xin-wen>
+        <xin-wen :showData="showData10"></xin-wen>
       </swiper-slide>
       <swiper-slide>
-        <xin-wen :showData="showData10"></xin-wen>
+        <xin-wen :showData="showData9"></xin-wen>
       </swiper-slide>
       <swiper-slide>
         <xin-wen :showData="showData11"></xin-wen>

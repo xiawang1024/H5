@@ -14,7 +14,7 @@
         swiper-animate-delay="0s"
       >新闻广播</h2>
     </div>
-    <div class="text-wrap">
+    <div :class="[{'text-wrap':true},topClass]">
       <h3
         class="title ani"
         swiper-animate-effect="fadeIn"
@@ -122,6 +122,10 @@ export default {
   .text-wrap {
     padding: 0 65px;
     box-sizing: border-box;
+
+    &.top5 {
+      padding: 0 56px;
+    }
 
     .title {
       margin-top: 40px;
