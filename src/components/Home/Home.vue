@@ -26,6 +26,9 @@
         <xin-wen :showData="showData7"></xin-wen>
       </swiper-slide>
       <swiper-slide>
+        <xin-wen :showData="showData7_2"></xin-wen>
+      </swiper-slide>
+      <swiper-slide>
         <xin-wen :showData="showData8"></xin-wen>
       </swiper-slide>
       <swiper-slide>
@@ -58,6 +61,7 @@ const showData4 = require("./data4.js");
 const showData5 = require("./data5.js");
 const showData6 = require("./data6.js");
 const showData7 = require("./data7.js");
+const showData7_2 = require("./data7-2.js");
 const showData8 = require("./data8.js");
 const showData9 = require("./data9.js");
 const showData10 = require("./data10.js");
@@ -81,6 +85,7 @@ export default {
       showData5,
       showData6,
       showData7,
+      showData7_2,
       showData8,
       showData9,
       showData10,

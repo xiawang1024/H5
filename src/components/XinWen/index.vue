@@ -80,6 +80,11 @@ export default {
       let url = this.showData.imgObj.url;
       if (url) {
         window.open(url);
+        // layer.open({
+        //   type: 2,
+        //   area: ["100%", "100%"],
+        //   content: [url, "no"]
+        // });
       }
     }
   }
