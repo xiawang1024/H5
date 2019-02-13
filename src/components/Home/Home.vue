@@ -1,14 +1,14 @@
 <template>
   <div class="home">
     <swiper :options="swiperOption">
-      <swiper-slide>
+       <swiper-slide>
         <start></start>
       </swiper-slide>
       <swiper-slide>
-        <xin-wen :showData="showData1"></xin-wen>
+        <xin-wen-two :showData="showData1"></xin-wen-two>
       </swiper-slide>
       <swiper-slide>
-        <xin-wen :showData="showData2"></xin-wen>
+        <xin-wen-two :showData="showData2"></xin-wen-two>
       </swiper-slide>
       <swiper-slide>
         <xin-wen :showData="showData3"></xin-wen>
@@ -50,6 +50,7 @@ const { swiperAnimateCache, swiperAnimate } = require("base/js/animate.min.js");
 
 import Hfive from "../Hfive/Hfive.vue";
 import XinWen from "../XinWen/index.vue";
+import XinWenTwo from "../XinWenTwo/index.vue";
 import Topic from "../Topic/Topic.vue";
 import Start from "../Start/Start.vue";
 import End from "../End/End.vue";
@@ -72,6 +73,7 @@ export default {
   components: {
     Hfive,
     XinWen,
+    XinWenTwo,
     Topic,
     Start,
     End
