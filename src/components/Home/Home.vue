@@ -4,8 +4,19 @@
       <swiper-slide>
         <start></start>
       </swiper-slide>
+
       <swiper-slide>
-        <xin-wen-two :showData="showData1"></xin-wen-two>
+        <xin-wen-two :showData="showData10"></xin-wen-two>
+      </swiper-slide>
+      <swiper-slide>
+        <xin-wen-two :showData="showData9">
+        </xin-wen-two>
+      </swiper-slide>
+      <swiper-slide>
+        <xin-wen :showData="showData7"></xin-wen>
+      </swiper-slide>
+      <swiper-slide>
+        <xin-wen :showData="showData7_2"></xin-wen>
       </swiper-slide>
       <swiper-slide>
         <xin-wen-two :showData="showData2"></xin-wen-two>
@@ -23,25 +34,14 @@
         <xin-wen :showData="showData6"></xin-wen>
       </swiper-slide>
       <swiper-slide>
-        <xin-wen :showData="showData7"></xin-wen>
+        <xin-wen-two :showData="showData1"></xin-wen-two>
       </swiper-slide>
       <swiper-slide>
-        <xin-wen :showData="showData7_2"></xin-wen>
-      </swiper-slide>
-      <swiper-slide>
-        <xin-wen :showData="showData8"></xin-wen>
-      </swiper-slide>
-      <swiper-slide>
-        <xin-wen-two :showData="showData10"></xin-wen-two>
-      </swiper-slide>
-      <swiper-slide>
-        <xin-wen-two :showData="showData9">
-        </xin-wen-two>
+        <xin-wen-two :showData="showData8"></xin-wen-two>
       </swiper-slide>
       <swiper-slide>
         <xin-wen :showData="showData11"></xin-wen>
       </swiper-slide>
-
     </swiper>
   </div>
 </template>

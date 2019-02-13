@@ -1,6 +1,6 @@
 const dirUrl = 'http://www.hndt.com/h5/xinwen/imgs/'
 const data = {
-  title: '一、时政报道',
+  title: '三、时政报道',
   subTitle: '系列述评：《争做新时代出彩河南人》',
   top: '2',
   imgObj: [

@@ -186,7 +186,7 @@ export default {
       position: relative;
       margin-top: 50px;
       width: 642px;
-      height: 731px;
+      height: 740px;
       margin-left: auto;
       margin-right: auto;
       display: flex;
@@ -232,8 +232,23 @@ export default {
     }
 
     &.top8 {
-      .img {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      position: relative;
+      width: 562px;
+      height: 820px;
+      margin-left: auto;
+      margin-right: auto;
+
+      .img-1 {
         width: 562px;
+        height: 300px;
+      }
+
+      .img-2, .img-3, .img-4, .img-5 {
+        width: 274px;
+        height: 240px;
       }
     }
 
@@ -306,7 +321,7 @@ export default {
         left: 0;
         top: 240px;
         width: 174px;
-        height: 210px;
+        // height: 210px;
       }
 
       .img-3 {
@@ -314,7 +329,7 @@ export default {
         left: 215px;
         top: 240px;
         width: 174px;
-        height: 209px;
+        // height: 209px;
       }
 
       .img-4 {
@@ -322,7 +337,7 @@ export default {
         left: 427px;
         top: 240px;
         width: 174px;
-        height: 209px;
+        // height: 209px;
       }
 
       .img-5 {
@@ -330,7 +345,7 @@ export default {
         left: 0px;
         top: 470px;
         width: 174px;
-        height: 209px;
+        // height: 209px;
       }
 
       .img-6 {
@@ -338,7 +353,7 @@ export default {
         left: 215px;
         top: 470px;
         width: 174px;
-        height: 209px;
+        // height: 209px;
       }
 
       .img-7 {
@@ -346,15 +361,7 @@ export default {
         left: 430px;
         top: 470px;
         width: 174px;
-        height: 209px;
-      }
-
-      .img-3 {
-        position: absolute;
-        left: 215px;
-        top: 240px;
-        width: 174px;
-        height: 209px;
+        // height: 209px;
       }
     }
 
