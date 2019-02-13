@@ -183,17 +183,51 @@ export default {
     }
 
     &.top10 {
+      position: relative;
       margin-top: 50px;
-      padding: 0 50px;
+      width: 642px;
+      height: 731px;
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+      flex-wrap: wrap;
+      font-size: 0;
+      justify-content: space-between;
 
       .img {
-        width: 642px;
+        flex: 0 0 316px;
+        width: 316px;
+        height: 237px;
+        // margin-bottom: 12px;
       }
     }
 
     &.top9 {
+      position: relative;
+      width: 550px;
+      height: 911px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-top: 235px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
       .img {
-        width: 550px;
+        flex: 0 0 250px;
+        width: 250px;
+        height: 212px;
+
+        &.img-1 {
+          position: absolute;
+          top: 0;
+          left: 158px;
+          width: 234px;
+          height: 222px;
+        }
+      }
+
+      .img-2 {
       }
     }
 
@@ -273,6 +307,46 @@ export default {
         top: 240px;
         width: 174px;
         height: 210px;
+      }
+
+      .img-3 {
+        position: absolute;
+        left: 215px;
+        top: 240px;
+        width: 174px;
+        height: 209px;
+      }
+
+      .img-4 {
+        position: absolute;
+        left: 427px;
+        top: 240px;
+        width: 174px;
+        height: 209px;
+      }
+
+      .img-5 {
+        position: absolute;
+        left: 0px;
+        top: 470px;
+        width: 174px;
+        height: 209px;
+      }
+
+      .img-6 {
+        position: absolute;
+        left: 215px;
+        top: 470px;
+        width: 174px;
+        height: 209px;
+      }
+
+      .img-7 {
+        position: absolute;
+        left: 430px;
+        top: 470px;
+        width: 174px;
+        height: 209px;
       }
 
       .img-3 {

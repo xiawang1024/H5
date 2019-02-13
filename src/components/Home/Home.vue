@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <swiper :options="swiperOption">
-       <swiper-slide>
+      <swiper-slide>
         <start></start>
       </swiper-slide>
       <swiper-slide>
@@ -32,10 +32,11 @@
         <xin-wen :showData="showData8"></xin-wen>
       </swiper-slide>
       <swiper-slide>
-        <xin-wen :showData="showData10"></xin-wen>
+        <xin-wen-two :showData="showData10"></xin-wen-two>
       </swiper-slide>
       <swiper-slide>
-        <xin-wen :showData="showData9"></xin-wen>
+        <xin-wen-two :showData="showData9">
+        </xin-wen-two>
       </swiper-slide>
       <swiper-slide>
         <xin-wen :showData="showData11"></xin-wen>
