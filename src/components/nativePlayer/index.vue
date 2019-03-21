@@ -1,55 +1,74 @@
 <template>
   <div class="live-player">
-    <video id="video" class="v-hls" controls playsinline="playsinline" webkit-playsinline="true" x5-playsinline="true" width="100%" height='100%' :poster='poster' />
+    <video
+      id="video"
+      class="v-hls"
+      controls
+      playsinline="playsinline"
+      webkit-playsinline="true"
+      x5-playsinline="true"
+      width="100%"
+      height="100%"
+      :poster="poster"
+    />
   </div>
 </template>
 
 <script>
-import Hls from 'hls.js'
-import Bus from 'base/js/bus'
+import Hls from "hls.js";
+import Bus from "base/js/bus";
 export default {
-  name: 'livePlayer',
+  name: "livePlayer",
   data() {
     return {
-      poster: ''
-    }
+      poster: ""
+    };
   },
   mounted() {
-    let video = document.getElementById('video')
-    Bus.$on('initPlayer', data => {
-      let { live, icon } = data
+    let videoBox = document.getElementById("video");
+    Bus.$on("initPlayer", data => {
+      let { live, icon, status, video } = data;
       this.$nextTick(() => {
-        this.poster = icon
-
-        if (live.indexOf('.m3u8') !== -1 && this.isPc()) {
-          if (Hls.isSupported()) {
-            var hls = new Hls()
-            hls.loadSource(live)
-            hls.attachMedia(video)
-            hls.on(Hls.Events.MANIFEST_PARSED, function() {
-              video.play()
-            })
+        this.poster = icon;
+        /**
+         * live
+         */
+        if (status.indexOf("b") !== -1) {
+          if (this.isPc()) {
+            if (Hls.isSupported()) {
+              var hls = new Hls();
+              hls.loadSource(live);
+              hls.attachMedia(vidvideoBoxo);
+              hls.on(Hls.Events.MANIFEST_PARSED, function() {
+                videoBox.play();
+              });
+            }
+          } else {
+            videoBox.setAttribute("src", live);
           }
-        } else {
-          video.setAttribute('src', live)
+        } else if (status.indexOf("c") !== -1) {
+          /**
+           * 点播
+           * */
+          videoBox.setAttribute("src", video);
         }
-      })
-    })
-    Bus.$on('backPlay', backSrc => {
-      video.setAttribute('src', backSrc)
-      video.play()
-    })
+      });
+    });
+    Bus.$on("backPlay", backSrc => {
+      videoBox.setAttribute("src", backSrc);
+      videoBox.play();
+    });
   },
   methods: {
     isPc() {
       if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
-        return false
+        return false;
       } else {
-        return true
+        return true;
       }
     }
   }
-}
+};
 </script>
 
 <style lang="stylus" scoped>
