@@ -44,8 +44,9 @@ export default {
           loading.hide();
           let { page, pages, list } = res.data;
           this.pages = pages;
-          this.backList = this.filterHander(list);
-          console.log(this.filterHander(list));
+          // this.backList = [this.backList,...this.filterHander(list)];
+          this.backList = this.backList.concat(this.filterHander(list));
+          // console.log(this.filterHander(list));
           if (list.lenght == 0) {
             this.msg = "暂无回看数据，小编正在努力增加中";
           }
