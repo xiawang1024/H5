@@ -16,7 +16,7 @@ import channelData from '@/channelData'
  */
 const postMsg = (page, cid = HU_DONG_ID, content = '', creater = '游客', fromUid = '0') =>
 	axios.post(
-		'https://talk.hndt.com/test/upRadio.do',
+		'http://talk.hndt.com/test/upRadio.do',
 		Qs.stringify({
 			page,
 			cid,
@@ -32,9 +32,10 @@ const postMsg = (page, cid = HU_DONG_ID, content = '', creater = '游客', fromU
 //   channelData[HU_DONG_ID - 1]['channel_id']
 // }`
 
-let channel_id = 1502
+let channel_id = 1650
 let url = `http://api.hndt.com/api/page?template_id=394&channel_id=${channel_id}&article_id=${getQueryString('id')}`
 
+// let url = `http://www.hndt.com/nh5/jiaoyu/jiaoyu20190410.json`
 const getLiveData = () => axios.get(url)
 
 function getQueryString(name) {

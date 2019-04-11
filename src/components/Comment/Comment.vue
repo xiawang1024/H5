@@ -4,47 +4,71 @@
       <i class="icon-people"></i>
       <span class="online-num">浏览人数：{{online}}</span>
     </div>
-    <scroll class="list-wrap" ref="scroll" :data="commentList" :pullDownRefresh="pullDownRefresh" :pullUpLoad="pullUpLoad" @pullingDown="onPullingDown" @pullingUp="onPullingUp">
+    <scroll
+      class="list-wrap"
+      ref="scroll"
+      :data="commentList"
+      :pullDownRefresh="pullDownRefresh"
+      :pullUpLoad="pullUpLoad"
+      @pullingDown="onPullingDown"
+      @pullingUp="onPullingUp"
+    >
       <div class="list" v-for="(item,index) of commentList" :key="item.id">
         <!-- {{item.comment.icon}} -->
-        <img :src="item.comment.icon || defaultAvatar" alt="" class="avatar">
+        <img :src="item.comment.icon || defaultAvatar" alt class="avatar">
         <div class="text-wrap">
           <span class="time">{{item.comment.create_time | timeStamp2LocalTime}}</span>
           <h5 class="name">{{item.comment.creater}}</h5>
           <div class="content">
             <p v-if="item.comment.file_type == 'TEXT'" v-html="item.comment.content"></p>
-            <img class="img" width="300" v-if="item.comment.file_type == 'PIC'" :src="item.comment.content" @click="previewImage(item.comment.content)" />
-            <voice v-if="item.comment.file_type == 'VOICE'" v-on:click.native="playVoice(item.comment.content,index)" :isPlay="voicePlayindex === index" :restTime="voiceRestTime"></voice>
+            <img
+              class="img"
+              width="300"
+              v-if="item.comment.file_type == 'PIC'"
+              :src="item.comment.content"
+              @click="previewImage(item.comment.content)"
+            >
+            <voice
+              v-if="item.comment.file_type == 'VOICE'"
+              v-on:click.native="playVoice(item.comment.content,index)"
+              :isPlay="voicePlayindex === index"
+              :restTime="voiceRestTime"
+            ></voice>
           </div>
-          <div class="anchor-reply" v-show="item.commentChildList && item.commentChildList.length > 0">
+          <div
+            class="anchor-reply"
+            v-show="item.commentChildList && item.commentChildList.length > 0"
+          >
             <span class="anchor">主播回复:</span>
             <div class="child-list-wrap">
-              <div class="child-list" v-for="childItem of item.commentChildList" :key="childItem.create_time">
-                {{childItem.content}}
-              </div>
+              <div
+                class="child-list"
+                v-for="childItem of item.commentChildList"
+                :key="childItem.create_time"
+              >{{childItem.content}}</div>
             </div>
           </div>
         </div>
       </div>
     </scroll>
     <send-msg @sendMsg="onSendMsg"></send-msg>
-    <audio src="" ref="audio" style="display:none" @timeupdate="timeupdate" @ended="playEnd"></audio>
+    <audio src ref="audio" style="display:none" @timeupdate="timeupdate" @ended="playEnd"></audio>
   </div>
 </template>
 
 
 <script>
-import Scroll from 'common/scroll/scroll'
-import SendMsg from '../SendMsg/SendMsg'
-import Voice from './Voice'
-import weui from 'weui.js'
-import wx from 'weixin-js-sdk'
-import { postMsg } from 'api/index'
+import Scroll from "common/scroll/scroll";
+import SendMsg from "../SendMsg/SendMsg";
+import Voice from "./Voice";
+import weui from "weui.js";
+import wx from "weixin-js-sdk";
+import { postMsg } from "api/index";
 
-import Bus from 'base/js/bus'
+import Bus from "base/js/bus";
 
 export default {
-  name: 'comment',
+  name: "comment",
   components: {
     Scroll,
     SendMsg,
@@ -52,118 +76,118 @@ export default {
   },
   data() {
     return {
-      defaultAvatar: 'http://www.hndt.com/res/logo_300.png',
+      defaultAvatar: "http://www.hndt.com/res/logo_300.png",
       commentList: [],
-      online: '',
+      online: "",
       pullDownRefresh: {
-        txt: '更新成功',
+        txt: "更新成功",
         stop: 40,
         threshold: 80
       },
       pullUpLoad: {
         txt: {
-          more: '玩命加载中',
-          noMore: '没有更多数据'
+          more: "玩命加载中",
+          noMore: "没有更多数据"
         },
         threshold: 0
       },
       page: 1,
       pages: 0,
-      openid: '',
+      openid: "",
       voicePlayindex: -1,
       voiceRestTime: 0
-    }
+    };
   },
   created() {
-    this.loading = weui.loading('努力加载中...')
+    this.loading = weui.loading("努力加载中...");
     // this._fetchOnline(-1)
     // postMsg(-2)
   },
   mounted() {
-    Bus.$on('tabClick', () => {
+    Bus.$on("tabClick", () => {
       setTimeout(() => {
-        this.$refs.scroll.forceUpdate()
-      }, 200)
-    })
-    this.audio = this.$refs.audio
-    this._fetchData(-1)
+        this.$refs.scroll.forceUpdate();
+      }, 200);
+    });
+    this.audio = this.$refs.audio;
+    this._fetchData(-1);
 
     // setInterval(() => {
     //     this._fetchOnline()
     // },15000)
 
     setInterval(() => {
-      this._fetchData(1)
-    }, 60000)
+      this._fetchData(1);
+    }, 60000);
   },
   methods: {
     _fetchOnline() {
       postMsg(1)
         .then(res => {
           // console.log(res)
-          let data = res.data
+          let data = res.data;
           if (data.success) {
             // this.commentList = data.result.list
-            this.pages = data.result.pages
-            this.online = data.message
+            this.pages = data.result.pages;
+            this.online = data.message;
           }
         })
         .catch(err => {
-          console.log(err)
-        })
+          console.log(err);
+        });
     },
     _fetchData(page) {
       postMsg(page)
         .then(res => {
           // console.log(res)
-          let data = res.data
+          let data = res.data;
           if (data.success) {
-            this.loading.hide()
-            this.commentList = data.result.list
-            this.pages = data.result.pages
-            this.online = data.message
-            Bus.$emit('initComment', data.message)
+            this.commentList = data.result.list;
+            this.pages = data.result.pages;
+            this.online = data.message;
           }
+          this.loading.hide();
+          Bus.$emit("initComment", data.message);
         })
         .catch(err => {
-          console.log(err)
-        })
+          console.log(err);
+        });
     },
     _getQueryString(name) {
-      let reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i')
-      let r = window.location.search.substr(1).match(reg)
-      if (r != null) return unescape(r[2])
-      return null
+      let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+      let r = window.location.search.substr(1).match(reg);
+      if (r != null) return unescape(r[2]);
+      return null;
     },
     onSendMsg() {
       // alert('fasongxinxi')
-      this._fetchData(1)
+      this._fetchData(1);
     },
     onPullingDown() {
-      this._fetchData(1)
+      this._fetchData(1);
     },
     onPullingUp() {
       // 更新数据
-      console.log('pulling up and load data')
+      console.log("pulling up and load data");
 
-      this.page++
+      this.page++;
       if (this.page <= this.pages) {
         postMsg(this.page)
           .then(res => {
             // console.log(res)
-            let data = res.data
+            let data = res.data;
             if (data.success) {
-              this.commentList = this.commentList.concat(data.result.list)
-              this.pages = data.result.pages
+              this.commentList = this.commentList.concat(data.result.list);
+              this.pages = data.result.pages;
             } else {
-              this.$refs.scroll.forceUpdate()
+              this.$refs.scroll.forceUpdate();
             }
           })
           .catch(err => {
-            console.log(err)
-          })
+            console.log(err);
+          });
       } else {
-        this.$refs.scroll.forceUpdate()
+        this.$refs.scroll.forceUpdate();
       }
     },
     previewImage(url) {
@@ -171,42 +195,42 @@ export default {
       wx.previewImage({
         current: url, // 当前显示图片的http链接
         urls: [url]
-      })
+      });
     },
     playVoice(src, index) {
       if (this.voicePlayindex == index) {
         if (this.audio.paused) {
-          this.audio.play()
+          this.audio.play();
         } else {
-          this.voicePlayindex = -1
-          this.audio.pause()
+          this.voicePlayindex = -1;
+          this.audio.pause();
         }
       } else {
-        this.audio.pause()
+        this.audio.pause();
 
-        this.audio.setAttribute('src', src)
+        this.audio.setAttribute("src", src);
 
-        this.$refs.audio.play()
-        this.voiceRestTime = 0
-        this.$nextTick(() => {})
+        this.$refs.audio.play();
+        this.voiceRestTime = 0;
+        this.$nextTick(() => {});
         setTimeout(() => {
-          this.voicePlayindex = index
-        }, 20)
+          this.voicePlayindex = index;
+        }, 20);
       }
     },
     timeupdate(e) {
-      let target = e.target
-      let restTime = (target.duration - target.currentTime) | 0
+      let target = e.target;
+      let restTime = (target.duration - target.currentTime) | 0;
 
-      this.voiceRestTime = restTime
-      this.$nextTick(() => {})
+      this.voiceRestTime = restTime;
+      this.$nextTick(() => {});
     },
     playEnd() {
-      console.log('end')
-      this.voicePlayindex = -1
+      console.log("end");
+      this.voicePlayindex = -1;
     }
   }
-}
+};
 </script>
 
 
