@@ -83,7 +83,7 @@ export default {
 <style lang='stylus' scoped>
 #block {
   position: absolute;
-  z-index: 1024;
+  z-index: 102400;
   width: 100px;
   height: 100px;
   border: 2px solid orange;

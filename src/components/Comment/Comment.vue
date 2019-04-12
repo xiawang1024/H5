@@ -1,5 +1,6 @@
 <template>
   <div class="comment">
+    <div class="mark">请下载云上南阳APP进行互动</div>
     <div class="online-people">
       <i class="icon-people"></i>
       <span class="online-num">浏览人数：{{online}}</span>
@@ -111,10 +112,6 @@ export default {
     });
     this.audio = this.$refs.audio;
     this._fetchData(-1);
-
-    // setInterval(() => {
-    //     this._fetchOnline()
-    // },15000)
 
     setInterval(() => {
       this._fetchData(1);
@@ -242,6 +239,24 @@ export default {
   right: 0;
   bottom: 0px;
   height: 100%;
+
+  .mark {
+    position: absolute;
+    z-index: 1024;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding-top: 160px;
+    background: rgba(0, 0, 0, 0.2);
+    color: #333;
+    box-sizing: border-box;
+  }
 
   .online-people {
     display: none;
