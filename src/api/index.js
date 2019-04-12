@@ -35,31 +35,28 @@ const postMsg = (page, cid = HU_DONG_ID, content = '', creater = '游客', fromU
 // let channel_id = 1650
 // let url = `http://api.hndt.com/api/page?template_id=394&channel_id=${channel_id}&article_id=${getQueryString('id')}`
 
-let url = `http://www.hndt.com/tvapp_ny/index.json`
-
-const map = {
-	'5001': '90002431001111',
-	'5002': '90002431001112',
-	'5003': '90002431001113',
-	'5004': '90002431001114'
-}
+// let url = `/hndt/streaming-media/stream/230`
+let url = `http://gw.dianzhenkeji.com/streaming-media/stream/${getQueryString('cid')}`
 
 const getLiveData = () => {
 	return new Promise((resolve, reject) => {
-		axios
-			.get(url)
-			.then((res) => {
-				let { data } = res
-				let cid = getQueryString('cid')
-				let select = data.filter((item) => {
-					return item.id == map[cid]
-				})
-				console.log(select)
-				resolve(select[0])
-			})
-			.catch((err) => {
-				reject(err)
-			})
+		axios.get(url).then((res) => {
+			let { code, msg, result } = res.data
+			console.log(res.data)
+			if (code === 0) {
+				let { ipAndPort, liveUrl, screenshot, videoTitle, description } = result
+
+				let data = {
+					live: `${ipAndPort}${liveUrl}`,
+					icon: `${ipAndPort}${screenshot}`,
+					name: videoTitle,
+					desc: description
+				}
+				resolve(data)
+			} else {
+				reject()
+			}
+		})
 	})
 }
 

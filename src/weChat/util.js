@@ -93,12 +93,12 @@ class WeChatConf extends WeChat {
 			document.title = data.name || '直播间'
 			this.img_url = data.icon
 			this.desc = data.desc || data.name
-			let src = data.stream
+			let src = data.live
 			let poster = data.icon
 			let content = data.body
 
 			let playData = {
-				live: data.stream,
+				live: data.live,
 				icon: data.icon,
 				title: data.name
 			}

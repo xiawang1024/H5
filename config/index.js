@@ -18,7 +18,7 @@ module.exports = {
 				}
 			},
 			'/hndt': {
-				target: 'http://www.hndt.com',
+				target: 'http://192.168.25.147:55301',
 				changeOrigin: true,
 				pathRewrite: {
 					'^/hndt': ''
