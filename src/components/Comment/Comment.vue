@@ -1,6 +1,6 @@
 <template>
   <div class="comment">
-    <div class="mark">请下载云上南阳APP进行互动</div>
+    <div class="mark">请下载‘云上南阳APP’进行互动</div>
     <div class="online-people">
       <i class="icon-people"></i>
       <span class="online-num">浏览人数：{{online}}</span>
