@@ -33,24 +33,17 @@ export default {
         /**
          * live
          */
-        if (status.indexOf("b") !== -1) {
-          if (this.isPc()) {
-            if (Hls.isSupported()) {
-              var hls = new Hls();
-              hls.loadSource(live);
-              hls.attachMedia(videoBox);
-              hls.on(Hls.Events.MANIFEST_PARSED, function() {
-                videoBox.play();
-              });
-            }
-          } else {
-            videoBox.setAttribute("src", live);
+        if (this.isPc()) {
+          if (Hls.isSupported()) {
+            var hls = new Hls();
+            hls.loadSource(live);
+            hls.attachMedia(videoBox);
+            hls.on(Hls.Events.MANIFEST_PARSED, function() {
+              videoBox.play();
+            });
           }
-        } else if (status.indexOf("c") !== -1) {
-          /**
-           * 点播
-           * */
-          videoBox.setAttribute("src", video);
+        } else {
+          videoBox.setAttribute("src", live);
         }
       });
     });

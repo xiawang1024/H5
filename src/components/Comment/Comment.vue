@@ -76,7 +76,7 @@ export default {
   },
   data() {
     return {
-      defaultAvatar: "http://www.hndt.com/res/logo_300.png",
+      defaultAvatar: require("./logo.png"),
       commentList: [],
       online: "",
       pullDownRefresh: {
@@ -286,6 +286,7 @@ export default {
         height: 80px;
         flex: 0 0 80;
         border-radius: 50%;
+        border: 1px solid #eee;
       }
 
       .text-wrap {

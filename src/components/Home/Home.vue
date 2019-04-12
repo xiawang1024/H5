@@ -9,7 +9,7 @@
         <p class="num">{{online}}</p>
       </div>
       <div class="tab-wrap">
-        <div class="tab" @click="slide(0)" :class="isIndex == 0 ? 'isActive' : ''">预告</div>
+        <!-- <div class="tab" @click="slide(0)" :class="isIndex == 0 ? 'isActive' : ''">预告</div> -->
         <!-- <div class="tab" @click="slide(1)" :class="isIndex == 1 ? 'isActive' : ''">互动</div> -->
         <!-- <div class="tab" @click="slide(2)" :class="isIndex == 2 ? 'isActive' : ''">回看</div> -->
       </div>
@@ -17,7 +17,7 @@
 
     <!-- <component :is="componentId"></component> -->
     <div class="tab-content">
-      <info v-show="isIndex == 0"></info>
+      <!-- <info v-show="isIndex == 0"></info> -->
       <comment v-show="isIndex==1"></comment>
       <!-- <program v-show="isIndex == 2"></program> -->
     </div>
@@ -47,7 +47,7 @@ export default {
   },
   data() {
     return {
-      isIndex: 0,
+      isIndex: 1,
       componentId: Info,
       online: "获取中...", //在线人数
       isShowOnline: false
@@ -141,7 +141,7 @@ export default {
 
 .tab-content {
   position: absolute;
-  top: 502px;
+  top: 502 - 80px;
   left: 0;
   right: 0;
   bottom: 0px;

@@ -32,11 +32,36 @@ const postMsg = (page, cid = HU_DONG_ID, content = '', creater = '游客', fromU
 //   channelData[HU_DONG_ID - 1]['channel_id']
 // }`
 
-let channel_id = 1650
-let url = `http://api.hndt.com/api/page?template_id=394&channel_id=${channel_id}&article_id=${getQueryString('id')}`
+// let channel_id = 1650
+// let url = `http://api.hndt.com/api/page?template_id=394&channel_id=${channel_id}&article_id=${getQueryString('id')}`
 
-// let url = `http://www.hndt.com/nh5/jiaoyu/jiaoyu20190410.json`
-const getLiveData = () => axios.get(url)
+let url = `http://www.hndt.com/tvapp_ny/index.json`
+
+const map = {
+	'5001': '90002431001111',
+	'5002': '90002431001112',
+	'5003': '90002431001113',
+	'5004': '90002431001114'
+}
+
+const getLiveData = () => {
+	return new Promise((resolve, reject) => {
+		axios
+			.get(url)
+			.then((res) => {
+				let { data } = res
+				let cid = getQueryString('cid')
+				let select = data.filter((item) => {
+					return item.id == map[cid]
+				})
+				console.log(select)
+				resolve(select[0])
+			})
+			.catch((err) => {
+				reject(err)
+			})
+	})
+}
 
 function getQueryString(name) {
 	var url = new RegExp('(^|&)' + name + '=([^&]*)(&|$)')

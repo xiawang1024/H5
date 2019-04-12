@@ -87,17 +87,23 @@ class WeChatConf extends WeChat {
 		this.desc = ''
 	}
 	init() {
-		getLiveData().then((res) => {
-			let data = res.data
-			this.title = data.title
-			document.title = data.title || '直播间'
+		getLiveData().then((data) => {
+			console.log(data)
+			this.title = data.name
+			document.title = data.name || '直播间'
 			this.img_url = data.icon
-			this.desc = data.desc
-			let src = data.video
+			this.desc = data.desc || data.name
+			let src = data.stream
 			let poster = data.icon
 			let content = data.body
 
-			Bus.$emit('initPlayer', data)
+			let playData = {
+				live: data.stream,
+				icon: data.icon,
+				title: data.name
+			}
+
+			Bus.$emit('initPlayer', playData)
 			axios
 				.post('https://a.weixin.hndt.com/boom/at/sign', Qs.stringify({ url: window.location.href }))
 				.then((res) => {
