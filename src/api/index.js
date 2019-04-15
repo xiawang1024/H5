@@ -32,7 +32,7 @@ const postMsg = (page, cid = HU_DONG_ID, content = '', creater = '游客', fromU
 //   channelData[HU_DONG_ID - 1]['channel_id']
 // }`
 
-let channel_id = 1652
+let channel_id = 1502
 let url = `http://api.hndt.com/api/page?template_id=394&channel_id=${channel_id}`
 
 const getLiveData = () => axios.get(url)

@@ -11,7 +11,7 @@
       <div class="tab-wrap">
         <div class="tab" @click="slide(0)" :class="isIndex == 0 ? 'isActive' : ''">预告</div>
         <div class="tab" @click="slide(1)" :class="isIndex == 1 ? 'isActive' : ''">互动</div>
-        <!-- <div class="tab" @click="slide(2)" :class="isIndex == 2 ? 'isActive' : ''">回看</div> -->
+        <div class="tab" @click="slide(2)" :class="isIndex == 2 ? 'isActive' : ''">回看</div>
       </div>
     </div>
 
@@ -19,7 +19,7 @@
     <div class="tab-content">
       <info v-show="isIndex == 0"></info>
       <comment v-show="isIndex==1"></comment>
-      <!-- <program v-show="isIndex == 2"></program> -->
+      <program v-show="isIndex == 2"></program>
     </div>
   </div>
 </template>
@@ -30,7 +30,7 @@ import Down from "components/Down/index";
 import Player from "components/nativePlayer/index";
 import Comment from "components/Comment/Comment";
 import Info from "components/Info/Info";
-// import Program from 'components/Program/Program'
+import Program from "components/Program/Program";
 
 import Bus from "base/js/bus";
 import weui from "weui.js";
@@ -42,8 +42,8 @@ export default {
     Comment,
     DownTips,
     Down,
-    Info
-    // Program
+    Info,
+    Program
   },
   data() {
     return {
