@@ -36,7 +36,7 @@ const postMsg = (page, cid = HU_DONG_ID, content = '', creater = '游客', fromU
 // let url = `http://api.hndt.com/api/page?template_id=394&channel_id=${channel_id}&article_id=${getQueryString('id')}`
 
 // let url = `/hndt/streaming-media/stream/230`
-let url = `http://gw.dianzhenkeji.com/streaming-media/stream/${getQueryString('cid')}`
+let url = `http://gw.dianzhenkeji.com/streaming-media/stream/${getQueryString('streamName')}`
 
 const getLiveData = () => {
 	return new Promise((resolve, reject) => {

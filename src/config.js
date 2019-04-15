@@ -1,4 +1,4 @@
-const HU_DONG_ID = getQueryString('cid') //临时id
+const HU_DONG_ID = getQueryString('streamName') //临时id
 
 function getQueryString(name) {
 	var url = new RegExp('(^|&)' + name + '=([^&]*)(&|$)')

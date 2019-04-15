@@ -100,7 +100,7 @@ export default {
     };
   },
   created() {
-    this.loading = weui.loading("努力加载中...");
+    // this.loading = weui.loading("努力加载中...");
     // this._fetchOnline(-1)
     // postMsg(-2)
   },
@@ -111,11 +111,11 @@ export default {
       }, 200);
     });
     this.audio = this.$refs.audio;
-    this._fetchData(-1);
+    // this._fetchData(-1);
 
-    setInterval(() => {
-      this._fetchData(1);
-    }, 60000);
+    // setInterval(() => {
+    //   this._fetchData(1);
+    // }, 60000);
   },
   methods: {
     _fetchOnline() {
