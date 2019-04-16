@@ -10,7 +10,7 @@
       </div>
       <div class="tab-wrap">
         <div class="tab" @click="slide(0)" :class="isIndex == 0 ? 'isActive' : ''">预告</div>
-        <div class="tab" @click="slide(1)" :class="isIndex == 1 ? 'isActive' : ''">互动</div>
+        <!-- <div class="tab" @click="slide(1)" :class="isIndex == 1 ? 'isActive' : ''">互动</div> -->
         <div class="tab" @click="slide(2)" :class="isIndex == 2 ? 'isActive' : ''">回看</div>
       </div>
     </div>
