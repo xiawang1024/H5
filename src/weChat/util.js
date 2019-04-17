@@ -1,6 +1,8 @@
 import wx from 'weixin-js-sdk'
 import axios from 'axios'
 import Qs from 'qs'
+import store from 'store'
+import STORE_NAME from 'config/store_config.js'
 
 import { getLiveData } from 'api/index'
 import Bus from 'base/js/bus'
@@ -18,13 +20,13 @@ class WeChat {
 		this.weChat_Redirect = '#wechat_redirect'
 	}
 	getQueryString(name) {
-		var url = new RegExp('(^|&)' + name + '=([^&]*)(&|$)')
-		var newUrl = window.location.search.substr(1).match(url)
-		if (newUrl != null) {
-			return unescape(newUrl[2])
-		} else {
-			return false
+		let reg = new RegExp('[?&]' + name + '=([^&#]*)', 'i')
+		let res = window.location.href.match(reg)
+
+		if (res && res.length > 1) {
+			return decodeURIComponent(res[1])
 		}
+		return ''
 	}
 	redirectUrl() {
 		let url =
@@ -52,16 +54,17 @@ class WeChat {
 	getOpenId() {
 		axios({
 			method: 'post',
-			url: 'https://a.weixin.hndt.com/boom/api/token/access/redirect2',
+			url: 'https://a.weixin.hndt.com/boom/wx/access/subscribe',
 			data: Qs.stringify({
 				code: this.getQueryString('code'),
-				cate: this.appId
+				state: this.appId,
+				subscribe: false
 			})
 		})
 			.then((res) => {
-				let data = res.data
-				if (data.status == 'ok') {
-					this.setStorage('WXHNDTOPENID', JSON.stringify(data.data))
+				let { data, status } = res.data
+				if (status === 'ok') {
+					store.set(STORE_NAME, data)
 				} else {
 					this.redirectUrl()
 				}
@@ -87,6 +90,16 @@ class WeChatConf extends WeChat {
 		this.desc = ''
 	}
 	init() {
+		/**微信授权 */
+		// if (this.isWeixinBrowser()) {
+		// 	if (!store.get(STORE_NAME)) {
+		// 		super.hasCode()
+		// 	}
+		// }
+
+		this.initData()
+	}
+	initData() {
 		getLiveData().then((res) => {
 			let data = res.data
 			this.title = data.title
@@ -125,6 +138,14 @@ class WeChatConf extends WeChat {
 					})
 				})
 		})
+	}
+	isWeixinBrowser() {
+		let agent = navigator.userAgent.toLowerCase()
+		if (agent.match(/MicroMessenger/i) == 'micromessenger') {
+			return true
+		} else {
+			return false
+		}
 	}
 }
 
