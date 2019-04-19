@@ -4,7 +4,6 @@
 import axios from "axios";
 import Qs from "qs";
 import HU_DONG_ID from "@/config.js";
-import channelData from "@/channelData";
 
 /**
  * 互动
