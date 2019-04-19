@@ -38,7 +38,7 @@ export default {
             if (Hls.isSupported()) {
               var hls = new Hls();
               hls.loadSource(live);
-              hls.attachMedia(vidvideoBoxo);
+              hls.attachMedia(videoBox);
               hls.on(Hls.Events.MANIFEST_PARSED, function() {
                 videoBox.play();
               });
