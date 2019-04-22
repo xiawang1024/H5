@@ -47,11 +47,15 @@ export default {
           // this.backList = [this.backList,...this.filterHander(list)];
           this.backList = this.backList.concat(this.filterHander(list));
           // console.log(this.filterHander(list));
-          if (list.lenght == 0) {
-            this.msg = "暂无回看数据，小编正在努力增加中";
+
+          if (this.backList.length == 0) {
+            this.$nextTick(() => {
+              this.msg = "暂无视频，小编正在努力生成中...";
+            });
           }
         })
         .catch(() => {
+          loading.hide();
           weui.alert("网络超时，请刷新页面");
         });
     },
