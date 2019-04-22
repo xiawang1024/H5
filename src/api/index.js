@@ -40,7 +40,7 @@ const postMsg = (
 // let url = `http://api.hndt.com/api/page?template_id=394&channel_id=${channel_id}`
 
 let channel_id = 1652;
-let article_id = 2403720;
+let article_id = 2404568;
 let url = `http://api.hndt.com/api/page?template_id=394&channel_id=${channel_id}&article_id=${article_id}`;
 
 const getLiveData = () => axios.get(url);
@@ -60,7 +60,7 @@ function getQueryString(name) {
  * @param {*} page
  * @param {*} channel_id 1502： 1066直播列表，1503： 共享直播间列表
  */
-const getLiveList = (page, channel_id = "1502") => {
+const getLiveList = (page, channel_id = "1192") => {
   let url = `http://api.hndt.com/api/page?template_id=395&channel_id=${channel_id}&page=${page}`;
   return axios.get(url);
 };
