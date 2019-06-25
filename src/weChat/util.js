@@ -81,7 +81,7 @@ class WeChat {
 class WeChatConf extends WeChat {
   constructor(props) {
     super(props);
-    this.title = '思念食品2018财年年会';
+    this.title = '思念食品2018财年年会--筑梦思念，共创未来';
     this.link = LINK; //分享链接
     this.img_url = 'http://www.hndt.com/nh5/out/20190618/imgs/logo.png';
     this.desc =
