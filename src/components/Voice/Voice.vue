@@ -1,6 +1,12 @@
 <template>
   <div class="voice">
-    <button class="btn" :class="isTouch ? 'istouch':'' " @touchstart.prevent="startRecord" @touchend.prevent="stopRecord" v-html="tipsMsg"></button>
+    <button
+      class="btn"
+      :class="isTouch ? 'istouch':'' "
+      @touchstart.prevent="startRecord"
+      @touchend.prevent="stopRecord"
+      v-html="tipsMsg"
+    ></button>
   </div>
 </template>
 
@@ -26,27 +32,27 @@ export default {
   },
   components: {},
   mounted() {
-    Bus.$on('initPlayer',() => {
+    Bus.$on('initPlayer', () => {
       if (
         !localStorage.rainAllowRecord ||
         localStorage.rainAllowRecord !== 'true'
       ) {
         wx.startRecord({
-          success: function() {
+          success: function () {
             localStorage.rainAllowRecord = 'true'
             wx.stopRecord()
           },
-          cancel: function() {
+          cancel: function () {
             weui.alert('用户拒绝授权录音')
           }
         })
       }
     })
-    
-    
+
+
 
     this.isNotWeixin = !this.isWeixinBrowser()
-    
+
   },
   methods: {
     isWeixinBrowser() {
@@ -107,7 +113,7 @@ export default {
       } else {
         this._stopHandler()
       }
-      this.$nextTick(() => {})
+      this.$nextTick(() => { })
     },
     _stopHandler() {
       wx.stopRecord({
@@ -158,6 +164,8 @@ export default {
 
 
 <style lang="stylus" scoped>
+@import '~base/stylus/theme.styl';
+
 .voice {
   width: 100%;
   height: 100%;
@@ -166,7 +174,7 @@ export default {
     display: inline-block;
     width: 100%;
     height: 60px;
-    border: 1px solid #0081dc;
+    border: 1px solid activeColor;
     border-radius: 12px;
     font-size: 28px;
     outline: none;

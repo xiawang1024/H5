@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 // import router from 'router'
 import 'base/stylus/index.styl'
+import 'base/font.css'
 
 /* 微信自定义分享 */
 

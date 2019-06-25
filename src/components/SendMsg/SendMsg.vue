@@ -1,7 +1,12 @@
 <template>
   <div class="send-msg">
-    <span class="sendVoice" :class="isVoice?'':'sendMsg'" @click="switchBtn"></span>
-    <span class="sendImg" @click="postImg"></span>
+    <span class="sendVoice" :class="isVoice?'':'sendMsg'" @click="switchBtn">
+      <i v-show="isVoice" class="icon icon-voice"></i>
+      <i v-show="!isVoice" class="icon icon-ipt"></i>
+    </span>
+    <span class="sendImg" @click="postImg">
+      <i class="icon icon-img"></i>
+    </span>
     <input v-show="isVoice" class="ipt" type="text" v-model="msg">
     <voice v-show="!isVoice" class="voice"></voice>
     <button v-show="isVoice" class="sendBtn" @click="sendMsg">发送</button>
@@ -119,6 +124,8 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+@import '~base/stylus/theme.styl';
+
 .send-msg {
   position: absolute;
   bottom: 0;
@@ -134,21 +141,38 @@ export default {
 
   .sendVoice {
     flex: 0 0 60px;
-    height: 55px;
-    background: url('./icon-voice.png') center center no-repeat;
-    background-size: contain;
+    height: 65px;
+
+    // background: url('./icon-voice.png') center center no-repeat;
+    // background-size: contain;
+    .icon-voice {
+      font-size: 65px;
+      color: activeColor;
+    }
+
+    .icon-ipt {
+      font-size: 65px;
+      color: activeColor;
+    }
 
     &.sendMsg {
-      background: url('./icon-ipt.png') center center no-repeat;
-      background-size: contain;
+      // background: url('./icon-ipt.png') center center no-repeat;
+      // background-size: contain;
     }
   }
 
   .sendImg {
     flex: 0 0 100px;
+    justify-content: space-around;
     height: 65px;
-    background: url('./icon-img.png') center center no-repeat;
-    background-size: contain;
+    text-align: center;
+
+    // background: url('./icon-img.png') center center no-repeat;
+    // background-size: contain;
+    .icon-img {
+      font-size: 65px;
+      color: activeColor;
+    }
   }
 
   .voice {
@@ -160,7 +184,7 @@ export default {
     flex: 0 0 360px;
     width: 360px;
     height: 56px;
-    border: 1px solid #0081dc;
+    border: 1px solid activeColor;
     padding-left: 16px;
     border-radius: 12px;
     outline: none;
@@ -173,7 +197,7 @@ export default {
     width: 150px;
     outline: none;
     border: none;
-    background: #0081dc;
+    background: activeColor;
     border-radius: 8px;
     font-size: 32px;
     color: #ffffff;

@@ -4,31 +4,55 @@
       <i class="icon-people"></i>
       <span class="online-num">浏览人数：{{online}}</span>
     </div>
-    <scroll class="list-wrap" ref="scroll" :data="commentList" :pullDownRefresh="pullDownRefresh" :pullUpLoad="pullUpLoad" @pullingDown="onPullingDown" @pullingUp="onPullingUp">
+    <scroll
+      class="list-wrap"
+      ref="scroll"
+      :data="commentList"
+      :pullDownRefresh="pullDownRefresh"
+      :pullUpLoad="pullUpLoad"
+      @pullingDown="onPullingDown"
+      @pullingUp="onPullingUp"
+    >
       <div class="list" v-for="(item,index) of commentList" :key="item.id">
         <!-- {{item.comment.icon}} -->
-        <img :src="item.comment.icon || defaultAvatar" alt="" class="avatar">
+        <img :src="item.comment.icon || defaultAvatar" alt class="avatar">
         <div class="text-wrap">
           <span class="time">{{item.comment.create_time | timeStamp2LocalTime}}</span>
           <h5 class="name">{{item.comment.creater}}</h5>
           <div class="content">
             <p v-if="item.comment.file_type == 'TEXT'" v-html="item.comment.content"></p>
-            <img class="img" width="300" v-if="item.comment.file_type == 'PIC'" :src="item.comment.content" @click="previewImage(item.comment.content)" />
-            <voice v-if="item.comment.file_type == 'VOICE'" v-on:click.native="playVoice(item.comment.content,index)" :isPlay="voicePlayindex === index" :restTime="voiceRestTime"></voice>
+            <img
+              class="img"
+              width="300"
+              v-if="item.comment.file_type == 'PIC'"
+              :src="item.comment.content"
+              @click="previewImage(item.comment.content)"
+            >
+            <voice
+              v-if="item.comment.file_type == 'VOICE'"
+              v-on:click.native="playVoice(item.comment.content,index)"
+              :isPlay="voicePlayindex === index"
+              :restTime="voiceRestTime"
+            ></voice>
           </div>
-          <div class="anchor-reply" v-show="item.commentChildList && item.commentChildList.length > 0">
+          <div
+            class="anchor-reply"
+            v-show="item.commentChildList && item.commentChildList.length > 0"
+          >
             <span class="anchor">主播回复:</span>
             <div class="child-list-wrap">
-              <div class="child-list" v-for="childItem of item.commentChildList" :key="childItem.create_time">
-                {{childItem.content}}
-              </div>
+              <div
+                class="child-list"
+                v-for="childItem of item.commentChildList"
+                :key="childItem.create_time"
+              >{{childItem.content}}</div>
             </div>
           </div>
         </div>
       </div>
     </scroll>
     <send-msg @sendMsg="onSendMsg"></send-msg>
-    <audio src="" ref="audio" style="display:none" @timeupdate="timeupdate" @ended="playEnd"></audio>
+    <audio src ref="audio" style="display:none" @timeupdate="timeupdate" @ended="playEnd"></audio>
   </div>
 </template>
 
@@ -52,7 +76,7 @@ export default {
   },
   data() {
     return {
-      defaultAvatar: 'http://www.hndt.com/res/logo_300.png',
+      defaultAvatar: 'http://www.hndt.com/nh5/out/20190618/imgs/logo.png',
       commentList: [],
       online: '',
       pullDownRefresh: {
@@ -188,7 +212,7 @@ export default {
 
         this.$refs.audio.play()
         this.voiceRestTime = 0
-        this.$nextTick(() => {})
+        this.$nextTick(() => { })
         setTimeout(() => {
           this.voicePlayindex = index
         }, 20)
@@ -199,7 +223,7 @@ export default {
       let restTime = (target.duration - target.currentTime) | 0
 
       this.voiceRestTime = restTime
-      this.$nextTick(() => {})
+      this.$nextTick(() => { })
     },
     playEnd() {
       console.log('end')

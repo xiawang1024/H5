@@ -10,8 +10,8 @@
       </div>
       <div class="tab-wrap">
         <div class="tab" @click="slide(0)" :class="isIndex == 0 ? 'isActive' : ''">预告</div>
-        <!-- <div class="tab" @click="slide(1)" :class="isIndex == 1 ? 'isActive' : ''">互动</div>
-        <div class="tab" @click="slide(2)" :class="isIndex == 2 ? 'isActive' : ''">回看</div>-->
+        <div class="tab" @click="slide(1)" :class="isIndex == 1 ? 'isActive' : ''">互动</div>
+        <!-- <div class="tab" @click="slide(2)" :class="isIndex == 2 ? 'isActive' : ''">回看</div> -->
       </div>
     </div>
 
@@ -19,7 +19,7 @@
     <div class="tab-content">
       <info v-show="isIndex == 0"></info>
       <comment v-show="isIndex==1"></comment>
-      <program v-show="isIndex == 2"></program>
+      <!-- <program v-show="isIndex == 2"></program> -->
     </div>
   </div>
 </template>
@@ -30,7 +30,7 @@ import DownTips from 'components/DownTips/DownTips'
 import Player from 'components/nativePlayer/index'
 import Comment from 'components/Comment/Comment'
 import Info from 'components/Info/Info'
-import Program from 'components/Program/Program'
+// import Program from 'components/Program/Program'
 
 import Bus from 'base/js/bus'
 import weui from 'weui.js'
@@ -43,7 +43,7 @@ export default {
     DownTips,
     // Down,
     Info,
-    Program
+    // Program
   },
   data() {
     return {
@@ -88,6 +88,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="stylus" scoped>
+@import '~base/stylus/theme.styl';
+
 .tips {
   width: 100%;
   height: 20px;
@@ -132,8 +134,8 @@ export default {
       &.isActive {
         padding: 15px 0;
         // border-radius: 4px;
-        color: #0081dc;
-        border-bottom: 2px solid #0081dc;
+        color: activeColor;
+        border-bottom: 2px solid activeColor;
       }
     }
   }
