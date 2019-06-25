@@ -10,6 +10,7 @@
       width="100%"
       height="100%"
       :poster="poster"
+      src
     />
   </div>
 </template>
@@ -21,39 +22,54 @@ export default {
   name: "livePlayer",
   data() {
     return {
-      poster: ""
+      poster: "http://www.hndt.com/nh5/out/20190618/imgs/cover.png"
     };
   },
   mounted() {
     let videoBox = document.getElementById("video");
-    Bus.$on("initPlayer", data => {
-      let { live, icon, status, video } = data;
-      this.$nextTick(() => {
-        this.poster = icon;
-        /**
-         * live
-         */
-        if (status.indexOf("b") !== -1) {
-          if (this.isPc()) {
-            if (Hls.isSupported()) {
-              var hls = new Hls();
-              hls.loadSource(live);
-              hls.attachMedia(videoBox);
-              hls.on(Hls.Events.MANIFEST_PARSED, function() {
-                videoBox.play();
-              });
-            }
-          } else {
-            videoBox.setAttribute("src", live);
-          }
-        } else if (status.indexOf("c") !== -1) {
-          /**
-           * 点播
-           * */
-          videoBox.setAttribute("src", video);
-        }
-      });
-    });
+
+    let live = 'http://livepull.hndt.com/live/sinian2019/playlist.m3u8'
+    if (this.isPc()) {
+      if (Hls.isSupported()) {
+        var hls = new Hls();
+        hls.loadSource(live);
+        hls.attachMedia(videoBox);
+        hls.on(Hls.Events.MANIFEST_PARSED, function () {
+          videoBox.play();
+        });
+      }
+    } else {
+      videoBox.setAttribute("src", live);
+    }
+
+    // Bus.$on("initPlayer", data => {
+    //   let { live, icon, status, video } = data;
+    //   this.$nextTick(() => {
+    //     this.poster = icon;
+    //     /**
+    //      * live
+    //      */
+    //     if (status.indexOf("b") !== -1) {
+    //       if (this.isPc()) {
+    //         if (Hls.isSupported()) {
+    //           var hls = new Hls();
+    //           hls.loadSource(live);
+    //           hls.attachMedia(videoBox);
+    //           hls.on(Hls.Events.MANIFEST_PARSED, function () {
+    //             videoBox.play();
+    //           });
+    //         }
+    //       } else {
+    //         videoBox.setAttribute("src", live);
+    //       }
+    //     } else if (status.indexOf("c") !== -1) {
+    //       /**
+    //        * 点播
+    //        * */
+    //       videoBox.setAttribute("src", video);
+    //     }
+    //   });
+    // });
     Bus.$on("backPlay", backSrc => {
       videoBox.setAttribute("src", backSrc);
       videoBox.play();

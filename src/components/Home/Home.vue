@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <!-- <down-tips></down-tips> -->
-    <Down></Down>
+    <!-- <Down></Down> -->
     <player></player>
     <div class="wrap">
       <div v-if="isShowOnline" class="online">
@@ -9,10 +9,9 @@
         <p class="num">{{online}}</p>
       </div>
       <div class="tab-wrap">
-
         <div class="tab" @click="slide(0)" :class="isIndex == 0 ? 'isActive' : ''">预告</div>
-        <div class="tab" @click="slide(1)" :class="isIndex == 1 ? 'isActive' : ''">互动</div>
-        <div class="tab" @click="slide(2)" :class="isIndex == 2 ? 'isActive' : ''">回看</div>
+        <!-- <div class="tab" @click="slide(1)" :class="isIndex == 1 ? 'isActive' : ''">互动</div>
+        <div class="tab" @click="slide(2)" :class="isIndex == 2 ? 'isActive' : ''">回看</div>-->
       </div>
     </div>
 
@@ -22,13 +21,12 @@
       <comment v-show="isIndex==1"></comment>
       <program v-show="isIndex == 2"></program>
     </div>
-
   </div>
 </template>
 
 <script>
 import DownTips from 'components/DownTips/DownTips'
-import Down from 'components/Down/index'
+// import Down from 'components/Down/index'
 import Player from 'components/nativePlayer/index'
 import Comment from 'components/Comment/Comment'
 import Info from 'components/Info/Info'
@@ -43,7 +41,7 @@ export default {
     Player,
     Comment,
     DownTips,
-    Down,
+    // Down,
     Info,
     Program
   },
@@ -55,7 +53,7 @@ export default {
       isShowOnline: false
     }
   },
-  created() {},
+  created() { },
   mounted() {
     Bus.$on('initComment', data => {
       this.online = data
