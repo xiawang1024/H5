@@ -21,13 +21,13 @@ if (isWeixinBrowser()) {
 }
 weChatConf.init()
 
-wx.ready(function() {
+wx.ready(function () {
   wx.onMenuShareTimeline({
     title: weChatConf.title,
     link: weChatConf.link,
     imgUrl: weChatConf.img_url,
-    success: function() {},
-    cancel: function() {}
+    success: function () { },
+    cancel: function () { }
   })
   wx.onMenuShareAppMessage({
     title: weChatConf.title,
@@ -36,8 +36,8 @@ wx.ready(function() {
     desc: weChatConf.desc,
     type: '',
     dataUrl: '',
-    success: function() {},
-    cancel: function() {}
+    success: function () { },
+    cancel: function () { }
   })
 
   wx.onVoiceRecordEnd({
@@ -77,7 +77,7 @@ function uploadVoice(voiceLocalId) {
     success: res => {
       let serverId = res.serverId
       postMsg(-2, HU_DONG_ID, serverId).then(() => {
-        weui.toast('发送成功，等待审核！')
+        weui.toast('发送成功！')
       })
     }
   })

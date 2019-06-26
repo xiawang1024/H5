@@ -99,7 +99,7 @@ export default {
     }
   },
   created() {
-    this.loading = weui.loading('努力加载中...')
+    // this.loading = weui.loading('努力加载中...')
     // this._fetchOnline(-1)
     // postMsg(-2)
   },

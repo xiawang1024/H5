@@ -153,7 +153,7 @@ export default {
         isShowProgressTips: 1, // 默认为1，显示进度提示
         success: res => {
           postMsg('VOICE', HU_DONG_ID, res.serverId).then(res => {
-            weui.toast('审核中！')
+            weui.toast('发送成功！')
           })
         }
       })
