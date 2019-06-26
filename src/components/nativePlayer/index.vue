@@ -10,7 +10,7 @@
       width="100%"
       height="100%"
       :poster="poster"
-      src
+      src="http://www.hndt.com/nh5/out/20190618/source/sinian.mp4"
     />
   </div>
 </template>
@@ -26,26 +26,26 @@ export default {
     };
   },
   mounted() {
-    let videoBox = document.getElementById("video");
+    // let videoBox = document.getElementById("video");
 
-    let live = 'http://livepull.hndt.com/live/sinian2019/playlist.m3u8'
-    if (this.isPc()) {
-      if (Hls.isSupported()) {
-        var hls = new Hls();
-        hls.loadSource(live);
-        hls.attachMedia(videoBox);
-        hls.on(Hls.Events.MANIFEST_PARSED, function () {
-          videoBox.play();
-        });
-      }
-    } else {
-      videoBox.setAttribute("src", live);
-    }
+    // let live = 'http://livepull.hndt.com/live/sinian2019/playlist.m3u8'
+    // if (this.isPc()) {
+    //   if (Hls.isSupported()) {
+    //     var hls = new Hls();
+    //     hls.loadSource(live);
+    //     hls.attachMedia(videoBox);
+    //     hls.on(Hls.Events.MANIFEST_PARSED, function () {
+    //       videoBox.play();
+    //     });
+    //   }
+    // } else {
+    //   videoBox.setAttribute("src", live);
+    // }
 
-    Bus.$on("backPlay", backSrc => {
-      videoBox.setAttribute("src", backSrc);
-      videoBox.play();
-    });
+    // Bus.$on("backPlay", backSrc => {
+    //   videoBox.setAttribute("src", backSrc);
+    //   videoBox.play();
+    // });
   },
   methods: {
     isPc() {
