@@ -41,7 +41,7 @@ export default {
       let loading = weui.loading("努力加载中...");
       getLiveList(page)
         .then(res => {
-          loading.hide();
+          // loading.hide();
           let { page, pages, list } = res.data;
           this.pages = pages;
           // this.backList = [this.backList,...this.filterHander(list)];

@@ -142,7 +142,7 @@ export default {
           // console.log(res)
           let data = res.data
           if (data.success) {
-            this.loading.hide()
+            // this.loading.hide()
             this.commentList = data.result.list
             this.pages = data.result.pages
             this.online = data.message

@@ -42,34 +42,6 @@ export default {
       videoBox.setAttribute("src", live);
     }
 
-    // Bus.$on("initPlayer", data => {
-    //   let { live, icon, status, video } = data;
-    //   this.$nextTick(() => {
-    //     this.poster = icon;
-    //     /**
-    //      * live
-    //      */
-    //     if (status.indexOf("b") !== -1) {
-    //       if (this.isPc()) {
-    //         if (Hls.isSupported()) {
-    //           var hls = new Hls();
-    //           hls.loadSource(live);
-    //           hls.attachMedia(videoBox);
-    //           hls.on(Hls.Events.MANIFEST_PARSED, function () {
-    //             videoBox.play();
-    //           });
-    //         }
-    //       } else {
-    //         videoBox.setAttribute("src", live);
-    //       }
-    //     } else if (status.indexOf("c") !== -1) {
-    //       /**
-    //        * 点播
-    //        * */
-    //       videoBox.setAttribute("src", video);
-    //     }
-    //   });
-    // });
     Bus.$on("backPlay", backSrc => {
       videoBox.setAttribute("src", backSrc);
       videoBox.play();
