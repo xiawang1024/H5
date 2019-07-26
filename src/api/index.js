@@ -39,8 +39,8 @@ const postMsg = (
 
 // let url = `http://api.hndt.com/api/page?template_id=394&channel_id=${channel_id}`
 
-let channel_id = 1652;
-let article_id = 2414300;
+let channel_id = 1657;
+let article_id = 2414684;
 let url = `http://api.hndt.com/api/page?template_id=394&channel_id=${channel_id}&article_id=${article_id}`;
 
 const getLiveData = () => axios.get(url);
