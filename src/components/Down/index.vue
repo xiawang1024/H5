@@ -1,7 +1,15 @@
+<!--
+ * @Description:
+ * @Version: 0.0.1
+ * @Company: hNdt
+ * @Author: xiaWang1024
+ * @Date: 2019-11-04 16:28:12
+ * @LastEditTime: 2019-11-04 16:37:48
+ -->
 <template>
-  <div class='drag'>
-    <div id="block" ref='logoBox'>
-      <img src="./logo.png" alt="" class="img">
+  <div class="drag">
+    <div id="block" ref="logoBox">
+      <img src="./logo.png" alt class="img" />
     </div>
   </div>
 </template>
@@ -12,7 +20,7 @@ import weui from 'weui.js'
 
 export default {
   name: 'drag',
-  created() {},
+  created() { },
   mounted() {
     this.dragInit()
     this.winResize()
@@ -20,8 +28,8 @@ export default {
   methods: {
     click() {
       weui.dialog({
-        title: '河南广播APP',
-        content: '下载河南广播APP，‘听河南，览天下’',
+        title: '下载大象新闻APP',
+        content: '大象新闻APP，脚踏实地做新闻',
         className: 'custom-classname',
         buttons: [
           {
@@ -31,8 +39,8 @@ export default {
           {
             label: '确定',
             type: 'primary',
-            onClick: function() {
-              window.location = 'http://www.hndt.com/app/download/index.html'
+            onClick: function () {
+              window.location = 'https://cmsres.dianzhenkeji.com/zhlfres/dxnew/app/yqm//#/webDownload'
             }
           }
         ]
