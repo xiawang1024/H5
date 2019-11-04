@@ -38,7 +38,7 @@ const postMsg = (
 //   channelData[HU_DONG_ID - 1]['channel_id']
 // }`
 
-let channel_id = 1656;
+let channel_id = 1502;
 // let article_id = 2405376;
 let url = `http://api.hndt.com/api/page?template_id=394&channel_id=${channel_id}`;
 // let url = `http://api.hndt.com/api/page?template_id=394&channel_id=${channel_id}&article_id=${article_id}`;
@@ -60,7 +60,7 @@ function getQueryString(name) {
  * @param {*} page
  * @param {*} channel_id
  */
-const getLiveList = (page, channel_id = "1656") => {
+const getLiveList = (page, channel_id = "1502") => {
   let url = `http://api.hndt.com/api/page?template_id=395&channel_id=${channel_id}&page=${page}`;
   return axios.get(url);
 };
