@@ -1,3 +1,11 @@
+/*
+ * @Description:
+ * @Version: 0.0.1
+ * @Company: hNdt
+ * @Author: xiaWang1024
+ * @Date: 2019-11-01 15:14:01
+ * @LastEditTime: 2019-11-04 16:20:48
+ */
 /**
  * api
  */
@@ -38,7 +46,7 @@ const postMsg = (
 //   channelData[HU_DONG_ID - 1]['channel_id']
 // }`
 
-let channel_id = 1502
+let channel_id = 1652
 let url = `http://api.hndt.com/api/page?template_id=394&channel_id=${channel_id}&article_id=${getQueryString(
   'id'
 )}`
@@ -60,7 +68,7 @@ function getQueryString(name) {
  * @param {*} page
  * @param {*} channel_id 1502： 1066直播列表，1503： 共享直播间列表
  */
-const getLiveList = (page, channel_id = '1502') => {
+const getLiveList = (page, channel_id = '1652') => {
   let url = `http://api.hndt.com/api/page?template_id=395&channel_id=${channel_id}&page=${page}`
   return axios.get(url)
 }
