@@ -89,7 +89,10 @@ class WeChatConf extends WeChat {
     this.desc = ''
   }
   init() {
-    this.hasCode()
+    if (!window.localStorage.getItem('WXHNDTOPENID')) {
+      this.hasCode()
+    }
+
     getLiveData().then(res => {
       let data = res.data
       this.title = data.title

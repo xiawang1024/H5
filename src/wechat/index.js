@@ -1,3 +1,11 @@
+/*
+ * @Description:
+ * @Version: 0.0.1
+ * @Company: hNdt
+ * @Author: xiaWang1024
+ * @Date: 2019-11-04 16:28:12
+ * @LastEditTime: 2020-02-27 14:34:31
+ */
 import wx from 'weixin-js-sdk'
 
 import weui from 'weui.js'
@@ -19,15 +27,17 @@ function isWeixinBrowser() {
 
 if (isWeixinBrowser()) {
 }
+
+
 weChatConf.init()
 
-wx.ready(function() {
+wx.ready(function () {
   wx.onMenuShareTimeline({
     title: weChatConf.title,
     link: weChatConf.link,
     imgUrl: weChatConf.img_url,
-    success: function() {},
-    cancel: function() {}
+    success: function () { },
+    cancel: function () { }
   })
   wx.onMenuShareAppMessage({
     title: weChatConf.title,
@@ -36,8 +46,8 @@ wx.ready(function() {
     desc: weChatConf.desc,
     type: '',
     dataUrl: '',
-    success: function() {},
-    cancel: function() {}
+    success: function () { },
+    cancel: function () { }
   })
 
   wx.onVoiceRecordEnd({

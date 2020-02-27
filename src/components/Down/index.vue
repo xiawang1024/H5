@@ -1,7 +1,15 @@
+<!--
+ * @Description:
+ * @Version: 0.0.1
+ * @Company: hNdt
+ * @Author: xiaWang1024
+ * @Date: 2020-02-27 11:47:07
+ * @LastEditTime: 2020-02-27 11:48:39
+ -->
 <template>
-  <div class='drag'>
-    <div id="block" ref='logoBox'>
-      <img src="./logo.png" alt="" class="img">
+  <div class="drag">
+    <div id="block" ref="logoBox">
+      <img src="./logo.png" alt class="img" />
     </div>
   </div>
 </template>
@@ -12,14 +20,14 @@ import weui from 'weui.js'
 
 export default {
   name: 'drag',
-  created() {},
+  created() { },
   mounted() {
     this.dragInit()
     this.winResize()
   },
   methods: {
     click() {
-      window.location = 'http://a.weixin.hndt.com/h5/fmlive/hamilist/index.html'
+      window.location = 'https://a.weixin.hndt.com/h5/fmlive/hamilist/index.html'
       // weui.dialog({
       //   title: '河南广播APP',
       //   content: '下载河南广播APP，‘听河南，览天下’',
