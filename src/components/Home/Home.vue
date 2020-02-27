@@ -4,7 +4,7 @@
     <Down></Down>
     <player></player>
     <div class="online">
-      <span class="name">观看人数 : </span>
+      <span class="name">观看人数 :</span>
       <span class="num">&nbsp;{{online}}</span>
     </div>
     <!-- <div class="wrap">
@@ -18,18 +18,17 @@
         <div class="tab" @click="slide(1)" :class="isIndex == 1 ? 'isActive' : ''">互动</div>
         <div class="tab" @click="slide(2)" :class="isIndex == 2 ? 'isActive' : ''">回看</div>
       </div>
-    </div> -->
+    </div>-->
 
     <!-- <component :is="componentId"></component> -->
     <!-- <div class="tab-content">
       <info v-show="isIndex == 0"></info>
       <comment v-show="isIndex==1"></comment>
       <program v-show="isIndex == 2"></program>
-    </div> -->
+    </div>-->
     <div class="tab-content">
       <component :is="componentId"></component>
     </div>
-
   </div>
 </template>
 
@@ -39,7 +38,7 @@ import Down from 'components/Down/index'
 import Player from 'components/nativePlayer/index'
 import Comment from 'components/Comment/Comment'
 import Info from 'components/Info/Info'
-import Program from 'components/Program/Program'
+// import Program from 'components/Program/Program'
 
 import Bus from 'base/js/bus'
 import weui from 'weui.js'
@@ -52,7 +51,7 @@ export default {
     DownTips,
     Down,
     Info,
-    Program
+    // Program
   },
   data() {
     return {
@@ -62,7 +61,7 @@ export default {
       isShowOnline: false
     }
   },
-  created() {},
+  created() { },
   mounted() {
     Bus.$on('initComment', data => {
       this.online = data

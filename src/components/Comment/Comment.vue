@@ -13,25 +13,14 @@
       @pullingDown="onPullingDown"
       @pullingUp="onPullingUp"
     >
-      <div
-        class="list"
-        v-for="(item,index) of commentList"
-        :key="item.id"
-      >
+      <div class="list" v-for="(item,index) of commentList" :key="item.id">
         <!-- {{item.comment.icon}} -->
-        <img
-          :src="item.comment.icon || defaultAvatar"
-          alt=""
-          class="avatar"
-        >
+        <img :src="item.comment.icon || defaultAvatar" alt class="avatar" />
         <div class="text-wrap">
           <span class="time">{{item.comment.create_time | timeStamp2LocalTime}}</span>
           <h5 class="name">{{item.comment.creater}}</h5>
           <div class="content">
-            <p
-              v-if="item.comment.file_type == 'TEXT'"
-              v-html="item.comment.content"
-            ></p>
+            <p v-if="item.comment.file_type == 'TEXT'" v-html="item.comment.content"></p>
             <img
               class="img"
               width="300"
@@ -56,22 +45,14 @@
                 class="child-list"
                 v-for="childItem of item.commentChildList"
                 :key="childItem.create_time"
-              >
-                {{childItem.content}}
-              </div>
+              >{{childItem.content}}</div>
             </div>
           </div>
         </div>
       </div>
     </scroll>
     <send-msg @sendMsg="onSendMsg"></send-msg>
-    <audio
-      src=""
-      ref="audio"
-      style="display:none"
-      @timeupdate="timeupdate"
-      @ended="playEnd"
-    ></audio>
+    <audio src ref="audio" style="display:none" @timeupdate="timeupdate" @ended="playEnd"></audio>
   </div>
 </template>
 
@@ -161,7 +142,7 @@ export default {
     },
     _fetchData(page) {
       let userInfo = JSON.parse(weChat.getStorage("WXHNDTOPENID"));
-      let openid = userInfo.openid;
+      let openid = userInfo ? userInfo.openid : '';
       postMsg(page, openid)
         .then(res => {
           // console.log(res)
@@ -239,7 +220,7 @@ export default {
 
         this.$refs.audio.play();
         this.voiceRestTime = 0;
-        this.$nextTick(() => {});
+        this.$nextTick(() => { });
         setTimeout(() => {
           this.voicePlayindex = index;
         }, 20);
@@ -250,7 +231,7 @@ export default {
       let restTime = (target.duration - target.currentTime) | 0;
 
       this.voiceRestTime = restTime;
-      this.$nextTick(() => {});
+      this.$nextTick(() => { });
     },
     playEnd() {
       console.log("end");
