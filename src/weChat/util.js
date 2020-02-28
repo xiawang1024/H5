@@ -53,17 +53,16 @@ class WeChat {
   getOpenId() {
     axios({
       method: 'post',
-      url: 'https://a.weixin.hndt.com/boom/wx/access/subscribe',
+      url: 'https://weizan.dianzhenkeji.com/api/getuserinfo.php',
       data: Qs.stringify({
         code: this.getQueryString('code'),
-        state: this.appId,
-        subscribe: false
+        appid: this.appId
       })
     })
       .then(res => {
-        let data = res.data
-        if (data.status == 'ok') {
-          this.setStorage('WXHNDTOPENID', JSON.stringify(data.data))
+        let { code, msg } = res.data
+        if (code === 0) {
+          this.setStorage('WXHNDTOPENID', JSON.stringify(msg))
         } else {
           this.redirectUrl()
         }
@@ -106,32 +105,34 @@ class WeChatConf extends WeChat {
       Bus.$emit('initPlayer', data)
       axios
         .post(
-          'https://a.weixin.hndt.com/boom/at/sign',
+          'https://weizan.dianzhenkeji.com/api/jssdk.php',
           Qs.stringify({ url: window.location.href })
         )
         .then(res => {
-          let data = res.data
-          wx.config({
-            debug: false,
-            appId: data.appId,
-            timestamp: data.timestamp,
-            nonceStr: data.nonceStr,
-            signature: data.signature,
-            jsApiList: [
-              'onMenuShareTimeline',
-              'onMenuShareAppMessage',
-              'chooseImage',
-              'uploadImage',
-              'previewImage',
-              'startRecord',
-              'playVoice',
-              'stopRecord',
-              'downloadVoice',
-              'uploadVoice',
-              'stopVoice',
-              'openLocation'
-            ]
-          })
+          let { data, code } = res.data
+          if (code === 0) {
+            wx.config({
+              debug: false,
+              appId: data.appId,
+              timestamp: data.timestamp,
+              nonceStr: data.nonceStr,
+              signature: data.signature,
+              jsApiList: [
+                'onMenuShareTimeline',
+                'onMenuShareAppMessage',
+                'chooseImage',
+                'uploadImage',
+                'previewImage',
+                'startRecord',
+                'playVoice',
+                'stopRecord',
+                'downloadVoice',
+                'uploadVoice',
+                'stopVoice',
+                'openLocation'
+              ]
+            })
+          }
         })
     })
   }
