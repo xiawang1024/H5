@@ -7,7 +7,7 @@ import 'base/stylus/index.styl'
 
 /* 微信自定义分享 */
 
-import './weChat/index'
+import './wechat/index'
 
 /* swiper插件 */
 

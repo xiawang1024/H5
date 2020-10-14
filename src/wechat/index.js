@@ -2,7 +2,7 @@ import wx from 'weixin-js-sdk'
 
 import weui from 'weui.js'
 
-import { WeChatConf } from './util'
+import { WeChatConf } from '../weChat/util'
 import HU_DONG_ID from '@/config.js'
 import { postMsg } from 'api/index'
 
@@ -21,13 +21,13 @@ if (isWeixinBrowser()) {
 }
 weChatConf.init()
 
-wx.ready(function() {
+wx.ready(function () {
   wx.onMenuShareTimeline({
     title: weChatConf.title,
     link: weChatConf.link,
     imgUrl: weChatConf.img_url,
-    success: function() {},
-    cancel: function() {}
+    success: function () { },
+    cancel: function () { }
   })
   wx.onMenuShareAppMessage({
     title: weChatConf.title,
@@ -36,8 +36,8 @@ wx.ready(function() {
     desc: weChatConf.desc,
     type: '',
     dataUrl: '',
-    success: function() {},
-    cancel: function() {}
+    success: function () { },
+    cancel: function () { }
   })
 
   wx.onVoiceRecordEnd({
