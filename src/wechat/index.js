@@ -10,7 +10,7 @@ import wx from 'weixin-js-sdk'
 
 import weui from 'weui.js'
 
-import { WeChatConf } from './util'
+import { WeChatConf } from '../weChat/util'
 import HU_DONG_ID from '@/config.js'
 import { postMsg } from 'api/index'
 

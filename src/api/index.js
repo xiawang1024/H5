@@ -13,6 +13,7 @@ import axios from 'axios'
 import Qs from 'qs'
 import HU_DONG_ID from '@/config.js'
 import channelData from '@/channelData'
+const CryptoJS = require("crypto-js")
 
 /**
  * 互动
@@ -49,24 +50,32 @@ const postMsg = (
 let channel_id = 1511
 let article_id = 2256953
 // let url = `https://api.hndt.com/api/page?template_id=394&channel_id=${channel_id}&article_id=${article_id}`
-let url = `https://prog.dianzhenkeji.com/program/get/channel/channelIds/program/180`
+let url = `https://prog.dianzhenkeji.com/program/getAuth/channel/channelIds/program/180`
 
-const getLiveData = () => axios.get(url).then(res => {
-  return new Promise((resolve, reject) => {
-    let { name, image, streams } = res.data[0]
-    resolve({
-      data: {
-        title: name,
-        icon: `https://cmsres.dianzhenkeji.com${image}`,
-        live: streams[0],
-        status: 'b',
-        body: '',
-        channel: "",
-        video: ''
-      }
+const getLiveData = () => {
+  let timestamp = (new Date()).getTime() / 1000 | 0
+  return axios.get(url, {
+    headers: {
+      timestamp: timestamp,
+      sign: CryptoJS.SHA256('6ca114a836ac7d73' + timestamp)
+    }
+  }).then(res => {
+    return new Promise((resolve, reject) => {
+      let { name, image, streams } = res.data[0]
+      resolve({
+        data: {
+          title: name,
+          icon: `https://cmsres.dianzhenkeji.com${image}`,
+          live: streams[0],
+          status: 'b',
+          body: '',
+          channel: "",
+          video: ''
+        }
+      })
     })
   })
-})
+}
 
 function getQueryString(name) {
   var url = new RegExp('(^|&)' + name + '=([^&]*)(&|$)')
